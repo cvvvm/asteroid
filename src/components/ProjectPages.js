@@ -164,7 +164,7 @@ const ToggledGallery = ({
       <div className={index === currentImg ? 'slide active' : 'slide'} key={index}>
         <img
           src={
-            '/images/projects/zig-zag-tattoo/' +
+            '../images/projects/zig-zag-tattoo/' +
             galleries[activeGallery].title +
             '-' +
             image +

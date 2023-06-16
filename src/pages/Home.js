@@ -53,7 +53,6 @@ function Home() {
               <img
                 className="intro-image"
                 src={'/images/home-intro/' + introImages[activeImage]}
-                alt=""
               />
             </div>
           </div>
