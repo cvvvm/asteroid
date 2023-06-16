@@ -163,13 +163,13 @@ const ToggledGallery = ({
     return (
       <div className={index === currentImg ? 'slide active' : 'slide'} key={index}>
         <img
-          src={
+          src={(
             '/images/projects/zig-zag-tattoo/' +
             galleries[activeGallery].title +
             '-' +
             image +
             imgType
-          }
+          ).toLowerCase()}
         />
       </div>
     );
@@ -224,9 +224,6 @@ export function GalleryImgToggler({
       </button>
     );
   });
-
-  // add gallery + toggles
-  //---------------------------------------------------------------------
 
   // render component
   //---------------------------------------------------------------------

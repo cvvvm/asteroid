@@ -207,7 +207,13 @@ export function PalmPre({ project, page, containRef, imgRef }) {
         <div className="palm-pre-img-mask" style={{ height: imgRef }}>
           <img
             className="palm-pre-img"
-            src={'/images/projects/' + project + '/mobile-' + page + '.png'}
+            src={(
+              '/images/projects/' +
+              project +
+              '/mobile-' +
+              page +
+              '.png'
+            ).toLowerCase()}
             alt="mobile view of a website"
           />
         </div>
@@ -245,7 +251,7 @@ export function CRTMonitor({ project, page, containRef, imgRef }) {
         <div className="crt-monitor-img-mask" style={{ height: imgRef }}>
           <img
             className="crt-monitor-img"
-            src={'/images/projects/' + project + '/desk-' + page + '.png'}
+            src={('/images/projects/' + project + '/desk-' + page + '.png').toLowerCase()}
             alt="desk view of a website"
           />
         </div>
