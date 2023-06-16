@@ -16,9 +16,14 @@
   grid-template-rows: max-content;
   place-items: center;
 
-  overflow: hidden;
+  overflow-x: clip;
+
   position: relative;
   width: 100%;
+
+  @include breakpoint(md) {
+    overflow-x: visible;
+  }
 }
 
 .device-container {
