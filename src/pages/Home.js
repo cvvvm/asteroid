@@ -1,30 +1,35 @@
 import { useState } from 'react';
-import { Work } from './Work';
 import Footer from '../components/Footer';
 
 // home intros
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const homeIntros = [
-  "hi, i'm Kate. i made a fun website for pictures.",
-  "I've made everything on this website unless otherwise stated.",
+const homeHeading = [
+  "hi, i'm @!*/&_%$.",
+  "I've made this website.",
   "Don't like the site colors? Change them in the nav menu!",
   'the funniest person in web design.',
   'professional keyboard & cat appreciator.',
   'coding this site makes it a portfolio piece.',
 ];
 
+const homeDesc = [
+  'i made a fun website for pictures.',
+  'and everything on it. *unless otherwise stated.',
+];
+
 const introImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', 'coded-by-hand.jpg'];
 
 let introIndex = 0;
 function Home() {
-  let [activeIntro, setActiveIntro] = useState(0);
+  let [activeHead, setActiveHead] = useState(0);
   let [activeImage, setActiveImage] = useState(0);
+  let [activeDesc, setActiveDesc] = useState(0);
 
   function prevIntro() {
     if (introIndex <= 0) {
-      introIndex = homeIntros.length - 1;
+      introIndex = homeHeading.length - 1;
     } else {
       introIndex -= 1;
     }
@@ -33,7 +38,7 @@ function Home() {
 
   function nextIntro() {
     introIndex += 1;
-    if (introIndex >= homeIntros.length) {
+    if (introIndex >= homeHeading.length) {
       introIndex = 0;
     }
     setIntros(introIndex);
@@ -41,7 +46,8 @@ function Home() {
 
   function setIntros(index) {
     setActiveImage(index);
-    setActiveIntro(index);
+    setActiveHead(index);
+    setActiveDesc(index);
   }
 
   return (
@@ -58,7 +64,8 @@ function Home() {
           </div>
 
           <div id="intro" className="col-5 jc-center">
-            <h2 className="px-1">{homeIntros[activeIntro]}</h2>
+            <h3 className="px-1">{homeHeading[activeHead]}</h3>
+            <p className="px-1">{homeDesc[activeDesc]}</p>
           </div>
         </div>
 

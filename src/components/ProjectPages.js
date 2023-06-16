@@ -52,7 +52,7 @@ export function Role({ columns, project, intro, freelance, roles, contributors }
     );
   }
   return (
-    <div className={'outline invert row-gap-xs-1 col-' + columns}>
+    <div className={'outline invert mt-xs-5 mt-md-0 row-gap-xs-1 col-' + columns}>
       <div className="col-f10 pb-xs-3 row-gap-xs-1">
         <h2>{project}</h2>
         <p>{intro}</p>
