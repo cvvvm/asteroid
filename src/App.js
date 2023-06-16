@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import {gsap} from 'gsap';
+import gsap from 'gsap';
 
 import './1-css/main.min.css';
 import calcGridCol from './functions/calcGridCol';

@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 
 import { ThemeSet, ColorSet } from '../functions/ThemeSet';
 

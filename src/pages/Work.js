@@ -1,4 +1,4 @@
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { Outlet, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 
