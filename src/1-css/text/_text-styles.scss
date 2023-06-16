@@ -1,0 +1,268 @@
+/* no text highlight */
+body {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+}
+
+// font families
+//---------------------------------------------------------------------
+$avara: 'avara';
+$jet-brains: 'jetbrains mono';
+
+// text styles list
+//---------------------------------------------------------------------
+$text-styles-list: h1, h2, h3, h4, h5, p, ol, ul, '.note';
+
+@import './text-import';
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// UTILITY MIXINS
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// text contrast
+//---------------------------------------------------------------------
+@mixin text-contrast($hue, $invert: false) {
+  color: cssvar-get(text-#{$hue});
+  background-color: cssvar-get(bg-#{$hue});
+
+  @if $invert {
+    color: cssvar-get(bg-#{$hue});
+    background-color: cssvar-get(text-#{$hue});
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// HEADING STYLES
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// setup map key selection
+@function type-ratio($key) {
+  @return map-get($type-ratios, $key);
+}
+
+// ratios map
+$type-ratios: (
+  minorSecond: 1.067,
+  majorSecond: 1.125,
+  minorThird: 1.2,
+  majorThird: 1.25,
+  perfectFourth: 1.333,
+  augmentedFourth: 1.414,
+  perfectFifth: 1.5,
+  goldenRatio: 1.618,
+);
+
+$base-type-size: 1rem;
+
+$type-size-ratio: type-ratio('goldenRatio');
+$type-levels: 5, 4, 3, 2, 1;
+
+// set font
+$font-family: (
+  1: $avara,
+  2: $avara,
+  3: $avara,
+  4: $avara,
+  5: $jet-brains,
+);
+
+// set weight
+$font-weight: (
+  1: $weight-x-bold,
+  2: $weight-bold,
+  3: $weight-medium,
+  4: $weight-bold,
+  5: $weight-semi-bold,
+);
+
+// set size
+$font-size: (
+  1: clamp(3rem, 3rem + 1.5vw, 5rem),
+  2: clamp(2.25rem, 2.25rem + 1.5vw, 3.5rem),
+  3: clamp(1.75rem, 1.75rem + 1.5vw, 2.5rem),
+  4: clamp(1.4rem, 1.4rem + 1.5vw, 2rem),
+  5: clamp(1.4rem, 1.4rem + 1.5vw, 2rem),
+);
+
+@each $level in $type-levels {
+  h#{$level} {
+    font-family: map-get($font-family, $level);
+    font-weight: map-get($font-weight, $level);
+    font-size: map-get($font-size, $level);
+    line-height: 125%;
+  }
+}
+
+h2 + p {
+  margin-top: -0.5rem;
+}
+h3 + p,
+h4 + p {
+  margin-top: -0.75rem;
+}
+h5 + p {
+  margin-top: -0.5rem;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// non-heading styles
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// paragraph
+//---------------------------------------------------------------------
+p {
+  font-size: clamp(1.2rem, 1.2rem + 1.5vw, 1.35rem);
+  font-family: $jet-brains;
+  font-weight: $weight-light;
+  letter-spacing: 0.02rem;
+  line-height: 155%;
+
+  opacity: 95%;
+
+  padding: 0;
+  margin: 0rem 0.1rem;
+
+  + p {
+    margin-top: 1rem;
+  }
+
+  + p.note {
+    margin-top: -0.5rem;
+  }
+}
+
+// lists
+//---------------------------------------------------------------------
+ol,
+ul {
+  font-size: clamp(1.25rem, 1.25rem + 1.5vw, 1.4rem);
+
+  font-family: $jet-brains;
+  font-weight: $weight-light;
+  line-height: 165%;
+  margin: 2rem 0rem 0rem;
+
+  & li + li {
+    margin-top: 0.85rem;
+  }
+
+  & + p {
+    margin-top: 2rem;
+  }
+}
+
+// ordered list markers
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ol {
+  margin-left: 1rem;
+
+  & li + li {
+    margin-top: 1.5rem;
+  }
+
+  // if activating numbers
+  counter-reset: list-counter;
+
+  & li {
+    counter-increment: list-counter;
+  }
+
+  & li::marker {
+    font-weight: bold;
+  }
+}
+
+//
+// CUSTOM STYLES
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// badge mixin
+// intended for use with <p>
+//---------------------------------------------------------------------
+@mixin badge-base($hue, $outline: false) {
+  @include text-contrast($hue, $invert: true);
+
+  font-family: $jet-brains;
+  line-height: 100%;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.015rem;
+
+  max-width: max-content;
+  max-height: max-content;
+
+  margin: 0rem 0rem 0rem -0.25rem;
+  padding: 7px 12px;
+
+  border: 0.125rem solid cssvar-get(text-#{$hue});
+  border-radius: 0.6rem;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out,
+    border 200ms ease-in-out;
+
+  @include firefox() {
+    padding: 7px 13px 8px;
+  }
+
+  @if $outline {
+    @include text-contrast($hue);
+    background: none;
+    border: 0.125rem solid cssvar-get(accent-#{$hue});
+    box-shadow: none;
+  }
+}
+
+// note
+//---------------------------------------------------------------------
+p.note {
+  font-family: $jet-brains;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  opacity: 80%;
+
+  letter-spacing: 0.025rem;
+  line-height: 135%;
+
+  //margin-bottom: 1rem;
+}
+
+// GENERATE MANUAL TEXT COLORS
+//---------------------------------------------------------------------
+
+@each $hue in $color-hues {
+  @each $value in $color-values {
+    .text-#{$hue}-#{$value} {
+      color: cssvar-get(#{$hue}-#{$value});
+    }
+  }
+}

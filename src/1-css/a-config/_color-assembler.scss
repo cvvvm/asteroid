@@ -1,0 +1,99 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// AUTO backgrounds
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@each $hue in $color-hues {
+  .bg-#{$hue} {
+    @include text-contrast($hue);
+
+    transition: color 300ms ease-out, background-color 300ms ease-out,
+      border 300ms ease-out, border-color 300ms ease-out;
+
+    p a {
+      @include link-basic($hue);
+    }
+
+    // badges
+    //---------------------------------------------------------------------
+    .badge {
+      @include badge-base($hue);
+      &-outline {
+        @include badge-base($hue, $outline: true);
+      }
+    }
+
+    // buttons
+    //---------------------------------------------------------------------
+    .button {
+      @include buttons(#{$hue});
+      &-outline {
+        @include buttons(#{$hue}, $outline: true);
+      }
+    }
+
+    // col outline
+    //---------------------------------------------------------------------
+    .outline {
+      @include column-outline($hue);
+      transition: color 300ms ease-out, background-color 300ms ease-out,
+        border 300ms ease-out, border-color 300ms ease-out;
+
+      &.invert {
+        @include column-outline($hue, $invert: true);
+
+        & a,
+        .badge-outline,
+        .button-outline {
+          @include text-contrast($hue, $invert: true);
+        }
+
+        & .badge,
+        .button {
+          @include text-contrast($hue);
+        }
+      }
+    }
+
+    // work page project cards
+    //---------------------------------------------------------------------
+    @include work-card($hue);
+
+    // sidebar
+    //---------------------------------------------------------------------
+    @include sidebar($hue);
+  }
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //
+  //
+  // MANUAL colors
+  //
+  //
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // MANUAL color buttons
+  //---------------------------------------------------------------------
+  .button-#{$hue} {
+    @include buttons(#{$hue});
+    &-outline {
+      @include buttons(#{$hue}, $outline: true);
+    }
+  }
+
+  // MANUAL color badges
+  //---------------------------------------------------------------------
+  .badge-#{$hue} {
+    @include badge-base($hue);
+    &-outline {
+      @include badge-base($hue, $outline: true);
+    }
+  }
+}

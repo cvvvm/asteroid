@@ -1,0 +1,148 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// DEVICES CONTAINER
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// device containers
+//---------------------------------------------------------------------
+.devices-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  place-items: center;
+
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(md) {
+    overflow: visible;
+  }
+}
+
+.device-container {
+  display: flex;
+  place-content: center;
+  grid-column: 1;
+  grid-row: 1;
+
+  padding: 0rem 2rem;
+  width: 100%;
+
+  @include breakpoint(lg) {
+    padding: 0rem;
+  }
+}
+
+// device toggle buttons
+//---------------------------------------------------------------------
+.device-toggle-button {
+  font-size: 1rem !important;
+  margin: 0 !important;
+  padding: 0.5rem 1rem !important;
+
+  &.right {
+    border-radius: 0rem 2rem 2rem 0rem !important;
+    border-left: none !important;
+  }
+  &.left {
+    border-radius: 2rem 0rem 0rem 2rem !important;
+    border-right: none !important;
+    z-index: 1;
+  }
+
+  &:active {
+    translate: 0 !important;
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// DEVICES
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// DEVICE BASE MIXIN
+//---------------------------------------------------------------------
+@mixin device-base($max-width, $min-width) {
+  z-index: 100;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  position: relative;
+  width: 100%;
+  max-width: $max-width;
+  min-width: $min-width;
+}
+
+// DEVICE IMG MASK MIXIN
+//--------------------------------------------------------------------
+@mixin device-frame() {
+  z-index: 2;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// PALM PRE
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.palm-pre {
+  @include device-base(400px, 250px);
+  scale: 0;
+}
+
+.palm-pre-top {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.palm-pre-img-mask {
+  @include device-frame();
+  aspect-ratio: 638/901;
+  scale: 1.055;
+  translate: 1% -1.5%;
+}
+
+.palm-pre-img {
+  width: 100%;
+}
+
+.palm-pre-bottom {
+  z-index: 1;
+  position: absolute;
+}
+
+// CRT MONITOR
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.crt-monitor {
+  @include device-base(1000px, 300px);
+}
+
+.crt-monitor-frame {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.crt-monitor-img-mask {
+  @include device-frame();
+  aspect-ratio: 341/256;
+  scale: 0.6075;
+  translate: -0.05% -12.15%;
+}
+
+.crt-monitor-img {
+  width: 100%;
+}

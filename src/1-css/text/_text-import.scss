@@ -1,0 +1,87 @@
+// font weights
+//---------------------------------------------------------------------
+$weight-x-light: 200;
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+$weight-x-bold: 800;
+$weight-black: 900;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// bootstrap icons
+/* https://icons.getbootstrap.com/ */
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// jetbrains
+/* https://gist.github.com/Albert221/753d7f8955eeb6f5e50486fce048e39f */
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-Light.woff2') format('woff2');
+  font-weight: $weight-light;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: $weight-regular;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-Italic.woff2') format('woff2');
+  font-weight: $weight-regular;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: $weight-medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: $weight-bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// avara
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@font-face {
+  font-family: 'Avara';
+  src: url('/public/fonts/avara-web/Avara-Black.woff2') format('woff2');
+  font-weight: $weight-black;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avara';
+  src: url('/public/fonts/avara-web/Avara-Bold.woff2') format('woff2');
+  font-weight: $weight-bold;
+  font-style: normal;
+  font-display: swap;
+}

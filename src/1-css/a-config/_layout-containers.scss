@@ -1,0 +1,154 @@
+//---------------------------------------------------------------------
+// COLUMN VARIABLES are generated in JS calcGridCol() function
+//---------------------------------------------------------------------
+$max-columns: 18;
+
+@include cssvar-set(
+  (
+    max-columns: #{$max-columns},
+    current-columns: '',
+    gap: 4rem,
+    spacer: 1rem,
+
+    // clamp(min size, set size when computed, max size)
+    // min(set size, min size when computed)
+    // max(set size, max size when computed)
+    container-padding: clamp(2rem, 1rem + 5vw, 6rem)
+      clamp(var(--current-columns) * 1px, 1rem, 10vw) clamp(3rem, 2rem + 5vw, 6.5rem),
+  )
+);
+
+$spacer: cssvar-get(spacer) !default;
+
+$place-start: start !default;
+$place-center: center !default;
+
+$page-breakpoints: (
+  xs: 0,
+  sm: 512,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1536,
+);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// LAYOUT MIXINS
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@mixin flex-base() {
+  display: flex;
+  flex: 1 1 100%;
+  transition: height 250ms ease-out, width 250ms ease-out;
+}
+
+// area types
+//---------------------------------------------------------------------
+@mixin row() {
+  flex-flow: row wrap;
+  gap: cssvar-get(gap);
+  place-content: $place-center;
+  //place-items: $place-center;
+}
+
+@mixin col() {
+  flex-flow: column wrap;
+  gap: calc(cssvar-get(gap) / 2.5);
+  place-content: $place-start;
+  place-items: $place-start;
+  > img {
+    width: 100%;
+  }
+}
+
+// fill types
+//---------------------------------------------------------------------
+@mixin width-fixed($i) {
+  @include breakpoint(sm) {
+    max-width: calc(cssvar-get(current-columns) * 100px);
+    flex: 0 1 calc(($i * 100px) - (cssvar-get(gap) / 2));
+  }
+}
+
+@mixin width-fill($i) {
+  @include breakpoint(md) {
+    flex: 0 1 calc(($i * 10%));
+  }
+}
+
+// CARD column
+//---------------------------------------------------------------------
+@mixin column-outline($hue, $invert: false) {
+  @include text-contrast(#{$hue});
+  place-self: center;
+  place-content: center;
+  padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)
+    clamp(3.3rem, 3.3rem + 1vw, 3.8rem);
+  border-radius: 1rem;
+  border: 3px solid cssvar-get(accent-#{$hue});
+  @if $invert {
+    @include text-contrast(#{$hue}, $invert: true);
+    border: none;
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// LAYOUT CLASSES
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// container
+//---------------------------------------------------------------------
+.container {
+  @include flex-base();
+  @include row;
+
+  max-width: calc(cssvar-get(max-columns) * 100px);
+
+  margin: 0 auto;
+  padding: clamp(2rem, calc(2 * 4vw), 10rem) 1rem;
+
+  &.full-width {
+    max-width: 100vw;
+    margin: 0;
+  }
+}
+
+@for $i from 1 through $max-columns {
+  // fixed
+  //---------------------------------------------------------------------
+  .row-#{$i} {
+    @include flex-base();
+    @include row();
+    @include width-fixed($i);
+  }
+  .col-#{$i} {
+    @include flex-base();
+    @include col();
+    @include width-fixed($i);
+  }
+}
+@for $i from 1 through 10 {
+  // fills
+  //---------------------------------------------------------------------
+  .row-f#{$i} {
+    @include flex-base();
+    @include row();
+    @include width-fill($i);
+  }
+  .col-f#{$i} {
+    @include flex-base();
+    @include col();
+    @include width-fill($i);
+  }
+}

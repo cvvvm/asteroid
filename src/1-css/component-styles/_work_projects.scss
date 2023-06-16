@@ -1,0 +1,148 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// WORK PAGE
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// back to work button
+//---------------------------------------------------------------------
+.work-return {
+  z-index: 9000;
+  position: fixed;
+  top: clamp(1rem, 0.2rem + 1vw, 1.5rem);
+  left: clamp(1.25rem, 0.45rem + 1vw, 1.75rem);
+
+  padding: 0.85rem 1.3rem 0.875rem 1.25rem !important;
+}
+
+// work page image background
+//---------------------------------------------------------------------
+.work-pg-bg {
+  pointer-events: none;
+  z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 0;
+  background-size: cover;
+
+  transition: opacity 200ms ease-in-out;
+}
+
+// work card
+//---------------------------------------------------------------------
+@mixin work-card($hue) {
+  .work-card {
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 3rem 1fr auto;
+    row-gap: 0.75rem;
+
+    width: 500px;
+
+    padding: 2.25rem 2rem 2.5rem;
+    border-radius: 2rem;
+    border: 2px solid cssvar-get(accent-#{$hue});
+    background-color: cssvar-get(bg-#{$hue});
+
+    transition: scale 300ms ease-out;
+
+    @include breakpoint(md) {
+      padding: 2.5rem 3rem 3rem;
+    }
+
+    &:hover {
+      scale: 1.025;
+    }
+
+    .title {
+      align-self: center;
+    }
+
+    .caption {
+      align-self: start;
+      padding: 0rem;
+    }
+  }
+}
+
+// work page frame
+//---------------------------------------------------------------------
+.work-frame {
+  z-index: 1;
+  position: relative;
+}
+
+// project frame
+//---------------------------------------------------------------------
+.project-frame {
+  position: absolute;
+  translate: 100vw -100vh;
+  border: 1px solid red;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// PROJECT PAGES
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.device-img-toggler-button {
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem !important;
+  margin: -0.5rem 0rem 0rem -0.5rem !important;
+}
+
+// image gallery
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.gallery {
+  display: grid;
+  grid-template-columns: [left-button] 40px [slide] 1fr [right-button] 40px;
+  grid-auto-rows: max-content;
+
+  gap: 0;
+  flex-flow: row nowrap;
+
+  place-content: space-between;
+  place-items: center;
+}
+
+.gallery-button {
+  z-index: 8000;
+  padding: 0.5rem 1rem 0.6rem !important;
+}
+
+.slide {
+  grid-column: slide;
+  grid-row: 1;
+
+  width: 100%;
+
+  opacity: 0;
+  scale: 0.25;
+
+  transition: scale 200ms ease-in-out, filter 400ms ease-out;
+  &.active {
+    opacity: 1;
+    scale: 1;
+
+    transition: scale 200ms ease-in-out, filter 300ms ease-in;
+  }
+  > img {
+    height: 100%;
+    width: 100%;
+  }
+}

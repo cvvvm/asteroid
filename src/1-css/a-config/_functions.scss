@@ -1,0 +1,35 @@
+// DETECT CONTRAST
+//---------------------------------------------------------------------
+/* https://codepen.io/kennyglenn/pen/kxqWjP */
+@function contrast-color($color) {
+  @return if(lightness($color) < 60%, $wht, $gry-drk);
+}
+// DEEP GET
+//---------------------------------------------------------------------
+/* https://css-tricks.com/snippets/sass/deep-getset-maps/ */
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// STRING REPLACE
+//---------------------------------------------------------------------
+/* https://css-tricks.com/snippets/sass/str-replace-function/ */
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// USE CSS VARIABLE
+//---------------------------------------------------------------------
+@function cssvar-get($name) {
+  @return var(--#{$name});
+}

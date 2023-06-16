@@ -1,0 +1,189 @@
+// containers
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.nav-wrapper {
+  z-index: 9900;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0rem;
+  border-radius: 1.25rem;
+  border-width: 0px;
+  border-style: solid;
+
+  transform-origin: right top;
+  translate: 0% 0%;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// TOGGLES
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.nav-control-bar {
+  z-index: 9999;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 0rem 0rem;
+  border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+  //background-color: cssvar-get(text-mono);
+}
+
+@mixin toggle-base() {
+  @include text-contrast(mono);
+  font-family: $jet-brains;
+  border: none;
+  //height: 50px;
+  transition: filter 175ms ease-in-out;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+  &:active {
+    filter: brightness(0.8);
+  }
+}
+
+.nav-control-spacer {
+  width: 0px;
+  opacity: 0;
+}
+
+// toggle theme
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.theme-toggle {
+  @include toggle-base();
+  font-size: 1.25rem;
+  border-radius: 1rem 0rem 0rem 1rem;
+  padding: 1rem 1.25rem 1.125rem;
+}
+
+.nav-toggle {
+  @include toggle-base();
+  font-size: 1.5rem;
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding: 0.745rem 1.255rem 0.855rem 1.245rem;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// COLOR SET
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.color-set-toggles-mask {
+  z-index: 9990;
+  overflow: hidden;
+
+  height: 0;
+  width: 0;
+
+  transform-origin: center top;
+  translate: 0 -100%;
+}
+
+.color-set-toggles-bar {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.35rem;
+
+  padding: 0.5rem 0.75rem 0.75rem;
+  //border-radius: 3rem;
+
+  background-color: cssvar-get(text-mono);
+
+  transform-origin: center top;
+}
+
+.color-set-toggle {
+  padding: 1rem;
+  flex: 1 1 calc(100% / 7);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 2rem;
+  border-width: 3px;
+  border-style: solid;
+  //margin: 0.35rem 0.25rem;
+  box-shadow: inset 0px 0px rgba(black, 0); //inset 1px 0px rgba(black, 0.25), inset -1px 3px rgba(black, 0.2), inset 0px 7px rgba(black, 0.15);
+
+  transition: filter 150ms ease-out;
+
+  transform-origin: center;
+  scale: 0;
+
+  &:hover {
+    filter: brightness(0.8) saturate(1.25);
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// LINKS
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// link wrapper
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.nav-link-mask {
+  z-index: 9001;
+  overflow: hidden;
+  height: 0px;
+
+  transform-origin: center top;
+  translate: 0 -75%;
+  scale: 0.9;
+}
+
+.nav-link-container {
+  display: grid;
+  gap: 0.75rem;
+  align-items: center;
+
+  max-width: 100%;
+
+  border-radius: 0rem 0rem 1.25rem 1.25rem;
+  padding: 0rem;
+}
+
+// link buttons
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.nav-link {
+  font-size: 1.35rem;
+  font-family: $jet-brains;
+  font-weight: $weight-light;
+  text-align: center;
+  text-decoration: none;
+
+  padding: 1rem 0rem;
+  border-radius: 0.75rem;
+
+  transition: padding 200ms ease-out, letter-spacing 350ms ease-in-out;
+
+  transform-origin: center;
+  translate: 0 -650%;
+  scale: 0.9;
+
+  &:hover {
+    -webkit-text-stroke: 1px;
+    letter-spacing: 0.075rem;
+    outline-width: 2px;
+  }
+  &.active {
+    font-size: 1.5rem;
+    font-weight: $weight-black;
+    padding: 1.75rem 0rem;
+
+    &:hover {
+      -webkit-text-stroke: 0px;
+      outline-width: 2px;
+      letter-spacing: 0.1rem;
+    }
+  }
+}

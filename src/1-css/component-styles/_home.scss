@@ -1,0 +1,35 @@
+/* .home-bg {
+  position: absolute;
+  z-index: -1;
+  height: max(35%, 40vh);
+  aspect-ratio: 1 /1;
+  background-image: url('/Users/robbiegeiss/dropbox/2. personal/1. code projects/2023 asteroid-portfolio/asteroid/public/images/SVG/mask-3.svg');
+
+  &.t {
+    top: 0;
+  }
+  &.b {
+    bottom: 0;
+  }
+  &.r {
+    right: 0;
+  }
+
+  &.l {
+    left: 0;
+  }
+} */
+
+.home-button.back {
+  padding-right: 1.4rem;
+}
+
+.intro-image-box {
+  aspect-ratio: 1.25 / 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.intro-image {
+  width: 100%;
+}

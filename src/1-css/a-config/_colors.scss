@@ -1,0 +1,133 @@
+//
+// COLORS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// primaries
+//---------------------------------------
+$yellow-lt: #fbea99;
+$yellow-drk: #996600;
+
+$green-lt: #c9f0c2;
+$green-drk: #006611;
+
+$blue-lt: #cde6fe;
+$blue-drk: #0b4bcb;
+
+$pink-lt: #f6cdfe;
+$pink-drk: #aa09aa;
+
+$red-lt: #fed1cd;
+$red-drk: #990d00;
+
+$grey-lt: #dde0e3;
+$grey-drk: #2b2e3b;
+
+$mono-lt: #f5f5f5;
+$mono-drk: #000000;
+
+// accents
+//---------------------------------------
+$accent-yellow: #ffc908;
+$accent-green: #57da4c;
+$accent-blue: #579dff;
+$accent-pink: #ff6ece;
+$accent-red: #ff6464;
+$accent-grey: #9da3af;
+$accent-mono: #808080;
+
+//
+// SET CSS VARIABLES
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.light-theme {
+  --text-yellow: #{$yellow-drk};
+  --text-green: #{$green-drk};
+  --text-blue: #{$blue-drk};
+  --text-pink: #{$pink-drk};
+  --text-red: #{$red-drk};
+  --text-grey: #{$grey-drk};
+  --text-mono: #{$mono-drk};
+
+  --bg-yellow: #{$yellow-lt};
+  --bg-green: #{$green-lt};
+  --bg-blue: #{$blue-lt};
+  --bg-pink: #{$pink-lt};
+  --bg-red: #{$red-lt};
+  --bg-grey: #{$grey-lt};
+  --bg-mono: #{$mono-lt};
+}
+
+.dark-theme {
+  --text-yellow: #{$yellow-lt};
+  --text-green: #{$green-lt};
+  --text-blue: #{$blue-lt};
+  --text-pink: #{$pink-lt};
+  --text-red: #{$red-lt};
+  --text-grey: #{$grey-lt};
+  --text-mono: #{$mono-lt};
+
+  --bg-yellow: #{$yellow-drk};
+  --bg-green: #{$green-drk};
+  --bg-blue: #{$blue-drk};
+  --bg-pink: #{$pink-drk};
+  --bg-red: #{$red-drk};
+  --bg-grey: #{$grey-drk};
+  --bg-mono: #{$mono-drk};
+}
+
+@include cssvar-set(
+  (
+    accent-yellow: $accent-yellow,
+    accent-green: $accent-green,
+    accent-blue: $accent-blue,
+    accent-pink: $accent-pink,
+    accent-red: $accent-red,
+    accent-grey: $accent-grey,
+    accent-mono: $accent-mono,
+  )
+);
+
+// COLOR SUFFIX
+//---------------------------------------------------------------------
+$color-values: ('lt', 'drk');
+
+// COLOR NAMES
+//---------------------------------------------------------------------
+$color-hues: ('yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono');
+
+// SCSS COLOR VALUES MAP
+//---------------------------------------------------------------------
+$color-primary: (
+  yellow-lt: $yellow-lt,
+  yellow-drk: $yellow-drk,
+
+  green-lt: $green-lt,
+  green-drk: $green-drk,
+
+  blue-lt: $blue-lt,
+  blue-drk: $blue-drk,
+
+  pink-lt: $pink-lt,
+  pink-drk: $pink-drk,
+
+  red-lt: $red-lt,
+  red-drk: $red-drk,
+
+  grey-lt: $grey-lt,
+  grey-drk: $grey-drk,
+
+  mono-lt: $mono-lt,
+  mono-drk: $mono-drk,
+);
+
+$color-accent: (
+  accent-yellow: $accent-yellow,
+  accent-green: $accent-green,
+  accent-blue: $accent-blue,
+  accent-pink: $accent-pink,
+  accent-red: $accent-red,
+  accent-grey: $accent-grey,
+  accent-mono: $accent-mono,
+);

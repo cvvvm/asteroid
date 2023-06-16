@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:selector';
+@use 'sass:string';
+
+//
+// import
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@import './reset.css';
+@import './a-config/mixins';
+@import './a-config/functions';
+@import './a-config/colors';
+@import './a-config/layout-containers';
+@import './a-config/utilities';
+@import './text/text-styles';
+@import './text/link-styles';
+//@import "./effects/animations";
+//@import "./effects/shadows";
+//@import "./objects";
+
+@import './component-styles/button';
+@import './component-styles/work_projects';
+@import './component-styles/home';
+@import './component-styles/nav';
+@import './component-styles/sidebar';
+@import './component-styles/mockup-devices';
+
+@import './a-config/color-assembler';
+
+//
+// cursor
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* {
+  cursor: url('/public/cursor/cursor_idle.png') -64 -64, auto;
+}
+
+*:active {
+  cursor: url('/public/cursor/cursor_glowing.png') 10 10, auto;
+}

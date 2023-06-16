@@ -1,0 +1,43 @@
+//
+// CSS VARIABLES
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+
+// custom properties :)
+//---------------------------------------------------------------------
+@mixin cssvar-set($css-variables) {
+  :root {
+    @each $name, $value in $css-variables {
+      --#{$name}: #{$value};
+    }
+  }
+}
+
+// update custom property!
+//---------------------------------------------------------------------
+@mixin cssvar-update($name, $value: '') {
+  --#{$name}: #{$value};
+}
+
+//
+// BROWSERS
+//---------------------------------------------------------------------
+
+@mixin firefox {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+//
+// BREAKPOINTS / LAYOUT
+//---------------------------------------------------------------------
+
+// get breakpoint
+//---------------------------------------
+@mixin breakpoint($width, $value: 'px') {
+  @media (min-width: #{map-get($page-breakpoints, $width) + $value}) {
+    @content;
+  }
+}

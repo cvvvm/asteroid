@@ -1,0 +1,232 @@
+// layout maps
+//---------------------------------------------------------------------
+$spacer-types: (
+  'padding': 'p',
+  'margin': 'm',
+);
+
+$spacer-areas: (
+  '': '',
+  '-top': 't',
+  '-right': 'r',
+  '-bottom': 'b',
+  '-left': 'l',
+);
+
+// placement maps
+//---------------------------------------------------------------------
+$place-content: (
+  start,
+  end,
+  flex-start,
+  flex-end,
+  center,
+  space-between,
+  space-around,
+  space-evenly,
+  stretch
+);
+
+$place-items: (
+  start,
+  end,
+  flex-start,
+  flex-end,
+  self-start,
+  self-end,
+  center,
+  baseline,
+  stretch
+);
+
+//
+// justification & alignment
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// self
+//---------------------------------------
+@each $place in $place-items {
+  .js-#{$place} {
+    justify-self: $place !important;
+  }
+  .as-#{$place} {
+    align-self: $place !important;
+  }
+  .ps-#{$place} {
+    place-self: $place !important;
+  }
+}
+
+// items
+//---------------------------------------
+@each $place in $place-items {
+  .ji-#{$place} {
+    justify-items: $place !important;
+  }
+  .ai-#{$place} {
+    align-items: $place !important;
+  }
+  .pi-#{$place} {
+    place-items: $place !important;
+  }
+}
+
+// content
+//---------------------------------------
+@each $place in $place-content {
+  .jc-#{$place} {
+    justify-content: $place !important;
+  }
+  .ac-#{$place} {
+    align-content: $place !important;
+  }
+  .pc-#{$place} {
+    place-content: $place !important;
+  }
+}
+
+//
+// vertical height
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@for $i from 1 through 10 {
+  .vh-#{$i}0 {
+    min-height: #{$i * 10}vh !important;
+  }
+}
+
+//
+// height %
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@for $i from 1 through 10 {
+  .h-#{$i}0 {
+    height: #{$i * 10%} !important;
+  }
+}
+
+//
+// vertical width
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@for $i from 1 through 10 {
+  .vw-#{$i}0 {
+    min-width: #{$i * 10}vw !important;
+  }
+}
+
+//
+// width %
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@for $i from 1 through 10 {
+  .w-#{$i}0 {
+    width: #{$i * 10%} !important;
+  }
+}
+
+//
+// opacity
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@for $i from 1 to 10 {
+  $amount: calc($i/10);
+
+  .opacity-#{$i}0 {
+    opacity: $amount;
+  }
+}
+
+//
+// manual text coloring
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@each $hue in $color-hues {
+  .text-#{$hue} {
+    color: cssvar-get(text-#{$hue}) !important;
+  }
+}
+
+//
+// margins & padding
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@each $breakpoint, $pxWidth in $page-breakpoints {
+  $spacer: 1rem;
+  @include breakpoint($breakpoint) {
+    // spacers 'md'
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    @each $property, $prefix in $spacer-types {
+      @each $area-type, $area-prefix in $spacer-areas {
+        @for $i from 0 through 10 {
+          // spacers
+          //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          @if $area-type == '' {
+            .#{$prefix}x-#{$breakpoint}-#{$i} {
+              #{$property}-right: $spacer * $i !important;
+              #{$property}-left: $spacer * $i !important;
+            }
+
+            .#{$prefix}y-#{$breakpoint}-#{$i} {
+              #{$property}-top: $spacer * $i !important;
+              #{$property}-bottom: $spacer * $i !important;
+            }
+          }
+
+          .#{$prefix}#{$area-prefix}-#{$breakpoint}-#{$i} {
+            #{$property}#{$area-type}: $spacer * $i !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// z-index + ordering
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@each $breakpoint, $pxWidth in $page-breakpoints {
+  @include breakpoint($breakpoint) {
+    @for $i from 0 through 10 {
+      // order
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .order-#{$breakpoint}-#{$i} {
+        order: #{$i};
+      }
+
+      // z-index
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .z-index-#{$breakpoint}-#{$i} {
+        z-index: #{$i};
+      }
+    }
+  }
+}
+
+//
+// flex + grid gaps
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@each $breakpoint, $pxWidth in $page-breakpoints {
+  @for $i from 0 through 10 {
+    @include breakpoint($breakpoint) {
+      //row + column gaps
+      .gap-#{$breakpoint}-#{$i} {
+        gap: #{$i}rem !important;
+      }
+      // row gaps
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .row-gap-#{$breakpoint}-#{$i} {
+        row-gap: #{$i}rem !important;
+      }
+
+      // column gaps
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .col-gap-#{$breakpoint}-#{$i} {
+        column-gap: #{$i}rem !important;
+      }
+    }
+  }
+}
