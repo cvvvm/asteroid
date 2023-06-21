@@ -106,37 +106,14 @@ export function Work() {
         <WorkCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
-          background={'img-test-lg'}
           title={'Zig Zag Tattoo'}
           caption={'Building a new website & brand.'}
         />
         <WorkCard
-          categories={['automation', 'design']}
-          background={'img-test-lg2'}
-          title={'Dynamic Weather Wallpapers'}
-          caption={'a new take on taking a take and recalibrating to take longer.'}
-        />
-        <WorkCard
-          categories={['design', 'illustration']}
-          background={'img-test-lg3'}
-          title={'Big Robot Bug'}
-          caption={
-            'a new take on taking a take and recalibrating to take longer without making a huge fuss.'
-          }
-        />
-        <WorkCard
-          categories={['UX/UI', 'illustration']}
-          background={'img-test-lg4'}
-          title={'Gold Rigging'}
-          caption={
-            'a new take on taking a take and recalibrating to take longer and make a huge mess.'
-          }
-        />
-        <WorkCard
-          categories={['design', 'illustration']}
-          background={'img-test-lg'}
-          title={'Dynamic Weather Wallpapers'}
-          caption={'a new take on taking a take and recalibrating to take longer.'}
+          link={'asc-exhibit'}
+          categories={['UX/UI']}
+          title={'Jamison City Exhibit'}
+          caption={'Stress-testing Powerpoint to teach history.'}
         />
       </div>
     </>

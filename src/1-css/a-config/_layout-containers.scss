@@ -61,7 +61,8 @@ $page-breakpoints: (
   gap: calc(cssvar-get(gap) / 2.5);
   place-content: $place-start;
   place-items: $place-start;
-  > img {
+  > img,
+  > video {
     width: 100%;
   }
 }
@@ -122,6 +123,16 @@ $page-breakpoints: (
     max-width: 100vw;
     margin: 0;
   }
+}
+
+.col-f {
+  @include col();
+  flex: 1 1 auto;
+}
+
+.row-f {
+  @include row();
+  flex: 1 1 auto;
 }
 
 @for $i from 1 through $max-columns {

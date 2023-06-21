@@ -164,8 +164,10 @@ const ToggledGallery = ({
       <div className={index === currentImg ? 'slide active' : 'slide'} key={index}>
         <img
           src={(
-            '/images/projects/zig-zag-tattoo/' +
-            galleries[activeGallery].title +
+            '/images/projects/' +
+            project +
+            '/' +
+            galleries[activeGallery].prefix +
             '-' +
             image +
             imgType
@@ -197,6 +199,7 @@ export function GalleryImgToggler({
   invert,
   vh = 80,
   galleryCol,
+  colOrder = 0,
   project,
   imgType,
   galleries = [{ title: '', images: [] }],
@@ -231,7 +234,11 @@ export function GalleryImgToggler({
     <div className={'row-f10 vh-' + vh}>
       <div
         className={
-          'order-xs-1 order-xl-0 outline col-' + textCol + (invert ? ' invert' : '')
+          'order-xs-1 order-xl-' +
+          colOrder +
+          ' outline col-' +
+          textCol +
+          (invert ? ' invert' : '')
         }
       >
         {children}
@@ -239,9 +246,9 @@ export function GalleryImgToggler({
         <div className="row-f10 pc-flex-start col-gap-xs-1"> {toggleMap} </div>
       </div>
       <ToggledGallery
-        columns={7}
-        imgType="svg"
-        project="zig-zag-tattoo"
+        columns={galleryCol}
+        imgType={imgType}
+        project={project}
         activeGallery={activeGallery}
         galleries={galleries}
       />

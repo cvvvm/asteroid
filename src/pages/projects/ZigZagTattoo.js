@@ -1,4 +1,3 @@
-import Footer from '../../components/Footer';
 import {
   ImgCover,
   Role,
@@ -20,7 +19,7 @@ function ZigZagTattoo() {
             }
             columns={7}
             roles={
-              'UI/UX, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'
+              'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'
             }
             contributors={'Zig Zag Tattoo provided copy & photos.'}
           />
@@ -50,8 +49,12 @@ function ZigZagTattoo() {
           project={project}
           imgType={'svg'}
           galleries={[
-            { title: 'Logo', images: ['cover', 'primary', 'wide', 'tall'] },
-            { title: 'Process', images: ['1', '2', '3'] },
+            {
+              title: 'final marks',
+              prefix: 'logo',
+              images: ['cover', 'primary', 'wide', 'tall'],
+            },
+            { title: 'sketches', prefix: 'process', images: ['1', '2', '3'] },
           ]}
         >
           <h2>form, function... and name.</h2>

@@ -131,15 +131,10 @@
 
   width: 100%;
 
-  opacity: 0;
-  scale: 0.25;
+  display: none;
 
-  transition: scale 200ms ease-in-out, filter 400ms ease-out;
   &.active {
-    opacity: 1;
-    scale: 1;
-
-    transition: scale 200ms ease-in-out, filter 300ms ease-in;
+    display: block;
   }
   > img {
     height: 100%;

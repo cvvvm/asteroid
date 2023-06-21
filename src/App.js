@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useRoutes } from 'react-router-dom';
 import gsap from 'gsap';
 
 import './1-css/main.min.css';
@@ -12,6 +12,7 @@ import About from './pages/About';
 import Documentation from './pages/Documentation';
 import { Work, ReturnToWork } from './pages/Work';
 import ZigZagTattoo from './pages/projects/ZigZagTattoo';
+import JamisonExhibit from './pages/projects/JamisonExhibit';
 
 // SCROLL TO TOP ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -71,6 +72,7 @@ function App() {
               </div>
             }
           />
+
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/work" element={<Work />} />
@@ -86,6 +88,7 @@ function App() {
             }
           >
             <Route path="/work/zig-zag-tattoo" element={<ZigZagTattoo />} />
+            <Route path="/work/asc-exhibit" element={<JamisonExhibit />} />
           </Route>
         </Routes>
       </ScrollToTop>
