@@ -45,6 +45,7 @@ function ZigZagTattoo() {
         </DeviceImgToggler>
         <GalleryImgToggler
           textCol={6}
+          invert
           galleryCol={7}
           project={project}
           imgType={'svg'}
@@ -57,7 +58,7 @@ function ZigZagTattoo() {
             { title: 'sketches', prefix: 'process', images: ['1', '2', '3'] },
           ]}
         >
-          <h2>form, function... and name.</h2>
+          <h2>form, function, name.</h2>
           <p>
             It always made sense what should drive the logo design: the words zig zag make
             the shape they describe...What's the word for a visual onomatopoeia?

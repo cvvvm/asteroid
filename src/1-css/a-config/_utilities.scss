@@ -16,27 +16,23 @@ $spacer-areas: (
 // placement maps
 //---------------------------------------------------------------------
 $place-content: (
-  start,
-  end,
-  flex-start,
-  flex-end,
-  center,
-  space-between,
-  space-around,
-  space-evenly,
-  stretch
+  'start': 'flex-start',
+  'end': 'flex-end',
+  'center': 'center',
+  'between': 'space-between',
+  'around': 'space-around',
+  'evenly': 'space-evenly',
+  'stretch': 'stretch',
 );
 
 $place-items: (
-  start,
-  end,
-  flex-start,
-  flex-end,
-  self-start,
-  self-end,
-  center,
-  baseline,
-  stretch
+  'start': 'flex-start',
+  'end': 'flex-end',
+  'self-start': 'self-start',
+  'self-end': 'self-end',
+  'center': 'center',
+  'baseline': 'baseline',
+  'stretch': 'stretch',
 );
 
 //
@@ -46,43 +42,43 @@ $place-items: (
 
 // self
 //---------------------------------------
-@each $place in $place-items {
-  .js-#{$place} {
-    justify-self: $place !important;
+@each $name, $place in $place-items {
+  .js-#{$name} {
+    justify-self: #{$place} !important;
   }
-  .as-#{$place} {
-    align-self: $place !important;
+  .as-#{$name} {
+    align-self: #{$place} !important;
   }
-  .ps-#{$place} {
-    place-self: $place !important;
+  .ps-#{$name} {
+    place-self: #{$place} !important;
   }
 }
 
 // items
 //---------------------------------------
-@each $place in $place-items {
-  .ji-#{$place} {
-    justify-items: $place !important;
+@each $name, $place in $place-items {
+  .ji-#{$name} {
+    justify-items: #{$place} !important;
   }
-  .ai-#{$place} {
-    align-items: $place !important;
+  .ai-#{$name} {
+    align-items: #{$place} !important;
   }
-  .pi-#{$place} {
-    place-items: $place !important;
+  .pi-#{$name} {
+    place-items: #{$place} !important;
   }
 }
 
 // content
 //---------------------------------------
-@each $place in $place-content {
-  .jc-#{$place} {
-    justify-content: $place !important;
+@each $name, $place in $place-content {
+  .jc-#{$name} {
+    justify-content: #{$place} !important;
   }
-  .ac-#{$place} {
-    align-content: $place !important;
+  .ac-#{$name} {
+    align-content: #{$place} !important;
   }
-  .pc-#{$place} {
-    place-content: $place !important;
+  .pc-#{$name} {
+    place-content: #{$place} !important;
   }
 }
 

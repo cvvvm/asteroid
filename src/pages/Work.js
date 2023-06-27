@@ -8,7 +8,7 @@ export function ReturnToWork() {
   return (
     <>
       <a href="/work">
-        <button className="button work-return">&#60;</button>
+        <button className="button work-return">←</button>
       </a>
 
       {/* <Link to={'/work'}>
@@ -79,7 +79,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
         /*         onMouseEnter={showProjectImg}
         onMouseLeave={hideProjectImg} */
       >
-        <div className="row-f10 pc-flex-start col-gap-xs-1" style={{ opacity: 0.65 }}>
+        <div className="row-f10 pc-start col-gap-xs-1" style={{ opacity: 0.65 }}>
           {catmap}
         </div>
         <h3 className="title">{title}</h3>

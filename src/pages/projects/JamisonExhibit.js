@@ -3,6 +3,7 @@ import {
   Role,
   DeviceImgToggler,
   GalleryImgToggler,
+  VideoGallery,
 } from '../../components/ProjectPages';
 
 function JamisonExhibit() {
@@ -15,7 +16,7 @@ function JamisonExhibit() {
             freelance
             project={'Jamison City Exhibit'}
             intro={
-              'Sponsored by the California Department of Parks & Recreation, my client from the Sonoma State University Anthropological Studies Center (ASC) needed to create an interactive digital exhibit showcasing the history of Jamison City, CA.'
+              'Sponsored by the California Department of Parks & Recreation, my client from Sonoma State University Anthropological Studies Center (ASC) needed to create an interactive digital exhibit showcasing the history of now lost Jamison City, CA.'
             }
             columns={8}
             roles={
@@ -26,29 +27,57 @@ function JamisonExhibit() {
         </div>
       </ImgCover>
       <div className="container">
+        <div className="row-f10 vh-80">
+          <div className="col-6 outline invert">
+            <h2>a really powerful point.</h2>
+            <p>
+              Just one catch - with no internet at the installation & no budget for
+              additional software - the exhibit's hundreds of screens needed to run in
+              Microsoft Powerpoint.
+            </p>
+            <p>
+              Very doable, but <i>shockingly</i> not what the software is best at.
+            </p>
+          </div>
+          <VideoGallery
+            columns={9}
+            project={project}
+            videoType={'mp4'}
+            galleries={[
+              {
+                title: 'animations',
+                prefix: project,
+                images: ['fire-start', 'map-world-us-transition'],
+              },
+            ]}
+          />
+        </div>
         <GalleryImgToggler
-          textCol={5}
-          galleryCol={'f6'}
-          colOrder={1}
+          textCol={6}
+          invert
+          textOrder={0}
+          galleryCol={10}
+          vh={80}
           project={project}
           imgType={'webp'}
           galleries={[
             {
-              title: 'before',
-              prefix: 'before',
+              title: 'final',
+              prefix: 'after',
               images: ['menu', 'people', 'world_map', 'town_map', 'things'],
             },
             {
-              title: 'after',
-              prefix: 'after',
+              title: 'wireframe',
+              prefix: 'before',
               images: ['menu', 'people', 'world_map', 'town_map', 'things'],
             },
           ]}
         >
-          <h3>form, function... name.</h3>
+          <h3>Optimization:</h3>
           <p>
-            It always made sense what should drive the logo design: the words zig zag make
-            the shape they describe...What's the word for a visual onomatopoeia?
+            The large amount of assets & animations meant balancing intensely between how
+            much was on screen, what moved, and what could be rasterized together, then
+            further compressed. (thanks <a href="https://imageoptim.com">imgoptim</a>!)
           </p>
         </GalleryImgToggler>
       </div>

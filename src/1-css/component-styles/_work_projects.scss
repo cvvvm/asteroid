@@ -13,10 +13,11 @@
 .work-return {
   z-index: 9000;
   position: fixed;
+  font-size: 1.5rem !important;
   top: clamp(1rem, 0.2rem + 1vw, 1.5rem);
   left: clamp(1.25rem, 0.45rem + 1vw, 1.75rem);
 
-  padding: 0.85rem 1.3rem 0.875rem 1.25rem !important;
+  padding: 0.65rem 1.3rem 0.75rem 1.25rem !important;
 }
 
 // work page image background
@@ -68,7 +69,7 @@
     }
 
     .caption {
-      align-self: start;
+      align-self: flex-start;
       padding: 0rem;
     }
   }
@@ -101,8 +102,8 @@
 
 .device-img-toggler-button {
   font-size: 1rem !important;
-  padding: 0.5rem 1rem !important;
-  margin: -0.5rem 0rem 0rem -0.5rem !important;
+  padding: 0.4375rem 1rem 0.5rem !important;
+  margin: 0rem !important;
 }
 
 // image gallery

@@ -64,6 +64,7 @@ $page-breakpoints: (
   > img,
   > video {
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -94,7 +95,7 @@ $page-breakpoints: (
   border: 3px solid cssvar-get(accent-#{$hue});
   @if $invert {
     @include text-contrast(#{$hue}, $invert: true);
-    border: none;
+    border: 3px solid rgba(0, 0, 0, 0);
   }
 }
 

@@ -114,7 +114,7 @@ export function DeviceImgToggler({
       >
         {children}
         <p className="note mt-xs-2 mb-xs-0">display page:</p>
-        <div className="row-f10 pc-flex-start col-gap-xs-1">{toggleMap}</div>
+        <div className="row-f10 pc-start col-gap-xs-1">{toggleMap}</div>
       </div>
       <Devices columns={deviceCol} project={project} page={displayImg} imgtype={'svg'} />
     </div>
@@ -125,7 +125,7 @@ export function DeviceImgToggler({
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 //
-// GALLERY + DESCRIPTION TOGGLER
+// IMAGE GALLERY + DESCRIPTION TOGGLER
 //
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,12 +178,12 @@ const ToggledGallery = ({
   });
 
   return (
-    <div className={'gallery ps-center col-' + columns}>
-      <button className="gallery-button button" onClick={lastSlide}>
+    <div className={'gallery ps-center col-f10 ' + columns}>
+      <button className="gallery-button button-outline" onClick={lastSlide}>
         &#60;
       </button>
       {imgMap}
-      <button className="gallery-button button" onClick={nextSlide}>
+      <button className="gallery-button button-outline" onClick={nextSlide}>
         &#62;
       </button>
     </div>
@@ -196,10 +196,11 @@ const ToggledGallery = ({
 
 export function GalleryImgToggler({
   textCol,
+  textOrder = 0,
   invert,
+  outline,
   vh = 80,
   galleryCol,
-  colOrder = 0,
   project,
   imgType,
   galleries = [{ title: '', images: [] }],
@@ -231,27 +232,31 @@ export function GalleryImgToggler({
   // render component
   //---------------------------------------------------------------------
   return (
-    <div className={'row-f10 vh-' + vh}>
+    <div className={' row-f10 vh-' + vh}>
       <div
         className={
-          'order-xs-1 order-xl-' +
-          colOrder +
-          ' outline col-' +
+          'pc-center mb-lg-4 order-xs-1 order-xl-' +
+          textOrder +
+          '  col-' +
           textCol +
-          (invert ? ' invert' : '')
+          (outline ? ' outline' : '') +
+          (invert ? ' outline invert' : '')
         }
       >
         {children}
-        <p className="note mt-xs-2 mb-xs-0">display gallery:</p>
-        <div className="row-f10 pc-flex-start col-gap-xs-1"> {toggleMap} </div>
       </div>
-      <ToggledGallery
-        columns={galleryCol}
-        imgType={imgType}
-        project={project}
-        activeGallery={activeGallery}
-        galleries={galleries}
-      />
+      <div className={'row-gap-xs-2 row-' + galleryCol}>
+        <ToggledGallery
+          imgType={imgType}
+          project={project}
+          activeGallery={activeGallery}
+          galleries={galleries}
+        />
+        <div className="row-f10 pc-center col-gap-xs-1">
+          <p className="note ps-center">view:</p>
+          {toggleMap}
+        </div>
+      </div>
     </div>
   );
 }
@@ -290,7 +295,7 @@ export const Gallery = ({ columns, imgType = '', project = '', images }) => {
 
   return (
     <div className={'gallery ps-center col-' + columns}>
-      <button className="gallery-button button" onClick={lastSlide}>
+      <button className="gallery-button button-outline" onClick={lastSlide}>
         &#60;
       </button>
 
@@ -306,7 +311,80 @@ export const Gallery = ({ columns, imgType = '', project = '', images }) => {
         );
       })}
 
-      <button className="gallery-button button" onClick={nextSlide}>
+      <button className="gallery-button button-outline" onClick={nextSlide}>
+        &#62;
+      </button>
+    </div>
+  );
+};
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// VIDEO GALLERY
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+export const VideoGallery = ({
+  columns,
+  project = '',
+  videoType = '',
+  activeGallery = 0,
+  galleries,
+}) => {
+  const [currentImg, setCurrentImg] = useState(0);
+  const length = galleries[activeGallery].images.length;
+
+  if (videoType) {
+    videoType = '.' + videoType;
+  }
+
+  const nextSlide = () => {
+    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
+  };
+
+  const lastSlide = () => {
+    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1);
+  };
+
+  // map active gallery
+  //---------------------------------------------------------------------
+  //src={'/images/projects/' + project + '/' + displayGallery + '-' + galleries[0].images[0] + '.png'
+  var imgMap = galleries[activeGallery].images.map((image, index) => {
+    return (
+      <div
+        className={
+          'col-' + columns + ' ' + (index === currentImg ? 'slide active' : 'slide')
+        }
+        key={index}
+      >
+        <video muted controls playsInline>
+          <source
+            src={(
+              '/images/projects/' +
+              project +
+              '/' +
+              galleries[activeGallery].prefix +
+              '-' +
+              image +
+              videoType
+            ).toLowerCase()}
+          />
+        </video>
+      </div>
+    );
+  });
+
+  return (
+    <div className={'gallery ps-center col-' + columns}>
+      <button className="gallery-button button-outline" onClick={lastSlide}>
+        &#60;
+      </button>
+      {imgMap}
+      <button className="gallery-button button-outline" onClick={nextSlide}>
         &#62;
       </button>
     </div>
