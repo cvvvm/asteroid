@@ -100,7 +100,7 @@ export function Devices({ columns, project, page, defaultState = 'desk' }) {
 
   return (
     <>
-      <div className={'row-gap-xs-1 row-' + columns}>
+      <div className={'row-gap-1 row-' + columns}>
         <div className="devices-container" ref={devicesContainer}>
           <div className="device-container">
             <PalmPre
@@ -119,7 +119,7 @@ export function Devices({ columns, project, page, defaultState = 'desk' }) {
             />
           </div>
         </div>
-        <div className="row-f10 gap-xs-0">
+        <div className="row-f10 gap-0">
           <button
             className={
               'device-toggle-button left button' +

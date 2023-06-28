@@ -35,6 +35,14 @@ $weight-black: 900;
 
 @font-face {
   font-family: 'JetBrains Mono';
+  src: url('/public/fonts/jetbrains-web/JetBrainsMono-LightItalic.woff2') format('woff2');
+  font-weight: $weight-light;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
   src: url('/public/fonts/jetbrains-web/JetBrainsMono-Regular.woff2') format('woff2');
   font-weight: $weight-regular;
   font-style: normal;

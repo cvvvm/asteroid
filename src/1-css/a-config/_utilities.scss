@@ -151,27 +151,47 @@ $place-items: (
 @each $breakpoint, $pxWidth in $page-breakpoints {
   $spacer: 1rem;
   @include breakpoint($breakpoint) {
-    // spacers 'md'
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     @each $property, $prefix in $spacer-types {
       @each $area-type, $area-prefix in $spacer-areas {
         @for $i from 0 through 10 {
-          // spacers
-          //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          @if $area-type == '' {
-            .#{$prefix}x-#{$breakpoint}-#{$i} {
-              #{$property}-right: $spacer * $i !important;
-              #{$property}-left: $spacer * $i !important;
+          // all
+          //---------------------------------------------------------------------
+          @if $breakpoint == 'xs' {
+            @if $area-type == '' {
+              .#{$prefix}x-#{$i} {
+                #{$property}-right: $spacer * $i !important;
+                #{$property}-left: $spacer * $i !important;
+              }
+
+              .#{$prefix}y-#{$i} {
+                #{$property}-top: $spacer * $i !important;
+                #{$property}-bottom: $spacer * $i !important;
+              }
             }
 
-            .#{$prefix}y-#{$breakpoint}-#{$i} {
-              #{$property}-top: $spacer * $i !important;
-              #{$property}-bottom: $spacer * $i !important;
+            .#{$prefix}#{$area-prefix}-#{$i} {
+              #{$property}#{$area-type}: $spacer * $i !important;
             }
           }
 
-          .#{$prefix}#{$area-prefix}-#{$breakpoint}-#{$i} {
-            #{$property}#{$area-type}: $spacer * $i !important;
+          //  breakpoint
+          //---------------------------------------------------------------------
+          @else {
+            @if $area-type == '' {
+              .#{$prefix}x-#{$breakpoint}-#{$i} {
+                #{$property}-right: $spacer * $i !important;
+                #{$property}-left: $spacer * $i !important;
+              }
+
+              .#{$prefix}y-#{$breakpoint}-#{$i} {
+                #{$property}-top: $spacer * $i !important;
+                #{$property}-bottom: $spacer * $i !important;
+              }
+            }
+
+            .#{$prefix}#{$area-prefix}-#{$breakpoint}-#{$i} {
+              #{$property}#{$area-type}: $spacer * $i !important;
+            }
           }
         }
       }
@@ -186,16 +206,30 @@ $place-items: (
 @each $breakpoint, $pxWidth in $page-breakpoints {
   @include breakpoint($breakpoint) {
     @for $i from 0 through 10 {
-      // order
-      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      .order-#{$breakpoint}-#{$i} {
-        order: #{$i};
-      }
+      @if $breakpoint == 'xs' {
+        // order
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .order-#{$i} {
+          order: #{$i};
+        }
 
-      // z-index
-      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      .z-index-#{$breakpoint}-#{$i} {
-        z-index: #{$i};
+        // z-index
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .z-index-#{$i} {
+          z-index: #{$i};
+        }
+      } @else {
+        // order
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .order-#{$breakpoint}-#{$i} {
+          order: #{$i};
+        }
+
+        // z-index
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .z-index-#{$breakpoint}-#{$i} {
+          z-index: #{$i};
+        }
       }
     }
   }
@@ -206,22 +240,40 @@ $place-items: (
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @each $breakpoint, $pxWidth in $page-breakpoints {
-  @for $i from 0 through 10 {
-    @include breakpoint($breakpoint) {
-      //row + column gaps
-      .gap-#{$breakpoint}-#{$i} {
-        gap: #{$i}rem !important;
-      }
-      // row gaps
-      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      .row-gap-#{$breakpoint}-#{$i} {
-        row-gap: #{$i}rem !important;
-      }
+  @include breakpoint($breakpoint) {
+    @for $i from 0 through 10 {
+      @if $breakpoint == 'xs' {
+        //row + column gaps
+        .gap-#{$i} {
+          gap: #{$i}rem !important;
+        }
+        // row gaps
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .row-gap-#{$i} {
+          row-gap: #{$i}rem !important;
+        }
 
-      // column gaps
-      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      .col-gap-#{$breakpoint}-#{$i} {
-        column-gap: #{$i}rem !important;
+        // column gaps
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .col-gap-#{$i} {
+          column-gap: #{$i}rem !important;
+        }
+      } @else {
+        //row + column gaps
+        .gap-#{$breakpoint}-#{$i} {
+          gap: #{$i}rem !important;
+        }
+        // row gaps
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .row-gap-#{$breakpoint}-#{$i} {
+          row-gap: #{$i}rem !important;
+        }
+
+        // column gaps
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        .col-gap-#{$breakpoint}-#{$i} {
+          column-gap: #{$i}rem !important;
+        }
       }
     }
   }

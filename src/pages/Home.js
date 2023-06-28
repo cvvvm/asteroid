@@ -6,17 +6,18 @@ import Footer from '../components/Footer';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const homeHeading = [
-  "hi, i'm @!*/&_%$.",
-  "I've made this website.",
-  "Don't like the site colors? Change them in the nav menu!",
+  "hi, i'm claire.",
+  'i made you this website.',
+  'you can change the color.',
   'the funniest person in web design.',
   'professional keyboard & cat appreciator.',
   'coding this site makes it a portfolio piece.',
 ];
 
 const homeDesc = [
-  'i made a fun website for pictures.',
-  'and everything on it. *unless otherwise stated.',
+  'a designer, engineer, occasional illustrator.',
+  "you're the only one who knows about it. really!",
+  'because it was fun to make.',
 ];
 
 const introImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', 'coded-by-hand.jpg'];
@@ -52,8 +53,9 @@ function Home() {
 
   return (
     <>
-      <div className="container vh-100">
-        <div className="row-f10">
+      <div className="container vh-100 pt-5 row-gap-2">
+        {/* picture */}
+        <div className="row-f10 vh-70 row-gap-1 row-gap-sm-4">
           <div className="col-6">
             <div className="intro-image-box">
               <img
@@ -62,14 +64,15 @@ function Home() {
               />
             </div>
           </div>
-
-          <div id="intro" className="col-5 jc-center">
-            <h3 className="px-1">{homeHeading[activeHead]}</h3>
-            <p className="px-1">{homeDesc[activeDesc]}</p>
+          {/* text */}
+          <div id="intro" className="col-4 jc-center">
+            <h3 className="">{homeHeading[activeHead]}</h3>
+            <p className="">{homeDesc[activeDesc]}</p>
           </div>
         </div>
 
-        <div className="row-f10 col-gap-xs-2 pt-md-5">
+        {/* buttons */}
+        <div className="row-f10 col-gap-2">
           <button className="button-outline home-button back" onClick={prevIntro}>
             &#60;
           </button>

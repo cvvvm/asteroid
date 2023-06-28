@@ -44,7 +44,7 @@ export function Role({ columns, project, intro, freelance, roles, contributors }
   if (contributors) {
     var contributes = (
       <>
-        <div className="col-f10 pt-xs-1">
+        <div className="col-f10 pt-1">
           <p className="badge">contributors:</p>
         </div>
         <p className="note">{contributors}</p>
@@ -52,12 +52,12 @@ export function Role({ columns, project, intro, freelance, roles, contributors }
     );
   }
   return (
-    <div className={'outline invert mt-xs-5 mt-md-0 row-gap-xs-1 col-' + columns}>
-      <div className="col-f10 pb-xs-3 row-gap-xs-1">
-        <h2>{project}</h2>
+    <div className={'outline invert mt-5 mt-md-0 row-gap-1 col-' + columns}>
+      <div className="col-f10 pb-3 row-gap-1">
+        <h1>{project}</h1>
         <p>{intro}</p>
       </div>
-      <div className="row-f10 pc-start col-gap-xs-1">
+      <div className="row-f10 pc-start col-gap-1">
         <p className="badge">my role:</p>
         {freelanceBadge}
       </div>
@@ -109,12 +109,12 @@ export function DeviceImgToggler({
     <div className={'row-f10 vh-' + vh}>
       <div
         className={
-          'order-xs-1 order-xl-0 outline col-' + textCol + (invert ? ' invert' : '')
+          'order-1 order-xl-0 outline col-' + textCol + (invert ? ' invert' : '')
         }
       >
         {children}
-        <p className="note mt-xs-2 mb-xs-0">display page:</p>
-        <div className="row-f10 pc-start col-gap-xs-1">{toggleMap}</div>
+        <p className="note mt-2 mb-0">display page:</p>
+        <div className="row-f10 pc-start col-gap-1">{toggleMap}</div>
       </div>
       <Devices columns={deviceCol} project={project} page={displayImg} imgtype={'svg'} />
     </div>
@@ -235,7 +235,7 @@ export function GalleryImgToggler({
     <div className={' row-f10 vh-' + vh}>
       <div
         className={
-          'pc-center mb-lg-4 order-xs-1 order-xl-' +
+          'pc-center mb-lg-4 order-1 order-xl-' +
           textOrder +
           '  col-' +
           textCol +
@@ -245,14 +245,14 @@ export function GalleryImgToggler({
       >
         {children}
       </div>
-      <div className={'row-gap-xs-2 row-' + galleryCol}>
+      <div className={'row-gap-2 row-' + galleryCol}>
         <ToggledGallery
           imgType={imgType}
           project={project}
           activeGallery={activeGallery}
           galleries={galleries}
         />
-        <div className="row-f10 pc-center col-gap-xs-1">
+        <div className="row-f10 pc-center col-gap-1">
           <p className="note ps-center">view:</p>
           {toggleMap}
         </div>
@@ -378,15 +378,26 @@ export const VideoGallery = ({
     );
   });
 
+  // slide counter
+  //---------------------------------------------------------------------
+  var slideCounter = (
+    <p className="note">
+      {currentImg + 1} / {galleries.length + 1}
+    </p>
+  );
+
   return (
-    <div className={'gallery ps-center col-' + columns}>
-      <button className="gallery-button button-outline" onClick={lastSlide}>
-        &#60;
-      </button>
-      {imgMap}
-      <button className="gallery-button button-outline" onClick={nextSlide}>
-        &#62;
-      </button>
+    <div className={'row-gap-1 row-' + columns}>
+      <div className="gallery">
+        <button className="gallery-button button-outline" onClick={lastSlide}>
+          &#60;
+        </button>
+        {imgMap}
+        <button className="gallery-button button-outline" onClick={nextSlide}>
+          &#62;
+        </button>
+      </div>
+      <div className={'row-' + columns}>{slideCounter}</div>
     </div>
   );
 };

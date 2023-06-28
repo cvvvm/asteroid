@@ -13,11 +13,11 @@ function ZigZagTattoo() {
         <div className="row-f10">
           <Role
             freelance
-            project={'Zig Zag Tattoo'}
+            project={'zig zag tattoo'}
             intro={
-              'is a new tattoo studio in Portland, OR. I built a website with one of the founders last year, so I was stoked they returned to work on a bigger project - a website & brand for the studio.'
+              'is a tattoo studio in Portland, OR. i built a website with one of the founders last year, so i was stoked they returned to work on a bigger project - a website & brand for the newly founded studio.'
             }
-            columns={7}
+            columns={8}
             roles={
               'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'
             }
@@ -33,13 +33,13 @@ function ZigZagTattoo() {
           project={project}
           images={['Home', 'Artist', 'FAQ']}
         >
-          <h2>Building the Website:</h2>
+          <h2>building the website:</h2>
           <p>
-            We needed a concise site that showcases artist's work and reduces admin work
+            we needed a concise site that showcases artist's work and reduces admin work
             for artists with booking forms & Calendly scheduling.
           </p>
           <p>
-            Each artist operates as a one-person business, so reducing their workload
+            each artist operates as a one-person business, so reducing their workload
             outside of tattooing is essential.
           </p>
         </DeviceImgToggler>
@@ -60,11 +60,11 @@ function ZigZagTattoo() {
         >
           <h2>form, function, name.</h2>
           <p>
-            It always made sense what should drive the logo design: the words zig zag make
-            the shape they describe...What's the word for a visual onomatopoeia?
+            it always made sense what should drive the logo design: the words zig zag make
+            the shape they describe...what's the word for a visual onomatopoeia?
           </p>
           <p>
-            The mark made my clients really happy - the highly flexible, geometric design
+            the mark made my clients really happy - the highly flexible, geometric design
             paying homage to a preferred tattooing style of the founders.
           </p>
         </GalleryImgToggler>

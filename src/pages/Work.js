@@ -79,7 +79,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
         /*         onMouseEnter={showProjectImg}
         onMouseLeave={hideProjectImg} */
       >
-        <div className="row-f10 pc-start col-gap-xs-1" style={{ opacity: 0.65 }}>
+        <div className="row-f10 pc-start col-gap-1" style={{ opacity: 0.65 }}>
           {catmap}
         </div>
         <h3 className="title">{title}</h3>
@@ -106,14 +106,14 @@ export function Work() {
         <WorkCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
-          title={'Zig Zag Tattoo'}
-          caption={'Building a new website & brand.'}
+          title={'zig zag tattoo'}
+          caption={'building a new website & brand.'}
         />
         <WorkCard
           link={'asc-exhibit'}
           categories={['UX/UI']}
-          title={'Jamison City Exhibit'}
-          caption={'Stress-testing Powerpoint to teach history.'}
+          title={'jamison city exhibit'}
+          caption={'stress-testing Powerpoint to teach history.'}
         />
       </div>
     </>
