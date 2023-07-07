@@ -17,7 +17,13 @@ function Footer({ project }) {
     <div className="container pi-center">
       {projectReturn}
       <div className="row-f10">
-        <p className="note">&copy;{currYear}. built by me with react & scss :)</p>
+        <p style={{ textAlign: 'center' }} className="note">
+          &copy;{currYear}.{' '}
+          <Link className={'notelink'} to={'/documentation'}>
+            built
+          </Link>{' '}
+          by me :)
+        </p>
       </div>
     </div>
   );

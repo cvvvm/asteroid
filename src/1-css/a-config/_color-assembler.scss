@@ -19,6 +19,10 @@
       @extend p;
       @include p-link($hue);
     }
+    .notelink {
+      @extend .note;
+      @include p-link($hue);
+    }
 
     // badges
     //---------------------------------------------------------------------
