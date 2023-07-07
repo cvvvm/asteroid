@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+
 import Footer from '../components/Footer';
 
 // home intros
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//---------------------------------------------------------------------
+let introIndex = 0;
 
 const homeHeading = [
   "hi, i'm claire.",
@@ -22,12 +24,16 @@ const homeDesc = [
 
 const introImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', 'coded-by-hand.jpg'];
 
-let introIndex = 0;
+// HOME PAGE
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function Home() {
   let [activeHead, setActiveHead] = useState(0);
   let [activeImage, setActiveImage] = useState(0);
   let [activeDesc, setActiveDesc] = useState(0);
 
+  // swap intros
+  //---------------------------------------------------------------------
   function prevIntro() {
     if (introIndex <= 0) {
       introIndex = homeHeading.length - 1;

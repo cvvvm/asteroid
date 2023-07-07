@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
+
 function Footer({ project }) {
   const currYear = new Date().getFullYear();
 
   if (project) {
     var projectReturn = (
       <div className="row-f10">
-        <a href="/work">
+        <Link to={'/work'}>
           <button className="button">return to work</button>
-        </a>
+        </Link>
       </div>
     );
   }

@@ -15,8 +15,9 @@
     transition: color 300ms ease-out, background-color 300ms ease-out,
       border 300ms ease-out, border-color 300ms ease-out;
 
-    p a {
-      @include link-basic($hue);
+    .plink {
+      @extend p;
+      @include p-link($hue);
     }
 
     // badges

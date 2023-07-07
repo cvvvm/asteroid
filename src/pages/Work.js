@@ -1,15 +1,15 @@
-import gsap from 'gsap';
-import { Outlet, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import gsap from 'gsap';
 
 // PROJECT PAGE RETURN TO WORK
 //---------------------------------------------------------------------
 export function ReturnToWork() {
   return (
     <>
-      <a href="/work">
+      <Link to={'/work'}>
         <button className="button work-return">←</button>
-      </a>
+      </Link>
 
       {/* <Link to={'/work'}>
         <button className="button work-return">&#60;</button>

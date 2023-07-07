@@ -5,8 +5,8 @@ import gsap from 'gsap';
 import { ThemeSet, ColorSet } from '../functions/ThemeSet';
 
 // nav links
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function NavLink({ to, children, appColor, ...props }) {
   const resolvedPath = useResolvedPath(to);
@@ -32,22 +32,32 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
+//
 // NAV MENU
+//
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function Nav() {
+  // animation
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   var defaultColor = 'pink';
   const nav = useRef();
   const navTL = useRef();
   const [navState, setNavState] = useState('closed');
   const [appColor, setAppColor] = useState(defaultColor);
 
+  // change app color
+  //---------------------------------------------------------------------
   function changeAppColor(e) {
     setAppColor(e.currentTarget.id);
   }
 
+  // toggle nav menu state
+  //---------------------------------------------------------------------
   function toggleNavMenu() {
     if (navState === 'closed') {
       setNavState('open');
@@ -83,6 +93,7 @@ function Nav() {
   }, []);
 
   // build nav menu
+  //---------------------------------------------------------------------
   return (
     <nav ref={nav}>
       <div

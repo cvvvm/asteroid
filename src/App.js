@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { Route, Routes, useLocation, useRoutes } from 'react-router-dom';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 
 import './1-css/main.min.css';
 import calcGridCol from './functions/calcGridCol';
@@ -14,46 +14,64 @@ import { Work, ReturnToWork } from './pages/Work';
 import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 
-// SCROLL TO TOP ON ROUTE CHANGE
+// ON ROUTE CHANGE
 //---------------------------------------------------------------------
 export const ScrollToTop = ({ children }) => {
   const location = useLocation();
+
+  // scroll to top
+  //---------------------------------------------------------------------
   useEffect(() => {
     document.documentElement.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // animate page
+  //---------------------------------------------------------------------
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from('.container', {
+        delay: 0.2,
+        opacity: 0,
+        y: '100%',
+        duration: 0.5,
+        ease: 'expo.out',
+      });
+      gsap.from(['.outline', '.work-card', 'img'], {
+        delay: 0.4,
+        duration: 0.6,
+        y: 50,
+        ease: 'expo.out',
+      });
+      gsap.from(['h1', 'h2', 'h3', 'h4', '.badge', '.badge-outline'], {
+        delay: 0.3,
+        y: 10,
+        ease: 'ease.out',
+      });
+      gsap.from('.work-return', {
+        delay: 0.6,
+        y: -100,
+        duration: 0.5,
+        ease: 'expo.out',
+      });
+    });
+
+    return () => ctx.revert(); // cleanup
+  }, [location.pathname]);
+
   return children;
 };
 
 function App() {
-  // PAGE TRANSITION + CALC GRID
+  // CALC GRID
   //---------------------------------------------------------------------
-  const transitionMask = useRef();
-
   useLayoutEffect(() => {
     calcGridCol();
-    gsap.to(transitionMask.current, {
-      opacity: 0,
-      ease: 'expo.in',
-      duration: 0.4,
-    });
   }, []);
 
   // APP RENDER
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //---------------------------------------------------------------------
   return (
     <>
-      <div
-        ref={transitionMask}
-        style={{
-          pointerEvents: 'none',
-          zIndex: 9999,
-          position: 'fixed',
-          width: '100vw',
-          height: '100vh',
-          background: 'var(--bg-mono)',
-        }}
-      ></div>
       <ScrollToTop>
         <Nav />
 

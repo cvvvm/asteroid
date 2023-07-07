@@ -29,7 +29,7 @@ function JamisonExhibit() {
       <div className="container">
         <div className="row-f10 vh-80">
           <div className="col-9 outline invert ">
-            <h2>a really important point.</h2>
+            <h2>making a powerful point.</h2>
             <p>
               just one catch - with no internet at the installation & no budget for
               additional software - the exhibit's hundreds of screens needed to run
@@ -64,7 +64,7 @@ function JamisonExhibit() {
               </p>
             </div>
             <div className="col-4">
-              <h4>experience</h4>
+              <h4>experience:</h4>
               <p>
                 i built hundreds of slides coordinated between dozens of branching user
                 paths. designing & coordinating interactive maps, information pop-ups,

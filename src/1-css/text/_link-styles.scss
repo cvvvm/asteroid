@@ -3,16 +3,17 @@ a {
   text-decoration: none;
 }
 
-// LINK STYLE MIXIN
+// P LINK STYLE MIXIN
 //---------------------------------------------------------------------
-@mixin link-basic($hue, $invert: false) {
+@mixin p-link($hue, $invert: false) {
   $accent-color: map-get(
     $map: $color-accent,
     $key: accent-#{$hue},
   );
-
-  font-style: italic;
-  font-weight: $weight-medium;
+  letter-spacing: -0.0625rem;
+  opacity: 0.8;
+  //font-style: italic;
+  font-weight: $weight-light;
   text-decoration: none;
 
   padding: 0rem 0.2rem 0rem 0.1rem;
