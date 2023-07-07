@@ -1,5 +1,6 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Route, Routes, useLocation, useRoutes } from 'react-router-dom';
+import { Transition } from 'react-transition-group';
 import { gsap } from 'gsap';
 
 import './1-css/main.min.css';
@@ -61,6 +62,16 @@ export const ScrollToTop = ({ children }) => {
   return children;
 };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// APP
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function App() {
   // CALC GRID
   //---------------------------------------------------------------------
@@ -68,13 +79,12 @@ function App() {
     calcGridCol();
   }, []);
 
-  // APP RENDER
+  // RENDER
   //---------------------------------------------------------------------
   return (
     <>
       <ScrollToTop>
         <Nav />
-
         <Routes>
           <Route
             path="*"
