@@ -14,7 +14,7 @@ import { useState, useRef, useLayoutEffect } from 'react';
 export function ImgCover({ project, imgType, vh = 100, children, className }) {
   return (
     <div
-      className={'container full-width vh-' + vh + ' pt-6 pt-md-3 ' + className}
+      className={'container full vh-' + vh + ' pt-6 pt-md-3 ' + className}
       style={{
         backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
         backgroundSize: 'cover',

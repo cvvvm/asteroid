@@ -36,6 +36,7 @@ function JamisonExhibit() {
               exclusively in Microsoft Powerpoint.
             </p>
           </div>
+
           <VideoGallery
             columns={12}
             project={project}
@@ -48,7 +49,8 @@ function JamisonExhibit() {
               },
             ]}
           />
-          <div className="row-f10 jc-evenly">
+
+          <div className="row-f10 jc-evenly outline">
             <div className="col-4">
               <h4>visuals:</h4>
               <p>

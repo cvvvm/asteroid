@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Route, Routes, useLocation, useRoutes } from 'react-router-dom';
+import { Link, Route, Routes, useLocation, useRoutes } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
 import { gsap } from 'gsap';
 
@@ -30,24 +30,23 @@ export const ScrollToTop = ({ children }) => {
   //---------------------------------------------------------------------
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from('.container', {
-        delay: 0.2,
-        opacity: 0,
-        y: '100%',
-        duration: 0.5,
+      gsap.from('.container > * ', {
+        delay: 0.1,
+        y: '100vh',
+        stagger: 0.025,
         ease: 'expo.out',
       });
-      gsap.from(['.outline', '.work-card', 'img'], {
+      /*       gsap.from(['.outline', '.work-card', 'img'], {
         delay: 0.4,
         duration: 0.6,
         y: 50,
         ease: 'expo.out',
-      });
-      gsap.from(['h1', 'h2', 'h3', 'h4', '.badge', '.badge-outline'], {
+      }); */
+      /*       gsap.from(['h1', 'h2', 'h3', 'h4', '.badge', '.badge-outline'], {
         delay: 0.3,
         y: 10,
         ease: 'ease.out',
-      });
+      }); */
       gsap.from('.work-return', {
         delay: 0.6,
         y: -100,
@@ -93,9 +92,9 @@ function App() {
                 <div className="col-6 ps-center pc-center pi-center">
                   <h1>lol oops.</h1>
                   <p>how did you get here?</p>
-                  <a href="/">
+                  <Link to="/">
                     <button className="button">go home</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             }
