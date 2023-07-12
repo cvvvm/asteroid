@@ -1,8 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  railscasts,
-  shadesOfPurple,
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import highlighterstyles from '../functions/highlighter-slyles';
 
 function Documentation() {
   const codeString = '@mixin flex-base() {\ndisplay: flex;\nflex: 1 1 100%;\n}';
@@ -15,11 +12,11 @@ function Documentation() {
         <p>oooh. looks like these haven't been written yet!</p>
         <p>try coming back in 5 minutes?</p>
 
-        <SyntaxHighlighter language="scss" style={railscasts} showLineNumbers>
-          {codeString}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter language="scss" style={shadesOfPurple} showLineNumbers>
+        <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
           {codeString2}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
+          {codeString}
         </SyntaxHighlighter>
       </div>
     </div>
