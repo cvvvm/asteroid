@@ -49,21 +49,19 @@ function Nav() {
   // update CSS var
   //---------------------------------------------------------------------
   var style = getComputedStyle(document.body);
-  document.body.style.setProperty('--current-bg', 'var(--bg-' + appColor + ')');
-  document.body.style.setProperty('--current-text', 'var(--text-' + appColor + ')');
-  document.body.style.setProperty('--current-accent', 'var(--accent-' + appColor + ')');
 
-  function updateCurrColor(color) {
-    document.body.style.setProperty('--current-bg', 'var(--bg-' + color + ')');
-    document.body.style.setProperty('--current-text', 'var(--text-' + color + ')');
-    document.body.style.setProperty('--current-accent', 'var(--accent-' + appColor + ')');
+  function setCssVarColor(color) {
+    document.body.style.setProperty('--text', 'var(--text1-' + color + ')');
+    document.body.style.setProperty('--bg', 'var(--bg1-' + color + ')');
+    document.body.style.setProperty('--text-alt', 'var(--text2-' + color + ')');
+    document.body.style.setProperty('--bg-alt', 'var(--bg2-' + color + ')');
   }
+  setCssVarColor(appColor);
 
   // change app color
   //---------------------------------------------------------------------
   function changeAppColor(e) {
     setAppColor(e.currentTarget.id);
-    updateCurrColor(e.currentTarget.id);
   }
 
   // toggle nav menu state

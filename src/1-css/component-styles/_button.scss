@@ -2,9 +2,7 @@
 // BUTTONS
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@mixin buttons($hue, $outline: false) {
-  @include text-contrast($hue, $invert: true);
-
+@mixin buttons($outline: false) {
   font-family: $jet-brains;
   font-weight: $weight-medium;
   font-size: 1.25rem;
@@ -12,29 +10,28 @@
   padding: 0.75rem 1.35rem 0.85rem;
   margin: 0rem -0.35rem;
 
-  border-color: cssvar-get(text-#{$hue});
+  border-color: var(--text);
   border-style: solid;
   border-width: 0.2rem;
   border-radius: 2rem;
 
   @if $outline {
-    @include text-contrast($hue);
-    border-color: cssvar-get(accent-#{$hue});
+    border-color: var(--text-alt);
   }
 
   transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
     border 200ms ease-in-out, translate 100ms ease-out, filter 100ms ease-out;
 
   &:hover {
-    background-color: cssvar-get(accent-#{$hue});
-    border-color: cssvar-get(accent-#{$hue});
-    color: cssvar-get(bg-#{$hue});
+    background-color: var(--text-alt);
+    border-color: var(--text-alt);
+    color: var(--bg-alt);
   }
 
   &:active {
-    background: cssvar-get(accent-#{$hue});
-    //border-color: cssvar-get(text-#{$hue});
+    background: var(--text-alt);
+    border-color: var(--text-alt);
     translate: -1px -2px;
-    filter: brightness(0.9) saturate(2);
+    filter: brightness(0.9) saturate(1.25);
   }
 }

@@ -37,7 +37,6 @@
 }
 
 @mixin toggle-base() {
-  @include text-contrast(mono);
   font-family: $jet-brains;
   border: none;
   //height: 50px;

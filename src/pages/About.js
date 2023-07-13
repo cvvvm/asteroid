@@ -15,9 +15,15 @@ function About() {
         </div>
 
         <div className="col-5">
-          <p className="badge">resources</p>
+          <p className="badge-outline">resources</p>
           <a
             className="plink"
+            href="https://configure.zsa.io/moonlander/layouts/wGzJq/latest/0"
+          >
+            my moonlander keyboard layout
+          </a>
+          <a
+            className="notelink"
             href="https://configure.zsa.io/moonlander/layouts/wGzJq/latest/0"
           >
             my moonlander keyboard layout

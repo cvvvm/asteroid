@@ -4,9 +4,10 @@
 
 // color
 //---------------------------------------------------------------------
-const colorBg = 'var(--current-text)';
-const colorText = 'var(--current-bg)';
-const colorAccent = 'var(--current-accent)';
+const textLt = 'var(--text-lt)';
+const textDk = 'var(--text-dk)';
+const bgLt = 'var(--bg-lt)';
+const bgDk = 'var(--bg-dk)';
 
 // text
 //---------------------------------------------------------------------
@@ -16,6 +17,10 @@ const tabSize = 2;
 const fontFamily = 'JetBrains Mono';
 const wtReg = '200';
 const wtBold = '700';
+
+// misc
+//---------------------------------------------------------------------
+const transition = 'all 250ms ease-in-out';
 
 // styles
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,12 +43,13 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: colorBg,
-    color: colorText,
+    background: bgLt,
+    color: textLt,
     padding: '2rem 1.65rem 2rem 1.5rem',
     margin: '.5rem 0',
     borderRadius: '.75rem',
     overflow: 'auto',
+    transition: transition,
   },
   'code[class*="language-"]': {
     fontFamily: fontFamily,
@@ -62,8 +68,9 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: colorBg,
-    color: '#9a86fd',
+    background: bgLt,
+    color: textLt,
+    transition: transition,
   },
   'pre > code[class*="language-"]': {
     fontSize: '1rem',
@@ -105,7 +112,7 @@ export default {
     borderRadius: '.3rem',
   },
   comment: {
-    color: colorAccent,
+    color: bgDk,
   },
   prolog: {
     color: '#6c6783',
@@ -132,10 +139,10 @@ export default {
     color: '#e09142',
   },
   property: {
-    color: colorText,
+    color: textLt,
   },
   function: {
-    color: colorText,
+    color: textDk,
   },
   'tag-id': {
     color: '#eeebff',

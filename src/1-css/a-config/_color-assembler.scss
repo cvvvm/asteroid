@@ -8,97 +8,82 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@each $hue in $color-hues {
-  .bg-#{$hue} {
-    @include text-contrast($hue);
+// text contrast
+//---------------------------------------------------------------------
+@mixin contrast-dk($invert: false) {
+  color: var(--text);
+  background-color: var(--bg);
 
-    transition: color 300ms ease-out, background-color 300ms ease-out,
-      border 300ms ease-out, border-color 300ms ease-out;
+  @if $invert {
+    color: var(--bg);
+    background-color: var(--text);
+  }
+}
 
-    .plink {
-      @extend p;
-      @include p-link($hue);
-    }
-    .notelink {
-      @extend .note;
-      @include p-link($hue);
-    }
+.bg {
+  @include contrast-dk();
+  @include transition-base();
 
-    // badges
-    //---------------------------------------------------------------------
-    .badge {
-      @include badge-base($hue);
-      &-outline {
-        @include badge-base($hue, $outline: true);
-      }
-    }
-
-    // buttons
-    //---------------------------------------------------------------------
-    .button {
-      @include buttons(#{$hue});
-      &-outline {
-        @include buttons(#{$hue}, $outline: true);
-      }
-    }
-
-    // col outline
-    //---------------------------------------------------------------------
-    .outline {
-      @include column-outline($hue);
-      transition: color 300ms ease-out, background-color 300ms ease-out,
-        border 300ms ease-out, border-color 300ms ease-out;
-
-      &.invert {
-        @include column-outline($hue, $invert: true);
-
-        & a,
-        .badge-outline,
-        .button-outline {
-          @include text-contrast($hue, $invert: true);
-        }
-
-        & .badge,
-        .button {
-          @include text-contrast($hue);
-        }
-      }
-    }
-
-    // work page project cards
-    //---------------------------------------------------------------------
-    @include work-card($hue);
-
-    // sidebar
-    //---------------------------------------------------------------------
-    @include sidebar($hue);
+  .plink {
+    @extend p;
+    @include p-link();
+  }
+  .notelink {
+    @extend .note;
+    @include p-link();
   }
 
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //
-  //
-  // MANUAL colors
-  //
-  //
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  // MANUAL color buttons
+  // badges
   //---------------------------------------------------------------------
-  .button-#{$hue} {
-    @include buttons(#{$hue});
+  .badge {
+    @include badge-base();
     &-outline {
-      @include buttons(#{$hue}, $outline: true);
+      @include badge-base($outline: true);
     }
   }
 
-  // MANUAL color badges
+  // buttons
   //---------------------------------------------------------------------
-  .badge-#{$hue} {
-    @include badge-base($hue);
+  .button {
+    @include buttons();
+    @include contrast-dk($invert: true);
     &-outline {
-      @include badge-base($hue, $outline: true);
+      @include buttons($outline: true);
+      @include contrast-dk();
     }
   }
+
+  // col outline
+  //---------------------------------------------------------------------
+  .outline {
+    @include column-outline();
+
+    &.invert {
+      @include column-outline($invert: true);
+
+      & a,
+      .badge-outline,
+      .button-outline {
+        @include contrast-dk($invert: true);
+      }
+
+      & .badge,
+      .button {
+        @include contrast-dk();
+      }
+    }
+
+    &.invert-alt {
+      @extend .invert;
+      @include column-outline($alt: true);
+    }
+  }
+
+  // work page project cards
+  //---------------------------------------------------------------------
+  @include work-card();
+
+  // sidebar
+  //---------------------------------------------------------------------
+  @include sidebar();
 }

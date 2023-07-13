@@ -30,28 +30,6 @@ $text-styles-list: h1, h2, h3, h4, h5, p, ol, ul, '.note';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 //
-// UTILITY MIXINS
-//
-//
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// text contrast
-//---------------------------------------------------------------------
-@mixin text-contrast($hue, $invert: false) {
-  color: cssvar-get(text-#{$hue});
-  background-color: cssvar-get(bg-#{$hue});
-
-  @if $invert {
-    color: cssvar-get(bg-#{$hue});
-    background-color: cssvar-get(text-#{$hue});
-  }
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-//
 // HEADING STYLES
 //
 //
@@ -111,7 +89,7 @@ $font-size: (
     font-size: map-get($font-size, $level);
     line-height: 125%;
     margin-left: -0.2rem;
-    filter: saturate(1.5);
+    color: cssvar-get(text-alt);
   }
 }
 
@@ -198,14 +176,13 @@ ol {
 // badge mixin
 // intended for use with <p>
 //---------------------------------------------------------------------
-@mixin badge-base($hue, $outline: false) {
-  @include text-contrast($hue, $invert: true);
-
+@mixin badge-base($outline: false) {
   font-family: $jet-brains;
   line-height: 100%;
   font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0.015rem;
+  color: var(--bg);
 
   max-width: max-content;
   max-height: max-content;
@@ -213,7 +190,8 @@ ol {
   margin: 0rem 0rem 0rem -0.25rem;
   padding: 7px 12px;
 
-  border: 0.125rem solid cssvar-get(text-#{$hue});
+  background-color: var(--text-alt);
+  border: 0.125rem solid cssvar-get(text-alt);
   border-radius: 0.6rem;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out,
     border 200ms ease-in-out;
@@ -223,9 +201,9 @@ ol {
   }
 
   @if $outline {
-    @include text-contrast($hue);
-    background: none;
-    border: 0.125rem solid cssvar-get(accent-#{$hue});
+    background-color: none;
+    color: var(--text);
+    border: 0.125rem solid cssvar-get(text-alt);
     box-shadow: none;
   }
 }

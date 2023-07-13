@@ -18,7 +18,7 @@ $max-columns: 18;
   )
 );
 
-$spacer: cssvar-get(spacer) !default;
+$spacer: var(--spacer) !default;
 
 $place-start: start !default;
 $place-center: center !default;
@@ -51,14 +51,14 @@ $page-breakpoints: (
 //---------------------------------------------------------------------
 @mixin row() {
   flex-flow: row wrap;
-  gap: cssvar-get(gap);
+  gap: var(--gap);
   place-content: $place-center;
   //place-items: $place-center;
 }
 
 @mixin col() {
   flex-flow: column wrap;
-  gap: calc(cssvar-get(gap) / 2.5);
+  gap: calc(var(--gap) / 2.5);
   place-content: $place-start;
   place-items: $place-start;
   > img,
@@ -72,8 +72,8 @@ $page-breakpoints: (
 //---------------------------------------------------------------------
 @mixin width-fixed($i) {
   @include breakpoint(sm) {
-    max-width: calc(cssvar-get(current-columns) * 100px);
-    flex: 0 1 calc(($i * 100px) - (cssvar-get(gap) / 2));
+    max-width: calc(var(--current-columns) * 100px);
+    flex: 0 1 calc(($i * 100px) - (var(--gap) / 2));
   }
 }
 
@@ -85,17 +85,37 @@ $page-breakpoints: (
 
 // CARD column
 //---------------------------------------------------------------------
-@mixin column-outline($hue, $invert: false) {
-  @include text-contrast(#{$hue});
+@mixin column-outline($invert: false, $alt: false) {
+  @include transition-base();
   place-self: center;
   place-content: center;
   padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)
     clamp(3.3rem, 3.3rem + 1vw, 3.8rem);
   border-radius: 1rem;
-  border: 3px solid cssvar-get(accent-#{$hue});
+  border: 3px solid var(--text-alt);
+
   @if $invert {
-    @include text-contrast(#{$hue}, $invert: true);
+    color: var(--bg);
+    background-color: var(--text);
     border: 3px solid rgba(0, 0, 0, 0);
+    > h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--bg-alt);
+    }
+  }
+
+  @if $alt {
+    color: var(--text);
+    background-color: var(--bg-alt);
+    border: 3px solid rgba(0, 0, 0, 0);
+    > h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--text);
+    }
   }
 }
 
@@ -115,7 +135,7 @@ $page-breakpoints: (
   @include flex-base();
   @include row;
 
-  max-width: calc(cssvar-get(max-columns) * 100px);
+  max-width: calc(var(--max-columns) * 100px);
 
   margin: 0 auto;
   padding: clamp(2rem, calc(2 * 4vw), 10rem) 1rem;

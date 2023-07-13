@@ -1,4 +1,4 @@
-@mixin sidebar($hue) {
+@mixin sidebar() {
   // holds sidebar & related content container
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,9 +44,9 @@
 
     padding: 1.5rem 1.25rem;
     border-radius: 1rem;
-    border: 1px solid cssvar-get(accent-#{$hue});
+    border: 1px solid cssvar-get(text-dk);
 
-    background-color: cssvar-get(bg-#{$hue});
+    background-color: cssvar-get(bg-dk);
 
     transform-origin: left center;
     transition: scale 350ms ease-out;
@@ -58,17 +58,17 @@
       @extend p;
       font-size: 1.15rem;
       font-weight: $weight-light;
-      color: cssvar-get(text-#{$hue});
+      color: cssvar-get(text-lt);
 
       padding: 0.5rem 1.25rem;
       border-radius: 0.6rem;
-      border: 1px solid cssvar-get(accent-#{$hue});
+      border: 1px solid cssvar-get(text-dk);
 
-      background-color: cssvar-get(bg-#{$hue});
+      background-color: cssvar-get(bg-lt);
 
       &:hover {
-        color: cssvar-get(bg-#{$hue});
-        background-color: cssvar-get(accent-#{$hue});
+        color: cssvar-get(bg-lt);
+        background-color: cssvar-get(text-dk);
       }
     }
   }

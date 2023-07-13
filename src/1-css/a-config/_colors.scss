@@ -8,96 +8,125 @@
 
 // primaries
 //---------------------------------------------------------------------
-$yellow-lt: #fbea99;
-$yellow-drk: #996600;
+$yellow-lt1: #fbea99;
+$yellow-lt2: #ffc908;
+$yellow-dk1: #4d3300; //color.scale(#996600, $lightness: -50%, $saturation: 100%);
+$yellow-dk2: #996600;
 
-$green-lt: #c9f0c2;
-$green-drk: #006611;
+$green-lt1: #c9f0c2;
+$green-lt2: #57da4c;
+$green-dk1: #003309; //color.scale(#006611, $lightness: -50%, $saturation: 100%);
+$green-dk2: #006611;
 
-$blue-lt: #cde6fe;
-$blue-drk: #0b4bcb;
+$blue-lt1: #cde6fe;
+$blue-lt2: #579dff;
+$blue-dk1: #001d56; //color.scale(#0b4bcb, $lightness: -60%, $saturation: 100%);
+$blue-dk2: #0b4bcb;
 
-$pink-lt: #f6cdfe;
-$pink-drk: #aa09aa;
+$pink-lt1: #f6cdfe;
+$pink-lt2: #ff6ece;
+$pink-dk1: #5a005a; //color.scale($pink-dk1, $lightness: -50%, $saturation: 100%);
+$pink-dk2: #aa09aa;
 
-$red-lt: #fed1cd;
-$red-drk: #990d00;
+$red-lt1: #fed1cd;
+$red-lt2: #ff6464;
+$red-dk1: #4d0700; //color.scale(#990d00, $lightness: -50%, $saturation: 100%);
+$red-dk2: #990d00;
 
-$grey-lt: #dde0e3;
-$grey-drk: #2b2e3b;
+$grey-lt1: #dde0e3;
+$grey-lt2: #9da3af;
+$grey-dk1: #12131a; //color.scale(#2b2e3b, $lightness: -50%, $saturation: 100%);
+$grey-dk2: #2b2e3b;
 
-$mono-lt: #f5f5f5;
-$mono-drk: #000000;
-
-// accents
-//---------------------------------------------------------------------
-$accent-yellow: #ffc908;
-$accent-green: #57da4c;
-$accent-blue: #579dff;
-$accent-pink: #ff6ece;
-$accent-red: #ff6464;
-$accent-grey: #9da3af;
-$accent-mono: #808080;
+$mono-lt1: #f5f5f5;
+$mono-lt2: #808080;
+$mono-dk1: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
+$mono-dk2: #333333;
 
 //
 // SET CSS VARIABLES
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.light-theme {
-  --text-yellow: #{$yellow-drk};
-  --text-green: #{$green-drk};
-  --text-blue: #{$blue-drk};
-  --text-pink: #{$pink-drk};
-  --text-red: #{$red-drk};
-  --text-grey: #{$grey-drk};
-  --text-mono: #{$mono-drk};
-
-  --bg-yellow: #{$yellow-lt};
-  --bg-green: #{$green-lt};
-  --bg-blue: #{$blue-lt};
-  --bg-pink: #{$pink-lt};
-  --bg-red: #{$red-lt};
-  --bg-grey: #{$grey-lt};
-  --bg-mono: #{$mono-lt};
-}
-
-.dark-theme {
-  --text-yellow: #{$yellow-lt};
-  --text-green: #{$green-lt};
-  --text-blue: #{$blue-lt};
-  --text-pink: #{$pink-lt};
-  --text-red: #{$red-lt};
-  --text-grey: #{$grey-lt};
-  --text-mono: #{$mono-lt};
-
-  --bg-yellow: #{$yellow-drk};
-  --bg-green: #{$green-drk};
-  --bg-blue: #{$blue-drk};
-  --bg-pink: #{$pink-drk};
-  --bg-red: #{$red-drk};
-  --bg-grey: #{$grey-drk};
-  --bg-mono: #{$mono-drk};
-}
-
 @include cssvar-set(
   (
-    current-text: '',
-    current-bg: '',
-    current-accent: '',
-    accent-yellow: $accent-yellow,
-    accent-green: $accent-green,
-    accent-blue: $accent-blue,
-    accent-pink: $accent-pink,
-    accent-red: $accent-red,
-    accent-grey: $accent-grey,
-    accent-mono: $accent-mono,
+    text: '',
+    text-alt: '',
+    bg: '',
+    bg-alt: '',
   )
 );
 
+.light-theme {
+  --text1-yellow: #{$yellow-dk1};
+  --text1-green: #{$green-dk1};
+  --text1-blue: #{$blue-dk1};
+  --text1-pink: #{$pink-dk1};
+  --text1-red: #{$red-dk1};
+  --text1-grey: #{$grey-dk1};
+  --text1-mono: #{$mono-dk1};
+
+  --text2-yellow: #{$yellow-dk2};
+  --text2-green: #{$green-dk2};
+  --text2-blue: #{$blue-dk2};
+  --text2-pink: #{$pink-dk2};
+  --text2-red: #{$red-dk2};
+  --text2-grey: #{$grey-dk2};
+  --text2-mono: #{$mono-dk2};
+
+  --bg1-yellow: #{$yellow-lt1};
+  --bg1-green: #{$green-lt1};
+  --bg1-blue: #{$blue-lt1};
+  --bg1-pink: #{$pink-lt1};
+  --bg1-red: #{$red-lt1};
+  --bg1-grey: #{$grey-lt1};
+  --bg1-mono: #{$mono-lt1};
+
+  --bg2-yellow: #{$yellow-lt2};
+  --bg2-green: #{$green-lt2};
+  --bg2-blue: #{$blue-lt2};
+  --bg2-pink: #{$pink-lt2};
+  --bg2-red: #{$red-lt2};
+  --bg2-grey: #{$grey-lt2};
+  --bg2-mono: #{$mono-lt2};
+}
+
+.dark-theme {
+  --text1-yellow: #{$yellow-lt1};
+  --text1-green: #{$green-lt1};
+  --text1-blue: #{$blue-lt1};
+  --text1-pink: #{$pink-lt1};
+  --text1-red: #{$red-lt1};
+  --text1-grey: #{$grey-lt1};
+  --text1-mono: #{$mono-lt1};
+
+  --text2-yellow: #{$yellow-lt2};
+  --text2-green: #{$green-lt2};
+  --text2-blue: #{$blue-lt2};
+  --text2-pink: #{$pink-lt2};
+  --text2-red: #{$red-lt2};
+  --text2-grey: #{$grey-lt2};
+  --text2-mono: #{$mono-lt2};
+
+  --bg1-yellow: #{$yellow-dk1};
+  --bg1-green: #{$green-dk1};
+  --bg1-blue: #{$blue-dk1};
+  --bg1-pink: #{$pink-dk1};
+  --bg1-red: #{$red-dk1};
+  --bg1-grey: #{$grey-dk1};
+  --bg1-mono: #{$mono-dk1};
+
+  --bg2-yellow: #{$yellow-dk2};
+  --bg2-green: #{$green-dk2};
+  --bg2-blue: #{$blue-dk2};
+  --bg2-pink: #{$pink-dk2};
+  --bg2-red: #{$red-dk2};
+  --bg2-grey: #{$grey-dk2};
+  --bg2-mono: #{$mono-dk2};
+}
+
 // COLOR SUFFIX
 //---------------------------------------------------------------------
-$color-values: ('lt', 'drk');
+$color-values: ('lt', 'dk');
 
 // COLOR NAMES
 //---------------------------------------------------------------------
@@ -106,34 +135,38 @@ $color-hues: ('yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono');
 // SCSS COLOR VALUES MAP
 //---------------------------------------------------------------------
 $color-primary: (
-  yellow-lt: $yellow-lt,
-  yellow-drk: $yellow-drk,
+  yellow-lt1: $yellow-lt1,
+  yellow-lt2: $yellow-lt2,
+  yellow-dk1: $yellow-dk1,
+  yellow-dk2: $yellow-dk2,
 
-  green-lt: $green-lt,
-  green-drk: $green-drk,
+  green-lt1: $green-lt1,
+  green-lt2: $green-lt2,
+  green-dk1: $green-dk1,
+  green-dk2: $green-dk2,
 
-  blue-lt: $blue-lt,
-  blue-drk: $blue-drk,
+  blue-lt1: $blue-lt1,
+  blue-lt2: $blue-lt2,
+  blue-dk1: $blue-dk1,
+  blue-dk2: $blue-dk2,
 
-  pink-lt: $pink-lt,
-  pink-drk: $pink-drk,
+  pink-lt1: $pink-lt1,
+  pink-lt2: $pink-lt2,
+  pink-dk1: $pink-dk1,
+  pink-dk2: $pink-dk2,
 
-  red-lt: $red-lt,
-  red-drk: $red-drk,
+  red-lt1: $red-lt1,
+  red-lt2: $red-lt2,
+  red-dk1: $red-dk1,
+  red-dk2: $red-dk2,
 
-  grey-lt: $grey-lt,
-  grey-drk: $grey-drk,
+  grey-lt1: $grey-lt1,
+  grey-lt2: $grey-lt2,
+  grey-dk1: $grey-dk1,
+  grey-dk2: $grey-dk2,
 
-  mono-lt: $mono-lt,
-  mono-drk: $mono-drk,
-);
-
-$color-accent: (
-  accent-yellow: $accent-yellow,
-  accent-green: $accent-green,
-  accent-blue: $accent-blue,
-  accent-pink: $accent-pink,
-  accent-red: $accent-red,
-  accent-grey: $accent-grey,
-  accent-mono: $accent-mono,
+  mono-lt1: $mono-lt1,
+  mono-lt2: $mono-lt2,
+  mono-dk1: $mono-dk1,
+  mono-dk2: $mono-dk2,
 );

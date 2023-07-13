@@ -39,7 +39,7 @@
 
 // work card
 //---------------------------------------------------------------------
-@mixin work-card($hue) {
+@mixin work-card() {
   .work-card {
     position: relative;
 
@@ -51,8 +51,8 @@
 
     padding: 2.25rem 2rem 2.5rem;
     border-radius: 2rem;
-    border: 2px solid cssvar-get(accent-#{$hue});
-    background-color: cssvar-get(bg-#{$hue});
+    border: 2px solid cssvar-get(text-dk);
+    background-color: cssvar-get(bg-lt);
 
     transition: scale 300ms ease-out;
 

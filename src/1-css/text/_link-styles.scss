@@ -5,11 +5,8 @@ a {
 
 // P LINK STYLE MIXIN
 //---------------------------------------------------------------------
-@mixin p-link($hue, $invert: false) {
-  $accent-color: map-get(
-    $map: $color-accent,
-    $key: accent-#{$hue},
-  );
+@mixin p-link($invert: false) {
+  //$accent-color: #{cssvar-get(text-dk)};
   letter-spacing: -0.0625rem;
   opacity: 0.8;
   //font-style: italic;
@@ -23,14 +20,14 @@ a {
 
   box-shadow:
     // underline
-    inset 0 -2px 0 0 rgba($accent-color, 50%),
+    inset 0 -2px 0 0 rgba(#{var(--text-dk)}, 50%),
     // left shading
-    inset 0rem 0rem 0 0 rgba($accent-color, 0%),
-    inset 0rem 0rem 0 0 rgba($accent-color, 0%),
-    inset 0rem 0rem 0 0 rgba($accent-color, 0%),
-    inset 0rem 0rem 0 0 rgba($accent-color, 0%),
+    inset 0rem 0rem 0 0 rgba(#{var(--text-dk)}, 0%),
+    inset 0rem 0rem 0 0 rgba(#{var(--text-dk)}, 0%),
+    inset 0rem 0rem 0 0 rgba(#{var(--text-dk)}, 0%),
+    inset 0rem 0rem 0 0 rgba(#{var(--text-dk)}, 0%),
     // drop shadow
-    0 0 1rem 0 rgba($accent-color, 0%);
+    0 0 1rem 0 rgba(#{var(--text-dk)}, 0%);
 
   transition: box-shadow 200ms ease-out;
 
@@ -38,8 +35,8 @@ a {
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   &:hover {
     opacity: 100%;
-    padding: 0rem 0.5rem 0rem 0.4rem;
-    margin: 0rem -0.4rem 0rem -0.4rem;
+    padding: 0 0.5rem 0.1rem 0.4rem;
+    margin: 0 -0.4rem -0.2rem;
     padding-bottom: 0.1rem;
     margin-bottom: -0.2rem;
 
@@ -47,14 +44,14 @@ a {
 
     box-shadow:
       // underline
-      inset 0 -0.095rem 0 0 rgba($accent-color, 0%),
+      inset 0 -0.095rem 0 0 rgba(#{var(--text-dk)}, 0%),
       // left shading
-      inset 5rem -1rem 1rem 0 rgba($accent-color, 20%),
-      inset 10rem -1.5rem 1rem 0 rgba($accent-color, 40%),
-      inset 15rem -2rem 1rem 0 rgba($accent-color, 60%),
-      inset 20rem -2.5rem 1rem 0 rgba($accent-color, 80%),
+      inset 5rem -1rem 1rem 0 rgba(#{var(--text-dk)}, 20%),
+      inset 10rem -1.5rem 1rem 0 rgba(#{var(--text-dk)}, 40%),
+      inset 15rem -2rem 1rem 0 rgba(#{var(--text-dk)}, 60%),
+      inset 20rem -2.5rem 1rem 0 rgba(#{var(--text-dk)}, 80%),
       // drop shadow
-      0 0 0.15rem 0 rgba($accent-color, 1);
+      0 0 0.15rem 0 rgba(#{var(--text-dk)}, 1);
 
     transition: all 250ms ease-in-out;
   }
@@ -72,14 +69,14 @@ a {
 
     box-shadow:
       // underline
-      inset 0 -0.095rem 0 0 rgba($accent-color, 0%),
+      inset 0 -0.095rem 0 0 rgba(#{var(--text-dk)}, 0%),
       // left shading
-      inset 5rem -1rem 1rem 0 rgba($accent-color, 15%),
-      inset 10rem -1.5rem 1rem 0 rgba($accent-color, 15%),
-      inset 15rem -2rem 1rem 0 rgba($accent-color, 15%),
-      inset 20rem -2.5rem 1rem 0 rgba($accent-color, 15%),
+      inset 5rem -1rem 1rem 0 rgba(#{var(--text-dk)}, 15%),
+      inset 10rem -1.5rem 1rem 0 rgba(#{var(--text-dk)}, 15%),
+      inset 15rem -2rem 1rem 0 rgba(#{var(--text-dk)}, 15%),
+      inset 20rem -2.5rem 1rem 0 rgba(#{var(--text-dk)}, 15%),
       // drop shadow
-      0 0 0.15rem 0 rgba($accent-color, 0);
+      0 0 0.15rem 0 rgba(#{var(--text-dk)}, 0);
 
     transition: all 150ms ease-in-out;
   }

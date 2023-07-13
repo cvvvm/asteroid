@@ -41,3 +41,10 @@
     @content;
   }
 }
+
+// transition mixin
+//---------------------------------------------------------------------
+@mixin transition-base() {
+  transition: color 100ms ease-out, background-color 300ms ease-out, border 300ms ease-out,
+    border-color 300ms ease-out !important;
+}

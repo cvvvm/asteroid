@@ -71,7 +71,7 @@ export function ThemeSet({ classNames, currentAppColor }) {
   let themeIcon = '';
   const [appTheme, setAppTheme] = useState(detectThemePref());
 
-  document.body.className = 'bg-' + currentAppColor + ' ' + appTheme + '-theme';
+  document.body.className = 'bg ' + appTheme + '-theme';
 
   // SET theme icon
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
