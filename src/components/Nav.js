@@ -40,20 +40,30 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function Nav() {
-  // animation
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
   var defaultColor = 'pink';
   const nav = useRef();
   const navTL = useRef();
   const [navState, setNavState] = useState('closed');
   const [appColor, setAppColor] = useState(defaultColor);
 
+  // update CSS var
+  //---------------------------------------------------------------------
+  var style = getComputedStyle(document.body);
+  document.body.style.setProperty('--current-bg', 'var(--bg-' + appColor + ')');
+  document.body.style.setProperty('--current-text', 'var(--text-' + appColor + ')');
+  document.body.style.setProperty('--current-accent', 'var(--accent-' + appColor + ')');
+
+  function updateCurrColor(color) {
+    document.body.style.setProperty('--current-bg', 'var(--bg-' + color + ')');
+    document.body.style.setProperty('--current-text', 'var(--text-' + color + ')');
+    document.body.style.setProperty('--current-accent', 'var(--accent-' + appColor + ')');
+  }
+
   // change app color
   //---------------------------------------------------------------------
   function changeAppColor(e) {
     setAppColor(e.currentTarget.id);
+    updateCurrColor(e.currentTarget.id);
   }
 
   // toggle nav menu state

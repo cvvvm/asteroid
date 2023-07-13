@@ -45,8 +45,6 @@ $accent-mono: #808080;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .light-theme {
-  --current-text: ;
-  --current-accent: ;
   --text-yellow: #{$yellow-drk};
   --text-green: #{$green-drk};
   --text-blue: #{$blue-drk};
@@ -65,8 +63,6 @@ $accent-mono: #808080;
 }
 
 .dark-theme {
-  --current-bg: ;
-  --current-accent: ;
   --text-yellow: #{$yellow-lt};
   --text-green: #{$green-lt};
   --text-blue: #{$blue-lt};
@@ -86,6 +82,9 @@ $accent-mono: #808080;
 
 @include cssvar-set(
   (
+    current-text: '',
+    current-bg: '',
+    current-accent: '',
     accent-yellow: $accent-yellow,
     accent-green: $accent-green,
     accent-blue: $accent-blue,

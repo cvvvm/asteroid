@@ -1,49 +1,72 @@
+// variables
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// color
+//---------------------------------------------------------------------
+const colorBg = 'var(--current-text)';
+const colorText = 'var(--current-bg)';
+const colorAccent = 'var(--current-accent)';
+
+// text
+//---------------------------------------------------------------------
+const fontSize = '1rem';
+const lineHeight = '150%';
+const tabSize = 2;
+const fontFamily = 'JetBrains Mono';
+const wtReg = '200';
+const wtBold = '700';
+
+// styles
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export default {
-  'code[class*="language-"]': {
-    fontFamily:
-      'Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace',
-    fontSize: '14px',
-    lineHeight: '1.375',
-    direction: 'ltr',
-    textAlign: 'left',
-    whiteSpace: 'pre',
-    wordSpacing: 'normal',
-    wordBreak: 'normal',
-    MozTabSize: '4',
-    OTabSize: '4',
-    tabSize: '4',
-    WebkitHyphens: 'none',
-    MozHyphens: 'none',
-    msHyphens: 'none',
-    hyphens: 'none',
-    background: '#2a2734',
-    color: '#9a86fd',
-  },
   'pre[class*="language-"]': {
-    fontFamily:
-      'Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace',
-    fontSize: '14px',
-    lineHeight: '1.375',
+    fontFamily: fontFamily,
+    fontSize: fontSize,
+    fontWeight: wtReg,
+    lineHeight: lineHeight,
     direction: 'ltr',
     textAlign: 'left',
     whiteSpace: 'pre',
     wordSpacing: 'normal',
     wordBreak: 'normal',
-    MozTabSize: '4',
-    OTabSize: '4',
-    tabSize: '4',
+    MozTabSize: tabSize,
+    OTabSize: tabSize,
+    tabSize: tabSize,
     WebkitHyphens: 'none',
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: '#2a2734',
-    color: '#9a86fd',
-    padding: '1em',
-    margin: '.5em 0',
+    background: colorBg,
+    color: colorText,
+    padding: '2rem 1.65rem 2rem 1.5rem',
+    margin: '.5rem 0',
+    borderRadius: '.75rem',
     overflow: 'auto',
   },
+  'code[class*="language-"]': {
+    fontFamily: fontFamily,
+    fontSize: fontSize,
+    fontWeight: wtReg,
+    lineHeight: lineHeight,
+    direction: 'ltr',
+    textAlign: 'left',
+    whiteSpace: 'pre',
+    wordSpacing: 'normal',
+    wordBreak: 'normal',
+    MozTabSize: tabSize,
+    OTabSize: tabSize,
+    tabSize: tabSize,
+    WebkitHyphens: 'none',
+    MozHyphens: 'none',
+    msHyphens: 'none',
+    hyphens: 'none',
+    background: colorBg,
+    color: '#9a86fd',
+  },
   'pre > code[class*="language-"]': {
-    fontSize: '1em',
+    fontSize: '1rem',
   },
   'pre[class*="language-"]::-moz-selection': {
     textShadow: 'none',
@@ -78,11 +101,11 @@ export default {
     background: '#6a51e6',
   },
   ':not(pre) > code[class*="language-"]': {
-    padding: '.1em',
-    borderRadius: '.3em',
+    padding: '.1rem',
+    borderRadius: '.3rem',
   },
   comment: {
-    color: '#6c6783',
+    color: colorAccent,
   },
   prolog: {
     color: '#6c6783',
@@ -97,7 +120,7 @@ export default {
     color: '#6c6783',
   },
   namespace: {
-    Opacity: '.7',
+    opacity: '.7',
   },
   tag: {
     color: '#e09142',
@@ -109,10 +132,10 @@ export default {
     color: '#e09142',
   },
   property: {
-    color: '#9a86fd',
+    color: colorText,
   },
   function: {
-    color: '#9a86fd',
+    color: colorText,
   },
   'tag-id': {
     color: '#eeebff',
@@ -205,8 +228,8 @@ export default {
     fontWeight: 'bold',
   },
   'pre > code.highlight': {
-    Outline: '.4em solid #8a75f5',
-    OutlineOffset: '.4em',
+    Outline: '.4rem solid #8a75f5',
+    OutlineOffset: '.4rem',
   },
   '.line-numbers.line-numbers .line-numbers-rows': {
     borderRightColor: '#2c2937',
