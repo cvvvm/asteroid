@@ -10,6 +10,7 @@ a {
   //font-style: italic;
   font-weight: $weight-light;
   text-decoration: none;
+  text-shadow: 0.0625rem 0.0625rem rgb-var(bg, 0);
 
   padding: 0rem 0.2rem 0rem 0.1rem;
   margin: 0rem -0.1rem 0rem -0.1rem;
@@ -28,11 +29,12 @@ a {
     // drop shadow
     0 0 1rem 0 rgb-var(accent, 0);
 
-  transition: box-shadow 200ms ease-out;
+  transition: all 200ms ease-out;
 
   // link hover
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   &:hover {
+    text-shadow: 0.0625rem 0.0625rem rgb-var(bg, 100);
     opacity: 100%;
     padding: 0rem 0.5rem 0rem 0.4rem;
     margin: 0rem -0.4rem 0rem -0.4rem;
@@ -43,14 +45,12 @@ a {
       // underline
       inset 0 -0.095rem 0 0 rgb-var(accent, 0),
       // left shading
-      inset 5rem -1rem 1rem 0 rgb-var(accent, 20),
-      inset 10rem -1.5rem 1rem 0 rgb-var(accent, 40),
-      inset 15rem -2rem 1rem 0 rgb-var(accent, 60),
-      inset 20rem -2.5rem 1rem 0 rgb-var(accent, 80),
+      inset 5rem -1rem 1rem 0 rgb-var(accent, 10),
+      inset 10rem -1.5rem 1rem 0 rgb-var(accent, 20),
+      inset 15rem -2rem 1rem 0 rgb-var(accent, 30),
+      inset 20rem -2.5rem 1rem 0 rgb-var(accent, 40),
       // drop shadow
       0 0 0.15rem 0 rgb-var(accent, 0);
-
-    transition: all 250ms ease-in-out;
   }
 
   // link active

@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import gsap from 'gsap';
 
-import { ThemeSet, ColorSet } from '../functions/ThemeSet';
+import { ThemeSet, ColorSet, setCssVarColor } from '../functions/ThemeSet';
 import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 // nav links
@@ -45,39 +45,6 @@ function Nav() {
   const [navState, setNavState] = useState('closed');
   const [appColor, setAppColor] = useState(defaultColor);
 
-  // UPDATE CSS VARS
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  // primary CSS var
-  //---------------------------------------------------------------------
-  const root = document.documentElement.style;
-  function setCssVarColor(color) {
-    root.setProperty('--text', 'var(--text-' + color + ')');
-    root.setProperty('--bg', 'var(--bg-' + color + ')');
-    root.setProperty('--accent', 'var(--' + color + '-accent)');
-    root.setProperty('--blk', 'var(--' + color + '-blk)');
-    setCssVarColorRGB();
-  }
-
-  // RGB CSS var
-  //---------------------------------------------------------------------
-  function splitRGB(type) {
-    const style = getComputedStyle(document.documentElement);
-    let textSlice = style.getPropertyValue('--' + type).slice(4, -1);
-
-    return textSlice;
-  }
-  function setCssVarColorRGB() {
-    root.setProperty('--text-rgb', splitRGB('text'));
-    root.setProperty('--bg-rgb', splitRGB('bg'));
-    root.setProperty('--accent-rgb', splitRGB('accent'));
-    root.setProperty('--blk-rgb', splitRGB('blk'));
-  }
-
-  // set app color
-  setCssVarColor(appColor);
-
   // NAV TOGGLES
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,6 +54,10 @@ function Nav() {
   function changeAppColor(e) {
     setAppColor(e.currentTarget.id);
   }
+  // update CSS variables
+  useEffect(() => {
+    setCssVarColor(appColor);
+  });
 
   // toggle nav menu state
   //---------------------------------------------------------------------

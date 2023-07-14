@@ -8,6 +8,36 @@ import { useState } from 'react';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// UPDATE CSS VARS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// primary CSS var
+//---------------------------------------------------------------------
+const root = document.documentElement.style;
+export function setCssVarColor(color) {
+  root.setProperty('--text', 'var(--text-' + color + ')');
+  root.setProperty('--bg', 'var(--bg-' + color + ')');
+  root.setProperty('--accent', 'var(--' + color + '-accent)');
+  root.setProperty('--blk', 'var(--' + color + '-blk)');
+  setCssVarColorRGB();
+}
+
+// RGB CSS var
+//---------------------------------------------------------------------
+function splitRGB(type) {
+  const style = getComputedStyle(document.documentElement);
+  let textSlice = style.getPropertyValue('--' + type).slice(4, -1);
+
+  return textSlice;
+}
+function setCssVarColorRGB() {
+  root.setProperty('--text-rgb', splitRGB('text'));
+  root.setProperty('--bg-rgb', splitRGB('bg'));
+  root.setProperty('--accent-rgb', splitRGB('accent'));
+  root.setProperty('--blk-rgb', splitRGB('blk'));
+}
+
 export function ColorSet({ currentAppColor, appColorTarget }) {
   const appColorList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono'];
 
