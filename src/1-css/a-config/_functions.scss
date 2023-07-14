@@ -28,8 +28,8 @@
   @return $string;
 }
 
-// USE CSS VARIABLE
+// USE CSS VARIABLE - RGBA
 //---------------------------------------------------------------------
-@function cssvar-get($name) {
-  @return var(--#{$name});
+@function rgb-var($name, $val) {
+  @return rgba(var(--#{$name}-rgb), (#{$val + '%'}));
 }

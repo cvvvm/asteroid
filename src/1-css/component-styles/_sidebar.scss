@@ -44,9 +44,9 @@
 
     padding: 1.5rem 1.25rem;
     border-radius: 1rem;
-    border: 1px solid cssvar-get(text-dk);
+    border: 1px solid var(--text-dk);
 
-    background-color: cssvar-get(bg-dk);
+    background-color: var(--bg-dk);
 
     transform-origin: left center;
     transition: scale 350ms ease-out;
@@ -58,17 +58,17 @@
       @extend p;
       font-size: 1.15rem;
       font-weight: $weight-light;
-      color: cssvar-get(text-lt);
+      color: var(--text-lt);
 
       padding: 0.5rem 1.25rem;
       border-radius: 0.6rem;
-      border: 1px solid cssvar-get(text-dk);
+      border: 1px solid var(--text-dk);
 
-      background-color: cssvar-get(bg-lt);
+      background-color: var(--bg-lt);
 
       &:hover {
-        color: cssvar-get(bg-lt);
-        background-color: cssvar-get(text-dk);
+        color: var(--bg-lt);
+        background-color: var(--text-dk);
       }
     }
   }

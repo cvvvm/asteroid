@@ -69,9 +69,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
   return (
     <>
       <Link to={'/work/' + link} className="work-card ">
-        <div className="row-f10 pc-start col-gap-1" style={{ opacity: 0.65 }}>
-          {catmap}
-        </div>
+        <div className="row-f10 pc-start col-gap-1">{catmap}</div>
         <h3 className="title">{title}</h3>
         <p className="caption">{caption}</p>
       </Link>

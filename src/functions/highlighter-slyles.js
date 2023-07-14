@@ -1,13 +1,18 @@
-// variables
+// variables & functions
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const accent = 'var(--accent-rgb)';
+const blk = 'var(--blk)';
 
+function filter(b, s) {
+  return 'brightness(' + b + ') saturate(' + s + ')';
+}
+
+function color(o) {
+  return 'rgba(' + accent + ', ' + o + ')';
+}
 // color
 //---------------------------------------------------------------------
-const textLt = 'var(--text-lt)';
-const textDk = 'var(--text-dk)';
-const bgLt = 'var(--bg-lt)';
-const bgDk = 'var(--bg-dk)';
 
 // text
 //---------------------------------------------------------------------
@@ -43,8 +48,8 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: bgLt,
-    color: textLt,
+    background: blk,
+    color: color(1),
     padding: '2rem 1.65rem 2rem 1.5rem',
     margin: '.5rem 0',
     borderRadius: '.75rem',
@@ -68,8 +73,7 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: bgLt,
-    color: textLt,
+    color: color(1),
     transition: transition,
   },
   'pre > code[class*="language-"]': {
@@ -112,7 +116,8 @@ export default {
     borderRadius: '.3rem',
   },
   comment: {
-    color: bgDk,
+    color: color(),
+    filter: filter(1.2, 0.5),
   },
   prolog: {
     color: '#6c6783',
@@ -139,10 +144,10 @@ export default {
     color: '#e09142',
   },
   property: {
-    color: textLt,
+    color: blk,
   },
   function: {
-    color: textDk,
+    color: accent,
   },
   'tag-id': {
     color: '#eeebff',

@@ -8,40 +8,40 @@
 
 // primaries
 //---------------------------------------------------------------------
-$yellow-lt: #fbea99;
-$yellow-accent: #ffc908;
-$yellow-dk: #996600;
-$yellow-blk: #4d3300; //color.scale(#996600, $lightness: -50%, $saturation: 100%);
+$yellow-lt: rgb(251, 234, 153); // #fbea99;
+$yellow-accent: rgb(255, 201, 8); // #ffc908;
+$yellow-dk: rgb(153, 102, 0); // #996600;
+$yellow-blk: rgb(77, 51, 0); // #4d3300;
 
-$green-lt: #c9f0c2;
-$green-accent: #57da4c;
-$green-dk: #006611;
-$green-blk: #003309; //color.scale(#006611, $lightness: -50%, $saturation: 100%);
+$green-lt: rgb(201, 240, 194); // #c9f0c2;
+$green-accent: rgb(87, 218, 76); // #57da4c;
+$green-dk: rgb(0, 102, 17); // #006611;
+$green-blk: rgb(0, 51, 9); // #003309;
 
-$blue-lt: #cde6fe;
-$blue-accent: #579dff;
-$blue-dk: #0b4bcb;
-$blue-blk: #001d56; //color.scale(#0b4bcb, $lightness: -60%, $saturation: 100%);
+$blue-lt: rgb(205, 230, 254); // #cde6fe;
+$blue-accent: rgb(87, 157, 255); // #579dff;
+$blue-dk: rgb(11, 75, 203); // #0b4bcb;
+$blue-blk: rgb(0, 29, 86); // #001d56;
 
-$pink-lt: #f6cdfe;
-$pink-accent: #ff6ece;
-$pink-dk: #aa09aa;
-$pink-blk: #5a005a; //color.scale($pink-dk, $lightness: -50%, $saturation: 100%);
+$pink-lt: rgb(246, 205, 254); // #f6cdfe;
+$pink-accent: rgb(255, 110, 206); // #ff6ece;
+$pink-dk: rgb(170, 9, 170); // #aa09aa;
+$pink-blk: rgb(90, 0, 90); // #5a005a;
 
-$red-lt: #fed1cd;
-$red-accent: #ff6464;
-$red-dk: #990d00;
-$red-blk: #4d0700; //color.scale(#990d00, $lightness: -50%, $saturation: 100%);
+$red-lt: rgb(254, 209, 205); // #fed1cd;
+$red-accent: rgb(255, 100, 100); // #ff6464;
+$red-dk: rgb(153, 13, 0); // #990d00;
+$red-blk: rgb(77, 7, 0); // #4d0700;
 
-$grey-lt: #dde0e3;
-$grey-accent: #9da3af;
-$grey-dk: #2b2e3b;
-$grey-blk: #12131a; //color.scale(#2b2e3b, $lightness: -50%, $saturation: 100%);
+$grey-lt: rgb(221, 224, 227); // #dde0e3;
+$grey-accent: rgb(221, 224, 227); // #9da3af;
+$grey-dk: rgb(43, 46, 59); // #2b2e3b;
+$grey-blk: rgb(18, 19, 26); // #12131a;
 
-$mono-lt: #f5f5f5;
-$mono-accent: #808080;
-$mono-dk: #333333;
-$mono-blk: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
+$mono-lt: rgb(245, 245, 245); // #f5f5f5;
+$mono-accent: rgb(128, 128, 128); // #808080;
+$mono-dk: rgb(0, 0, 0); // #000000;
+$mono-blk: rgb(51, 51, 51); // #333333;
 
 //
 // SET CSS VARIABLES
@@ -52,6 +52,13 @@ $mono-blk: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
     text: '',
     bg: '',
     accent: '',
+    blk: '',
+
+    text-rgb: '',
+    bg-rgb: '',
+    accent-rgb: '',
+    blk-rgb: '',
+
     yellow-accent: #{$yellow-accent},
     green-accent: #{$green-accent},
     blue-accent: #{$blue-accent},
@@ -59,6 +66,14 @@ $mono-blk: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
     red-accent: #{$red-accent},
     grey-accent: #{$grey-accent},
     mono-accent: #{$mono-accent},
+
+    yellow-blk: #{$yellow-blk},
+    green-blk: #{$green-blk},
+    blue-blk: #{$blue-blk},
+    pink-blk: #{$pink-blk},
+    red-blk: #{$red-blk},
+    grey-blk: #{$grey-blk},
+    mono-blk: #{$mono-blk},
   )
 );
 
@@ -104,7 +119,7 @@ $color-values: ('lt', 'dk');
 
 // COLOR NAMES
 //---------------------------------------------------------------------
-$color-hues: ('yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono');
+//$color-hues: ('yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono');
 
 // SCSS COLOR VALUES MAP
 //---------------------------------------------------------------------

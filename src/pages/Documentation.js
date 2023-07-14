@@ -14,10 +14,14 @@ function Documentation() {
   return (
     <div className="container vh-90">
       <div className="row-f8">
-        <h1>documentation</h1>
-        <p>oooh. looks like these haven't been written yet!</p>
-        <p>try coming back in 5 minutes?</p>
+        <div className="col-6">
+          <h1>documentation</h1>
+          <p>oooh. looks like these haven't been written yet!</p>
+          <p className="note">try coming back in 5 minutes?</p>
+        </div>
+      </div>
 
+      <div className="row-f8">
         <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
           {codeString2}
         </SyntaxHighlighter>

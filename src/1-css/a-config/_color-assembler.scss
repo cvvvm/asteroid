@@ -8,10 +8,19 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// use bg mixin to remove this page and have color assembly happen locally in each file
+//---------------------------------------------------------------------
+@mixin bg() {
+  color: var(--text);
+  background-color: var(--bg);
+  @include transition-base();
+
+  @content;
+}
+
 .bg {
   color: var(--text);
   background-color: var(--bg);
-
   @include transition-base();
 
   .plink {
@@ -20,6 +29,7 @@
   }
   .notelink {
     @extend .note;
+    opacity: 1 !important;
     @include p-link();
   }
 

@@ -1,5 +1,10 @@
 /* no text highlight */
-body {
+img,
+video,
+button,
+button-outline,
+p.badge,
+p.badge-outline {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -89,6 +94,10 @@ $font-size: (
     font-size: map-get($font-size, $level);
     line-height: 125%;
     margin-left: -0.2rem;
+    filter: saturate(2);
+  }
+  h#{$level}::selection {
+    background: rgb-var(accent, 50);
   }
 }
 
@@ -124,12 +133,16 @@ p {
   + p.note {
     margin-top: -0.5rem;
   }
+  &::selection {
+    background: rgb-var(accent, 50);
+  }
 }
 
 // lists
 //---------------------------------------------------------------------
 ol,
 ul {
+  @extend p;
   font-size: clamp(1.25rem, 1.25rem + 1.5vw, 1.4rem);
 
   font-family: $jet-brains;
@@ -147,7 +160,7 @@ ul {
 }
 
 // ordered list markers
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//---------------------------------------------------------------------
 ol {
   margin-left: 1rem;
 
@@ -167,8 +180,13 @@ ol {
   }
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
 //
 // CUSTOM STYLES
+//
+//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -218,7 +236,7 @@ ol {
 
 // note
 //---------------------------------------------------------------------
-p.note {
+.note {
   font-family: $jet-brains;
   font-style: italic;
   font-weight: $weight-light;
@@ -227,15 +245,4 @@ p.note {
   opacity: 80%;
 
   filter: saturate(1.5);
-}
-
-// GENERATE MANUAL TEXT COLORS
-//---------------------------------------------------------------------
-
-@each $hue in $color-hues {
-  @each $value in $color-values {
-    .text-#{$hue}-#{$value} {
-      color: var(--#{$hue}-#{$value});
-    }
-  }
 }
