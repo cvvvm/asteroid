@@ -89,7 +89,6 @@ $font-size: (
     font-size: map-get($font-size, $level);
     line-height: 125%;
     margin-left: -0.2rem;
-    color: cssvar-get(text-alt);
   }
 }
 
@@ -176,7 +175,7 @@ ol {
 // badge mixin
 // intended for use with <p>
 //---------------------------------------------------------------------
-@mixin badge-base($outline: false) {
+@mixin badge-base($outline: false, $invert: false, $outline-invert: false) {
   font-family: $jet-brains;
   line-height: 100%;
   font-size: 1.15rem;
@@ -190,8 +189,8 @@ ol {
   margin: 0rem 0rem 0rem -0.25rem;
   padding: 7px 12px;
 
-  background-color: var(--text-alt);
-  border: 0.125rem solid cssvar-get(text-alt);
+  background-color: var(--text);
+  border: 0.125rem solid var(--text);
   border-radius: 0.6rem;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out,
     border 200ms ease-in-out;
@@ -201,10 +200,19 @@ ol {
   }
 
   @if $outline {
-    background-color: none;
+    background-color: var(--bg);
     color: var(--text);
-    border: 0.125rem solid cssvar-get(text-alt);
-    box-shadow: none;
+    border: 0.125rem solid var(--accent);
+  }
+  @if $invert {
+    background-color: var(--bg);
+    color: var(--text);
+    border: 0.125rem solid var(--bg);
+  }
+  @if $outline-invert {
+    background-color: var(--text);
+    color: var(--bg);
+    border: 0.125rem solid var(--accent);
   }
 }
 
@@ -227,7 +235,7 @@ p.note {
 @each $hue in $color-hues {
   @each $value in $color-values {
     .text-#{$hue}-#{$value} {
-      color: cssvar-get(#{$hue}-#{$value});
+      color: var(--#{$hue}-#{$value});
     }
   }
 }

@@ -18,9 +18,7 @@ function NavLink({ to, children, appColor, ...props }) {
       {...props}
       className={'nav-link' + (isActive ? ' active' : '')}
       style={{
-        backgroundColor: isActive
-          ? 'var(--text-' + appColor + ')'
-          : 'var(--bg-' + appColor + ')',
+        backgroundColor: isActive ? 'var(--text)' : 'var(--bg)',
         color: isActive ? 'var(--bg-' + appColor + ')' : 'var(--text-' + appColor + ')',
       }}
     >
@@ -48,13 +46,11 @@ function Nav() {
 
   // update CSS var
   //---------------------------------------------------------------------
-  var style = getComputedStyle(document.body);
 
   function setCssVarColor(color) {
-    document.body.style.setProperty('--text', 'var(--text1-' + color + ')');
-    document.body.style.setProperty('--bg', 'var(--bg1-' + color + ')');
-    document.body.style.setProperty('--text-alt', 'var(--text2-' + color + ')');
-    document.body.style.setProperty('--bg-alt', 'var(--bg2-' + color + ')');
+    document.body.style.setProperty('--text', 'var(--text-' + color + ')');
+    document.body.style.setProperty('--bg', 'var(--bg-' + color + ')');
+    document.body.style.setProperty('--accent', 'var(--' + color + '-accent)');
   }
   setCssVarColor(appColor);
 
@@ -104,19 +100,9 @@ function Nav() {
   //---------------------------------------------------------------------
   return (
     <nav ref={nav}>
-      <div
-        className="nav-wrapper"
-        style={{
-          borderColor: 'var(--accent-' + appColor + ')',
-        }}
-      >
-        <div
-          className="nav-control-bar"
-          style={{
-            backgroundColor: 'var(--accent-' + appColor + ')',
-          }}
-        >
-          <ThemeSet classNames={'theme-toggle'} currentAppColor={appColor} />
+      <div className="nav-wrapper">
+        <div className="nav-control-bar">
+          <ThemeSet classNames={'theme-toggle'} />
 
           <div className="nav-control-spacer"></div>
           <button
@@ -124,7 +110,7 @@ function Nav() {
             onClick={toggleNavMenu}
             style={
               navState === 'open'
-                ? { backgroundColor: 'var(--accent-red)', color: '#990d00' }
+                ? { backgroundColor: 'var(--red-accent)', color: '#990d00' }
                 : {
                     backgroundColor: 'var(--text-' + appColor + ')',
                     color: 'var(--bg-' + appColor + ')',
@@ -142,13 +128,7 @@ function Nav() {
         //---------------------------------------------------------------------
          */}
         <div className="nav-link-mask">
-          <div
-            className="nav-link-container"
-            onClick={toggleNavMenu}
-            style={{
-              backgroundColor: 'var(--text-' + appColor + ')',
-            }}
-          >
+          <div className="nav-link-container" onClick={toggleNavMenu}>
             <NavLink to="/home" children="home" appColor={appColor} />
             <NavLink to="/work" children="work" appColor={appColor} />
             <NavLink to="/documentation" children="docs" appColor={appColor} />
@@ -224,13 +204,9 @@ function navOpenNavLinks() {
     defaults: { duration: 0.2, ease: 'power4.out' },
   });
   openNavLinksTL
-    .to(
-      '.color-set-toggle',
-      {
-        scale: 1,
-      },
-      '<'
-    )
+    .to('.color-set-toggle', {
+      scale: 1,
+    })
     .to('.nav-link-container', { padding: '1rem', duration: 0 }, '<')
     .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: -1 })
     .to('.nav-link', { translateY: 0 }, '<')

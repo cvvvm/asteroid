@@ -8,40 +8,40 @@
 
 // primaries
 //---------------------------------------------------------------------
-$yellow-lt1: #fbea99;
-$yellow-lt2: #ffc908;
-$yellow-dk1: #4d3300; //color.scale(#996600, $lightness: -50%, $saturation: 100%);
-$yellow-dk2: #996600;
+$yellow-lt: #fbea99;
+$yellow-accent: #ffc908;
+$yellow-dk: #996600;
+$yellow-blk: #4d3300; //color.scale(#996600, $lightness: -50%, $saturation: 100%);
 
-$green-lt1: #c9f0c2;
-$green-lt2: #57da4c;
-$green-dk1: #003309; //color.scale(#006611, $lightness: -50%, $saturation: 100%);
-$green-dk2: #006611;
+$green-lt: #c9f0c2;
+$green-accent: #57da4c;
+$green-dk: #006611;
+$green-blk: #003309; //color.scale(#006611, $lightness: -50%, $saturation: 100%);
 
-$blue-lt1: #cde6fe;
-$blue-lt2: #579dff;
-$blue-dk1: #001d56; //color.scale(#0b4bcb, $lightness: -60%, $saturation: 100%);
-$blue-dk2: #0b4bcb;
+$blue-lt: #cde6fe;
+$blue-accent: #579dff;
+$blue-dk: #0b4bcb;
+$blue-blk: #001d56; //color.scale(#0b4bcb, $lightness: -60%, $saturation: 100%);
 
-$pink-lt1: #f6cdfe;
-$pink-lt2: #ff6ece;
-$pink-dk1: #5a005a; //color.scale($pink-dk1, $lightness: -50%, $saturation: 100%);
-$pink-dk2: #aa09aa;
+$pink-lt: #f6cdfe;
+$pink-accent: #ff6ece;
+$pink-dk: #aa09aa;
+$pink-blk: #5a005a; //color.scale($pink-dk, $lightness: -50%, $saturation: 100%);
 
-$red-lt1: #fed1cd;
-$red-lt2: #ff6464;
-$red-dk1: #4d0700; //color.scale(#990d00, $lightness: -50%, $saturation: 100%);
-$red-dk2: #990d00;
+$red-lt: #fed1cd;
+$red-accent: #ff6464;
+$red-dk: #990d00;
+$red-blk: #4d0700; //color.scale(#990d00, $lightness: -50%, $saturation: 100%);
 
-$grey-lt1: #dde0e3;
-$grey-lt2: #9da3af;
-$grey-dk1: #12131a; //color.scale(#2b2e3b, $lightness: -50%, $saturation: 100%);
-$grey-dk2: #2b2e3b;
+$grey-lt: #dde0e3;
+$grey-accent: #9da3af;
+$grey-dk: #2b2e3b;
+$grey-blk: #12131a; //color.scale(#2b2e3b, $lightness: -50%, $saturation: 100%);
 
-$mono-lt1: #f5f5f5;
-$mono-lt2: #808080;
-$mono-dk1: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
-$mono-dk2: #333333;
+$mono-lt: #f5f5f5;
+$mono-accent: #808080;
+$mono-dk: #333333;
+$mono-blk: #000000; //color.scale(#000000, $lightness: -50%, $saturation: 100%);
 
 //
 // SET CSS VARIABLES
@@ -50,78 +50,52 @@ $mono-dk2: #333333;
 @include cssvar-set(
   (
     text: '',
-    text-alt: '',
     bg: '',
-    bg-alt: '',
+    accent: '',
+    yellow-accent: #{$yellow-accent},
+    green-accent: #{$green-accent},
+    blue-accent: #{$blue-accent},
+    pink-accent: #{$pink-accent},
+    red-accent: #{$red-accent},
+    grey-accent: #{$grey-accent},
+    mono-accent: #{$mono-accent},
   )
 );
 
 .light-theme {
-  --text1-yellow: #{$yellow-dk1};
-  --text1-green: #{$green-dk1};
-  --text1-blue: #{$blue-dk1};
-  --text1-pink: #{$pink-dk1};
-  --text1-red: #{$red-dk1};
-  --text1-grey: #{$grey-dk1};
-  --text1-mono: #{$mono-dk1};
+  --text-yellow: #{$yellow-dk};
+  --text-green: #{$green-dk};
+  --text-blue: #{$blue-dk};
+  --text-pink: #{$pink-dk};
+  --text-red: #{$red-dk};
+  --text-grey: #{$grey-dk};
+  --text-mono: #{$mono-dk};
 
-  --text2-yellow: #{$yellow-dk2};
-  --text2-green: #{$green-dk2};
-  --text2-blue: #{$blue-dk2};
-  --text2-pink: #{$pink-dk2};
-  --text2-red: #{$red-dk2};
-  --text2-grey: #{$grey-dk2};
-  --text2-mono: #{$mono-dk2};
-
-  --bg1-yellow: #{$yellow-lt1};
-  --bg1-green: #{$green-lt1};
-  --bg1-blue: #{$blue-lt1};
-  --bg1-pink: #{$pink-lt1};
-  --bg1-red: #{$red-lt1};
-  --bg1-grey: #{$grey-lt1};
-  --bg1-mono: #{$mono-lt1};
-
-  --bg2-yellow: #{$yellow-lt2};
-  --bg2-green: #{$green-lt2};
-  --bg2-blue: #{$blue-lt2};
-  --bg2-pink: #{$pink-lt2};
-  --bg2-red: #{$red-lt2};
-  --bg2-grey: #{$grey-lt2};
-  --bg2-mono: #{$mono-lt2};
+  --bg-yellow: #{$yellow-lt};
+  --bg-green: #{$green-lt};
+  --bg-blue: #{$blue-lt};
+  --bg-pink: #{$pink-lt};
+  --bg-red: #{$red-lt};
+  --bg-grey: #{$grey-lt};
+  --bg-mono: #{$mono-lt};
 }
 
 .dark-theme {
-  --text1-yellow: #{$yellow-lt1};
-  --text1-green: #{$green-lt1};
-  --text1-blue: #{$blue-lt1};
-  --text1-pink: #{$pink-lt1};
-  --text1-red: #{$red-lt1};
-  --text1-grey: #{$grey-lt1};
-  --text1-mono: #{$mono-lt1};
+  --text-yellow: #{$yellow-lt};
+  --text-green: #{$green-lt};
+  --text-blue: #{$blue-lt};
+  --text-pink: #{$pink-lt};
+  --text-red: #{$red-lt};
+  --text-grey: #{$grey-lt};
+  --text-mono: #{$mono-lt};
 
-  --text2-yellow: #{$yellow-lt2};
-  --text2-green: #{$green-lt2};
-  --text2-blue: #{$blue-lt2};
-  --text2-pink: #{$pink-lt2};
-  --text2-red: #{$red-lt2};
-  --text2-grey: #{$grey-lt2};
-  --text2-mono: #{$mono-lt2};
-
-  --bg1-yellow: #{$yellow-dk1};
-  --bg1-green: #{$green-dk1};
-  --bg1-blue: #{$blue-dk1};
-  --bg1-pink: #{$pink-dk1};
-  --bg1-red: #{$red-dk1};
-  --bg1-grey: #{$grey-dk1};
-  --bg1-mono: #{$mono-dk1};
-
-  --bg2-yellow: #{$yellow-dk2};
-  --bg2-green: #{$green-dk2};
-  --bg2-blue: #{$blue-dk2};
-  --bg2-pink: #{$pink-dk2};
-  --bg2-red: #{$red-dk2};
-  --bg2-grey: #{$grey-dk2};
-  --bg2-mono: #{$mono-dk2};
+  --bg-yellow: #{$yellow-dk};
+  --bg-green: #{$green-dk};
+  --bg-blue: #{$blue-dk};
+  --bg-pink: #{$pink-dk};
+  --bg-red: #{$red-dk};
+  --bg-grey: #{$grey-dk};
+  --bg-mono: #{$mono-dk};
 }
 
 // COLOR SUFFIX
@@ -134,39 +108,39 @@ $color-hues: ('yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono');
 
 // SCSS COLOR VALUES MAP
 //---------------------------------------------------------------------
-$color-primary: (
-  yellow-lt1: $yellow-lt1,
-  yellow-lt2: $yellow-lt2,
-  yellow-dk1: $yellow-dk1,
-  yellow-dk2: $yellow-dk2,
+// $color-primary: (
+//   yellow-lt: $yellow-lt,
+//   yellow-lt-alt: $yellow-lt-alt,
+//   yellow-dk: $yellow-dk,
+//   yellow-dk-alt: $yellow-dk-alt,
 
-  green-lt1: $green-lt1,
-  green-lt2: $green-lt2,
-  green-dk1: $green-dk1,
-  green-dk2: $green-dk2,
+//   green-lt: $green-lt,
+//   green-lt-alt: $green-lt-alt,
+//   green-dk: $green-dk,
+//   green-dk-alt: $green-dk-alt,
 
-  blue-lt1: $blue-lt1,
-  blue-lt2: $blue-lt2,
-  blue-dk1: $blue-dk1,
-  blue-dk2: $blue-dk2,
+//   blue-lt: $blue-lt,
+//   blue-lt-alt: $blue-lt-alt,
+//   blue-dk: $blue-dk,
+//   blue-dk-alt: $blue-dk-alt,
 
-  pink-lt1: $pink-lt1,
-  pink-lt2: $pink-lt2,
-  pink-dk1: $pink-dk1,
-  pink-dk2: $pink-dk2,
+//   pink-lt: $pink-lt,
+//   pink-lt-alt: $pink-lt-alt,
+//   pink-dk: $pink-dk,
+//   pink-dk-alt: $pink-dk-alt,
 
-  red-lt1: $red-lt1,
-  red-lt2: $red-lt2,
-  red-dk1: $red-dk1,
-  red-dk2: $red-dk2,
+//   red-lt: $red-lt,
+//   red-lt-alt: $red-lt-alt,
+//   red-dk: $red-dk,
+//   red-dk-alt: $red-dk-alt,
 
-  grey-lt1: $grey-lt1,
-  grey-lt2: $grey-lt2,
-  grey-dk1: $grey-dk1,
-  grey-dk2: $grey-dk2,
+//   grey-lt: $grey-lt,
+//   grey-lt-alt: $grey-lt-alt,
+//   grey-dk: $grey-dk,
+//   grey-dk-alt: $grey-dk-alt,
 
-  mono-lt1: $mono-lt1,
-  mono-lt2: $mono-lt2,
-  mono-dk1: $mono-dk1,
-  mono-dk2: $mono-dk2,
-);
+//   mono-lt: $mono-lt,
+//   mono-lt-alt: $mono-lt-alt,
+//   mono-dk: $mono-dk,
+//   mono-dk-alt: $mono-dk-alt,
+// );

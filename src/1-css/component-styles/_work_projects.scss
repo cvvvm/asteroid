@@ -51,8 +51,8 @@
 
     padding: 2.25rem 2rem 2.5rem;
     border-radius: 2rem;
-    border: 2px solid cssvar-get(text-dk);
-    background-color: cssvar-get(bg-lt);
+    border: 2px solid var(--accent);
+    background-color: var(--bg);
 
     transition: scale 300ms ease-out;
 
@@ -127,12 +127,11 @@
 }
 
 .slide {
+  display: none;
   grid-column: slide;
   grid-row: 1;
 
   width: 100%;
-
-  display: none;
 
   &.active {
     display: block;

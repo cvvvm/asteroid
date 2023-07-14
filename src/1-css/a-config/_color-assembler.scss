@@ -8,20 +8,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// text contrast
-//---------------------------------------------------------------------
-@mixin contrast-dk($invert: false) {
+.bg {
   color: var(--text);
   background-color: var(--bg);
 
-  @if $invert {
-    color: var(--bg);
-    background-color: var(--text);
-  }
-}
-
-.bg {
-  @include contrast-dk();
   @include transition-base();
 
   .plink {
@@ -46,10 +36,9 @@
   //---------------------------------------------------------------------
   .button {
     @include buttons();
-    @include contrast-dk($invert: true);
+
     &-outline {
       @include buttons($outline: true);
-      @include contrast-dk();
     }
   }
 
@@ -57,25 +46,24 @@
   //---------------------------------------------------------------------
   .outline {
     @include column-outline();
+  }
 
-    &.invert {
-      @include column-outline($invert: true);
-
-      & a,
-      .badge-outline,
-      .button-outline {
-        @include contrast-dk($invert: true);
-      }
-
-      & .badge,
-      .button {
-        @include contrast-dk();
+  .invert {
+    @include column-outline($invert: true);
+    .badge {
+      @include badge-base($invert: true);
+      &-outline {
+        @include badge-base($outline-invert: true);
       }
     }
 
-    &.invert-alt {
-      @extend .invert;
-      @include column-outline($alt: true);
+    // buttons
+    //---------------------------------------------------------------------
+    .button {
+      @include buttons($invert: true);
+      &-outline {
+        @include buttons($outline-invert: true);
+      }
     }
   }
 

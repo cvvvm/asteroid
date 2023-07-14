@@ -68,17 +68,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
 
   return (
     <>
-      {/* <div
-        className="work-pg-bg"
-        ref={workBG}
-        style={{ backgroundImage: 'url(../images/' + background + '.jpg)' }}
-      /> */}
-      <Link
-        to={'/work/' + link}
-        className="work-card "
-        /*         onMouseEnter={showProjectImg}
-        onMouseLeave={hideProjectImg} */
-      >
+      <Link to={'/work/' + link} className="work-card ">
         <div className="row-f10 pc-start col-gap-1" style={{ opacity: 0.65 }}>
           {catmap}
         </div>

@@ -10,14 +10,10 @@ import { useState } from 'react';
 
 export function ColorSet({ currentAppColor, appColorTarget }) {
   const appColorList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono'];
+
   return (
     <div className="color-set-toggles-mask">
-      <div
-        className="color-set-toggles-bar"
-        style={{
-          backgroundColor: 'var(--accent-' + currentAppColor + ')',
-        }}
-      >
+      <div className="color-set-toggles-bar">
         {appColorList.map(function (color) {
           return (
             <div
@@ -25,11 +21,11 @@ export function ColorSet({ currentAppColor, appColorTarget }) {
               id={color}
               key={color}
               style={{
-                backgroundColor: 'var(--accent-' + color + ')',
+                backgroundColor: 'var(--' + color + '-accent)',
                 borderColor:
                   color == currentAppColor
                     ? 'var(--bg-' + currentAppColor + ')'
-                    : 'var(--accent-' + currentAppColor + ')',
+                    : 'var(--accent)',
               }}
               className="color-set-toggle"
             ></div>
@@ -67,7 +63,7 @@ function detectThemePref() {
 
 // SET THEME
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export function ThemeSet({ classNames, currentAppColor }) {
+export function ThemeSet({ classNames }) {
   let themeIcon = '';
   const [appTheme, setAppTheme] = useState(detectThemePref());
 
@@ -92,15 +88,7 @@ export function ThemeSet({ classNames, currentAppColor }) {
   }
 
   return (
-    <button
-      id="themeToggleButton"
-      onClick={themeSwap}
-      className={classNames}
-      style={{
-        backgroundColor: 'var(--text-' + currentAppColor + ')',
-        color: 'var(--bg-' + currentAppColor + ')',
-      }}
-    >
+    <button id="themeToggleButton" onClick={themeSwap} className={classNames}>
       <div>{themeIcon}</div>
     </button>
   );

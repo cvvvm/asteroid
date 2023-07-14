@@ -92,30 +92,13 @@ $page-breakpoints: (
   padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)
     clamp(3.3rem, 3.3rem + 1vw, 3.8rem);
   border-radius: 1rem;
-  border: 3px solid var(--text-alt);
+  background-color: var(--bg);
+  border: 3px solid var(--accent);
 
   @if $invert {
     color: var(--bg);
     background-color: var(--text);
     border: 3px solid rgba(0, 0, 0, 0);
-    > h1,
-    h2,
-    h3,
-    h4 {
-      color: var(--bg-alt);
-    }
-  }
-
-  @if $alt {
-    color: var(--text);
-    background-color: var(--bg-alt);
-    border: 3px solid rgba(0, 0, 0, 0);
-    > h1,
-    h2,
-    h3,
-    h4 {
-      color: var(--text);
-    }
   }
 }
 
