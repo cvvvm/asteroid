@@ -7,7 +7,8 @@ $max-columns: 18;
   (
     max-columns: #{$max-columns},
     current-columns: '',
-    gap: 4rem,
+    object-gap: clamp(2rem, 2rem + 1.1vw, 5rem),
+    item-gap: clamp(1rem, 1rem + 1vw, 2rem),
     spacer: 1rem,
 
     // clamp(min size, set size when computed, max size)
@@ -44,21 +45,21 @@ $page-breakpoints: (
 @mixin flex-base() {
   display: flex;
   flex: 1 1 100%;
-  transition: height 250ms ease-out, width 250ms ease-out;
+  transition: height 250ms ease-out, width 250ms ease-out, gap 350ms ease-out;
 }
 
 // area types
 //---------------------------------------------------------------------
 @mixin row() {
   flex-flow: row wrap;
-  gap: var(--gap);
+  gap: var(--object-gap);
   place-content: $place-center;
   //place-items: $place-center;
 }
 
 @mixin col() {
   flex-flow: column wrap;
-  gap: calc(var(--gap) / 2.5);
+  gap: var(--item-gap);
   place-content: $place-start;
   place-items: $place-start;
   > img,
@@ -73,7 +74,7 @@ $page-breakpoints: (
 @mixin width-fixed($i) {
   @include breakpoint(sm) {
     max-width: calc(var(--current-columns) * 100px);
-    flex: 0 1 calc(($i * 100px) - (var(--gap) / 2));
+    flex: 0 1 calc(($i * 100px) - (var(--object-gap) / 2));
   }
 }
 

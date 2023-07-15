@@ -8,7 +8,7 @@ SyntaxHighlighter.registerLanguage('javascript', javascript);
 const codeString =
   "useLayoutEffect(() => {\n\tconst navCtx = gsap.context(() => {\n\t\tnavTL.current = gsap\n\t\t\t.timeline({ reversed: true })\n\t\t\t.add(navOpenCtrlBar())\n\t\t\t.add(navOpenNavLinks(), '<');\n\t}, [nav]);\n\n\treturn () => navCtx.revert();\n}, []);";
 const codeString2 =
-  '@mixin row() {\n\tflex-flow: row wrap;\n\tgap: cssvar-get(gap);\n\tplace-content: $place-center;\n\t//place-items: $place-center;\n}';
+  '@mixin row() {\n\tflex-flow: row wrap !important;\n\tgap: cssvar-get(gap);\n\tplace-content: $place-center;\n\t//place-items: $place-center;\n}';
 
 function Documentation() {
   return (

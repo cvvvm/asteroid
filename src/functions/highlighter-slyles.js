@@ -74,6 +74,7 @@ export default {
     msHyphens: 'none',
     hyphens: 'none',
     color: color(1),
+    filter: filter(1, 1),
     transition: transition,
   },
   'pre > code[class*="language-"]': {
@@ -116,111 +117,146 @@ export default {
     borderRadius: '.3rem',
   },
   comment: {
-    color: color(),
-    filter: filter(1.2, 0.5),
+    color: color(0.35),
+    filter: filter(2, 0),
   },
   prolog: {
-    color: '#6c6783',
+    color: color(1),
+    filter: filter(2, 1),
   },
   doctype: {
-    color: '#6c6783',
+    color: color(1),
+    filter: filter(2, 1),
   },
   cdata: {
-    color: '#6c6783',
+    color: color(1),
+    filter: filter(2, 1),
   },
   punctuation: {
-    color: '#6c6783',
+    color: color(0.35),
+    filter: filter(2, 0),
   },
   namespace: {
-    opacity: '.7',
+    color: color(1),
+    filter: filter(2, 1),
   },
   tag: {
-    color: '#e09142',
+    color: color(1),
+    filter: filter(2, 1),
   },
   operator: {
-    color: '#e09142',
+    color: color(0.75),
+    filter: filter(1.5, 1),
   },
   number: {
-    color: '#e09142',
+    color: color(1),
+    filter: filter(2, 1),
   },
   property: {
-    color: blk,
+    color: color(1),
+    filter: filter(2, 1),
   },
   function: {
-    color: accent,
+    color: color(1),
+    filter: filter(3, 1),
+    //textShadow: '1px 1px black',
   },
   'tag-id': {
-    color: '#eeebff',
+    color: color(1),
+    filter: filter(2, 1),
   },
   selector: {
-    color: '#eeebff',
+    color: color(1),
+    filter: filter(3, 1),
   },
   'atrule-id': {
-    color: '#eeebff',
+    color: color(1),
+    filter: filter(2, 1),
   },
   'code.language-javascript': {
-    color: '#c4b9fe',
+    color: color(1),
+    filter: filter(2, 1),
   },
   'attr-name': {
-    color: '#c4b9fe',
+    color: color(1),
+    filter: filter(2, 1),
   },
   'code.language-css': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   'code.language-scss': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   boolean: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(1, 2),
   },
   string: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 0),
   },
   entity: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
     cursor: 'help',
   },
   url: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   '.language-css .token.string': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   '.language-scss .token.string': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   '.style .token.string': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   'attr-value': {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   keyword: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(1.5, 1),
   },
   control: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   directive: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   unit: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   statement: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   regex: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   atrule: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   placeholder: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(2, 1),
   },
   variable: {
-    color: '#ffcc99',
+    color: color(1),
+    filter: filter(1, 3),
   },
   deleted: {
     textDecoration: 'line-through',
@@ -234,7 +270,8 @@ export default {
   },
   important: {
     fontWeight: 'bold',
-    color: '#c4b9fe',
+    color: color(0.5),
+    filter: filter(1, 1),
   },
   bold: {
     fontWeight: 'bold',
@@ -244,10 +281,13 @@ export default {
     OutlineOffset: '.4rem',
   },
   '.line-numbers.line-numbers .line-numbers-rows': {
-    borderRightColor: '#2c2937',
+    borderRightColor: color(1),
+    color: color(0.5),
+    filter: filter(2, 1),
   },
   '.line-numbers .line-numbers-rows > span:before': {
-    color: '#3c3949',
+    color: color(0.5),
+    filter: filter(2, 1),
   },
   '.line-highlight.line-highlight': {
     background:

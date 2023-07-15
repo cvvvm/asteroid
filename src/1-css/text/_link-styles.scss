@@ -10,7 +10,7 @@ a {
   //font-style: italic;
   font-weight: $weight-light;
   text-decoration: none;
-  text-shadow: 0.0625rem 0.0625rem rgb-var(bg, 0);
+  text-shadow: 0rem 0.0625rem rgb-var(blk, 0);
 
   padding: 0rem 0.2rem 0rem 0.1rem;
   margin: 0rem -0.1rem 0rem -0.1rem;
@@ -34,7 +34,7 @@ a {
   // link hover
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   &:hover {
-    text-shadow: 0.0625rem 0.0625rem rgb-var(bg, 100);
+    text-shadow: 0rem 0.0625rem rgb-var(blk, 100);
     opacity: 100%;
     padding: 0rem 0.5rem 0rem 0.4rem;
     margin: 0rem -0.4rem 0rem -0.4rem;

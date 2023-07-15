@@ -90,7 +90,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
 export function Work() {
   return (
     <>
-      <div className="container px-md-6 vh-100">
+      <div className="container px-md-6 vh-100 ">
         <WorkCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
