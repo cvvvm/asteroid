@@ -45,7 +45,7 @@ $page-breakpoints: (
 @mixin flex-base() {
   display: flex;
   flex: 1 1 100%;
-  transition: height 250ms ease-out, width 250ms ease-out, gap 350ms ease-out;
+  @include transition-props();
 }
 
 // area types
@@ -87,7 +87,6 @@ $page-breakpoints: (
 // CARD column
 //---------------------------------------------------------------------
 @mixin column-outline($invert: false, $alt: false) {
-  @include transition-base();
   place-self: center;
   place-content: center;
   padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)

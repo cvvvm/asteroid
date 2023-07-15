@@ -41,6 +41,7 @@
 //---------------------------------------------------------------------
 @mixin work-card() {
   .work-card {
+    @include transition-props();
     position: relative;
 
     display: grid;
@@ -53,8 +54,6 @@
     border-radius: 1.25rem;
     border: 2px solid var(--accent);
     background-color: var(--bg);
-
-    transition: scale 250ms ease-out, padding 400ms ease-out, border-radius 400ms ease-out;
 
     @include breakpoint(md) {
       padding: 2.5rem 3rem 2.5rem;

@@ -89,6 +89,7 @@ $font-size: (
 
 @each $level in $type-levels {
   h#{$level} {
+    @include transition-props();
     font-family: map-get($font-family, $level);
     font-weight: map-get($font-weight, $level);
     font-size: map-get($font-size, $level);
@@ -122,6 +123,7 @@ h4 + p {
 // paragraph
 //---------------------------------------------------------------------
 p {
+  @include transition-props();
   font-size: clamp(1.1rem, 1.1rem + 1.5vw, 1.25rem);
   font-family: $jet-brains;
   font-weight: $weight-light;
@@ -204,14 +206,12 @@ ol {
   max-width: max-content;
   max-height: max-content;
 
-  margin: 0rem 0rem 0rem -0.25rem;
+  margin: 0rem 0rem 0rem -0.5rem;
   padding: 7px 12px;
 
   background-color: var(--text);
   border: 0.125rem solid var(--text);
   border-radius: 0.6rem;
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out,
-    border 200ms ease-in-out;
 
   @include firefox() {
     padding: 7px 13px 8px;

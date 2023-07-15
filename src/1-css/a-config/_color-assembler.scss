@@ -11,17 +11,17 @@
 // use bg mixin to remove this page and have color assembly happen locally in each file
 //---------------------------------------------------------------------
 @mixin bg() {
+  @include transition-props();
   color: var(--text);
   background-color: var(--bg);
-  @include transition-base();
-
   @content;
 }
 
+// build bgs
 .bg {
+  @include transition-props();
   color: var(--text);
   background-color: var(--bg);
-  @include transition-base();
 
   .plink {
     @extend p;

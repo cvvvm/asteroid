@@ -3,6 +3,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @mixin buttons($outline: false, $outline-invert: false, $invert: false) {
+  @include transition-props();
   font-family: $jet-brains;
   font-weight: $weight-medium;
   font-size: 1.25rem;
@@ -35,9 +36,6 @@
     border-color: var(--accent);
   }
 
-  transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
-    border 200ms ease-in-out, translate 100ms ease-out, filter 100ms ease-out;
-
   &:hover {
     background-color: var(--accent);
     border-color: var(--accent);
@@ -45,8 +43,8 @@
   }
 
   &:active {
-    background: var(--text);
-    border-color: var(--text);
+    background-color: var(--accent);
+    border-color: var(--accent);
     translate: -1px -2px;
     filter: brightness(0.9) saturate(1.25);
   }
