@@ -14,7 +14,7 @@ import { useState, useRef, useLayoutEffect } from 'react';
 export function ImgCover({ project, imgType, vh = 100, children, className }) {
   return (
     <div
-      className={'container vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
+      className={'container full vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
       style={{
         backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
         backgroundSize: 'cover',
@@ -382,7 +382,7 @@ export const VideoGallery = ({
   //---------------------------------------------------------------------
   var slideCounter = (
     <p className="note">
-      {currentImg + 1} / {galleries.length + 1}
+      {currentImg + 1} / {galleries[activeGallery].images.length}
     </p>
   );
 

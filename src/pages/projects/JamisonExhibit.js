@@ -37,20 +37,32 @@ function JamisonExhibit() {
             </p>
           </div>
 
-          <VideoGallery
-            columns={12}
-            project={project}
-            videoType={'mp4'}
-            galleries={[
-              {
-                title: 'animations',
-                prefix: project,
-                images: ['fire-start', 'map-world-us-transition'],
-              },
-            ]}
-          />
-
-          <div className="row-f10 jc-evenly outline">
+          <div className="row-f10 outline jc-evenly">
+            <div className="row-f10">
+              <h2>visual style</h2>
+            </div>
+            <div className="row-f10">
+              <VideoGallery
+                columns={12}
+                project={project}
+                videoType={'mp4'}
+                galleries={[
+                  {
+                    title: 'animations',
+                    prefix: project,
+                    images: [
+                      'map-next-country',
+                      'map-world-us-transition',
+                      'fire-start',
+                      'people-willam',
+                      'menu',
+                      'place-map-transition',
+                      'saloons',
+                    ],
+                  },
+                ]}
+              />
+            </div>
             <div className="col-4">
               <h4>visuals:</h4>
               <p>
