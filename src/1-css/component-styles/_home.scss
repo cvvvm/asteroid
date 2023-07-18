@@ -20,17 +20,14 @@
   }
 } */
 
-.home-button.back {
-  padding-right: 1.375rem !important;
-  padding-left: 1.3125rem !important;
-}
-
 .intro-image-box {
-  aspect-ratio: 1.25 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   width: 100%;
+  object-fit: cover;
 }
 
 .intro-image {
   width: 100%;
+  object-fit: cover;
 }

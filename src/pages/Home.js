@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 import Footer from '../components/Footer';
@@ -16,13 +17,20 @@ const homeHeading = [
   'coding this site makes it a portfolio piece.',
 ];
 
-const homeDesc = [
-  'a designer, engineer, occasional illustrator.',
-  "you're the only one who knows about it. really!",
-  'because it was fun to make.',
-];
+const homeDesc = ['a designer, engineer, occasional illustrator.'];
 
-const introImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', 'coded-by-hand.jpg'];
+const introImages = [
+  '1.webp',
+  '2.webp',
+  '3.webp',
+  '4.webp',
+  '5.webp',
+  '6.webp',
+  '7.webp',
+  '8.webp',
+  '9.webp',
+  '10.webp',
+];
 
 // HOME PAGE
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,33 +67,41 @@ function Home() {
 
   return (
     <>
-      <div className="container vh-100 pt-5 row-gap-2">
+      <div className="container vh-80 pt-5 row-gap-2">
         {/* picture */}
-        <div className="row-f10 vh-70 row-gap-1 row-gap-sm-4">
-          <div className="col-6">
+        <div className="col-6 pc-center gap-1">
+          {/*           <div className="col-6 pi-center">
+            <p className="badge-outline ">a random photo i took</p>
             <div className="intro-image-box">
               <img
                 className="intro-image"
-                src={'/images/home-intro/' + introImages[activeImage]}
+                src={'/images/home/' + introImages[activeImage]}
               />
             </div>
-          </div>
+            <button className="button home-button next " onClick={nextIntro}>
+              more!
+            </button>
+          </div> */}
           {/* text */}
-          <div id="intro" className="col-4 jc-center">
-            <h3 className="">{homeHeading[activeHead]}</h3>
-            <p className="">{homeDesc[activeDesc]}</p>
-          </div>
+
+          <h1 className="">{homeHeading[activeHead]}</h1>
+          <p className="">{homeDesc[activeDesc]}</p>
+          <p>
+            i built this website so you can see my work with the background color of your
+            choice.
+          </p>
+
+          {/* <button className="button home-button next" onClick={nextIntro}>
+              next &#62;
+            </button> */}
         </div>
-
-        {/* buttons */}
-        <div className="row-f10 col-gap-2">
-          <button className="button-outline home-button back" onClick={prevIntro}>
-            &#60;
-          </button>
-
-          <button className="button home-button next" onClick={nextIntro}>
-            next &#62;
-          </button>
+        <div className="row-f10">
+          <Link to={'/about'}>
+            <button className="button-outline as-center mt-2">about</button>
+          </Link>
+          <Link to={'/projects'}>
+            <button className="button as-center mt-2">projects</button>
+          </Link>
         </div>
       </div>
       <Footer />

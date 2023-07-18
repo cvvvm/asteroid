@@ -103,7 +103,6 @@ function Nav() {
         <div className="nav-control-bar">
           <ThemeSet classNames={'theme-toggle'} />
 
-          <div className="nav-control-spacer"></div>
           <button
             className="nav-toggle"
             onClick={toggleNavMenu}
@@ -129,7 +128,7 @@ function Nav() {
         <div className="nav-link-mask">
           <div className="nav-link-container" onClick={toggleNavMenu}>
             <NavLink to="/home" children="home" appColor={appColor} />
-            <NavLink to="/work" children="work" appColor={appColor} />
+            <NavLink to="/projects" children="projects" appColor={appColor} />
             <NavLink to="/documentation" children="docs" appColor={appColor} />
             <NavLink to="/about" children="about" appColor={appColor} />
             <NavLink to="/contact" children="contact" appColor={appColor} />
@@ -162,6 +161,7 @@ function navOpenCtrlBar() {
       {
         borderRadius: '1.5rem 1.5rem 0rem 0rem',
         padding: '0.65rem',
+        backgroundColor: 'var(--accent)',
       },
       '<'
     )

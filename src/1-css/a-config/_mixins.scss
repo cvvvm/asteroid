@@ -49,5 +49,5 @@ $ease-out: ease-out;
   transition: color 50ms $ease-out, background-color 300ms $ease-out,
     border 300ms $ease-out, border-color 300ms $ease-out, margin 250ms $ease-out,
     padding 250ms $ease-out, height 250ms $ease-out, width 250ms $ease-out,
-    gap 350ms $ease-out; //!important;
+    gap 350ms $ease-out, scale 350ms ease-out; //!important;
 }

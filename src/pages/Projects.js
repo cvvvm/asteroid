@@ -87,7 +87,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function Work() {
+export function Projects() {
   return (
     <>
       <div className="container px-md-6 vh-100 ">

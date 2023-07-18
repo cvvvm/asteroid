@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Documentation from './pages/Documentation';
-import { Work, ReturnToWork } from './pages/Work';
+import { Projects, ReturnToWork } from './pages/Projects';
 import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 
@@ -102,7 +102,7 @@ function App() {
 
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/about" element={<About />} />
 
