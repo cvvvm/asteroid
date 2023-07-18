@@ -117,7 +117,11 @@ function JamisonExhibit() {
           <p>
             The large amount of assets & animations meant balancing intensely between how
             much was on screen, what moved, and what could be rasterized together, then
-            further compressed. (thanks <a href="https://imageoptim.com">imgoptim</a>!)
+            further compressed. (thanks{' '}
+            <a className="plink" href="https://imageoptim.com">
+              imgoptim
+            </a>
+            !)
           </p>
         </GalleryImgToggler>
       </div>

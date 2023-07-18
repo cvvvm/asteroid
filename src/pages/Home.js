@@ -67,7 +67,7 @@ function Home() {
 
   return (
     <>
-      <div className="container vh-90 pt-8 row-gap-2">
+      <div className="container vh-80 pt-8 row-gap-2">
         {/* picture */}
         <div className="row-8">
           <div className="col-7 pc-center gap-1">
@@ -111,7 +111,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer padding={1} />
     </>
   );
 }

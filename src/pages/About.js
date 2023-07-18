@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 function About() {
   return (
     <>
-      <div className="container vh-90 gap-10 jc-start">
+      <div className="container vh-90 jc-start">
         <div className="col-5">
           <p className="badge">about</p>
           <p>you read enough about me on the home page.</p>
