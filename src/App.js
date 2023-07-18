@@ -47,7 +47,7 @@ export const ScrollToTop = ({ children }) => {
         y: 10,
         ease: 'ease.out',
       }); */
-      gsap.from('.work-return', {
+      gsap.from('.projects-return', {
         delay: 0.6,
         y: -100,
         duration: 0.5,

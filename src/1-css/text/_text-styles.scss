@@ -124,7 +124,7 @@ h4 + p {
 //---------------------------------------------------------------------
 p {
   @include transition-props();
-  font-size: clamp(1.1rem, 1.1rem + 1.5vw, 1.25rem);
+  font-size: 1.25rem;
   font-family: $jet-brains;
   font-weight: $weight-light;
   line-height: 155%;

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Footer({ project }) {
+function Footer({ project, vh = 10 }) {
   const currYear = new Date().getFullYear();
 
   if (project) {
@@ -14,7 +14,7 @@ function Footer({ project }) {
   }
 
   return (
-    <div className="container pi-center">
+    <div className={'container full pi-center vh-' + vh}>
       {projectReturn}
       <div className="row-f10">
         <p style={{ textAlign: 'center' }} className="note">

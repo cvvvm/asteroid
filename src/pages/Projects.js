@@ -7,13 +7,9 @@ import gsap from 'gsap';
 export function ReturnToWork() {
   return (
     <>
-      <Link to={'/work'}>
-        <button className="button work-return">←</button>
+      <Link to={'/projects'}>
+        <button className="button projects-return">←</button>
       </Link>
-
-      {/* <Link to={'/work'}>
-        <button className="button work-return">&#60;</button>
-      </Link> */}
       <Outlet />
     </>
   );
@@ -90,7 +86,7 @@ export function WorkCard({ title, caption, categories, link, background }) {
 export function Projects() {
   return (
     <>
-      <div className="container px-md-6 vh-100 ">
+      <div className="container py-6 px-md-6 vh-100 ">
         <WorkCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}

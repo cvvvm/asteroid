@@ -131,7 +131,6 @@ function Nav() {
             <NavLink to="/projects" children="projects" appColor={appColor} />
             <NavLink to="/documentation" children="docs" appColor={appColor} />
             <NavLink to="/about" children="about" appColor={appColor} />
-            <NavLink to="/contact" children="contact" appColor={appColor} />
           </div>
         </div>
       </div>

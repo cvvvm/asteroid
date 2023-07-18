@@ -67,10 +67,10 @@ function Home() {
 
   return (
     <>
-      <div className="container vh-80 pt-5 row-gap-2">
+      <div className="container vh-90 pt-8 row-gap-2">
         {/* picture */}
-        <div className="row-6">
-          <div className="col-6 pc-center gap-1">
+        <div className="row-8">
+          <div className="col-7 pc-center gap-1">
             {/*           <div className="col-6 pi-center">
             <p className="badge-outline ">a random photo i took</p>
             <div className="intro-image-box">
@@ -105,7 +105,9 @@ function Home() {
             </Link>
           </div>
           <div className="col-6">
-            <p className="note">*still in development, you may find a bug or two.</p>
+            <p className="note">
+              *some areas are still in development, bugs are possible.
+            </p>
           </div>
         </div>
       </div>
