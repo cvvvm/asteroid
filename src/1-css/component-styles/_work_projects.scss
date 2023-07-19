@@ -39,9 +39,9 @@
 
 // work card
 //---------------------------------------------------------------------
-@mixin work-card() {
-  .work-card {
-    @include transition-props();
+
+@mixin project-card() {
+  .project-card {
     position: relative;
 
     display: grid;
@@ -54,6 +54,8 @@
     border-radius: 1.25rem;
     border: 2px solid var(--accent);
     background-color: var(--bg);
+
+    transition: transition($color: true, $spacer: true, $scale: true);
 
     @include breakpoint(md) {
       padding: 2.5rem 3rem 2.5rem;

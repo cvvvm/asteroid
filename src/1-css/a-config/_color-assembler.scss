@@ -11,77 +11,75 @@
 // use bg mixin to remove this page and have color assembly happen locally in each file
 //---------------------------------------------------------------------
 @mixin bg() {
-  @include transition-props();
   color: var(--text);
   background-color: var(--bg);
+  transition: transition($color: true);
   @content;
 }
 
 // build bgs
 .bg {
-  @include transition-props();
-  color: var(--text);
-  background-color: var(--bg);
-
-  .plink {
-    @extend p;
-    @include p-link();
-  }
-  .notelink {
-    @extend .note;
-    opacity: 1 !important;
-    @include p-link();
-  }
-
-  // badges
-  //---------------------------------------------------------------------
-  .badge {
-    @include badge-base();
-    &-outline {
-      @include badge-base($outline: true);
+  @include bg() {
+    .plink {
+      @extend p;
+      @include p-link();
     }
-  }
-
-  // buttons
-  //---------------------------------------------------------------------
-  .button {
-    @include buttons();
-
-    &-outline {
-      @include buttons($outline: true);
+    .notelink {
+      @extend .note;
+      opacity: 1 !important;
+      @include p-link();
     }
-  }
 
-  // col outline
-  //---------------------------------------------------------------------
-  .outline {
-    @include column-outline();
-  }
-
-  .invert {
-    @include column-outline($invert: true);
+    // badges
+    //---------------------------------------------------------------------
     .badge {
-      @include badge-base($invert: true);
+      @include badge-base();
       &-outline {
-        @include badge-base($outline-invert: true);
+        @include badge-base($outline: true);
       }
     }
 
     // buttons
     //---------------------------------------------------------------------
     .button {
-      @include buttons($invert: true);
+      @include buttons();
+
       &-outline {
-        @include buttons($outline-invert: true);
+        @include buttons($outline: true);
       }
     }
+
+    // col outline
+    //---------------------------------------------------------------------
+    .outline {
+      @include column-outline();
+    }
+
+    .invert {
+      @include column-outline($invert: true);
+      .badge {
+        @include badge-base($invert: true);
+        &-outline {
+          @include badge-base($outline-invert: true);
+        }
+      }
+
+      // buttons
+      //---------------------------------------------------------------------
+      .button {
+        @include buttons($invert: true);
+        &-outline {
+          @include buttons($outline-invert: true);
+        }
+      }
+    }
+
+    // work page project cards
+    //---------------------------------------------------------------------
+    @include project-card();
+
+    // sidebar
+    //---------------------------------------------------------------------
+    @include sidebar();
   }
-
-  // work page project cards
-  //---------------------------------------------------------------------
-  @include work-card();
-
-  // sidebar
-  //---------------------------------------------------------------------
-  @include sidebar();
 }

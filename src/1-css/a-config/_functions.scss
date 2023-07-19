@@ -33,3 +33,38 @@
 @function rgb-var($name, $val) {
   @return rgba(var(--#{$name}-rgb), (#{$val + '%'}));
 }
+
+// transitions
+//---------------------------------------------------------------------
+@function transition(
+  $color: false,
+  $spacer: false,
+  $size: false,
+  $gap: false,
+  $scale: false,
+  $translate: false,
+  $timing: '250ms',
+  $ease: 'ease-in-out'
+) {
+  @if ($color) {
+    $color: 'color 50ms #{$ease}, background-color #{$timing} #{$ease}, border #{$timing} #{$ease}, border-color #{$timing} #{$ease}';
+  }
+  @if ($spacer) {
+    $spacer: 'margin #{$timing} #{$ease}, padding #{$timing} #{$ease}';
+  }
+  @if ($size) {
+    $size: 'height #{$timing} #{$ease}, width #{$timing} #{$ease}';
+  }
+  @if ($gap) {
+    $gap: 'gap #{$timing} #{$ease}';
+  }
+  @if ($scale) {
+    $scale: 'scale #{$timing} #{$ease}';
+  }
+  @if ($translate) {
+    $translate: 'translate #{$timing} #{$ease}';
+  }
+
+  @return #{$color + ', ' + $spacer + ', ' + $size + ', ' + $gap + ', ' + $scale + ', ' +
+    $translate};
+}

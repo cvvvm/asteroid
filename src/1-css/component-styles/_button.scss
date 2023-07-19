@@ -3,7 +3,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @mixin buttons($outline: false, $outline-invert: false, $invert: false) {
-  @include transition-props();
   font-family: $jet-brains;
   font-weight: $weight-medium;
   font-size: 1.25rem;
@@ -17,6 +16,8 @@
   border-style: solid;
   border-width: 0.2rem;
   border-radius: 2rem;
+
+  transition: transition($color: true, $translate: true);
 
   @if $outline {
     color: var(--text);
