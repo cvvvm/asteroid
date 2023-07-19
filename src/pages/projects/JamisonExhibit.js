@@ -6,7 +6,7 @@ import {
   VideoGallery,
 } from '../../components/ProjectPages';
 
-function JamisonExhibit() {
+export default function JamisonExhibit() {
   var project = 'jamison_exhibit';
   return (
     <>
@@ -14,7 +14,7 @@ function JamisonExhibit() {
         <div className="row-f10">
           <Role
             freelance
-            project={'Jamison City Exhibit'}
+            project={'Jamison City Interactive'}
             intro={
               'sponsored by the California Department of Parks & Recreation, my client from Sonoma State University Anthropological Studies Center (ASC) needed to create an interactive digital exhibit showcasing the history of now lost Jamison City, CA.'
             }
@@ -22,7 +22,9 @@ function JamisonExhibit() {
             roles={
               'UX/UI, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'
             }
-            contributors={'Zig Zag Tattoo provided copy & photos.'}
+            contributors={
+              'content & reference images, on-site implementation: Anthropological Studies Center.'
+            }
           />
         </div>
       </ImgCover>
@@ -140,4 +142,3 @@ function JamisonExhibit() {
     </>
   );
 }
-export default JamisonExhibit;

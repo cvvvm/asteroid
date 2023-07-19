@@ -25,7 +25,7 @@ export function ReturnToWork() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function WorkCard({ title, caption, categories, link, background }) {
+export function ProjectCard({ title, caption, categories, link, background }) {
   const workBG = useRef();
 
   const catmap = categories.map((category) => (
@@ -86,17 +86,23 @@ export function WorkCard({ title, caption, categories, link, background }) {
 export function Projects() {
   return (
     <>
-      <div className="container py-6 px-md-6 vh-100 ">
-        <WorkCard
+      <div className="container py-6 px-md-6 vh-100">
+        <ProjectCard
+          link={'ssu-web-reskin'}
+          categories={['brand', 'web']}
+          title={'sonoma state university'}
+          caption={'redesigning for a large university website.'}
+        />
+        <ProjectCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
-          title={'zig zag tattoo'}
-          caption={'building a new website & brand.'}
+          title={'zig zag tattoo: web + brand'}
+          caption={'establishing a foundation for a new studio.'}
         />
-        <WorkCard
+        <ProjectCard
           link={'asc-exhibit'}
           categories={['UX/UI']}
-          title={'jamison city exhibit'}
+          title={'jamison city interactive'}
           caption={'stress-testing Powerpoint to teach history.'}
         />
       </div>

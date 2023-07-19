@@ -5,7 +5,7 @@ import {
   GalleryImgToggler,
 } from '../../components/ProjectPages';
 
-function ZigZagTattoo() {
+export default function ZigZagTattoo() {
   var project = 'zig-zag-tattoo';
   return (
     <>
@@ -21,7 +21,7 @@ function ZigZagTattoo() {
             roles={
               'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'
             }
-            contributors={'Zig Zag Tattoo provided copy & photos.'}
+            contributors={'copy & photos: Zig Zag Tattoo.'}
           />
         </div>
       </ImgCover>
@@ -72,4 +72,3 @@ function ZigZagTattoo() {
     </>
   );
 }
-export default ZigZagTattoo;

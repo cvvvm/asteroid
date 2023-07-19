@@ -11,9 +11,11 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Documentation from './pages/Documentation';
+
 import { Projects, ReturnToWork } from './pages/Projects';
 import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
+import SsuWebReskin from './pages/projects/SsuWebReskin';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -116,6 +118,7 @@ function App() {
           >
             <Route path="/work/zig-zag-tattoo" element={<ZigZagTattoo />} />
             <Route path="/work/asc-exhibit" element={<JamisonExhibit />} />
+            <Route path="/work/ssu-web-reskin" element={<SsuWebReskin />} />
           </Route>
         </Routes>
       </ScrollToTop>
