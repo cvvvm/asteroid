@@ -15,7 +15,7 @@ function Documentation() {
     <div className="container vh-90">
       <div className="row-f8">
         <div className="col-6">
-          <h1>documentation</h1>
+          <h2>documentation</h2>
           <p>oooh. looks like these haven't been written yet!</p>
           <p className="note">try coming back in 5 minutes?</p>
         </div>
