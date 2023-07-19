@@ -205,7 +205,7 @@ function navOpenNavLinks() {
     .to('.color-set-toggle', {
       scale: 1,
     })
-    .to('.nav-link-container', { padding: '1rem', duration: 0 }, '<')
+    .to('.nav-link-container', { padding: '1rem', duration: 0.01 }, '<')
     .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: -1 })
     .to('.nav-link', { translateY: 0 }, '<')
     .to('.nav-link', { scale: 1, duration: 0.5 }, '<');
