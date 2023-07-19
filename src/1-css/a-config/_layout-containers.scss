@@ -90,14 +90,14 @@ $page-breakpoints: (
   padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)
     clamp(3.3rem, 3.3rem + 1vw, 3.8rem);
   border-radius: 1rem;
-  background-color: var(--bg);
-  border: 3px solid var(--accent);
+  background-color: rgb-var(bg);
+  border: 3px solid rgb-var(accent);
   transition: transition($color: true);
 
   @if $invert {
-    color: var(--bg);
-    background-color: var(--text);
-    border: 3px solid var(--text);
+    color: rgb-var(bg);
+    background-color: rgb-var(text);
+    border: 3px solid rgb-var(text);
   }
 }
 

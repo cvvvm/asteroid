@@ -11,8 +11,8 @@
 // use bg mixin to remove this page and have color assembly happen locally in each file
 //---------------------------------------------------------------------
 @mixin bg() {
-  color: var(--text);
-  background-color: var(--bg);
+  color: rgb-var(text);
+  background-color: rgb-var(bg);
   transition: transition($color: true);
   @content;
 }

@@ -199,7 +199,7 @@ ol {
   font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0.015rem;
-  color: var(--bg);
+  color: rgb-var(bg);
 
   max-width: max-content;
   max-height: max-content;
@@ -207,8 +207,8 @@ ol {
   margin: 0rem 0rem 0rem -0.5rem;
   padding: 7px 12px;
 
-  background-color: var(--text);
-  border: 0.125rem solid var(--text);
+  background-color: rgb-var(text);
+  border: 0.125rem solid rgb-var(text);
   border-radius: 0.6rem;
   transition: transition($color: true);
 
@@ -217,19 +217,19 @@ ol {
   }
 
   @if $outline {
-    background-color: var(--bg);
-    color: var(--text);
-    border: 0.125rem solid var(--accent);
+    background-color: rgb-var(bg);
+    color: rgb-var(text);
+    border: 0.125rem solid rgb-var(accent);
   }
   @if $invert {
-    background-color: var(--bg);
-    color: var(--text);
-    border: 0.125rem solid var(--bg);
+    background-color: rgb-var(bg);
+    color: rgb-var(text);
+    border: 0.125rem solid rgb-var(bg);
   }
   @if $outline-invert {
-    background-color: var(--text);
-    color: var(--bg);
-    border: 0.125rem solid var(--accent);
+    background-color: rgb-var(text);
+    color: rgb-var(bg);
+    border: 0.125rem solid rgb-var(accent);
   }
 }
 

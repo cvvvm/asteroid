@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { useRef } from 'react';
+import { rgbvar } from './ThemeSet';
 
 function linkClick(mask) {
   document.addEventListener('click', (e) => {
@@ -35,7 +36,7 @@ export function TransitionMask(color) {
         position: 'fixed',
         width: '100vw',
         height: '100vh',
-        background: 'var(--bg-' + color + ')',
+        background: rgbvar('bg-' + color),
       }}
     ></div>
   );

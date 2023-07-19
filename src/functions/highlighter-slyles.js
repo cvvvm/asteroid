@@ -1,8 +1,10 @@
+import { rgbvar } from './ThemeSet';
+
 // variables & functions
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const accent = 'var(--accent-rgb)';
-const blk = 'var(--blk)';
+const accent = rgbvar('accent');
+const blk = rgbvar('blk');
 
 function filter(b, s) {
   return 'brightness(' + b + ') saturate(' + s + ')';

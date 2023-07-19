@@ -30,8 +30,8 @@
 
 // USE CSS VARIABLE - RGBA
 //---------------------------------------------------------------------
-@function rgb-var($name, $val) {
-  @return rgba(var(--#{$name}-rgb), (#{$val + '%'}));
+@function rgb-var($name, $val: 100) {
+  @return rgba(var(--#{$name}), (#{$val + '%'}));
 }
 
 // transitions
@@ -43,6 +43,7 @@
   $gap: false,
   $scale: false,
   $translate: false,
+  $shadow: false,
   $timing: '250ms',
   $ease: 'ease-in-out'
 ) {
@@ -64,7 +65,10 @@
   @if ($translate) {
     $translate: 'translate #{$timing} #{$ease}';
   }
+  @if ($shadow) {
+    $shadow: 'box-shadow #{$timing} #{$ease}';
+  }
 
   @return #{$color + ', ' + $spacer + ', ' + $size + ', ' + $gap + ', ' + $scale + ', ' +
-    $translate};
+    $translate + ', ' + $shadow};
 }

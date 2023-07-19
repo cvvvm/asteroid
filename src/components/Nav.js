@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import gsap from 'gsap';
 
-import { ThemeSet, ColorSet, setCssVarColor } from '../functions/ThemeSet';
+import { ThemeSet, ColorSet, setCssVarColor, rgbvar } from '../functions/ThemeSet';
 import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 // nav links
@@ -19,8 +19,8 @@ function NavLink({ to, children, appColor, ...props }) {
       {...props}
       className={'nav-link' + (isActive ? ' active' : '')}
       style={{
-        backgroundColor: isActive ? 'var(--text)' : 'var(--bg)',
-        color: isActive ? 'var(--bg-' + appColor + ')' : 'var(--text-' + appColor + ')',
+        backgroundColor: isActive ? rgbvar('text') : rgbvar('bg'),
+        color: isActive ? rgbvar('bg-' + appColor) : rgbvar('text-' + appColor),
       }}
     >
       {children}
@@ -108,10 +108,10 @@ function Nav() {
             onClick={toggleNavMenu}
             style={
               navState === 'open'
-                ? { backgroundColor: 'var(--red-accent)', color: '#990d00' }
+                ? { backgroundColor: rgbvar('red-accent'), color: '#990d00' }
                 : {
-                    backgroundColor: 'var(--text-' + appColor + ')',
-                    color: 'var(--bg-' + appColor + ')',
+                    backgroundColor: rgbvar('text'),
+                    color: rgbvar('bg'),
                   }
             }
           >
@@ -160,7 +160,6 @@ function navOpenCtrlBar() {
       {
         borderRadius: '1.5rem 1.5rem 0rem 0rem',
         padding: '0.65rem',
-        backgroundColor: 'var(--accent)',
       },
       '<'
     )

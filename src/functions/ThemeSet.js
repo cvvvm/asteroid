@@ -8,6 +8,13 @@ import { useState } from 'react';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// rgb variable reader
+//---------------------------------------------------------------------
+export function rgbvar(color, opacity = 100) {
+  console.log('rgba(var(--' + color + '), ' + opacity + '%)');
+  return 'rgba(var(--' + color + '), ' + opacity + '%)';
+}
+
 // UPDATE CSS VARS
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,22 +27,6 @@ export function setCssVarColor(color) {
   root.setProperty('--bg', 'var(--bg-' + color + ')');
   root.setProperty('--accent', 'var(--' + color + '-accent)');
   root.setProperty('--blk', 'var(--' + color + '-blk)');
-  setCssVarColorRGB();
-}
-
-// RGB CSS var
-//---------------------------------------------------------------------
-function splitRGB(type) {
-  const style = getComputedStyle(document.documentElement);
-  let textSlice = style.getPropertyValue('--' + type).slice(4, -1);
-
-  return textSlice;
-}
-function setCssVarColorRGB() {
-  root.setProperty('--text-rgb', splitRGB('text'));
-  root.setProperty('--bg-rgb', splitRGB('bg'));
-  root.setProperty('--accent-rgb', splitRGB('accent'));
-  root.setProperty('--blk-rgb', splitRGB('blk'));
 }
 
 export function ColorSet({ currentAppColor, appColorTarget }) {
@@ -51,11 +42,11 @@ export function ColorSet({ currentAppColor, appColorTarget }) {
               id={color}
               key={color}
               style={{
-                backgroundColor: 'var(--' + color + '-accent)',
+                backgroundColor: rgbvar(color + '-accent'),
                 borderColor:
                   color == currentAppColor
-                    ? 'var(--bg-' + currentAppColor + ')'
-                    : 'var(--accent)',
+                    ? rgbvar('bg-' + currentAppColor)
+                    : rgbvar('accent'),
               }}
               className="color-set-toggle"
             ></div>
