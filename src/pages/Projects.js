@@ -86,18 +86,20 @@ export function ProjectCard({ title, caption, categories, link, background }) {
 export function Projects() {
   return (
     <>
-      <div className="container py-6 px-md-2 vh-100">
+      <div className="projects-container">
         <ProjectCard
           link={'ssu-web-reskin'}
           categories={['brand', 'web']}
-          title={'sonoma state university'}
+          title={'sonoma state university university'}
           caption={'redesigning for a large university website.'}
         />
         <ProjectCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
           title={'zig zag tattoo: web + brand'}
-          caption={'establishing a foundation for a new studio.'}
+          caption={
+            'establishing a foundation for a new studio. establishing a foundation for a new studio.'
+          }
         />
         <ProjectCard
           link={'asc-exhibit'}

@@ -32,7 +32,7 @@ export const ScrollToTop = ({ children }) => {
   //---------------------------------------------------------------------
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from('.container > * ', {
+      gsap.from(['.container > * ', '.projects-container > * '], {
         delay: 0.1,
         y: '100vh',
         stagger: 0.025,

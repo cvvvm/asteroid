@@ -2,7 +2,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 //
-// WORK PAGE
+// PROJECTS PAGE
 //
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,9 +20,20 @@
   padding: 0.65rem 1.3rem 0.75rem 1.25rem !important;
 }
 
-// work page image background
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-template-rows: repeat(auto-fit, auto);
+  gap: var(--object-gap);
+  place-content: $place-center;
+
+  min-height: 100vh;
+  padding: var(--container-padding);
+}
+
+// page image background
 //---------------------------------------------------------------------
-.work-pg-bg {
+.project-cover-bg {
   pointer-events: none;
   z-index: -100;
   position: fixed;
@@ -37,9 +48,9 @@
   transition: opacity 200ms ease-in-out;
 }
 
-// work card
-//---------------------------------------------------------------------
-
+// project card
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @mixin project-card() {
   .project-card {
     position: relative;
@@ -47,8 +58,6 @@
     display: grid;
     grid-template-rows: 0.25fr 1fr 0.5fr;
     row-gap: 1rem;
-
-    width: 400px;
 
     padding: 1.75rem 2rem 1.75rem;
     border-radius: 1.25rem;
@@ -75,21 +84,6 @@
       padding: 0rem;
     }
   }
-}
-
-// work page frame
-//---------------------------------------------------------------------
-.work-frame {
-  z-index: 1;
-  position: relative;
-}
-
-// project frame
-//---------------------------------------------------------------------
-.project-frame {
-  position: absolute;
-  translate: 100vw -100vh;
-  border: 1px solid red;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
