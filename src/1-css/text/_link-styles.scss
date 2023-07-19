@@ -20,7 +20,7 @@ a {
 
   box-shadow:
     // underline
-    inset 0 -0.125rem 0 0 rgb-var(accent, 75),
+    inset 0 -0.125rem 0 0 rgb-var(accent, 60),
     // left shading
     inset 0rem 0rem 0 0 rgb-var(accent, 0),
     inset 0rem 0rem 0 0 rgb-var(accent, 0), inset 0rem 0rem 0 0 rgb-var(accent, 0),
@@ -33,7 +33,7 @@ a {
   // link hover
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   &:hover {
-    text-shadow: 0rem 0.0625rem rgb-var(blk, 75);
+    text-shadow: 0rem 0.0625rem rgb-var(blk, 70);
     opacity: 100%;
     padding: 0rem 0.375rem 0rem 0.375rem;
     margin: 0rem -0.375rem 0rem -0.375rem;
@@ -44,10 +44,10 @@ a {
       // underline
       inset 0 -0.095rem 0 0 rgb-var(accent, 0),
       // left shading
-      inset 5rem -1rem 1rem 0 rgb-var(accent, 10),
-      inset 10rem -1.5rem 1rem 0 rgb-var(accent, 20),
-      inset 15rem -2rem 1rem 0 rgb-var(accent, 30),
-      inset 20rem -2.5rem 1rem 0 rgb-var(accent, 40),
+      inset 5rem -1rem 1rem 0 rgb-var(accent, 5),
+      inset 10rem -1.5rem 1rem 0 rgb-var(accent, 10),
+      inset 15rem -2rem 1rem 0 rgb-var(accent, 15),
+      inset 20rem -2.5rem 1rem 0 rgb-var(accent, 20),
       // drop shadow
       0 0 0.15rem 0 rgb-var(accent, 0);
   }
