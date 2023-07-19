@@ -86,7 +86,7 @@ export function ProjectCard({ title, caption, categories, link, background }) {
 export function Projects() {
   return (
     <>
-      <div className="container py-6 px-md-6 vh-100">
+      <div className="container py-6 px-md-2 vh-100">
         <ProjectCard
           link={'ssu-web-reskin'}
           categories={['brand', 'web']}
