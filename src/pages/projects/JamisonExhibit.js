@@ -109,7 +109,7 @@ export default function JamisonExhibit() {
         <GalleryImgToggler
           textCol={4}
           invert
-          textOrder={1}
+          textColOrder={1}
           galleryCol={'f6'}
           vh={50}
           project={project}

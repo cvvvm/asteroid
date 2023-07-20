@@ -78,6 +78,7 @@ export function Role({ columns, project, intro, freelance, roles, contributors }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function DeviceImgToggler({
   textCol,
+  textColOrder = 0,
   invert,
   vh = 80,
   deviceCol,
@@ -109,7 +110,7 @@ export function DeviceImgToggler({
     <div className={'row-f10 vh-' + vh}>
       <div
         className={
-          'order-1 order-xl-0 outline col-' + textCol + (invert ? ' invert' : '')
+          'order-' + textColOrder + ' outline col-' + textCol + (invert ? ' invert' : '')
         }
       >
         {children}
@@ -208,7 +209,7 @@ const ToggledGallery = ({
 
 export function GalleryImgToggler({
   textCol,
-  textOrder = 0,
+  textColOrder = 0,
   invert,
   outline,
   vh = 80,
@@ -248,7 +249,7 @@ export function GalleryImgToggler({
       <div
         className={
           'pc-center mb-lg-4 order-1 order-xl-' +
-          textOrder +
+          textColOrder +
           '  col-' +
           textCol +
           (outline ? ' outline' : '') +

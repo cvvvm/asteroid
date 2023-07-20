@@ -28,9 +28,10 @@ export default function SsuWebReskin() {
       </ImgCover>
       <div className="container">
         <DeviceImgToggler
-          textCol={5}
+          textCol={6}
+          textColOrder={0}
           invert
-          deviceCol={9}
+          deviceCol={8}
           project={project}
           images={['hero', 'hub', 'department', 'nested']}
           imgType={'webp'}
@@ -45,7 +46,7 @@ export default function SsuWebReskin() {
         </DeviceImgToggler>
 
         <div className="row-f10">
-          <div className="col-9 outline">
+          <div className="col-6 ps-stretch outline">
             <h2>tiny teams, tiny time.</h2>
             <p>
               due to resource limitations, changing functionality wasn't an option.
@@ -53,34 +54,18 @@ export default function SsuWebReskin() {
               look while maintaining project scope.
             </p>
           </div>
+          <div className="col-6 invert">
+            <h2>new skin, same bones.</h2>
+            <p>
+              i built spec sheets for prioritized assets - detailing layouts per
+              breakpoint, colors, font styles, and approximate sizing.
+            </p>
+            <p>
+              we focused on updating preexisting Drupal modules. the refresh could roll
+              out more seamlessly, as most pages wouldn't need many manual changes.
+            </p>
+          </div>
         </div>
-
-        <GalleryImgToggler
-          textCol={6}
-          invert
-          galleryCol={7}
-          project={project}
-          imgType={'svg'}
-          vh={60}
-          galleries={[
-            {
-              title: 'final marks',
-              prefix: 'logo',
-              images: ['cover', 'primary', 'wide', 'tall'],
-            },
-            { title: 'sketches', prefix: 'process', images: ['1', '2', '3'] },
-          ]}
-        >
-          <h2>new skin, same bones.</h2>
-          <p>
-            i built spec sheets for prioritized assets - detailing layouts per breakpoint,
-            colors, font styles, and approximate sizing.
-          </p>
-          <p>
-            we focused on updating preexisting Drupal modules. the refresh could roll out
-            more seamlessly, as most pages wouldn't need many manual changes.
-          </p>
-        </GalleryImgToggler>
       </div>
     </>
   );
