@@ -16,7 +16,7 @@ export default function SsuWebReskin() {
             intro={
               'you can’t rebrand without a website to match. since Sonoma State University got their new brand (developed by The Engine is Red), i used the shiny new brand toolkit to give the site a fresh look.'
             }
-            columns={8}
+            columns={6}
             roles={
               'visual design lead, pixel measurer, mock-up presenter, site auditer, zoom talker'
             }

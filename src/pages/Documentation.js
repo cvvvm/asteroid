@@ -82,7 +82,9 @@ export function ColorDoc() {
           functions.
         </p>
       </div>
-      <h2 className="">variable setup</h2>
+      <div className="pc-start row-f10">
+        <h2 className="">variable setup</h2>
+      </div>
       <div className="row-f10 pc-start outline">
         <div className="row-f10 pc-start">
           <div className="col-3 jc-center">
