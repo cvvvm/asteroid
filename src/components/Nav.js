@@ -127,10 +127,10 @@ function Nav() {
          */}
         <div className="nav-link-mask">
           <div className="nav-link-container" onClick={toggleNavMenu}>
-            <NavLink to="/home" children="home" appColor={appColor} />
-            <NavLink to="/projects" children="projects" appColor={appColor} />
-            <NavLink to="/docs" children="docs" appColor={appColor} />
-            <NavLink to="/about" children="about" appColor={appColor} />
+            <NavLink to="home" children="home" appColor={appColor} />
+            <NavLink to="projects" children="projects" appColor={appColor} />
+            <NavLink to="docs" children="docs" appColor={appColor} />
+            <NavLink to="about" children="about" appColor={appColor} />
           </div>
         </div>
       </div>

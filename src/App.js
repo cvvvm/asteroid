@@ -132,9 +132,9 @@ function App() {
               </>
             }
           >
-            <Route path="/projects/zig-zag-tattoo" element={<ZigZagTattoo />} />
-            <Route path="/projects/asc-exhibit" element={<JamisonExhibit />} />
-            <Route path="/projects/ssu-web-reskin" element={<SsuWebReskin />} />
+            <Route path="projects/zig-zag-tattoo" element={<ZigZagTattoo />} />
+            <Route path="projects/asc-exhibit" element={<JamisonExhibit />} />
+            <Route path="projects/ssu-web-reskin" element={<SsuWebReskin />} />
           </Route>
         </Routes>
       </ScrollToTop>

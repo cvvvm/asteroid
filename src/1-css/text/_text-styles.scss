@@ -163,13 +163,14 @@ p.small {
 .note {
   font-family: $jet-brains;
   font-style: italic;
-  font-weight: $weight-light;
+  font-weight: $weight-x-light;
   font-size: 1.0625rem;
 
-  letter-spacing: -0.025rem;
+  margin-left: 0.125rem;
+  letter-spacing: -0.05rem;
   opacity: 80%;
 
-  filter: saturate(1.5);
+  filter: saturate(0.5);
 }
 
 // lists

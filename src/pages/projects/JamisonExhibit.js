@@ -30,7 +30,7 @@ export default function JamisonExhibit() {
       </ImgCover>
       <div className="container">
         <div className="row-f10 vh-80">
-          <div className="col-9 outline invert ">
+          <div className="col-8 outline invert ">
             <h2>making a powerful point.</h2>
             <p>
               just one catch - with no internet at the installation & no budget for
@@ -107,11 +107,11 @@ export default function JamisonExhibit() {
           </div>
         </div>
         <GalleryImgToggler
-          textCol={5}
+          textCol={4}
           invert
-          textOrder={0}
+          textOrder={1}
           galleryCol={'f6'}
-          vh={80}
+          vh={50}
           project={project}
           imgType={'webp'}
           galleries={[
@@ -127,11 +127,11 @@ export default function JamisonExhibit() {
             },
           ]}
         >
-          <h4>optimization:</h4>
+          <h3>optimization:</h3>
           <p>
-            The large amount of assets & animations meant balancing intensely between how
-            much was on screen, what moved, and what could be rasterized together, then
-            further compressed. (thanks{' '}
+            the amount of assets & animations meant balancing intensely between how much
+            was on screen, what moved, and what could be rasterized together, then further
+            compressed. (thanks{' '}
             <a className="plink" href="https://imageoptim.com">
               imgoptim
             </a>
