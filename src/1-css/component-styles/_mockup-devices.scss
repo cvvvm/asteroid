@@ -41,7 +41,8 @@
 }
 
 // device toggle buttons
-//---------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .device-toggle-button {
   font-size: 1rem !important;
   margin: 0 !important;
@@ -60,6 +61,19 @@
   &:active {
     translate: 0 !important;
   }
+}
+
+// device toggler
+//---------------------------------------------------------------------
+.device-page-toggle {
+  font-size: 1rem !important;
+  padding: 0.4375rem 1rem 0.5rem !important;
+  margin: 0rem !important;
+  border-width: 2px !important;
+}
+
+.page-toggles-container {
+  gap: 0.5rem;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

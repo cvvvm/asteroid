@@ -94,9 +94,7 @@ export function DeviceImgToggler({
     return (
       <button
         key={page}
-        className={
-          'device-img-toggler-button button' + (displayImg === page ? '' : '-outline')
-        }
+        className={'device-page-toggle button' + (displayImg === page ? '' : '-outline')}
         onClick={() => setDisplayImg(images[index])}
         ref={() => index}
       >
@@ -117,7 +115,10 @@ export function DeviceImgToggler({
         {children}
         <div className="row-f10 jc-start gap-1">
           <p className="note mt-1 mb-0">{toggleCaption + ':'}</p>
-          <div className="row-f10 pc-start gap-1" style={{ marginLeft: '-.25rem' }}>
+          <div
+            className="page-toggles-container row-f10 pc-start"
+            style={{ marginLeft: '-.25rem' }}
+          >
             {toggleMap}
           </div>
         </div>
@@ -229,7 +230,7 @@ export function GalleryImgToggler({
       <button
         key={index}
         className={
-          'device-img-toggler-button button' +
+          'device-page-toggle button' +
           (galleries[activeGallery].title === gallery.title ? '' : '-outline')
         }
         onClick={() => setActiveGallery(index)}
@@ -263,7 +264,7 @@ export function GalleryImgToggler({
           activeGallery={activeGallery}
           galleries={galleries}
         />
-        <div className="row-f10 pc-center col-gap-1">
+        <div className="row-f10 pc-center page-toggles-container">
           <p className="note ps-center">view:</p>
           {toggleMap}
         </div>

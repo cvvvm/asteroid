@@ -1,4 +1,4 @@
-import { Link, Route, Routes, Outlet } from 'react-router-dom';
+import { Link, Outlet, useMatch, useResolvedPath } from 'react-router-dom';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss';
@@ -7,14 +7,20 @@ import highlighterstyles from './docs/highlighter-slyles';
 SyntaxHighlighter.registerLanguage('scss', scss);
 SyntaxHighlighter.registerLanguage('javascript', javascript);
 
-const codeString =
-  "useLayoutEffect(() => {\n\tconst navCtx = gsap.context(() => {\n\t\tnavTL.current = gsap\n\t\t\t.timeline({ reversed: true })\n\t\t\t.add(navOpenCtrlBar())\n\t\t\t.add(navOpenNavLinks(), '<');\n\t}, [nav]);\n\n\treturn () => navCtx.revert();\n}, []);";
-const codeString2 =
-  '@mixin row() {\n\tflex-flow: row wrap !important;\n\tgap: cssvar-get(gap);\n\tplace-content: $place-center;\n\t//place-items: $place-center;\n}';
-
 // sidebar
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+function NavLink({ to, children, appColor, ...props }) {
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+
+  return (
+    <Link to={to} {...props} className={'sidebar-item' + (isActive ? ' active' : '')}>
+      {children}
+    </Link>
+  );
+}
 
 export function Sidebar() {
   return (
@@ -22,9 +28,6 @@ export function Sidebar() {
       <h4>topics:</h4>
       <Link to={'docs/nav-menu'} className="sidebar-item">
         nav menu
-      </Link>
-      <Link to={'docs/nav-menu2'} className="sidebar-item">
-        nav menuee
       </Link>
     </div>
   );
@@ -55,7 +58,12 @@ export default function Documentation() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function DocNav() {
+const codeString =
+  "useLayoutEffect(() => {\n\tconst navCtx = gsap.context(() => {\n\t\tnavTL.current = gsap\n\t\t\t.timeline({ reversed: true })\n\t\t\t.add(navOpenCtrlBar())\n\t\t\t.add(navOpenNavLinks(), '<');\n\t}, [nav]);\n\n\treturn () => navCtx.revert();\n}, []);";
+const codeString2 =
+  '@mixin row() {\n\tflex-flow: row wrap !important;\n\tgap: cssvar-get(gap);\n\tplace-content: $place-center;\n\t//place-items: $place-center;\n}';
+
+export function DocIndex() {
   return (
     <div className="col-6">
       <h2>documentation</h2>
@@ -65,7 +73,7 @@ export function DocNav() {
   );
 }
 
-export function DocNav2() {
+export function NavDoc() {
   return (
     <div className="col-f10">
       <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>

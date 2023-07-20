@@ -26,6 +26,9 @@
     border-radius: 0.75rem;
     border: 2px solid rgb-var(accent);
     margin: 0;
+
+    &.active {
+    }
   }
 
   .page-content {
