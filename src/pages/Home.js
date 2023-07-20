@@ -70,7 +70,7 @@ function Home() {
       <div className="container vh-80 pt-8 row-gap-2">
         {/* picture */}
         <div className="row-8">
-          <div className="col-7 pc-center gap-1">
+          <div className="col-6 pc-center">
             {/*           <div className="col-6 pi-center">
             <p className="badge-outline ">a random photo i took</p>
             <div className="intro-image-box">
