@@ -17,7 +17,7 @@ import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 import SsuWebReskin from './pages/projects/SsuWebReskin';
 
-import { DocIndex, NavDoc } from './pages/Documentation';
+import { DocIndex, NavDoc, ColorDoc } from './pages/Documentation';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -65,6 +65,20 @@ export const ScrollToTop = ({ children }) => {
   return children;
 };
 
+export function ErrorPage({ page = '' }) {
+  return (
+    <div className="container vh-100">
+      <div className="col-6 ps-center pc-center pi-center">
+        <h1>lol oops.</h1>
+        <p>how did you get here?</p>
+        <Link to={'/' + page}>
+          <button className="button">go back</button>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
@@ -89,37 +103,25 @@ function App() {
       <ScrollToTop>
         <Nav />
         <Routes>
-          <Route
-            path="*"
-            element={
-              <div className="container vh-100">
-                <div className="col-6 ps-center pc-center pi-center">
-                  <h1>lol oops.</h1>
-                  <p>how did you get here?</p>
-                  <Link to="/">
-                    <button className="button">go home</button>
-                  </Link>
-                </div>
-              </div>
-            }
-          />
-
+          <Route path="*" element={<ErrorPage />} />
           <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
+          <Route path="home" element={<Home />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="about" element={<About />} />
 
           {/* docs */}
           <Route
-            path="/docs"
+            path="docs"
             element={
               <>
                 <Documentation />
               </>
             }
           >
+            <Route path="*" element={<ErrorPage page="docs" />} />
             <Route index element={<DocIndex />} />
-            <Route path="docs/nav-menu" element={<NavDoc />} />
+            <Route path="colors" element={<ColorDoc />} />
+            <Route path="nav-menu" element={<NavDoc />} />
           </Route>
 
           {/* projects */}

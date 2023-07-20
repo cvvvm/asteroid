@@ -14,11 +14,11 @@ export default function JamisonExhibit() {
         <div className="row-f10">
           <Role
             freelance
-            project={'Jamison City Interactive'}
+            project={'jamison city interactive'}
             intro={
               'sponsored by the California Department of Parks & Recreation, my client from Sonoma State University Anthropological Studies Center (ASC) needed to create an interactive digital exhibit showcasing the history of now lost Jamison City, CA.'
             }
-            columns={8}
+            columns={6}
             roles={
               'UX/UI, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'
             }

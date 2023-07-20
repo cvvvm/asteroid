@@ -136,8 +136,8 @@ p {
   font-size: 1.25rem;
   font-family: $jet-brains;
   font-weight: $weight-light;
-  line-height: 155%;
-  letter-spacing: -0.025rem;
+  line-height: 160%;
+  letter-spacing: -0.0375rem;
 
   padding: 0rem;
   margin: 0rem;
@@ -150,6 +150,24 @@ p {
   &::selection {
     background: rgb-var(accent, 50);
   }
+}
+p.small {
+  font-size: 1rem;
+  line-height: 140%;
+}
+
+// note
+//---------------------------------------------------------------------
+.note {
+  font-family: $jet-brains;
+  font-style: italic;
+  font-weight: $weight-light;
+  font-size: 1.05rem;
+
+  letter-spacing: -0.025rem;
+  opacity: 80%;
+
+  filter: saturate(1.5);
 }
 
 // lists
@@ -245,17 +263,4 @@ ol {
     color: rgb-var(bg);
     border: 0.125rem solid rgb-var(accent);
   }
-}
-
-// note
-//---------------------------------------------------------------------
-.note {
-  font-family: $jet-brains;
-  font-style: italic;
-  font-weight: $weight-light;
-  font-size: 1.05rem;
-  line-height: 140%;
-  opacity: 80%;
-
-  filter: saturate(1.5);
 }

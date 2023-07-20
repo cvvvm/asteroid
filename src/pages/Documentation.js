@@ -11,7 +11,7 @@ SyntaxHighlighter.registerLanguage('javascript', javascript);
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function NavLink({ to, children, appColor, ...props }) {
+function NavLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 
@@ -26,9 +26,9 @@ export function Sidebar() {
   return (
     <div className="sidebar">
       <h4>topics:</h4>
-      <Link to={'docs/nav-menu'} className="sidebar-item">
-        nav menu
-      </Link>
+      <NavLink to={''}>home</NavLink>
+      <NavLink to={'colors'}>colors</NavLink>
+      <NavLink to={'nav-menu'}>nav menu</NavLink>
     </div>
   );
 }
@@ -58,30 +58,67 @@ export default function Documentation() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const codeString =
-  "useLayoutEffect(() => {\n\tconst navCtx = gsap.context(() => {\n\t\tnavTL.current = gsap\n\t\t\t.timeline({ reversed: true })\n\t\t\t.add(navOpenCtrlBar())\n\t\t\t.add(navOpenNavLinks(), '<');\n\t}, [nav]);\n\n\treturn () => navCtx.revert();\n}, []);";
-const codeString2 =
-  '@mixin row() {\n\tflex-flow: row wrap !important;\n\tgap: cssvar-get(gap);\n\tplace-content: $place-center;\n\t//place-items: $place-center;\n}';
-
 export function DocIndex() {
   return (
     <div className="col-6">
-      <h2>documentation</h2>
-      <p>oooh. looks like these haven't been written yet!</p>
-      <p className="note">try coming back in 5 minutes?</p>
+      <p className="note">in progress. doesn't work on mobile yet!</p>
+      <h1>documentation</h1>
+      <p>here's how this website works.</p>
     </div>
   );
 }
 
+export function ColorDoc() {
+  const colorScssVar =
+    '// pink scss variables\n$pink-lt: 246, 205, 254;\n$pink-accent: 255, 110, 206;\n$pink-dk: 170, 9, 170;\n$pink-blk: 90, 0, 90;';
+  const cssColorVarSetFunc =
+    "@include cssvar-set(\n\t(\n\t\ttext: '',\n\t\tbg: '',\n\t\taccent: '',\n\t\tblk: '',\n\n\t\tyellow-accent: #{$yellow-accent},\n\t\tgreen-accent: #{$green-accent},\n\t\tblue-accent: #{$blue-accent},\n\t\tpink-accent: #{$pink-accent},\n\t\tred-accent: #{$red-accent},\n\t\tgrey-accent: #{$grey-accent},\n\t\tmono-accent: #{$mono-accent},\n\n\t\tyellow-blk: #{$yellow-blk},\n\t\tgreen-blk: #{$green-blk},\n\t\tblue-blk: #{$blue-blk},\n\t\tpink-blk: #{$pink-blk},\n\t\tred-blk: #{$red-blk},\n\t\tgrey-blk: #{$grey-blk},\n\t\tmono-blk: #{$mono-blk},\n\t)\n);";
+  return (
+    <div className="row-f10 pc-start">
+      <div className="col-7 invert mb-3">
+        <h1>colors</h1>
+        <p>
+          colors are implemented as number values with css variables, and accessed via
+          functions.
+        </p>
+      </div>
+      <h2 className="">variable setup</h2>
+      <div className="row-f10 pc-start outline">
+        <div className="row-f10 pc-start">
+          <div className="col-3 jc-center">
+            <h4>scss variables</h4>
+            <p className="small">
+              each color starts as the raw numbers for their rgb values.
+            </p>
+          </div>
+          <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
+            {colorScssVar}
+          </SyntaxHighlighter>
+        </div>
+        <div className="col-3 jc-center">
+          <h4>css variables: base</h4>
+          <p className="small">css variables are used to toggle color/theme switching.</p>
+          <p className="small">
+            'text' + 'bg' variables alternate based on theme, but each 'accent' + 'blk'
+            color remains the same, so those are directly declared here.
+          </p>
+        </div>
+        <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
+          {cssColorVarSetFunc}
+        </SyntaxHighlighter>
+      </div>
+    </div>
+  );
+}
 export function NavDoc() {
   return (
-    <div className="col-f10">
-      <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
-        {codeString2}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="javascript" style={highlighterstyles} showLineNumbers>
-        {codeString}
-      </SyntaxHighlighter>
+    <div className="row-f10 full">
+      <div className="col-f10">
+        <h1>navigation menu</h1>
+        <p>
+          the navigation menu doubles as a theme/color picker, and is animated with gsap.
+        </p>
+      </div>
     </div>
   );
 }

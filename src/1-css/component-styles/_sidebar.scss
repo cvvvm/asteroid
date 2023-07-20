@@ -28,6 +28,8 @@
     margin: 0;
 
     &.active {
+      background-color: rgb-var(text);
+      color: rgb-var(bg);
     }
   }
 

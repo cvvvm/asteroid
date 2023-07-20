@@ -3,15 +3,17 @@ import { rgbvar } from '../../functions/ThemeSet';
 // variables & functions
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const accent = rgbvar('accent');
-const blk = rgbvar('blk');
+const getBlk = rgbvar('blk');
 
 function filter(b, s) {
   return 'brightness(' + b + ') saturate(' + s + ')';
 }
 
-function color(o) {
-  return 'rgba(' + accent + ', ' + o + ')';
+function white(o) {
+  return 'rgba(255,255,255,' + o + '%)';
+}
+function accent(o) {
+  return rgbvar('accent', o);
 }
 // color
 //---------------------------------------------------------------------
@@ -27,7 +29,7 @@ const wtBold = '700';
 
 // misc
 //---------------------------------------------------------------------
-const transition = 'all 250ms ease-in-out';
+const transition = 'color 50ms ease-in-out';
 
 // styles
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,8 +52,8 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    background: blk,
-    color: color(1),
+    background: getBlk,
+    color: white(100),
     padding: '2rem 1.65rem 2rem 1.5rem',
     margin: '.5rem 0',
     borderRadius: '.75rem',
@@ -75,8 +77,7 @@ export default {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    color: color(1),
-    filter: filter(1, 1),
+    color: white(100),
     transition: transition,
   },
   'pre > code[class*="language-"]': {
@@ -119,146 +120,115 @@ export default {
     borderRadius: '.3rem',
   },
   comment: {
-    color: color(0.35),
-    filter: filter(2, 0),
+    color: white(40),
   },
   prolog: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   doctype: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   cdata: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   punctuation: {
-    color: color(0.35),
-    filter: filter(2, 0),
+    color: white(40),
   },
   namespace: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   tag: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   operator: {
-    color: color(0.75),
-    filter: filter(1.5, 1),
+    color: white(75),
   },
   number: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   property: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   function: {
-    color: color(1),
-    filter: filter(3, 1),
-    //textShadow: '1px 1px black',
+    color: accent(100),
+    filter: filter(1.5, 5),
+    fontWeight: wtBold,
   },
   'tag-id': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   selector: {
-    color: color(1),
-    filter: filter(3, 1),
+    color: white(100),
   },
   'atrule-id': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   'code.language-javascript': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   'attr-name': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   'code.language-css': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   'code.language-scss': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   boolean: {
-    color: color(1),
-    filter: filter(1, 2),
+    color: accent(100),
+    filter: filter(1.5, 2),
   },
   string: {
-    color: color(1),
-    filter: filter(2, 0),
+    color: white(100),
   },
   entity: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
     cursor: 'help',
   },
   url: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   '.language-css .token.string': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   '.language-scss .token.string': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   '.style .token.string': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   'attr-value': {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   keyword: {
-    color: color(1),
-    filter: filter(1.5, 1),
+    color: accent(100),
+    filter: filter(1, 0.75),
   },
   control: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   directive: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   unit: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   statement: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   regex: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   atrule: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   placeholder: {
-    color: color(1),
-    filter: filter(2, 1),
+    color: white(100),
   },
   variable: {
-    color: color(1),
-    filter: filter(1, 3),
+    color: accent(100),
+    filter: filter(1, 1.75),
   },
   deleted: {
     textDecoration: 'line-through',
@@ -271,9 +241,7 @@ export default {
     fontStyle: 'italic',
   },
   important: {
-    fontWeight: 'bold',
-    color: color(0.5),
-    filter: filter(1, 1),
+    color: accent(60),
   },
   bold: {
     fontWeight: 'bold',
@@ -283,13 +251,11 @@ export default {
     OutlineOffset: '.4rem',
   },
   '.line-numbers.line-numbers .line-numbers-rows': {
-    borderRightColor: color(1),
-    color: color(0.5),
-    filter: filter(2, 1),
+    borderRightColor: white(100),
+    color: white(50),
   },
   '.line-numbers .line-numbers-rows > span:before': {
-    color: color(0.5),
-    filter: filter(2, 1),
+    color: white(50),
   },
   '.line-highlight.line-highlight': {
     background:
