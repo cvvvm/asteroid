@@ -28,11 +28,13 @@ export default function SsuWebReskin() {
       </ImgCover>
       <div className="container">
         <DeviceImgToggler
-          textCol={6}
+          textCol={5}
           invert
-          deviceCol={7}
+          deviceCol={9}
           project={project}
-          images={['Home', 'Department']}
+          images={['hero', 'hub', 'department', 'nested']}
+          imgType={'webp'}
+          toggleCaption="final redesigned pages"
         >
           <h2>spring semester cleaning:</h2>
           <p>
@@ -59,6 +61,7 @@ export default function SsuWebReskin() {
           galleryCol={7}
           project={project}
           imgType={'svg'}
+          vh={60}
           galleries={[
             {
               title: 'final marks',

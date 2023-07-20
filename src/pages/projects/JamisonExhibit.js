@@ -56,7 +56,7 @@ export default function JamisonExhibit() {
                       'map-next-country',
                       'map-world-us-transition',
                       'fire-start',
-                      'people-willam',
+                      'people-william',
                       'menu',
                       'place-map-transition',
                       'saloons',

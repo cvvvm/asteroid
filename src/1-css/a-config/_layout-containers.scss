@@ -8,7 +8,7 @@ $max-columns: 18;
     max-columns: #{$max-columns},
     current-columns: '',
     object-gap: clamp(2rem, 2rem + 1.1vw, 5rem),
-    item-gap: clamp(1rem, 1rem + 1vw, 2rem),
+    item-gap: 2rem,
     spacer: 1rem,
 
     // clamp(min size, set size when computed, max size)
@@ -87,8 +87,8 @@ $page-breakpoints: (
 @mixin column-outline($invert: false, $alt: false) {
   place-self: center;
   place-content: center;
-  padding: clamp(3rem, 3rem + 1vw, 3.5rem) clamp(1rem, 1rem + 3vw, 4rem)
-    clamp(3.3rem, 3.3rem + 1vw, 3.8rem);
+  padding: clamp(2rem, calc(1.1 * 5vw), 2.5rem) clamp(1rem, calc(1.1 * 5vw), 3rem)
+    clamp(2.3rem, calc(1.1 * 5vw), 2.8rem);
   border-radius: 1rem;
   background-color: rgb-var(bg);
   border: 3px solid rgb-var(accent);

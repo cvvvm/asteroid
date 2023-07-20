@@ -89,7 +89,7 @@ export function Projects() {
       <div className="projects-container">
         <ProjectCard
           link={'ssu-web-reskin'}
-          categories={['brand', 'web']}
+          categories={['UX/UI', 'web']}
           title={'sonoma state university'}
           caption={'redesigning for a large university website.'}
         />

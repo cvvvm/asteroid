@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Footer({ project, vh = 20, padding = 5 }) {
+function Footer({ project, vh = 20, padding = 4 }) {
   const currYear = new Date().getFullYear();
 
   if (project) {

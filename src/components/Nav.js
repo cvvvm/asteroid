@@ -39,7 +39,7 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function Nav() {
-  var defaultColor = 'pink';
+  var defaultColor = 'blue';
   const nav = useRef();
   const navTL = useRef();
   const [navState, setNavState] = useState('closed');

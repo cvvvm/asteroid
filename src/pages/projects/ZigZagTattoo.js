@@ -31,7 +31,8 @@ export default function ZigZagTattoo() {
           invert
           deviceCol={7}
           project={project}
-          images={['Home', 'Artist', 'FAQ']}
+          images={['home', 'artist', 'FAQ']}
+          imgType={'webp'}
         >
           <h2>building the website:</h2>
           <p>

@@ -10,7 +10,7 @@ import gsap from 'gsap';
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export function Devices({ columns, project, page, defaultState = 'desk' }) {
+export function Devices({ columns, project, page, defaultState = 'desk', imgType }) {
   // container variables
   //---------------------------------------------------------------------
   const devicesContainer = useRef();
@@ -108,6 +108,7 @@ export function Devices({ columns, project, page, defaultState = 'desk' }) {
               page={page}
               containRef={palmFrame}
               imgRef={palmHeight}
+              imgType={imgType}
             />
           </div>
           <div className="device-container">
@@ -116,6 +117,7 @@ export function Devices({ columns, project, page, defaultState = 'desk' }) {
               page={page}
               containRef={crtFrame}
               imgRef={crtHeight}
+              imgType={imgType}
             />
           </div>
         </div>
@@ -154,7 +156,7 @@ export function Devices({ columns, project, page, defaultState = 'desk' }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function PalmPre({ project, page, containRef, imgRef }) {
+export function PalmPre({ project, page, containRef, imgRef, imgType }) {
   const palmPreTop = useRef();
   const palmPreBottom = useRef();
 
@@ -212,7 +214,8 @@ export function PalmPre({ project, page, containRef, imgRef }) {
               project +
               '/mobile-' +
               page +
-              '.png'
+              '.' +
+              imgType
             ).toLowerCase()}
             alt="mobile view of a website"
           />
@@ -239,7 +242,7 @@ export function PalmPre({ project, page, containRef, imgRef }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function CRTMonitor({ project, page, containRef, imgRef }) {
+export function CRTMonitor({ project, page, containRef, imgRef, imgType }) {
   return (
     <>
       <div className={'crt-monitor'} ref={containRef}>
@@ -251,7 +254,14 @@ export function CRTMonitor({ project, page, containRef, imgRef }) {
         <div className="crt-monitor-img-mask" style={{ height: imgRef }}>
           <img
             className="crt-monitor-img"
-            src={('/images/projects/' + project + '/desk-' + page + '.png').toLowerCase()}
+            src={(
+              '/images/projects/' +
+              project +
+              '/desk-' +
+              page +
+              '.' +
+              imgType
+            ).toLowerCase()}
             alt="desk view of a website"
           />
         </div>
