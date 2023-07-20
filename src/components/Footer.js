@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function Footer({ project, vh = 20, padding = 4 }) {
+function Footer({ project, vh = 20 }) {
   const currYear = new Date().getFullYear();
 
   if (project) {
     var projectReturn = (
-      <div className={'row-f10 py-' + padding}>
+      <div className={'row-f10 pb-5'}>
         <Link to={'/projects'}>
           <button className="button">return to work</button>
         </Link>
@@ -14,7 +14,7 @@ function Footer({ project, vh = 20, padding = 4 }) {
   }
 
   return (
-    <div className={'container full py-' + padding + ' pi-center vh-' + vh}>
+    <div className={'container full py-5 pi-center vh-' + vh}>
       {projectReturn}
       <div className="row-f10">
         <p style={{ textAlign: 'center' }} className="note">
