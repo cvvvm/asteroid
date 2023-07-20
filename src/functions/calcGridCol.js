@@ -1,7 +1,7 @@
 // variables
 var rtime;
 var timeout = false;
-const resizeDelay = 50;
+const resizeDelay = 100;
 const root = document.documentElement;
 
 // delay, update on resize

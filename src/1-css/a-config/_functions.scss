@@ -54,7 +54,7 @@
     $spacer: 'margin #{$timing} #{$ease}, padding #{$timing} #{$ease}';
   }
   @if ($size) {
-    $size: 'height #{$timing} #{$ease}, width #{$timing} #{$ease}';
+    $size: 'height #{$timing} #{$ease}, min-height #{$timing} #{$ease}, max-height #{$timing} #{$ease}, width #{$timing} #{$ease}, min-width #{$timing} #{$ease}, max-width #{$timing} #{$ease}';
   }
   @if ($gap) {
     $gap: 'gap #{$timing} #{$ease}';

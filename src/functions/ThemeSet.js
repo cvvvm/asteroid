@@ -11,7 +11,6 @@ import { useState } from 'react';
 // rgb variable reader
 //---------------------------------------------------------------------
 export function rgbvar(color, opacity = 100) {
-  console.log('rgba(var(--' + color + '), ' + opacity + '%)');
   return 'rgba(var(--' + color + '), ' + opacity + '%)';
 }
 

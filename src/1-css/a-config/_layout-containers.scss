@@ -92,12 +92,12 @@ $page-breakpoints: (
   border-radius: 1rem;
   background-color: rgb-var(bg);
   border: 3px solid rgb-var(accent);
-  transition: transition($color: true);
+  transition: transition($color: true, $size: true, $spacer: true);
 
   @if $invert {
     color: rgb-var(bg);
     background-color: rgb-var(text);
-    border: 3px solid rgb-var(text);
+    border: 3px solid rgb-var($name: text, $val: 100);
   }
 }
 
@@ -121,7 +121,6 @@ $page-breakpoints: (
 
   margin: 0 auto;
   padding: var(--container-padding); //clamp(2rem, calc(2 * 5vw), 10rem) 1rem;
-
   &.full {
     max-width: 100vw;
     margin: 0;
