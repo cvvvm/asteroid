@@ -66,7 +66,7 @@ export function ProjectCard({ title, caption, categories, link, background }) {
     <>
       <Link to={'/projects/' + link} className="project-card ">
         <div className="row-f10 pc-start col-gap-1">{catmap}</div>
-        <h3 className="title">{title}</h3>
+        <h2 className="title">{title}</h2>
         <p className="caption">{caption}</p>
       </Link>
     </>
