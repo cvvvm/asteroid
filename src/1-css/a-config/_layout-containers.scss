@@ -97,7 +97,7 @@ $page-breakpoints: (
   @if $invert {
     color: rgb-var(bg);
     background-color: rgb-var(text);
-    border: 3px solid rgb-var($name: text, $val: 100);
+    border: 3px solid rgb-var($color: text, $opacity: 100);
   }
 }
 

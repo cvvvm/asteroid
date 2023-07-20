@@ -19,7 +19,7 @@ function Footer({ project, vh = 20, padding = 5 }) {
       <div className="row-f10">
         <p style={{ textAlign: 'center' }} className="note">
           &copy;{currYear}.{' '}
-          <Link className={'notelink'} to={'/documentation'}>
+          <Link className={'notelink'} to={'/docs'}>
             built
           </Link>{' '}
           by me :)

@@ -30,8 +30,8 @@
 
 // USE CSS VARIABLE - RGBA
 //---------------------------------------------------------------------
-@function rgb-var($name, $val: 100) {
-  @return rgba(var(--#{$name}), (#{$val + '%'}));
+@function rgb-var($color, $opacity: 100) {
+  @return rgba(var(--#{$color}), (#{$opacity + '%'}));
 }
 
 // transitions

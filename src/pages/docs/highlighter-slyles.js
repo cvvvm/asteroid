@@ -1,4 +1,4 @@
-import { rgbvar } from './ThemeSet';
+import { rgbvar } from '../../functions/ThemeSet';
 
 // variables & functions
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

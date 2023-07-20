@@ -17,6 +17,8 @@ import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 import SsuWebReskin from './pages/projects/SsuWebReskin';
 
+import { DocNav, DocNav2 } from './pages/Documentation';
+
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
 export const ScrollToTop = ({ children }) => {
@@ -105,8 +107,21 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/documentation" element={<Documentation />} />
           <Route path="/about" element={<About />} />
+
+          {/* docs */}
+          <Route
+            path="/docs"
+            element={
+              <>
+                <Documentation />
+              </>
+            }
+          >
+            <Route index element={<DocNav />} />
+            <Route path="docs/nav-menu" element={<DocNav />} />
+            <Route path="docs/nav-menu2" element={<DocNav2 />} />
+          </Route>
 
           {/* projects */}
           <Route
@@ -116,9 +131,9 @@ function App() {
               </>
             }
           >
-            <Route path="/work/zig-zag-tattoo" element={<ZigZagTattoo />} />
-            <Route path="/work/asc-exhibit" element={<JamisonExhibit />} />
-            <Route path="/work/ssu-web-reskin" element={<SsuWebReskin />} />
+            <Route path="/projects/zig-zag-tattoo" element={<ZigZagTattoo />} />
+            <Route path="/projects/asc-exhibit" element={<JamisonExhibit />} />
+            <Route path="/projects/ssu-web-reskin" element={<SsuWebReskin />} />
           </Route>
         </Routes>
       </ScrollToTop>
