@@ -6,7 +6,7 @@ function Footer({ project, vh = 20, padding = 4 }) {
   if (project) {
     var projectReturn = (
       <div className={'row-f10 py-' + padding}>
-        <Link to={'/work'}>
+        <Link to={'/projects'}>
           <button className="button">return to work</button>
         </Link>
       </div>
