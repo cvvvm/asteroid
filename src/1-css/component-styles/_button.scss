@@ -21,7 +21,7 @@
 
   @if $outline {
     color: rgb-var(text);
-    background-color: rgb-var(bg);
+    background-color: rgb-var(accent, 15);
     border-color: rgb-var(accent);
   }
 
@@ -33,7 +33,7 @@
 
   @if $outline-invert {
     color: rgb-var(bg);
-    background-color: rgb-var(text);
+    background-color: rgb-var(accent, 25);
     border-color: rgb-var(accent);
   }
 
