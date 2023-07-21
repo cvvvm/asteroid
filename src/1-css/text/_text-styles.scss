@@ -240,11 +240,11 @@ ol {
   max-height: max-content;
 
   margin: 0rem 0rem 0rem -0.5rem;
-  padding: 7px 12px;
+  padding: 7px 11px 7px 12px;
 
   background-color: rgb-var(text);
-  border: 0.125rem solid rgb-var(text);
-  border-radius: 0.6rem;
+  border: $border-width solid rgb-var(text);
+  border-radius: $border-rad-sm;
   transition: transition($color: true);
 
   @include firefox() {
@@ -252,18 +252,18 @@ ol {
   }
 
   @if $outline {
-    background-color: rgb-var(bg);
+    background-color: rgb-var(accent, 15);
     color: rgb-var(text);
-    border: 0.125rem solid rgb-var(accent);
+    border: $border-width solid rgb-var(accent);
   }
   @if $invert {
     background-color: rgb-var(bg);
     color: rgb-var(text);
-    border: 0.125rem solid rgb-var(bg);
+    border: $border-width solid rgb-var(bg);
   }
   @if $outline-invert {
-    background-color: rgb-var(text);
+    background-color: rgb-var(accent, 15);
     color: rgb-var(bg);
-    border: 0.125rem solid rgb-var(accent);
+    border: $border-width solid rgb-var(accent);
   }
 }
