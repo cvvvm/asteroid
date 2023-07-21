@@ -1,0 +1,84 @@
+// color variables are in _colors.scss
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// layout
+//
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$page-breakpoints: (
+  xs: 0,
+  sm: 512,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1536,
+);
+
+$max-columns: 18;
+
+@include cssvar-set(
+  (
+    max-columns: #{$max-columns},
+    current-columns: '',
+    object-gap: clamp(2rem, 2rem + 1.1vw, 5rem),
+    item-gap: 2rem,
+    spacer: 1rem,
+    container-padding: 6rem 1rem,
+  )
+);
+
+$place-start: start !default;
+$place-center: center !default;
+
+$spacer: var(--spacer) !default;
+
+$border-rad-sm: 0.325rem !default;
+$border-rad: 0.625rem !default;
+$border-rad-lg: 1.25rem !default;
+
+$border-width: 2px !default;
+$border-width-lg: 3px !default;
+
+// spacers
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$spacer-types: (
+  'padding': 'p',
+  'margin': 'm',
+);
+
+$spacer-areas: (
+  '': '',
+  '-top': 't',
+  '-right': 'r',
+  '-bottom': 'b',
+  '-left': 'l',
+);
+
+// placement
+//---------------------------------------------------------------------
+$place-content: (
+  'start': 'flex-start',
+  'end': 'flex-end',
+  'center': 'center',
+  'between': 'space-between',
+  'around': 'space-around',
+  'evenly': 'space-evenly',
+  'stretch': 'stretch',
+);
+
+$place-items: (
+  'start': 'flex-start',
+  'end': 'flex-end',
+  'self-start': 'self-start',
+  'self-end': 'self-end',
+  'center': 'center',
+  'baseline': 'baseline',
+  'stretch': 'stretch',
+);
