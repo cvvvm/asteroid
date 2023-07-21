@@ -60,15 +60,15 @@
     row-gap: 2rem;
 
     padding: 1.75rem 2rem 1.75rem;
-    border-radius: 1.25rem;
-    border: 2px solid rgb-var(accent);
+    border-radius: $border-rad;
+    border: $border-width solid rgb-var(accent);
     background-color: rgb-var(bg);
 
     transition: transition($color: true, $spacer: true, $scale: true);
 
     @include breakpoint(md) {
       padding: 2.5rem 3rem 2.5rem;
-      border-radius: 1.125rem;
+      border-radius: $border-rad-lg;
     }
 
     &:hover {
@@ -114,7 +114,7 @@
 .gallery-button {
   z-index: 8000;
   padding: 0.5rem 1rem 0.6rem !important;
-  border-radius: 0.875rem !important;
+  border-radius: $border-rad !important;
 }
 
 .slide {

@@ -14,7 +14,7 @@
   background-color: rgb-var(text);
   border-color: rgb-var(text);
   border-style: solid;
-  border-width: 0.2rem;
+  border-width: $border-width;
   border-radius: $border-rad;
 
   transition: transition($color: true, $translate: true);

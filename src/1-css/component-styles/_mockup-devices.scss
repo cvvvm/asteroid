@@ -49,11 +49,11 @@
   padding: 0.5rem 1rem !important;
 
   &.right {
-    border-radius: 0rem 0.875rem 0.875rem 0rem !important;
+    border-radius: 0rem $border-rad $border-rad 0rem !important;
     border-left: none !important;
   }
   &.left {
-    border-radius: 0.875rem 0rem 0rem 0.875rem !important;
+    border-radius: $border-rad 0rem 0rem $border-rad !important;
     border-right: none !important;
     z-index: 1;
   }

@@ -23,11 +23,12 @@
   }
   .sidebar-item {
     @extend .button-outline;
-    border-radius: 0.75rem;
-    border: 2px solid rgb-var(accent);
+    border-radius: $border-rad-sm;
+    border: $border-width solid rgb-var(accent);
     margin: 0;
 
     &.active {
+      border-color: rgb-var(text);
       background-color: rgb-var(text);
       color: rgb-var(bg);
     }

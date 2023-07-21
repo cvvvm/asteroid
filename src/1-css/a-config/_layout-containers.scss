@@ -54,17 +54,17 @@
 @mixin column-outline($invert: false, $alt: false) {
   place-self: center;
   place-content: center;
-  padding: clamp(2rem, calc(1.1 * 5vw), 2.5rem) clamp(1rem, calc(1.1 * 5vw), 3rem)
-    clamp(2.2rem, calc(1.1 * 5vw), 2.7rem);
-  border-radius: 1rem;
+  padding: clamp(2rem, calc(1.125 * 5vw), 2.5rem) clamp(1rem, calc(1.1 * 5vw), 3rem)
+    clamp(2.125rem, calc(1.1 * 5vw), 2.625rem);
+  border-radius: $border-rad-lg;
   background-color: rgb-var(bg);
-  border: 3px solid rgb-var(accent);
+  border: $border-width solid rgb-var(accent);
   transition: transition($color: true, $size: true, $spacer: true);
 
   @if $invert {
     color: rgb-var(bg);
     background-color: rgb-var(text);
-    border: 3px solid rgb-var($color: text, $opacity: 100);
+    border: $border-width solid rgb-var($color: text, $opacity: 100);
   }
 }
 
