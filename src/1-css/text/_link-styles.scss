@@ -28,7 +28,7 @@ a {
     // drop shadow
     0 0 1rem 0 rgb-var(accent, 0);
 
-  transition: all #{$timing-std} ease-out;
+  transition: all #{$timing-primary} ease-out;
 
   // link hover
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

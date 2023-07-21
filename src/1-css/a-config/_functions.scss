@@ -36,7 +36,7 @@
 
 // transitions
 //---------------------------------------------------------------------
-$timing-std: '250ms';
+$timing-primary: '250ms';
 @function transition(
   $color: false,
   $spacer: false,
@@ -45,7 +45,7 @@ $timing-std: '250ms';
   $scale: false,
   $translate: false,
   $shadow: false,
-  $timing: $timing-std,
+  $timing: $timing-primary,
   $ease: 'ease-in-out'
 ) {
   @if ($color) {
