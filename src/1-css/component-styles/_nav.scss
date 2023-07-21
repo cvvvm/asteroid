@@ -87,7 +87,7 @@
   position: relative;
   display: flex;
   flex-flow: row nowrap;
-  gap: 0.35rem;
+  gap: 0.25rem;
 
   background-color: rgb-var(accent);
   padding: 0.5rem 0.75rem 0.75rem;
@@ -98,8 +98,9 @@
   padding: 1rem;
   flex: 1 1 calc(100% / 7);
   aspect-ratio: 1 / 1;
+  height: 2.5rem;
 
-  border-radius: $border-rad-lg;
+  border-radius: 2rem;
   border-width: $border-width-lg;
   border-style: solid;
   //margin: 0.35rem 0.25rem;

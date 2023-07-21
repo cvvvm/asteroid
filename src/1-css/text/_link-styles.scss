@@ -20,7 +20,7 @@ a {
 
   box-shadow:
     // underline
-    inset 0 -0.125rem 0 0 rgb-var(accent, 60),
+    inset 0 -#{$border-width} 0 0 rgb-var(accent, 60),
     // left shading
     inset 0rem 0rem 0 0 rgb-var(accent, 0),
     inset 0rem 0rem 0 0 rgb-var(accent, 0), inset 0rem 0rem 0 0 rgb-var(accent, 0),

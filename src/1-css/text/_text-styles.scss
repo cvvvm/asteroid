@@ -244,7 +244,8 @@ ol {
 
   background-color: rgb-var(text);
   border: $border-width solid rgb-var(text);
-  border-radius: $border-rad-lg;
+  border-radius: $border-rad-sm;
+
   transition: transition($color: true);
 
   @include firefox() {

@@ -158,13 +158,13 @@ function navOpenCtrlBar() {
     .to(
       '.nav-control-bar',
       {
-        borderRadius: '1rem 1rem 0rem 0rem',
+        borderRadius: '1.25rem 1.25rem 0rem 0rem',
         padding: '0.65rem',
       },
       '<'
     )
-    .to('.nav-toggle', { borderRadius: '0.625rem' }, '<')
-    .to('.theme-toggle', { borderRadius: '0.625rem' }, '<')
+    .to('.nav-toggle', { borderRadius: '0.875rem' }, '<')
+    .to('.theme-toggle', { borderRadius: '0.875rem' }, '<')
     .to(
       '.color-set-toggles-mask',
       {

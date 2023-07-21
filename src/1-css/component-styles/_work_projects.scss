@@ -15,7 +15,7 @@
   position: fixed;
   font-size: 1.5rem !important;
   top: clamp(1rem, 0.2rem + 1vw, 1.5rem);
-  left: clamp(1.25rem, 0.45rem + 1vw, 1.75rem);
+  left: clamp(1.375rem, 0.45rem + 1vw, 1.75rem);
 
   padding: 0.65rem 1.3rem 0.75rem 1.25rem !important;
 }
@@ -115,6 +115,7 @@
   z-index: 8000;
   padding: 0.5rem 1rem 0.6rem !important;
   border-radius: $border-rad !important;
+  background-color: rgb-var(bg) !important;
 }
 
 .slide {
