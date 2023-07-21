@@ -5,9 +5,9 @@
 @mixin buttons($outline: false, $outline-invert: false, $invert: false) {
   font-family: $jet-brains;
   font-weight: $weight-medium;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 
-  padding: 0.75rem 1.35rem 0.85rem;
+  padding: 0.5rem 1.35rem 0.65rem;
   margin: 0rem -0.35rem;
 
   color: rgb-var(bg);
@@ -15,7 +15,7 @@
   border-color: rgb-var(text);
   border-style: solid;
   border-width: 0.2rem;
-  border-radius: 2rem;
+  border-radius: 0.875rem;
 
   transition: transition($color: true, $translate: true);
 
