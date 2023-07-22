@@ -150,8 +150,8 @@ function navOpenCtrlBar() {
       '.nav-control-bar',
       {
         backgroundColor: rgbvar('accent', 100),
-        boxShadow: '0px 0px 0px ' + rgbvar('accent', 0),
-        duration: 0.001,
+        boxShadow: '0px 3px 0px ' + rgbvar('accent'),
+        duration: 0.01,
       },
       '<'
     )
