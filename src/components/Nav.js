@@ -109,7 +109,7 @@ function Nav() {
             className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
           >
-            o<i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
+            <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
           </button>
         </div>
 
