@@ -104,16 +104,8 @@ function Nav() {
           <ThemeSet classNames={'theme-toggle'} />
 
           <button
-            className="nav-toggle"
+            className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
-            style={
-              navState === 'open'
-                ? { backgroundColor: rgbvar('red-accent'), color: '#990d00' }
-                : {
-                    backgroundColor: rgbvar('text'),
-                    color: rgbvar('bg'),
-                  }
-            }
           >
             <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
           </button>
@@ -154,6 +146,15 @@ function navOpenCtrlBar() {
   });
   openCtrlBarTL
 
+    .to(
+      '.nav-control-bar',
+      {
+        backgroundColor: rgbvar('accent', 100),
+        boxShadow: '0px 0px 0px ' + rgbvar('accent', 0),
+        duration: 0.001,
+      },
+      '<'
+    )
     .to('.nav-link-mask', { scaleX: 1 }, '<')
     .to(
       '.nav-control-bar',
@@ -184,14 +185,16 @@ function navOpenCtrlBar() {
     .to(
       '.color-set-toggle',
       {
-        boxShadow: 'inset -2px 5px rgba(0, 0, 0, 0.35)',
+        boxShadow: 'inset 3px 4px rgba(0, 0, 0, 0.35)',
         stagger: {
           amount: 0.4,
         },
         duration: 0.6,
       },
       '<'
-    );
+    )
+    .to('.theme-toggle', { boxShadow: '3px 3px 0px ' + rgbvar('blk', 80) }, '<')
+    .to('.nav-toggle', { boxShadow: '3px 3px 0px #990d00', duration: 0.1 }, '<');
 
   return openCtrlBarTL;
 }

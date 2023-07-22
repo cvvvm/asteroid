@@ -14,29 +14,32 @@
   background-color: rgb-var(text);
   border-color: rgb-var(text);
   border-style: solid;
-  border-width: $border-width;
+  border-width: $border-width-sm;
   border-radius: $border-rad;
 
-  box-shadow: -1px 2px 0rem rgb-var(accent, 100);
+  box-shadow: $button-shadow-dist rgb-var(accent, 100);
 
   transition: transition($color: true, $translate: true);
 
   @if $outline {
     color: rgb-var(text);
-    background-color: rgb-var(accent, 15);
+    background-color: rgb-var(accent, 20);
     border-color: rgb-var(accent);
+    box-shadow: $button-shadow-dist rgb-var(accent, 100);
   }
 
   @if $invert {
     color: rgb-var(text);
     background-color: rgb-var(bg);
     border-color: rgb-var(bg);
+    box-shadow: $button-shadow-dist rgb-var(accent, 100);
   }
 
   @if $outline-invert {
     color: rgb-var(bg);
-    background-color: rgb-var(accent, 25);
+    background-color: rgb-var(accent, 20);
     border-color: rgb-var(accent);
+    box-shadow: $button-shadow-dist rgb-var(accent, 100);
   }
 
   &:hover {

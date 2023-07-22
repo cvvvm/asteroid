@@ -88,10 +88,10 @@ export function Projects() {
     <>
       <div className="projects-container">
         <ProjectCard
-          link={'ssu-web-reskin'}
-          categories={['UX/UI', 'web']}
-          title={'sonoma state university'}
-          caption={'redesigning for a large university website.'}
+          link={'asc-exhibit'}
+          categories={['UX/UI']}
+          title={'jamison city interactive'}
+          caption={'stress-testing Powerpoint to teach history.'}
         />
         <ProjectCard
           link={'zig-zag-tattoo'}
@@ -100,10 +100,10 @@ export function Projects() {
           caption={'establishing a foundation for a new studio.'}
         />
         <ProjectCard
-          link={'asc-exhibit'}
-          categories={['UX/UI']}
-          title={'jamison city interactive'}
-          caption={'stress-testing Powerpoint to teach history.'}
+          link={'ssu-web-reskin'}
+          categories={['UX/UI', 'web']}
+          title={'sonoma state university'}
+          caption={'redesigning for a large university website.'}
         />
       </div>
     </>

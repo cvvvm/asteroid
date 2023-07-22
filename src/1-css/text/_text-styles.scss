@@ -233,7 +233,6 @@ ol {
   line-height: 100%;
   font-size: 1.15rem;
   font-weight: 400;
-  letter-spacing: 0.015rem;
   color: rgb-var(bg);
 
   max-width: max-content;
@@ -253,9 +252,9 @@ ol {
   }
 
   @if $outline {
-    background-color: rgb-var(accent, 15);
+    background-color: rgb-var(bg, 100);
     color: rgb-var(text);
-    border: $border-width solid rgb-var(accent);
+    border: $border-width solid rgb-var(accent, 75);
   }
   @if $invert {
     background-color: rgb-var(bg);
@@ -263,8 +262,8 @@ ol {
     border: $border-width solid rgb-var(bg);
   }
   @if $outline-invert {
-    background-color: rgb-var(accent, 15);
+    background-color: rgb-var(text, 100);
     color: rgb-var(bg);
-    border: $border-width solid rgb-var(accent);
+    border: $border-width solid rgb-var(accent, 75);
   }
 }

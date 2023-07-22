@@ -47,15 +47,13 @@
   font-size: 1rem !important;
   margin: 0 !important;
   padding: 0.5rem 1rem !important;
+  box-shadow: none !important;
 
   &.right {
     border-radius: 0rem $border-rad $border-rad 0rem !important;
-    border-left: none !important;
   }
   &.left {
     border-radius: $border-rad 0rem 0rem $border-rad !important;
-    border-right: none !important;
-    z-index: 1;
   }
 
   &:active {
@@ -69,8 +67,8 @@
   font-size: 1rem !important;
   padding: 0.4375rem 1rem 0.5rem !important;
   margin: 0rem !important;
-  border-width: $border-width !important;
   border-radius: $border-rad-sm !important;
+  box-shadow: none !important;
 }
 
 .page-toggles-container {
