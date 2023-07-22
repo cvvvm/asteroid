@@ -60,22 +60,23 @@ export default function Documentation() {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SectionHead({ title }) {
+function SectionHead({ title, children }) {
   return (
-    <div className="col-f10 pc-start py-1 px-2 outline">
+    <div className="col-6 outline pc-start py-1 px-2 mt-3">
       <h2>{title}</h2>
+      {children}
     </div>
   );
 }
 
 function H4Code({ textCol = 3, code, language, title, children }) {
   return (
-    <div className="row-f9 gap-1 pc-start pi-center">
+    <div className="row-f10 pc-start pi-center gap-1 pl-2">
       <div className={'col-' + textCol}>
         <h4>{title}</h4>
         {children}
       </div>
-      <div className="row-f">
+      <div className="row-f jc-start">
         <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
           {code}
         </SyntaxHighlighter>
@@ -157,7 +158,7 @@ const rowMixin =
 
 export function LayoutDoc() {
   return (
-    <div className="row-f9 full">
+    <div className="row-f9 pc-start">
       <div className="col-f10 invert">
         <h1>layout</h1>
         <p>
@@ -165,8 +166,7 @@ export function LayoutDoc() {
           options for rows/columns.
         </p>
       </div>
-      <div className="col-f10 outline">
-        <h2>rows + columns</h2>
+      <SectionHead title={'rows + columns'}>
         <p>
           fixed width layout items are built to emulate css grid items - in that their
           width isn't based on a width percentage, but emulates a responsive column width.
@@ -175,53 +175,33 @@ export function LayoutDoc() {
           as the viewport is scaled, the items will scale down once the viewport width is
           less than the item width.
         </p>
-      </div>
-      <div className="row-f9 gap-1 pc-start pi-center">
-        <div className="row-3 gap-1">
-          <div className="row-f10 pc-start">
-            <h4>calculating columns</h4>
-          </div>
-          <div className="col-3">
-            <p className="small">
-              using the css variable '--current-columns', fixed width items watch if their
-              width is larger than the viewport width.
-            </p>
-          </div>
-          <div className="col-3">
-            <p className="small">
-              once the item's width is exceeded, the '--current-columns' css variable is
-              used to appropriately scale the item.
-            </p>
-          </div>
-        </div>
-        <div className="row-f">
-          <SyntaxHighlighter
-            language="javascript"
-            style={highlighterstyles}
-            showLineNumbers
-          >
-            {calcGridColFunc}
-          </SyntaxHighlighter>
-        </div>
-      </div>
+      </SectionHead>
+      <H4Code
+        title={'calculating columns'}
+        code={calcGridColFunc}
+        language={'javascript'}
+      >
+        <p className="small">
+          using the css variable '--current-columns', fixed width items watch if their
+          width is larger than the viewport width.
+        </p>
+        <p className="small">
+          once the item's width is exceeded, the '--current-columns' css variable is used
+          to appropriately scale the item.
+        </p>
+      </H4Code>
+
       <SectionHead title={'scss @mixins'} />
 
-      <div className="row-f9 gap-1 pc-start pi-center">
-        <div className="col-3">
-          <h4>rows base mixin</h4>
-          <p className="small">
-            rows are flex containers, defaulting to center-placed content.
-          </p>
-          <p className="small">
-            rows are intended to hold cols, rows, and most other objects.
-          </p>
-        </div>
-        <div className="row-f">
-          <SyntaxHighlighter language="scss" style={highlighterstyles} showLineNumbers>
-            {rowMixin}
-          </SyntaxHighlighter>
-        </div>
-      </div>
+      <H4Code code={rowMixin} language={'scss'} title={'rows base mixin'}>
+        <p className="small">
+          rows are flex containers, defaulting to center-placed content.
+        </p>
+        <p className="small">
+          rows are intended to hold cols, rows, and most other objects.
+        </p>
+      </H4Code>
+
       <H4Code code={colMixin} language={'scss'} title={'col base mixin'}>
         <p className="small">
           columns are flex containers, defaulting to left-aligned content.
