@@ -101,13 +101,15 @@ function Nav() {
     <nav ref={nav}>
       <div className="nav-wrapper">
         <div className="nav-control-bar">
-          <ThemeSet classNames={'theme-toggle'} />
+          <ThemeSet
+            classNames={'theme-toggle ' + (navState === 'open' ? 'active' : '')}
+          />
 
           <button
             className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
           >
-            <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
+            o<i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
           </button>
         </div>
 
@@ -145,22 +147,12 @@ function navOpenCtrlBar() {
     defaults: { duration: 0.2, ease: 'power4.out' },
   });
   openCtrlBarTL
-
-    .to(
-      '.nav-control-bar',
-      {
-        backgroundColor: rgbvar('accent', 100),
-        boxShadow: '0px 3px 0px ' + rgbvar('accent'),
-        duration: 0.01,
-      },
-      '<'
-    )
     .to('.nav-link-mask', { scaleX: 1 }, '<')
     .to(
       '.nav-control-bar',
       {
         borderRadius: '1.25rem 1.25rem 0rem 0rem',
-        padding: '0.65rem',
+        padding: '0.625rem',
       },
       '<'
     )
@@ -192,9 +184,7 @@ function navOpenCtrlBar() {
         duration: 0.6,
       },
       '<'
-    )
-    .to('.theme-toggle', { boxShadow: '3px 3px 0px ' + rgbvar('blk', 80) }, '<')
-    .to('.nav-toggle', { boxShadow: '3px 3px 0px #990d00', duration: 0.1 }, '<');
+    );
 
   return openCtrlBarTL;
 }
@@ -207,7 +197,7 @@ function navOpenNavLinks() {
     .to('.color-set-toggle', {
       scale: 1,
     })
-    .to('.nav-link-container', { padding: '1rem', duration: 0.1 }, '<')
+    .to('.nav-link-container', { padding: '0.875rem', duration: 0.1 }, '<')
     .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: -1 })
     .to('.nav-link', { translateY: 0 }, '<')
     .to('.nav-link', { scale: 1, duration: 0.5 }, '<');
