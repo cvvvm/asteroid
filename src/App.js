@@ -17,7 +17,7 @@ import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 import SsuWebReskin from './pages/projects/SsuWebReskin';
 
-import { DocIndex, NavDoc, ColorDoc } from './pages/Documentation';
+import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -121,7 +121,7 @@ function App() {
             <Route path="*" element={<ErrorPage page="docs" />} />
             <Route index element={<DocIndex />} />
             <Route path="colors" element={<ColorDoc />} />
-            <Route path="nav-menu" element={<NavDoc />} />
+            <Route path="layout" element={<LayoutDoc />} />
           </Route>
 
           {/* projects */}

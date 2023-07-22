@@ -1,21 +1,30 @@
+$sidebar-width: clamp(12rem, calc(12 * 2vw), 20rem);
 @mixin sidebar() {
-  .sidebar-container {
+  .sidebar-content-container {
+    position: relative;
     display: grid;
 
-    grid-template-columns: minmax(12rem, 20rem) 1fr;
+    grid-template-columns: $sidebar-width 1fr;
     width: 100vw;
     height: calc(100vh - 6rem);
   }
+  .sidebar-container {
+    position: relative;
+    display: flex;
+  }
   .sidebar {
     position: sticky;
+    top: 0;
+    bottom: 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3rem auto;
     row-gap: 1rem;
     place-content: center;
 
-    padding: 3rem 1.5rem 3rem 1.5rem;
+    width: $sidebar-width;
     height: 100vh;
+    padding: 3rem 1.5rem 3rem 1.5rem;
     background-color: rgb-var($color: accent, $opacity: 50);
 
     @include breakpoint(md) {
@@ -34,7 +43,8 @@
     }
   }
 
-  .page-content {
+  .sidebar-page-content {
+    position: relative;
     display: flex;
     place-content: center;
     place-items: center;

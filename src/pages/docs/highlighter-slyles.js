@@ -20,12 +20,13 @@ function accent(o) {
 
 // text
 //---------------------------------------------------------------------
-const fontSize = '1rem';
-const lineHeight = '150%';
-const tabSize = 2;
+const fontSize = '.9375rem';
+const letterSpacing = '0rem';
+const lineHeight = '135%';
+const tabSize = 1;
 const fontFamily = 'JetBrains Mono';
 const wtReg = '200';
-const wtBold = '700';
+const wtBold = '500';
 
 // misc
 //---------------------------------------------------------------------
@@ -39,6 +40,7 @@ export default {
     fontFamily: fontFamily,
     fontSize: fontSize,
     fontWeight: wtReg,
+    letterSpacing: letterSpacing,
     lineHeight: lineHeight,
     direction: 'ltr',
     textAlign: 'left',
@@ -54,9 +56,9 @@ export default {
     hyphens: 'none',
     background: getBlk,
     color: white(100),
-    padding: '2rem 1.65rem 2rem 1.5rem',
-    margin: '.5rem 0',
-    borderRadius: '.75rem',
+    padding: '1rem .75rem 1rem 1.3125rem',
+    margin: '0',
+    borderRadius: '.625rem',
     overflow: 'auto',
     transition: transition,
   },

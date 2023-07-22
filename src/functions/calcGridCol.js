@@ -29,12 +29,12 @@ function resizeEnd() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function calcGridCol() {
   // find maximum column count
-  let maxCol = getComputedStyle(root).getPropertyValue('--max-columns');
+  //let maxCol = getComputedStyle(root).getPropertyValue('--max-columns');
 
   // calulate current # of columns
   let winWidth = window.innerWidth; //15px for scrollbar;
   let colCount = parseInt(winWidth / 100 + 1); //Math.round(winWidth / 100);
-  let colShrink = maxCol - colCount;
+  //let colShrink = maxCol - colCount;
 
   // update current # of columns
   root.style.setProperty('--current-columns', colCount);

@@ -20,6 +20,7 @@
   flex-flow: row wrap;
   gap: var(--object-gap);
   place-content: $place-center;
+  place-items: $place-center;
 }
 
 @mixin col() {
@@ -96,11 +97,13 @@
 }
 
 .col-f {
+  @include flex-base();
   @include col();
   flex: 1 1 auto;
 }
 
 .row-f {
+  @include flex-base();
   @include row();
   flex: 1 1 auto;
 }
