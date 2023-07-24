@@ -20,7 +20,6 @@
   flex-flow: row wrap;
   gap: var(--object-gap);
   place-content: $place-center;
-  place-items: $place-center;
 }
 
 @mixin col() {

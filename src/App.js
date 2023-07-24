@@ -18,6 +18,7 @@ import JamisonExhibit from './pages/projects/JamisonExhibit';
 import SsuWebReskin from './pages/projects/SsuWebReskin';
 
 import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation';
+import VoltaRoach from './pages/projects/VoltaRoach';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -135,6 +136,7 @@ function App() {
             <Route path="projects/zig-zag-tattoo" element={<ZigZagTattoo />} />
             <Route path="projects/asc-exhibit" element={<JamisonExhibit />} />
             <Route path="projects/ssu-web-reskin" element={<SsuWebReskin />} />
+            <Route path="projects/volta-roach" element={<VoltaRoach />} />
           </Route>
         </Routes>
       </ScrollToTop>

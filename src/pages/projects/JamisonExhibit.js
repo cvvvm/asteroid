@@ -7,7 +7,7 @@ import {
 } from '../../components/ProjectPages';
 
 export default function JamisonExhibit() {
-  var project = 'jamison_exhibit';
+  var project = 'jamison-exhibit';
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>

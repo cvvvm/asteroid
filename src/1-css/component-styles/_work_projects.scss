@@ -22,7 +22,7 @@
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 450px));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 375px));
   grid-template-rows: repeat(auto-fit, auto);
   gap: var(--item-gap);
   place-content: $place-center;

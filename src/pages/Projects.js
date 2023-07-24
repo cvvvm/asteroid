@@ -94,6 +94,12 @@ export function Projects() {
           caption={'stress-testing Powerpoint to teach history.'}
         />
         <ProjectCard
+          link={'volta-roach'}
+          categories={['illustration']}
+          title={'volta mech roach'}
+          caption={'the battle for the future of energy.'}
+        />
+        <ProjectCard
           link={'zig-zag-tattoo'}
           categories={['brand', 'web']}
           title={'zig zag tattoo: web + brand'}
@@ -102,7 +108,7 @@ export function Projects() {
         <ProjectCard
           link={'ssu-web-reskin'}
           categories={['UX/UI', 'web']}
-          title={'sonoma state university'}
+          title={'sonoma state site redesign'}
           caption={'redesigning for a large university website.'}
         />
       </div>
