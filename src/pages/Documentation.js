@@ -27,8 +27,8 @@ export function Sidebar() {
   return (
     <div className="sidebar-container">
       <div className="sidebar">
-        {/* <NavLink to={'colors'}>colors</NavLink>
-        <NavLink to={'layout'}>layout</NavLink> */}
+        <NavLink to={'colors'}>colors</NavLink>
+        <NavLink to={'layout'}>layout</NavLink>
       </div>
     </div>
   );
@@ -97,7 +97,7 @@ export function DocIndex() {
   return (
     <div className="col-6">
       <h1>documentation</h1>
-      <p>coming soon. how exciting.</p>
+      <p>good job using the documentation branch!</p>
     </div>
   );
 }
