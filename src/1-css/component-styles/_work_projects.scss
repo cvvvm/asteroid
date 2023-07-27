@@ -76,7 +76,7 @@
     &:hover {
       color: rgb-var(blk);
       background-color: rgb-var(accent, 35);
-      border: $border-width solid rgb-var(accent, 0);
+      border: $border-width solid rgb-var(blk);
       box-shadow: $button-shadow rgb-var(blk);
       translate: $hover-translate !important;
       margin-top: -3px;
