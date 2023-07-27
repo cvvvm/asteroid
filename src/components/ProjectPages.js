@@ -242,10 +242,10 @@ export function GalleryImgToggler({
     );
   });
 
-  // render component
+  // if children exist
   //---------------------------------------------------------------------
-  return (
-    <div className={' row-f10 vh-' + vh}>
+  if (children) {
+    children = (
       <div
         className={
           'pc-center mb-lg-4 order-1 order-xl-' +
@@ -253,12 +253,20 @@ export function GalleryImgToggler({
           '  col-' +
           textCol +
           (outline ? ' outline' : '') +
-          (invert ? ' outline invert' : '')
+          (invert ? ' invert' : '')
         }
       >
         {children}
       </div>
-      <div className={'row-gap-2 row-' + galleryCol}>
+    );
+  }
+
+  // render component
+  //---------------------------------------------------------------------
+  return (
+    <div className={' row-f10 vh-' + vh}>
+      {children}
+      <div className={'row-gap-1 row-' + galleryCol}>
         <ToggledGallery
           imgType={imgType}
           project={project}

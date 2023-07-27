@@ -41,14 +41,12 @@
   color: rgb-var(bg);
 
   border: none;
-  transition: filter $timing-primary ease-in-out, background $timing-fast ease-in-out,
-    box-shadow $timing-fast ease-out;
+  transition: filter $timing ease-in-out, box-shadow $timing-fast ease-out,
+    transition($color: true);
 
   &:hover {
     background-color: rgb-var(accent, 100);
-    color: rgb-var(text);
-    transition: filter $timing-primary ease-in-out, background $timing-primary ease-in-out,
-      box-shadow $timing-primary ease-out;
+    color: rgb-var(blk);
   }
   &:active {
     filter: brightness(0.8) saturate(1.5);
@@ -67,10 +65,11 @@
   &.active {
     background-color: rgb-var(bg);
     color: rgb-var(text);
-    box-shadow: 3px 3px 0px rgb-var(blk, 80);
+    box-shadow: $button-shadow rgb-var(blk, 80);
 
     &:hover {
-      background-color: rgb-var(bg, 65);
+      color: rgb-var(blk);
+      background-color: rgb-var(bg, 50);
     }
   }
 }
@@ -85,7 +84,7 @@
   &.active {
     background-color: rgb-var(red-accent);
     color: #990d00;
-    box-shadow: 3px 3px 0px #990d00;
+    box-shadow: $button-shadow #990d00;
 
     &:hover {
       background-color: #f14131;
@@ -113,10 +112,10 @@
   position: relative;
   display: flex;
   flex-flow: row nowrap;
-  gap: 0.25rem;
+  gap: 0.5rem;
 
   background-color: rgb-var(accent);
-  padding: 0.5rem 0.75rem 0.75rem;
+  padding: 0.625rem 0.8125rem 0.8125rem 0.5625rem;
   transform-origin: center top;
 }
 
@@ -124,20 +123,19 @@
   padding: 1rem;
   flex: 1 1 calc(100% / 7);
   aspect-ratio: 1 / 1;
-  height: 2.5rem;
+  height: 2rem;
 
   border-radius: 2rem;
   border-width: $border-width-lg;
   border-style: solid;
-  box-shadow: inset 0px 0px rgba(black, 0); //inset 1px 0px rgba(black, 0.25), inset -1px 3px rgba(black, 0.2), inset 0px 7px rgba(black, 0.15);
-
-  transition: filter $timing-primary ease-out;
+  box-shadow: $button-shadow rgb-var(blk, 80);
 
   transform-origin: center;
-  scale: 0;
+  translate: 0px 0px;
+  transition: filter $timing ease-in-out;
 
   &:hover {
-    filter: brightness(0.8) saturate(1.25);
+    filter: brightness(0.85) saturate(1.25);
   }
 }
 
@@ -175,35 +173,32 @@
 .nav-link {
   font-size: 1.375rem;
   font-family: $jet-brains;
-  font-weight: $weight-light;
+  font-weight: $weight-regular;
   text-align: center;
   text-decoration: none;
 
-  padding: 2rem 0rem;
+  padding: clamp(3vh, calc(4 * 1.1vw), 2.5rem) 0rem;
   border-radius: $border-rad;
 
-  transition: padding $timing-primary ease-in, letter-spacing $timing-primary ease-in-out,
-    background $timing-primary ease-in-out, color $timing-primary ease-in-out,
-    box-shadow $timing-primary ease-in-out;
+  transition: padding $timing ease-in, letter-spacing $timing ease-in-out,
+    background $timing ease-in-out, color $timing ease-in-out;
 
   transform-origin: center;
   translate: 0 -650%;
   scale: 0.9;
 
   &:hover {
-    letter-spacing: 0.075rem;
-    background-color: rgb-var(bg, 80) !important;
-    -webkit-text-stroke: 1px;
+    letter-spacing: 0.0625rem;
+    color: rgb-var(blk) !important;
+    background-color: rgb-var(accent) !important;
   }
   &.active {
     font-weight: $weight-black;
-    padding: 3rem 0rem;
+    padding: clamp(6vh, calc(6 * 1.1vw), 5rem) 0rem;
     background-color: rgb-var(accent, 25) !important;
 
     &:hover {
-      background-color: rgb-var(accent, 35) !important;
-      -webkit-text-stroke: 0px;
-      letter-spacing: 0.1rem;
+      background-color: rgb-var(accent, 50) !important;
     }
   }
 }

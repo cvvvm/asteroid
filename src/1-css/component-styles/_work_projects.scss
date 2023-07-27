@@ -22,7 +22,7 @@
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 375px));
+  grid-template-columns: repeat(auto-fit, minmax(275px, 375px));
   grid-template-rows: repeat(auto-fit, auto);
   gap: var(--item-gap);
   place-content: $place-center;
@@ -45,7 +45,7 @@
   opacity: 0;
   background-size: cover;
 
-  transition: opacity $timing-primary ease-in-out;
+  transition: opacity $timing ease-in-out;
 }
 
 // project card
@@ -61,10 +61,11 @@
 
     padding: 1.75rem 2rem 1.75rem;
     border-radius: $border-rad;
-    border: $border-width solid rgb-var(accent);
+    border: $border-width-sm solid rgb-var(accent);
     background-color: rgb-var(bg);
+    box-shadow: $button-shadow rgb-var(accent);
 
-    transition: transition($color: true, $spacer: true, $scale: true);
+    transition: transition($color: true, $spacer: true, $scale: true, $translate: true);
 
     @include breakpoint(md) {
       padding: 2.5rem 3rem 2.5rem;
@@ -72,8 +73,17 @@
     }
 
     &:hover {
-      scale: 1.05 !important;
-      background-color: rgb-var(accent, 10);
+      color: rgb-var(blk);
+      background-color: rgb-var(accent, 50);
+      border: $border-width solid rgb-var(accent, 0);
+      box-shadow: $button-shadow rgb-var(blk);
+      translate: $hover-translate !important;
+
+      > .badge,
+      .badge-outline {
+        color: rgb-var(blk);
+        background-color: rgb-var(accent, 25);
+      }
     }
 
     .title {

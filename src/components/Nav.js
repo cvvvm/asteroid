@@ -152,7 +152,7 @@ function navOpenCtrlBar() {
       '.nav-control-bar',
       {
         borderRadius: '1.25rem 1.25rem 0rem 0rem',
-        padding: '0.625rem',
+        padding: '0.625rem 0.8125rem 0.625rem 0.625rem',
       },
       '<'
     )
@@ -174,14 +174,16 @@ function navOpenCtrlBar() {
       },
       '<'
     )
-    .to(
+    .from(
       '.color-set-toggle',
       {
-        boxShadow: 'inset 3px 4px rgba(0, 0, 0, 0.35)',
+        translateY: 3,
+        translateX: 3,
+        boxShadow: '0px 0px 0px rgba(0,0,0,0.25)',
         stagger: {
-          amount: 0.4,
+          amount: 0.3,
         },
-        duration: 0.6,
+        duration: 0.2,
       },
       '<'
     );

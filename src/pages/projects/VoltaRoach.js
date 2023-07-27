@@ -22,35 +22,29 @@ export default function VoltaRoach() {
         </div>
       </ImgCover>
       <div className="container">
-        <div className="row-f10 vh-80">
-          <div className="col-8 outline invert ">
-            <h2>battery charges.</h2>
-            <p>ha ha ha.</p>
-          </div>
-        </div>
         <GalleryImgToggler
-          textCol={4}
-          invert
+          textCol={5}
           textColOrder={1}
-          galleryCol={8}
+          invert
+          galleryCol={10}
           vh={50}
           project={project}
           imgType={'webp'}
           galleries={[
             {
-              title: 'final',
+              title: 'process',
               prefix: 'process',
-              images: ['final', 'wire', 'ink', 'sketch'],
+              images: ['final', 'color', 'wire', 'ink', 'sketch'],
             },
             {
-              title: 'detail',
+              title: 'details',
               prefix: 'detail',
-              images: ['1', '2', '3', '4'],
+              images: ['1', '2', '3', '4', '5'],
             },
           ]}
         >
-          <h3>bug bug bug:</h3>
-          <p>hi bug</p>
+          <h2>battery charges</h2>
+          <p>great pun.</p>
         </GalleryImgToggler>
       </div>
     </>

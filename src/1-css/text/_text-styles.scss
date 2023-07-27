@@ -167,7 +167,6 @@ p.small {
   font-size: 1.0625rem;
 
   margin-left: 0.125rem;
-  letter-spacing: -0.05rem;
   opacity: 80%;
 
   filter: saturate(0.5);
@@ -232,7 +231,7 @@ ol {
   font-family: $jet-brains;
   line-height: 100%;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: $weight-regular;
   color: rgb-var(bg);
 
   max-width: max-content;
@@ -242,8 +241,9 @@ ol {
   padding: 7px 12px;
 
   background-color: rgb-var(text);
-  border: $border-width solid rgb-var(text);
+  border: $border-width-sm solid rgb-var(text);
   border-radius: $border-rad-sm;
+  box-shadow: $badge-shadow rgb-var(accent);
 
   transition: transition($color: true);
 
@@ -254,16 +254,19 @@ ol {
   @if $outline {
     background-color: rgb-var(bg, 100);
     color: rgb-var(text);
-    border: $border-width solid rgb-var(accent, 75);
+    border: $border-width-sm solid rgb-var(accent, 75);
+    box-shadow: $badge-shadow rgb-var(accent, 75);
   }
   @if $invert {
     background-color: rgb-var(bg);
     color: rgb-var(text);
-    border: $border-width solid rgb-var(bg);
+    border: $border-width-sm solid rgb-var(bg);
+    box-shadow: $badge-shadow rgb-var(accent);
   }
   @if $outline-invert {
     background-color: rgb-var(text, 100);
     color: rgb-var(bg);
-    border: $border-width solid rgb-var(accent, 75);
+    border: $border-width-sm solid rgb-var(accent, 75);
+    box-shadow: $badge-shadow rgb-var(accent, 75);
   }
 }

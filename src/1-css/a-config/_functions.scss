@@ -44,11 +44,11 @@
   $scale: false,
   $translate: false,
   $shadow: false,
-  $timing: $timing-primary,
+  $timing: $timing,
   $ease: 'ease-in-out'
 ) {
   @if ($color) {
-    $color: 'color 50ms #{$ease}, background-color #{$timing} #{$ease}, border #{$timing} #{$ease}, border-color #{$timing} #{$ease}';
+    $color: 'color 50ms #{$ease}, background-color #{$timing} #{$ease}, border #{$timing} #{$ease}, border-color #{$timing} #{$ease}, box-shadow #{$timing} #{$ease}';
   }
   @if ($spacer) {
     $spacer: 'margin #{$timing} #{$ease}, padding #{$timing} #{$ease}';

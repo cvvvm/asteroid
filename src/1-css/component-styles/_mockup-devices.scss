@@ -56,6 +56,10 @@
     border-radius: $border-rad 0rem 0rem $border-rad !important;
   }
 
+  &:hover {
+    translate: 0 !important;
+  }
+
   &:active {
     translate: 0 !important;
   }
@@ -69,6 +73,10 @@
   margin: 0rem !important;
   border-radius: $border-rad-sm !important;
   box-shadow: none !important;
+
+  &:hover {
+    translate: $hover-translate-sm !important;
+  }
 }
 
 .page-toggles-container {

@@ -44,8 +44,9 @@ export function ColorSet({ currentAppColor, appColorTarget }) {
                 backgroundColor: rgbvar(color + '-accent'),
                 borderColor:
                   color == currentAppColor
-                    ? rgbvar('bg-' + currentAppColor)
-                    : rgbvar('accent'),
+                    ? 'rgba(255,255,255,0.75)'
+                    : rgbvar(color + '-accent'),
+                //boxShadow: '4px 4px 0px ' + rgbvar(color + '-blk'),
               }}
               className="color-set-toggle"
             ></div>
