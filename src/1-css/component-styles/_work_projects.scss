@@ -65,7 +65,8 @@
     background-color: rgb-var(bg);
     box-shadow: $button-shadow rgb-var(accent);
 
-    transition: transition($color: true, $spacer: true, $scale: true, $translate: true);
+    transition: transition($color: true, $spacer: true, $scale: true, $translate: true),
+      filter $timing ease-in-out;
 
     @include breakpoint(md) {
       padding: 2.5rem 3rem 2.5rem;
@@ -74,15 +75,23 @@
 
     &:hover {
       color: rgb-var(blk);
-      background-color: rgb-var(accent, 50);
+      background-color: rgb-var(accent, 35);
       border: $border-width solid rgb-var(accent, 0);
       box-shadow: $button-shadow rgb-var(blk);
       translate: $hover-translate !important;
+      margin-top: -3px;
+      margin-left: -3px;
+
+      > h2 {
+        filter: none;
+      }
 
       > .badge,
       .badge-outline {
         color: rgb-var(blk);
-        background-color: rgb-var(accent, 25);
+        background-color: rgb-var(accent, 15);
+        border: $border-width-sm solid rgb-var(text, 65);
+        box-shadow: $badge-shadow rgb-var(text, 65);
       }
     }
 
