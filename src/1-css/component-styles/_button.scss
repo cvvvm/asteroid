@@ -48,7 +48,7 @@
   }
 
   &:active {
-    translate: 0 0;
+    translate: -2px -2px;
     filter: brightness(0.9) saturate(1.25);
   }
 }

@@ -27,10 +27,8 @@ export function Sidebar() {
   return (
     <div className="sidebar-container">
       <div className="sidebar">
-        {/* <h4>topics:</h4>
-      <NavLink to={''}>home</NavLink> */}
-        <NavLink to={'colors'}>colors</NavLink>
-        <NavLink to={'layout'}>layout</NavLink>
+        {/* <NavLink to={'colors'}>colors</NavLink>
+        <NavLink to={'layout'}>layout</NavLink> */}
       </div>
     </div>
   );
@@ -98,9 +96,8 @@ function H4Code({ textCol = 3, code, language, title, children }) {
 export function DocIndex() {
   return (
     <div className="col-6">
-      <p className="note">in progress. doesn't work on mobile yet!</p>
       <h1>documentation</h1>
-      <p>here's how this website works.</p>
+      <p>coming soon. how exciting.</p>
     </div>
   );
 }

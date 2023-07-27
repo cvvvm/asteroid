@@ -39,9 +39,10 @@ $sidebar-width: clamp(12rem, calc(12 * 2vw), 15rem);
     margin: 0;
 
     &.active {
-      border-color: rgb-var(text);
-      background-color: rgb-var(text);
       color: rgb-var(bg);
+      background-color: rgb-var(text);
+      border-color: rgb-var(text);
+      box-shadow: $button-shadow rgb-var(blk);
     }
   }
 
