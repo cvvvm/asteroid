@@ -1,0 +1,60 @@
+form {
+  @extend p;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-weight: $weight-medium;
+  flex: 1 1 30%;
+}
+
+// field
+//---------------------------------------------------------------------
+fieldset {
+  display: flex;
+  flex: 1 1 100%;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: $weight-medium;
+}
+
+fieldset > div > label {
+  font-size: 1.125rem;
+  font-weight: $weight-light;
+  padding-left: 1rem;
+}
+
+fieldset > div > label > input[type='text'] {
+  padding: 0.35rem 0.75rem 0.45rem;
+}
+
+// inputs
+//---------------------------------------------------------------------
+input[type='text'],
+input[type='email'],
+textarea {
+  flex: 1 1 100%;
+
+  font-size: 1.125rem;
+  font-weight: $weight-light;
+
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: $border-rad;
+}
+
+input[type='checkbox'] {
+  padding: 1rem;
+}

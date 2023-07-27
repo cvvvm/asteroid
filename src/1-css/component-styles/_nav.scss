@@ -177,27 +177,31 @@
   text-align: center;
   text-decoration: none;
 
-  padding: clamp(3vh, calc(4 * 1.1vw), 2.5rem) 0rem;
   border-radius: $border-rad;
-
-  transition: padding $timing ease-in, letter-spacing $timing ease-in-out,
-    background $timing ease-in-out, color $timing ease-in-out;
+  //border: $border-width solid rgb-var(bg);
+  padding: clamp(3vh, calc(4 * 1.1vw), 2.5rem) 0rem;
 
   transform-origin: center;
   translate: 0 -650%;
   scale: 0.9;
 
+  transition: padding $timing ease-in, letter-spacing $timing ease-in-out,
+    background $timing ease-in-out, color $timing ease-in-out;
+
   &:hover {
     letter-spacing: 0.0625rem;
     color: rgb-var(blk) !important;
+    //border: $border-width solid rgb-var(accent, 0);
     background-color: rgb-var(accent) !important;
   }
   &.active {
     font-weight: $weight-black;
     padding: clamp(6vh, calc(6 * 1.1vw), 5rem) 0rem;
+    //border: $border-width solid rgb-var(accent);
     background-color: rgb-var(accent, 25) !important;
 
     &:hover {
+      //border: $border-width solid rgb-var(accent, 0);
       background-color: rgb-var(accent, 50) !important;
     }
   }
