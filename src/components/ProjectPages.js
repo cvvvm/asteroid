@@ -83,9 +83,9 @@ export function Role({ columns, project, freelance, roles, contributors, childre
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function DeviceImgToggler({
   textCol,
-  textColOrder = 0,
+  textColOrder = 1,
   invert,
-  vh = 80,
+  vh = 50,
   deviceCol,
   project,
   images = [],
@@ -112,7 +112,7 @@ export function DeviceImgToggler({
   // render component
   //---------------------------------------------------------------------
   return (
-    <div className={'row-f10 vh-' + vh}>
+    <div className={'row-f10 pb-3 pb-sm-2 pb-md-1 vh-' + vh}>
       <div
         className={
           'order-' + textColOrder + ' outline col-' + textCol + (invert ? ' invert' : '')
@@ -232,7 +232,7 @@ export function GalleryImgToggler({
   textColOrder = 0,
   invert,
   outline,
-  vh = 80,
+  vh = 50,
   galleryCol,
   project,
   imgType,

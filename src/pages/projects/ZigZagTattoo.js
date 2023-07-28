@@ -34,7 +34,7 @@ export default function ZigZagTattoo() {
       </ImgCover>
       <div className="container">
         <DeviceImgToggler
-          textCol={6}
+          textCol={5}
           invert
           deviceCol={7}
           project={project}
@@ -52,9 +52,9 @@ export default function ZigZagTattoo() {
           </p>
         </DeviceImgToggler>
         <GalleryImgToggler
-          textCol={6}
+          textCol={5}
           invert
-          galleryCol={7}
+          galleryCol={6}
           project={project}
           imgType={'svg'}
           galleries={[

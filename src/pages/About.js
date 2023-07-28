@@ -7,7 +7,7 @@ export default function About() {
     <>
       <div className="container">
         <div className="row-f10 vh-20 jc-evenly col-gap-5 px-md-10">
-          <div className="col-3">
+          <div className="col-4">
             <p className="badge">about</p>
             <p>professional computer user living in the PNW.</p>
           </div>
