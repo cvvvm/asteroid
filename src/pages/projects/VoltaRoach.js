@@ -26,7 +26,7 @@ export default function VoltaRoach() {
           textCol={5}
           textColOrder={1}
           invert
-          galleryCol={10}
+          galleryCol={9}
           vh={50}
           project={project}
           imgType={'webp'}
