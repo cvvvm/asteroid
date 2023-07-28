@@ -9,20 +9,27 @@ export default function ZigZagTattoo() {
   var project = 'zig-zag-tattoo';
   return (
     <>
-      <ImgCover project={project} imgType={'svg'}>
+      <ImgCover
+        project={project}
+        altText="pink, yellow, and light green zig zags on dark green background. pointing to intro text block for project page"
+        imgType={'svg'}
+      >
         <div className="row-f10">
           <Role
             freelance
             project={'zig zag tattoo'}
-            intro={
-              'is a tattoo studio in Portland, OR. i built a website with one of the founders last year, so i was stoked they returned to work on a bigger project - a website & brand for the newly founded studio.'
-            }
             columns={6}
             roles={
               'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'
             }
             contributors={'copy & photos: Zig Zag Tattoo.'}
-          />
+          >
+            <p>
+              is a tattoo studio in Portland, OR. i built a website with one of the
+              founders last year, so i was stoked they returned to work on a bigger
+              project - a website & brand for the newly founded studio.
+            </p>
+          </Role>
         </div>
       </ImgCover>
       <div className="container">

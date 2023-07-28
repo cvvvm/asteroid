@@ -11,17 +11,21 @@ import { useState, useRef, useLayoutEffect } from 'react';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function ImgCover({ project, imgType, vh = 100, children, className }) {
+export function ImgCover({ project, altText, imgType, vh = 100, children, className }) {
   return (
-    <div
-      className={'container full vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
-      style={{
-        backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      {children}
+    <div>
+      <span
+        className={'container full vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
+        style={{
+          backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        title={altText}
+        role="img"
+      >
+        {children}
+      </span>
     </div>
   );
 }
@@ -36,7 +40,7 @@ export function ImgCover({ project, imgType, vh = 100, children, className }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function Role({ columns, project, intro, freelance, roles, contributors }) {
+export function Role({ columns, project, freelance, roles, contributors, children }) {
   if (freelance) {
     var freelanceBadge = <p className="badge-outline">freelance</p>;
   }
@@ -55,7 +59,8 @@ export function Role({ columns, project, intro, freelance, roles, contributors }
     <div className={'outline invert mt-5 mt-md-0 row-gap-1 col-' + columns}>
       <div className="col-f10 pb-2">
         <h1>{project}</h1>
-        <p>{intro}</p>
+
+        {children}
       </div>
       <div className="row-f10 pc-start col-gap-1">
         <p className="badge">my role:</p>

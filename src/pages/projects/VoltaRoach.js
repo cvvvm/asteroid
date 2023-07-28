@@ -10,15 +10,30 @@ export default function VoltaRoach() {
   var project = 'volta-roach';
   return (
     <>
-      <ImgCover project={project} imgType={'webp'}>
+      <ImgCover
+        project={project}
+        altText={
+          'crop of illustration showing close-up view of gas station exploding. bright yellow and red coloring with black ink drawing.'
+        }
+        imgType={'webp'}
+      >
         <div className="row-f10">
           <Role
             freelance
             project={'big, robot bug.'}
-            intro={'big bug intro text :)'}
             columns={6}
             roles={'illustration + coloring, art direction.'}
-          />
+          >
+            <p>
+              the future is electric, and the people at Volta know it. according to the
+              brief they're an un-killable high-tech force, battling it out against the
+              ancient dinosaurs of industry.
+            </p>
+            <p className="note">
+              note: any likeness to any currently existing entities is merely
+              coincidental. Volta has been acquired by Shell Corp as of 2023.
+            </p>
+          </Role>
         </div>
       </ImgCover>
       <div className="container">
@@ -56,16 +71,27 @@ export default function VoltaRoach() {
               prefix: 'process',
               images: ['sketch'],
             },
-            /*             {
-              title: 'details',
-              prefix: 'detail',
-              images: ['1', '2', '3', '4', '5'],
-            }, */
           ]}
         >
           <h2>battery charges</h2>
           <p>great pun.</p>
         </GalleryImgToggler>
+        <GalleryImgToggler
+          textCol={5}
+          textColOrder={1}
+          invert
+          galleryCol={6}
+          vh={50}
+          project={project}
+          imgType={'webp'}
+          galleries={[
+            {
+              title: 'detail',
+              prefix: 'detail',
+              images: ['1', '2', '3', '4', '5'],
+            },
+          ]}
+        ></GalleryImgToggler>
       </div>
     </>
   );

@@ -15,9 +15,6 @@ export default function JamisonExhibit() {
           <Role
             freelance
             project={'jamison city interactive'}
-            intro={
-              'sponsored by the California Department of Parks & Recreation, my client from Sonoma State University Anthropological Studies Center (ASC) needed to create an interactive digital exhibit showcasing the history of now lost Jamison City, CA.'
-            }
             columns={6}
             roles={
               'UX/UI, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'
@@ -25,7 +22,14 @@ export default function JamisonExhibit() {
             contributors={
               'content & reference images, on-site implementation: Anthropological Studies Center.'
             }
-          />
+          >
+            <p>
+              sponsored by the California Department of Parks & Recreation, my client from
+              Sonoma State University Anthropological Studies Center (ASC) needed to
+              create an interactive digital exhibit showcasing the history of now lost
+              Jamison City, CA.
+            </p>
+          </Role>
         </div>
       </ImgCover>
       <div className="container">

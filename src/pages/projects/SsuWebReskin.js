@@ -13,9 +13,6 @@ export default function SsuWebReskin() {
         <div className="row-f10">
           <Role
             project={'new brand, fresh website'}
-            intro={
-              'you can’t rebrand without a website to match. since Sonoma State University got their new brand (developed by The Engine is Red), i used the shiny new brand toolkit to give the site a fresh look.'
-            }
             columns={6}
             roles={
               'visual design lead, pixel measurer, mock-up presenter, site auditer, zoom talker'
@@ -23,7 +20,13 @@ export default function SsuWebReskin() {
             contributors={
               'logo + assets: The Engine is Red, back-end: on-site developer, photos: university archive.'
             }
-          />
+          >
+            <p>
+              you can’t rebrand without a website to match. since Sonoma State University
+              got their new brand (developed by The Engine is Red), i used the shiny new
+              brand toolkit to give the site a fresh look.
+            </p>
+          </Role>
         </div>
       </ImgCover>
       <div className="container">
