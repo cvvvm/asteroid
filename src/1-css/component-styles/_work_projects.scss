@@ -74,8 +74,8 @@
     }
 
     &:hover {
-      color: rgb-var(blk);
-      background-color: rgb-var(accent, 35);
+      color: rgb-var(bg, 100);
+      background-color: rgb-var(text, 100);
       border: $border-width solid rgb-var(blk);
       box-shadow: $button-shadow rgb-var(blk);
       translate: $hover-translate !important;
@@ -88,10 +88,10 @@
 
       > .badge,
       .badge-outline {
-        color: rgb-var(blk);
-        background-color: rgb-var(accent, 15);
-        border: $border-width-sm solid rgb-var(text, 65);
-        box-shadow: $badge-shadow rgb-var(text, 65);
+        color: rgb-var(bg, 100);
+        background-color: rgb-var(text);
+        border: $border-width-sm solid rgb-var(bg, 65);
+        box-shadow: $badge-shadow rgb-var(bg, 65);
       }
     }
 
