@@ -45,7 +45,9 @@
   $translate: false,
   $shadow: false,
   $timing: $timing,
-  $ease: 'ease-in-out'
+  $ease: 'ease-in-out',
+  $ease-in: 'ease-in',
+  $ease-out: 'ease-out'
 ) {
   @if ($color) {
     $color: 'color 50ms #{$ease}, background-color #{$timing} #{$ease}, border #{$timing} #{$ease}, border-color #{$timing} #{$ease}, box-shadow #{$timing} #{$ease}';
@@ -54,7 +56,7 @@
     $spacer: 'margin #{$timing} #{$ease}, padding #{$timing} #{$ease}';
   }
   @if ($size) {
-    $size: 'height #{$timing} #{$ease}, min-height #{$timing} #{$ease}, max-height #{$timing} #{$ease}, width #{$timing} #{$ease}, min-width #{$timing} #{$ease}, max-width #{$timing} #{$ease}';
+    $size: 'height #{$timing} #{$ease-in}, min-height #{$timing} #{$ease-in}, max-height #{$timing} #{$ease-in}, width #{$timing} #{$ease-in}, min-width #{$timing} #{$ease-in}, max-width #{$timing} #{$ease-in}';
   }
   @if ($gap) {
     $gap: 'gap #{$timing} #{$ease}';

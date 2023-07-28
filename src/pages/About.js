@@ -83,100 +83,95 @@ export function ContactForm() {
   return (
     <div className="row-10 vh-50 invert jc-start px-md-4 py-4">
       <h2>done reading, wanna contact me?</h2>
-      <form>
-        <div className="row-10 jc-start pt-2 row-gap-4">
-          {/* name -------------------------------------------------------- */}
+
+      <form className="row-10 jc-start pt-2 row-gap-4">
+        {/* name -------------------------------------------------------- */}
+        <label>
+          name
+          <input
+            name="name"
+            id="name"
+            type="text"
+            placeholder="what should i call you?"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </label>
+        {/* email -------------------------------------------------------- */}
+
+        <label>
+          email
+          <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="where i'll respond"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+          />
+        </label>
+
+        {/* pronouns -------------------------------------------------------- */}
+
+        <fieldset>
+          <legend>pronouns</legend>
+
           <label>
-            name
             <input
-              name="name"
-              id="name"
+              type="checkbox"
+              id="sheHer"
+              name="pronouns"
+              value={'she/her'}
+              onChange={(e) => setUserPronouns(e.target.value)}
+            />
+            she/her
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              id="theyThem"
+              name="pronouns"
+              value={'they/them'}
+              onChange={(e) => setUserPronouns(e.target.value)}
+            />
+            they/them
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              id="heHim"
+              name="pronouns"
+              value={'he/him'}
+              onChange={(e) => setUserPronouns(e.target.value)}
+            />
+            he/him
+          </label>
+
+          <label>
+            <input
               type="text"
-              placeholder="what should i call you?"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              id="pronounOtherText"
+              name="pronounOtherText"
+              placeholder="something else?"
+              value={otherPronouns}
+              onChange={(e) => setOtherPronouns(e.target.value)}
             />
           </label>
-          {/* email -------------------------------------------------------- */}
-
-          <label>
-            email
-            <input
-              name="email"
-              id="email"
-              type="email"
-              placeholder="where i'll respond"
-              value={userEmail}
-              onChange={(e) => setUserEmail(e.target.value)}
-            />
-          </label>
-
-          {/* pronouns -------------------------------------------------------- */}
-
-          <fieldset>
-            <legend>pronouns</legend>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  id="sheHer"
-                  name="pronouns"
-                  value={'she/her'}
-                  onChange={(e) => setUserPronouns(e.target.value)}
-                />
-                she/her
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  id="theyThem"
-                  name="pronouns"
-                  value={'they/them'}
-                  onChange={(e) => setUserPronouns(e.target.value)}
-                />
-                they/them
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  id="heHim"
-                  name="pronouns"
-                  value={'he/him'}
-                  onChange={(e) => setUserPronouns(e.target.value)}
-                />
-                he/him
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="text"
-                  id="pronounOtherText"
-                  name="pronounOtherText"
-                  placeholder="something else?"
-                  value={otherPronouns}
-                  onChange={(e) => setOtherPronouns(e.target.value)}
-                />
-              </label>
-            </div>
-          </fieldset>
-          {/* message -------------------------------------------------------- */}
-          <label>
-            message
-            <textarea
-              id="message"
-              name="message"
-              placeholder="wanna work together? website feedbaack?"
-              value={userMessage}
-              onChange={(e) => setUserMessage(e.target.value)}
-              rows={10}
-            ></textarea>
-          </label>
-        </div>
+        </fieldset>
+        {/* message -------------------------------------------------------- */}
+        <label>
+          message
+          <textarea
+            id="message"
+            name="message"
+            placeholder="wanna work together? website feedback?"
+            value={userMessage}
+            onChange={(e) => setUserMessage(e.target.value)}
+            rows={10}
+          ></textarea>
+        </label>
       </form>
       {/* submit button -------------------------------------------------------- */}
       <div className="row-f10 pt-1">

@@ -16,6 +16,7 @@ label {
 //---------------------------------------------------------------------
 fieldset {
   display: flex;
+  flex-flow: row wrap;
   flex: 1 1 100%;
   gap: 1rem;
   justify-content: space-evenly;
@@ -28,15 +29,19 @@ fieldset {
 legend {
   font-size: 1.25rem;
   font-weight: $weight-medium;
+  padding-bottom: 0.75rem;
 }
 
-fieldset > div > label {
+fieldset > label {
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
+  column-gap: 0.5rem;
+  place-content: start;
   font-size: 1.125rem;
   font-weight: $weight-light;
-  padding-left: 1rem;
 }
 
-fieldset > div > label > input[type='text'] {
+fieldset > label > input[type='text'] {
   padding: 0.35rem 0.75rem 0.45rem;
 }
 
@@ -56,5 +61,33 @@ textarea {
 }
 
 input[type='checkbox'] {
-  padding: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: none;
+  margin: 0;
+
+  display: grid;
+  place-content: center;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: $border-rad-sm;
+  border: $border-width solid rgb-var(accent);
+  transition: all $timing-fast ease-in-out;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  scale: 0;
+  box-shadow: inset 1em 1em rgb-var(accent);
+  transition: all $timing-fast ease-in-out;
+}
+
+input[type='checkbox']:checked::before {
+  scale: 1;
+}
+input[type='checkbox']:checked {
+  border: $border-width solid rgb-var(accent, 50);
 }
