@@ -190,15 +190,30 @@ const ToggledGallery = ({
     );
   });
 
-  return (
-    <div className={'gallery ps-center col-f10 ' + columns}>
+  // hide/show buttons
+  //---------------------------------------------------------------------
+  var lastButton = '';
+  var nextButton = '';
+  console.log(galleries[activeGallery].images.length);
+
+  if (galleries[activeGallery].images.length > 1) {
+    lastButton = (
       <button className="gallery-button button-outline" onClick={lastSlide}>
         &#60;
       </button>
-      {imgMap}
+    );
+    nextButton = (
       <button className="gallery-button button-outline" onClick={nextSlide}>
         &#62;
       </button>
+    );
+  }
+
+  return (
+    <div className={'gallery ps-center col-f10 ' + columns}>
+      {lastButton}
+      {imgMap}
+      {nextButton}
     </div>
   );
 };

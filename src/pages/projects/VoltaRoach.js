@@ -32,15 +32,35 @@ export default function VoltaRoach() {
           imgType={'webp'}
           galleries={[
             {
-              title: 'process',
+              title: 'final',
               prefix: 'process',
-              images: ['final', 'color', 'wire', 'ink', 'sketch'],
+              images: ['final'],
             },
             {
+              title: 'color',
+              prefix: 'process',
+              images: ['color'],
+            },
+            {
+              title: 'wire',
+              prefix: 'process',
+              images: ['wire'],
+            },
+            {
+              title: 'ink',
+              prefix: 'process',
+              images: ['ink'],
+            },
+            {
+              title: 'sketch',
+              prefix: 'process',
+              images: ['sketch'],
+            },
+            /*             {
               title: 'details',
               prefix: 'detail',
               images: ['1', '2', '3', '4', '5'],
-            },
+            }, */
           ]}
         >
           <h2>battery charges</h2>
