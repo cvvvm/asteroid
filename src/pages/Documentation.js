@@ -67,18 +67,16 @@ function SectionHead({ title, children }) {
   );
 }
 
-function H4Code({ textCol = 3, code, language, title, children }) {
+function H4Code({ textCol = 6, code, language, title, children }) {
   return (
-    <div className="row-f10 pc-start pi-center gap-1 pl-2">
+    <div className="row-f10 pc-start pi-center pl-2">
       <div className={'col-' + textCol}>
         <h4>{title}</h4>
         {children}
       </div>
-      <div className="row-f jc-start">
-        <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
-          {code}
-        </SyntaxHighlighter>
-      </div>
+      <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
+        {code}
+      </SyntaxHighlighter>
     </div>
   );
 }
@@ -145,9 +143,12 @@ export function ColorDoc() {
     </div>
   );
 }
+
+// LAYOUT
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const calcGridColFunc =
   "function calcGridCol() { \n\t // calulate current # of columns \n\t let winWidth = window.innerWidth; \n\t let colCount = parseInt(winWidth / 100 + 1); \n\t\n\t // update current # of columns \n\t root.style.setProperty('--current-columns', colCount);\n}";
-
 const colMixin =
   '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, \n\t > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}';
 const rowMixin =
