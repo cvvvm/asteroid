@@ -122,8 +122,6 @@
 .gallery {
   display: grid;
   grid-template-columns: [left-button] 40px [slide] 1fr [right-button] 40px;
-  grid-auto-rows: max-content;
-
   gap: 0;
   flex-flow: row nowrap;
 
@@ -155,5 +153,6 @@
   > img {
     height: 100%;
     width: 100%;
+    max-height: 90vh;
   }
 }
