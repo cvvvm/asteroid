@@ -29,8 +29,12 @@ export default function VoltaRoach() {
               brief they're an un-killable high-tech force, battling it out against the
               ancient dinosaurs of industry.
             </p>
+            <p>
+              drawing robot battles keep my inner child happy, so i gleefully accepted
+              this job.
+            </p>
             <p className="note">
-              note: any likeness to any currently existing entities is merely
+              notes: any likeness to any currently existing entities is merely
               coincidental. Volta has been acquired by Shell Corp as of 2023.
             </p>
           </Role>
@@ -38,10 +42,10 @@ export default function VoltaRoach() {
       </ImgCover>
       <div className="container">
         <GalleryImgToggler
-          textCol={5}
+          textCol={4}
           textColOrder={1}
           invert
-          galleryCol={9}
+          galleryCol={12}
           vh={50}
           project={project}
           imgType={'webp'}
@@ -72,16 +76,24 @@ export default function VoltaRoach() {
               images: ['sketch'],
             },
           ]}
-        >
-          <h2>battery charges</h2>
-          <p>great pun.</p>
-        </GalleryImgToggler>
+        ></GalleryImgToggler>
+
+        <div className="row-f8 vh-30 col-gap-1 outline">
+          <div className="col-f2 jc-center">
+            <h3>feedback highlights:</h3>
+          </div>
+          <div className="col-f4 jc-center">
+            <p>“more megatron, less bumblebee“</p>
+            <p>“the cockroach should look…a lot buffer”</p>
+          </div>
+        </div>
+
         <GalleryImgToggler
           textCol={5}
           textColOrder={1}
-          invert
-          galleryCol={6}
-          vh={50}
+          outline
+          galleryCol={7}
+          vh={60}
           project={project}
           imgType={'webp'}
           galleries={[
@@ -91,7 +103,19 @@ export default function VoltaRoach() {
               images: ['1', '2', '3', '4', '5'],
             },
           ]}
-        ></GalleryImgToggler>
+        >
+          <h3>color bind.</h3>
+          <p>
+            the illustration needed to be printed as large wall art. to keep things clean
+            colors are all vector. the high-res inks scale well, and are eventually
+            converted to vector for the largest scales. it was a fun challenge getting the
+            details right.
+          </p>
+          <p>
+            you don't get called a clients "favorite artist" because they're unhappy with
+            the work.
+          </p>
+        </GalleryImgToggler>
       </div>
     </>
   );
