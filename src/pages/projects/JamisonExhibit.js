@@ -14,7 +14,7 @@ export default function JamisonExhibit() {
         <div className="row-f10">
           <Role
             freelance
-            project={'jamison city interactive'}
+            title={'jamison city interactive'}
             columns={6}
             roles={
               'UX/UI, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'

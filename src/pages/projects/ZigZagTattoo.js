@@ -17,7 +17,7 @@ export default function ZigZagTattoo() {
         <div className="row-f10">
           <Role
             freelance
-            project={'zig zag tattoo'}
+            title={'zig zag tattoo'}
             columns={6}
             roles={
               'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'

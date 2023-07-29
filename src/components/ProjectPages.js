@@ -40,7 +40,7 @@ export function ImgCover({ project, altText, imgType, vh = 100, children, classN
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function Role({ columns, project, freelance, roles, contributors, children }) {
+export function Role({ columns, title, freelance, roles, contributors, children }) {
   if (freelance) {
     var freelanceBadge = <p className="badge-outline">freelance</p>;
   }
@@ -58,7 +58,7 @@ export function Role({ columns, project, freelance, roles, contributors, childre
   return (
     <div className={'outline invert mt-5 mt-md-0 row-gap-1 col-' + columns}>
       <div className="col-f10 pb-2">
-        <h1>{project}</h1>
+        <h1>{title}</h1>
 
         {children}
       </div>

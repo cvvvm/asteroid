@@ -12,7 +12,7 @@ export default function SsuWebReskin() {
       <ImgCover project={project} imgType={'webp'}>
         <div className="row-f10">
           <Role
-            project={'new brand, fresh website'}
+            title={'new brand, fresh website'}
             columns={6}
             roles={
               'visual design lead, pixel measurer, mock-up presenter, site auditer, zoom talker'

@@ -20,7 +20,7 @@ export default function VoltaRoach() {
         <div className="row-f10">
           <Role
             freelance
-            project={'big, robot bug.'}
+            title={'big, robot bug.'}
             columns={6}
             roles={'illustration + coloring, art direction.'}
           >
