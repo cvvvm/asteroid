@@ -38,7 +38,7 @@ export default function SsuWebReskin() {
           project={project}
           images={['hero', 'hub', 'department', 'nested']}
           imgType={'webp'}
-          toggleCaption="final redesigned pages"
+          togglesDesc="final redesigned pages"
         >
           <h2>spring semester cleaning:</h2>
           <p>
@@ -57,7 +57,7 @@ export default function SsuWebReskin() {
               look while maintaining project scope.
             </p>
           </div>
-          <div className="col-6 invert">
+          <div className="col-6 outline">
             <h2>new skin, same bones.</h2>
             <p>
               i built spec sheets for prioritized assets - detailing layouts per

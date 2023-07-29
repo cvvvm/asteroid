@@ -129,7 +129,7 @@ export function Devices({ columns, project, page, defaultState = 'desk', imgType
             }
             onClick={toggleDesk}
           >
-            Desktop
+            desktop
           </button>
           <button
             className={
@@ -138,7 +138,7 @@ export function Devices({ columns, project, page, defaultState = 'desk', imgType
             }
             onClick={toggleMobile}
           >
-            Mobile
+            mobile
           </button>
         </div>
       </div>

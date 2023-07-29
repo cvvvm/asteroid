@@ -238,11 +238,11 @@ ol {
   max-height: max-content;
 
   margin: 0rem 0rem 0rem -0.5rem;
-  padding: 7px 12px;
+  padding: 8px 16px;
 
   background-color: rgb-var(text);
   border: $border-width-sm solid rgb-var(text);
-  border-radius: $border-rad-sm;
+  border-radius: $border-rad-lg;
   box-shadow: $badge-shadow rgb-var(accent);
 
   transition: transition($color: true);

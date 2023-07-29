@@ -13,12 +13,14 @@ import About from './pages/About';
 import Documentation from './pages/Documentation';
 
 import { Projects, ReturnToWork } from './pages/Projects';
+import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation';
+
 import ZigZagTattoo from './pages/projects/ZigZagTattoo';
 import JamisonExhibit from './pages/projects/JamisonExhibit';
 import SsuWebReskin from './pages/projects/SsuWebReskin';
-
-import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation';
 import VoltaRoach from './pages/projects/VoltaRoach';
+import TourTaniti from './pages/projects/TourTaniti';
+import NinaJarnumYoga from './pages/projects/NinaJarnumYoga';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -35,23 +37,15 @@ export const ScrollToTop = ({ children }) => {
   //---------------------------------------------------------------------
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from(['.container > * ', '.projects-container > * '], {
-        delay: 0.1,
-        y: '100vh',
-        stagger: 0.025,
-        ease: 'expo.out',
-      });
-      /*       gsap.from(['.outline', '.work-card', 'img'], {
-        delay: 0.4,
-        duration: 0.6,
-        y: 50,
-        ease: 'expo.out',
-      }); */
-      /*       gsap.from(['h1', 'h2', 'h3', 'h4', '.badge', '.badge-outline'], {
-        delay: 0.3,
-        y: 10,
-        ease: 'ease.out',
-      }); */
+      gsap.from(
+        ['.container:first-of-type > * ', '.projects-container > .project-card '],
+        {
+          delay: 0.1,
+          y: '100vh',
+          stagger: 0.025,
+          ease: 'expo.out',
+        }
+      );
       gsap.from('.projects-return', {
         delay: 0.6,
         y: -100,
@@ -137,6 +131,8 @@ function App() {
             <Route path="projects/asc-exhibit" element={<JamisonExhibit />} />
             <Route path="projects/ssu-web-reskin" element={<SsuWebReskin />} />
             <Route path="projects/volta-roach" element={<VoltaRoach />} />
+            <Route path="projects/tour-taniti" element={<TourTaniti />} />
+            <Route path="projects/nina-jarnum-yoga" element={<NinaJarnumYoga />} />
           </Route>
         </Routes>
       </ScrollToTop>

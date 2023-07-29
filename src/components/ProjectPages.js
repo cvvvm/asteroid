@@ -91,7 +91,7 @@ export function DeviceImgToggler({
   images = [],
   children,
   imgType,
-  toggleCaption = 'display page',
+  togglesDesc = 'display page',
 }) {
   // map display toggles
   //---------------------------------------------------------------------
@@ -120,7 +120,7 @@ export function DeviceImgToggler({
       >
         {children}
         <div className="row-f10 jc-start gap-1">
-          <p className="note mt-1 mb-0">{toggleCaption + ':'}</p>
+          <p className="note mt-1 mb-0">{togglesDesc + ':'}</p>
           <div
             className="page-toggles-container row-f10 pc-start"
             style={{ marginLeft: '-.25rem' }}
