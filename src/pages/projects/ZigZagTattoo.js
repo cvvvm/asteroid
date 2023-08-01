@@ -32,12 +32,13 @@ export default function ZigZagTattoo() {
       </ImgCover>
       <div className="container">
         <DeviceImgToggler
-          textCol={5}
+          textCol={4}
           invert
           deviceCol={7}
           project={project}
           images={['home', 'artist', 'FAQ']}
           imgType={'webp'}
+          arrows
         >
           <h2>building the website:</h2>
           <p>

@@ -10,7 +10,14 @@ import gsap from 'gsap';
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export function Devices({ columns, project, page, defaultState = 'desk', imgType }) {
+export function Devices({
+  columns,
+  project,
+  page,
+  defaultState = 'desk',
+  imgType,
+  children,
+}) {
   // container variables
   //---------------------------------------------------------------------
   const devicesContainer = useRef();
@@ -120,6 +127,9 @@ export function Devices({ columns, project, page, defaultState = 'desk', imgType
               imgType={imgType}
             />
           </div>
+        </div>
+        <div className="row-f10" style={{ marginBottom: '.5rem' }}>
+          {children}
         </div>
         <div className="row-f10 gap-0">
           <button

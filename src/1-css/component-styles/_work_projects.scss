@@ -14,10 +14,15 @@
   z-index: 9000;
   position: fixed;
   font-size: 1.5rem !important;
-  top: clamp(0.5rem, calc(1.1 * 2vw), 2rem);
-  left: 0.875rem;
+  top: 0.5rem;
+  left: 0.75rem;
 
   padding: 0.65rem 1.3rem 0.75rem 1.25rem !important;
+
+  @include breakpoint(md) {
+    top: 1rem;
+    left: 1rem;
+  }
 }
 
 .projects-container {
@@ -59,7 +64,7 @@
     grid-template-rows: 0.25fr 1fr 0.5fr;
     row-gap: 2rem;
 
-    padding: 1.75rem 2rem 1.75rem;
+    padding: 1.5rem 1.75rem 1.625rem;
     border-radius: $border-rad;
     border: $border-width-sm solid rgb-var(accent);
     background-color: rgb-var(bg);
@@ -97,6 +102,7 @@
 
     .title {
       align-self: center;
+      margin-top: -1rem;
     }
 
     .caption {
@@ -120,20 +126,22 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .gallery {
-  display: grid;
-  grid-template-columns: [left-button] 40px [slide] 1fr [right-button] 40px;
-  gap: 0;
-  flex-flow: row nowrap;
-
   place-content: space-between;
-  place-items: center;
+  place-items: stretch;
+
+  @include breakpoint(md) {
+    grid-template-columns: [left-button] 40px [slide] 1fr [right-button] 40px;
+    grid-template-areas: none;
+    gap: 0;
+    place-items: center;
+  }
 }
 
 .gallery-button {
   z-index: 8000;
-  padding: 0.5rem 1rem 0.6rem !important;
+  font-size: 1.5rem !important;
+  padding: 0.125rem 1.5rem 0.25rem !important;
   border-radius: $border-rad !important;
-  background-color: rgb-var(bg) !important;
 
   &:hover {
     background-color: rgb-var(accent) !important;

@@ -14,37 +14,33 @@ export default function SsuWebReskin() {
           <Role
             title={'new brand, fresh website'}
             columns={6}
-            roles={
-              'visual design lead, pixel measurer, mock-up presenter, site auditer, zoom talker'
-            }
+            roles={'visual design lead, prototyping'}
             contributors={
-              'logo + assets: The Engine is Red, back-end: on-site developer, photos: university archive.'
+              'brand assets: The Engine is Red, back-end: on-site developer, photos: university archive.'
             }
           >
             <p>
-              you can’t rebrand without a website to match. since Sonoma State University
-              got their new brand (developed by The Engine is Red), i used the shiny new
-              brand toolkit to give the site a fresh look.
+              for the launch of Sonoma State University's new brand, i partnered with the
+              campus web team to give the website a fresh new look.
             </p>
           </Role>
         </div>
       </ImgCover>
       <div className="container">
         <DeviceImgToggler
-          textCol={6}
-          textColOrder={0}
+          textCol={4}
           invert
           deviceCol={8}
           project={project}
           images={['hero', 'hub', 'department', 'nested']}
           imgType={'webp'}
           togglesDesc="final redesigned pages"
+          arrows
         >
           <h2>spring semester cleaning:</h2>
           <p>
-            i led the visual redesign while working with our dev + project management team
-            to update every single element, module, or style that appears across the
-            hundreds of webpages.
+            i led the visual redesign - working with our dev + project management team to
+            update every element, module, and style used across hundreds of webpages.
           </p>
         </DeviceImgToggler>
 

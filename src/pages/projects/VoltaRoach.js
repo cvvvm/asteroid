@@ -25,17 +25,13 @@ export default function VoltaRoach() {
             roles={'illustration + coloring, art direction, project management'}
           >
             <p>
-              the future is electric, and the people at Volta know it. according to the
-              brief they're an un-killable high-tech force, battling it out against the
-              ancient dinosaurs of industry.
+              the future is electric, and the people at Volta know it. they aim to be an
+              un-killable high-tech force, battling it out with the dinosaurs of industry.
             </p>
-            <p>
-              drawing robot battles keep my inner child happy, so i gleefully accepted
-              this job.
-            </p>
+
             <p className="note">
-              notes: any likeness to any currently existing entities is merely
-              coincidental. Volta has been acquired by Shell Corp as of 2023.
+              notes: any likeness to any currently existing entities is coincidence. Volta
+              was acquired by Shell Corp in 2023.
             </p>
           </Role>
         </div>
@@ -78,16 +74,6 @@ export default function VoltaRoach() {
           ]}
         ></GalleryImgToggler>
 
-        <div className="row-f8 vh-30 col-gap-1 outline">
-          <div className="col-f2 jc-center">
-            <h3>feedback highlights:</h3>
-          </div>
-          <div className="col-f4 jc-center">
-            <p>“more megatron, less bumblebee“</p>
-            <p>“the cockroach should look…a lot buffer”</p>
-          </div>
-        </div>
-
         <GalleryImgToggler
           textCol={5}
           textColOrder={1}
@@ -103,19 +89,16 @@ export default function VoltaRoach() {
               images: ['1', '2', '3', '4', '5'],
             },
           ]}
-        >
-          <h3>color bind.</h3>
-          <p>
-            the illustration needed to be printed as large wall art. to keep things clean
-            colors are all vector. the high-res inks scale well, and are eventually
-            converted to vector for the largest scales. it was a fun challenge getting the
-            details right.
-          </p>
-          <p>
-            you don't get called a clients "favorite artist" because they're unhappy with
-            the work.
-          </p>
-        </GalleryImgToggler>
+        ></GalleryImgToggler>
+        <div className="row-f8 vh-30 col-gap-1 outline">
+          <div className="col-f2 jc-center">
+            <h3>feedback highlights:</h3>
+          </div>
+          <div className="col-f4 jc-center">
+            <p>“more megatron, less bumblebee“</p>
+            <p>“the cockroach should look…a lot buffer”</p>
+          </div>
+        </div>
       </div>
     </>
   );
