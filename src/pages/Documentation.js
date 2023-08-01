@@ -98,6 +98,12 @@ export function DocIndex() {
     <div className="col-6">
       <h1>documentation</h1>
       <p>coming soon. how exciting.</p>
+      <p>
+        in the meantime,{' '}
+        <Link to={'https://github.com/cvvvm/asteroid'} className="plink">
+          view my github.
+        </Link>
+      </p>
     </div>
   );
 }
