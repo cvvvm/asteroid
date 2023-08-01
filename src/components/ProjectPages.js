@@ -56,7 +56,7 @@ export function Role({ columns, title, freelance, roles, contributors, children 
     );
   }
   return (
-    <div className={'outline invert mt-5 mt-md-0 row-gap-1 col-' + columns}>
+    <div className={'outline invert mt-4 mt-md-0 row-gap-1 col-' + columns}>
       <div className="col-f10 pb-2">
         <h1>{title}</h1>
 
