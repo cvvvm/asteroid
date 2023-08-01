@@ -1,4 +1,3 @@
 # read me
 
-these are for apps that other people use but i'm not ready for that yet. read site docs:
-clrmoon.com/docs
+do you ever use css frameworks and then decide it's easier to make your own? me too, sort of.
