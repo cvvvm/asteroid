@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import gsap from 'gsap';
 
-// PROJECT PAGE RETURN TO WORK
+// RETURN TO PROJECTS BUTTON
 //---------------------------------------------------------------------
-export function ReturnToWork() {
+export function ReturnToProjects() {
   return (
     <>
       <Link to={'/projects'}>

@@ -14,8 +14,8 @@
   z-index: 9000;
   position: fixed;
   font-size: 1.5rem !important;
-  top: clamp(1rem, 0.2rem + 1vw, 1.5rem);
-  left: clamp(1.375rem, 0.45rem + 1vw, 1.75rem);
+  top: clamp(0.5rem, calc(1.1 * 2vw), 2rem);
+  left: 0.875rem;
 
   padding: 0.65rem 1.3rem 0.75rem 1.25rem !important;
 }

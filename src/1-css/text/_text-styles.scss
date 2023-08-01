@@ -79,9 +79,9 @@ $font-weight: (
   4: $weight-bold,
 );
 
-$h1-max: 3rem;
-$h2-max: 2.25rem;
-$h3-max: 1.75rem;
+$h1-max: 2.75rem;
+$h2-max: 2rem;
+$h3-max: 1.5rem;
 $h4-max: 1.3125rem;
 $h4-min: 1.25rem;
 
@@ -135,7 +135,7 @@ h4 + p {
 // paragraph
 //---------------------------------------------------------------------
 p {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, calc(1.1 * 2vw), 1.125rem);
   font-family: $jet-brains;
   font-weight: $weight-light;
   line-height: 160%;
@@ -164,7 +164,6 @@ p.small {
   font-family: $jet-brains;
   font-style: italic;
   font-weight: $weight-x-light;
-  font-size: 1.0625rem;
 
   margin-left: 0.125rem;
   opacity: 90%;
@@ -230,7 +229,6 @@ ol {
 @mixin badge-base($outline: false, $invert: false, $outline-invert: false) {
   font-family: $jet-brains;
   line-height: 100%;
-  font-size: 1.15rem;
   font-weight: $weight-regular;
   color: rgb-var(bg);
 
@@ -238,7 +236,7 @@ ol {
   max-height: max-content;
 
   margin: 0rem 0rem 0rem -0.5rem;
-  padding: 8px 16px;
+  padding: 6px 16px;
 
   background-color: rgb-var(text);
   border: $border-width-sm solid rgb-var(text);

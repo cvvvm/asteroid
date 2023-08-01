@@ -49,9 +49,19 @@
 // vertical height
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@for $i from 1 through 10 {
-  .vh-#{$i}0 {
-    min-height: #{$i * 10}vh !important;
+@each $breakpoint, $pxWidth in $page-breakpoints {
+  @include breakpoint($breakpoint) {
+    @for $i from 0 through 10 {
+      @if $breakpoint == 'xs' {
+        .vh-#{$i}0 {
+          min-height: #{$i * 10}vh !important;
+        }
+      } @else {
+        .vh-#{$breakpoint}-#{$i}0 {
+          min-height: #{$i * 10}vh !important;
+        }
+      }
+    }
   }
 }
 

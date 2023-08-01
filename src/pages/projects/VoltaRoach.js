@@ -22,7 +22,7 @@ export default function VoltaRoach() {
             freelance
             title={'big, robot bug.'}
             columns={6}
-            roles={'illustration + coloring, art direction.'}
+            roles={'illustration + coloring, art direction, project management'}
           >
             <p>
               the future is electric, and the people at Volta know it. according to the

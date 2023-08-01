@@ -1,3 +1,4 @@
+import { Children, useState } from 'react';
 import {
   ImgCover,
   Role,
@@ -12,13 +13,13 @@ export default function NinaJarnumYoga() {
       <ImgCover project={project} imgType={'webp'}>
         <div className="row-f10">
           <Role
-            title={'staying flexible under pressure.'}
+            title={'flexible under pressure.'}
             columns={6}
-            roles={''}
+            roles={'visual design, CSS styles, project management'}
             freelance
             contributors={'website copy: provided by Nina Jarnum Yoga'}
           >
-            <p>nice</p>
+            <p>when there's a pandemic you gotta not die. but also make money</p>
           </Role>
         </div>
       </ImgCover>

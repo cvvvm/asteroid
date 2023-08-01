@@ -16,9 +16,7 @@ export default function JamisonExhibit() {
             freelance
             title={'jamison city interactive'}
             columns={6}
-            roles={
-              'UX/UI, visual design, front-end code, wireframing, scheduling/client intake & integration, & project management.'
-            }
+            roles={'UX/UI, illustration & compositing, project management'}
             contributors={
               'content & reference images, on-site implementation: Anthropological Studies Center.'
             }

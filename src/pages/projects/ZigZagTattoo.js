@@ -19,9 +19,7 @@ export default function ZigZagTattoo() {
             freelance
             title={'zig zag tattoo'}
             columns={6}
-            roles={
-              'UI/UX, visual design, front-end code, wireframes, scheduling software integration, & project management.'
-            }
+            roles={'UI/UX, visual design, front-end code, project management'}
             contributors={'copy & photos: Zig Zag Tattoo.'}
           >
             <p>

@@ -4,8 +4,9 @@
 .nav-wrapper {
   z-index: 9900;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  // top: calc(100vh - 64px); // position at bottom
+  top: clamp(0.5rem, calc(1.1 * 2vw), 2rem);
+  right: 0.625rem;
 
   display: flex;
   flex-flow: column nowrap;
@@ -16,6 +17,8 @@
 
   transform-origin: right top;
   translate: 0% 0%;
+
+  transition: all #{$timing-fast} ease-in-out;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +82,7 @@
   justify-self: end;
   font-size: 1.5rem;
   border-radius: 0rem $border-rad $border-rad 0rem;
-  padding: 0.745rem 1.255rem 0.855rem 1.245rem;
+  padding: 0.75rem 1.25rem 0.875rem 1.25rem;
 
   &.active {
     background-color: rgb-var(red-accent);

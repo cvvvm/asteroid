@@ -15,7 +15,7 @@ export function ImgCover({ project, altText, imgType, vh = 100, children, classN
   return (
     <div>
       <span
-        className={'container full vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
+        className={'container full w-100 vh-' + vh + ' px-1 py-1 py-md-6 ' + className}
         style={{
           backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
           backgroundSize: 'cover',
