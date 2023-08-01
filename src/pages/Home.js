@@ -68,36 +68,15 @@ function Home() {
   return (
     <>
       <div className="container vh-80 pt-8 row-gap-2">
-        {/* picture */}
         <div className="row-8">
           <div className="col-5 pc-center">
-            {/*
-            <div className="col-6 pi-center">
-              <p className="badge-outline ">a random photo i took</p>
-                <div className="intro-image-box">
-                <img
-                  className="intro-image"
-                  src={'/images/home/' + introImages[activeImage]}
-                />
-              </div>
-              <button className="button home-button next " onClick={nextIntro}>
-                more!
-              </button>
-            </div>
-            */}
-            {/* text */}
-
             <h1 className="">{homeHeading[activeHead]}</h1>
             <p className="">{homeDesc[activeDesc]}</p>
             <p>i specialize in building interfaces that feel authentic & rich.</p>
             <p>
-              i built this website<span className="note">*</span> so you can see my work
-              with the background color of your choice.
+              i built this website so you can see my work with the background color of
+              your choice.
             </p>
-
-            {/* <button className="button home-button next" onClick={nextIntro}>
-              next &#62;
-            </button> */}
           </div>
           <div className="row-5 pc-evenly py-1">
             <Link to={'/about'}>
@@ -106,11 +85,6 @@ function Home() {
             <Link to={'/projects'}>
               <button className="button as-center ">projects</button>
             </Link>
-          </div>
-          <div className="col-5">
-            <p className="note">
-              *some areas are still in development, bugs are possible.
-            </p>
           </div>
         </div>
       </div>
