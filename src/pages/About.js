@@ -1,5 +1,5 @@
 import emailjs from 'emailjs-com';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Footer from '../components/Footer';
 
 export default function About() {
@@ -82,7 +82,7 @@ export function ContactForm() {
   //---------------------------------------------------------------------
   return (
     <div className="row-10 vh-50 invert jc-start px-md-4 py-4">
-      <h2>done reading, wanna contact me?</h2>
+      <h2>done reading, wanna chat?</h2>
 
       <form className="row-10 jc-start pt-2 row-gap-4">
         {/* name -------------------------------------------------------- */}
