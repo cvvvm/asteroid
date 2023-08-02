@@ -72,10 +72,12 @@ function Home() {
           <div className="col-5 pc-center">
             <h1 className="">{homeHeading[activeHead]}</h1>
             <p className="">{homeDesc[activeDesc]}</p>
-            <p>i specialize in building interfaces that feel authentic & rich.</p>
             <p>
               i built this website so you can see my work with the background color of
               your choice.
+            </p>
+            <p className="note">
+              this site is new, some details are still being added :)
             </p>
           </div>
           <div className="row-5 pc-evenly py-1">
