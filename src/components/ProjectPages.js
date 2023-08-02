@@ -316,7 +316,7 @@ const ToggledGallery = ({
 
 export function GalleryImgToggler({
   textCol,
-  textColOrder = 0,
+  textColOrder = 1,
   invert,
   outline,
   vh = 50,
@@ -355,7 +355,7 @@ export function GalleryImgToggler({
     children = (
       <div
         className={
-          'pc-center mb-lg-4 order-1 order-xl-' +
+          'pc-center mb-lg-4 order-' +
           textColOrder +
           '  col-' +
           textCol +
