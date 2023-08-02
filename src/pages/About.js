@@ -114,7 +114,10 @@ export function ContactForm() {
         {/* pronouns -------------------------------------------------------- */}
 
         <fieldset>
-          <legend>pronouns</legend>
+          <legend>
+            {' '}
+            your pronouns? <span className="note">(mine are she/her)</span>
+          </legend>
 
           <label>
             <input
