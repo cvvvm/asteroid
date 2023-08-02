@@ -67,7 +67,7 @@ function Home() {
 
   return (
     <>
-      <div className="container vh-80 pt-8 row-gap-2">
+      <div className="container vh-50 pt-6 pb-0 row-gap-2">
         <div className="row-8">
           <div className="col-5 pc-center">
             <h1 className="">{homeHeading[activeHead]}</h1>
@@ -90,7 +90,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <Footer padding={1} />
+      <Footer />
     </>
   );
 }

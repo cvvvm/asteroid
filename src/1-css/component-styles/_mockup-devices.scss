@@ -12,13 +12,13 @@
 //---------------------------------------------------------------------
 .devices-container {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: max-content;
   place-items: center;
 
   overflow-x: clip;
 
-  position: relative;
   width: 100%;
 
   @include breakpoint(md) {

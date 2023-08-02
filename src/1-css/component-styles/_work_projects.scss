@@ -128,12 +128,16 @@
 .gallery {
   place-content: space-between;
   place-items: stretch;
+  margin-left: -1rem;
+  margin-right: -1rem;
 
   @include breakpoint(md) {
     grid-template-columns: [left-button] 40px [slide] 1fr [right-button] 40px;
     grid-template-areas: none;
     gap: 0;
     place-items: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
