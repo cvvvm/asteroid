@@ -15,11 +15,14 @@ export default function NinaJarnumYoga() {
           <Role
             title={'flexible under pressure.'}
             columns={6}
-            roles={'visual design, CSS styles, project management'}
+            roles={'visual design & code, project management'}
             freelance
-            contributors={'website copy: provided by Nina Jarnum Yoga'}
+            contributors={'website copy: Nina Jarnum Yoga'}
           >
-            <p>when there's a pandemic you gotta not die. but also make money</p>
+            <p>
+              Nina Jarnum Yoga uploaded themselves to the cloud for online instruction as
+              covid-19 made it impossible to safely teach in-person.
+            </p>
           </Role>
         </div>
       </ImgCover>
@@ -32,7 +35,17 @@ export default function NinaJarnumYoga() {
           images={['home', 'classes', 'member', 'about']}
         >
           <h3>staying flexible.</h3>
-          <p>when the world is falling apart you gotta sell stuff :/</p>
+          <p>
+            your laptop won't bend themselves backwards, but that's probably for the best.
+          </p>
+          <p>
+            we transitioned the large, growing video archive to an online, member-based
+            model with live classes.
+          </p>
+          <p>
+            filtered galleries help members find the right archived video for their
+            workout.
+          </p>
         </DeviceImgToggler>
       </div>
     </>
