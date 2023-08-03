@@ -32,7 +32,7 @@ export default function CovidCampusComms() {
             {
               title: 'posters',
               prefix: 'poster',
-              images: ['1', '2', '3'],
+              images: ['1', '2', '3', '4'],
             },
             {
               title: 'posts',
@@ -51,11 +51,10 @@ export default function CovidCampusComms() {
             },
           ]}
         >
-          <h3>optimization:</h3>
+          <h2>seawolves keep seawolves safe.</h2>
           <p>
-            the amount of assets & animations meant balancing intensely between how much
-            was on screen, what moved, and what could be rasterized together, then further
-            compressed.
+            messaging was designed to be as simple & direct as possible. on-campus safety
+            procedures adapted to the state/local guidelines on keeping people heathy.
           </p>
         </GalleryImgToggler>
       </div>
