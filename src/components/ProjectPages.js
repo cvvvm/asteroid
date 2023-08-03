@@ -47,7 +47,7 @@ export function Role({ columns, title, freelance, roles, contributors, children 
   if (contributors) {
     var contributes = (
       <>
-        <div className="col-f10 pt-1">
+        <div className="col-f10 pt-1" style={{ marginBottom: '-0.625rem' }}>
           <p className="badge">contributors:</p>
         </div>
         <p className="note">{contributors}</p>
@@ -61,7 +61,7 @@ export function Role({ columns, title, freelance, roles, contributors, children 
         <h1>{title}</h1>
         {children}
       </div>
-      <div className="row-f10 pc-start col-gap-1">
+      <div className="row-f10 pc-start col-gap-1" style={{ marginBottom: '-0.5rem' }}>
         <p className="badge">my role:</p>
         {freelanceBadge}
       </div>

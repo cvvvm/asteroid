@@ -7,16 +7,15 @@ export default function CovidCampusComms() {
       <ImgCover project={project} imgType={'webp'}>
         <div className="row-f10">
           <Role
-            title={'killing covid with signage'}
+            title={"covid can't read."}
             columns={6}
             roles={'illustration & design'}
             contributors={'copy: campus communications team, CDC.gov'}
           >
             <p>
-              sponsored by the California Department of Parks & Recreation, my client from
-              Sonoma State University Anthropological Studies Center (ASC) needed to
-              create an interactive digital exhibit showcasing the history of now lost
-              Jamison City, CA.
+              but the employees at SSU can. with support from the communications team, we
+              designed materials to help inform & reassure students, staff, & community
+              members over the course of the pandemic.
             </p>
           </Role>
         </div>
