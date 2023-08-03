@@ -34,7 +34,7 @@ export default function NinaJarnumYoga() {
           imgType={'webp'}
           images={['home', 'classes', 'member', 'about']}
         >
-          <h3>staying flexible.</h3>
+          <h2>staying flexible.</h2>
           <p>
             your laptop won't bend themselves backwards, but that's probably for the best.
           </p>
@@ -42,10 +42,7 @@ export default function NinaJarnumYoga() {
             we transitioned the large, growing video archive to an online, member-based
             model with live classes.
           </p>
-          <p>
-            filtered galleries help members find the right archived video for their
-            workout.
-          </p>
+          <p>filtered galleries help members find the right video for their workout.</p>
         </DeviceImgToggler>
       </div>
     </>
