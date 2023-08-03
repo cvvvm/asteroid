@@ -112,6 +112,12 @@ export function Projects() {
           caption={'redesigning for a large university website.'}
         />
         <ProjectCard
+          link={'covid-campus-comms'}
+          categories={['design', 'illustration']}
+          title={'covid-19 campus communications'}
+          caption={'keeping the SSU community informed.'}
+        />
+        <ProjectCard
           link={'nina-jarnum-yoga'}
           categories={['UX/UI', 'web']}
           title={'nina jarnum yoga: redesign'}
