@@ -89,16 +89,11 @@ export default function VoltaRoach() {
               images: ['1', '2', '3', '4', '5'],
             },
           ]}
-        ></GalleryImgToggler>
-        <div className="row-f8 vh-30 col-gap-1 outline">
-          <div className="col-f2 jc-center">
-            <h3>feedback highlights:</h3>
-          </div>
-          <div className="col-f4 jc-center">
-            <p>“more megatron, less bumblebee“</p>
-            <p>“the cockroach should look…a lot buffer”</p>
-          </div>
-        </div>
+        >
+          <h3>feedback highlights:</h3>
+          <p className="mt-0">“more megatron, less bumblebee“</p>
+          <p>“the cockroach should look…a lot buffer”</p>
+        </GalleryImgToggler>
       </div>
     </>
   );

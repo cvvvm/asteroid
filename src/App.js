@@ -21,6 +21,7 @@ import SsuWebReskin from './pages/projects/SsuWebReskin';
 import VoltaRoach from './pages/projects/VoltaRoach';
 import TourTaniti from './pages/projects/TourTaniti';
 import NinaJarnumYoga from './pages/projects/NinaJarnumYoga';
+import CovidCampusComms from './pages/projects/CovidCampusComms';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -133,6 +134,7 @@ function App() {
             <Route path="projects/volta-roach" element={<VoltaRoach />} />
             <Route path="projects/tour-taniti" element={<TourTaniti />} />
             <Route path="projects/nina-jarnum-yoga" element={<NinaJarnumYoga />} />
+            <Route path="projects/covid-campus-comms" element={<CovidCampusComms />} />
           </Route>
         </Routes>
       </ScrollToTop>

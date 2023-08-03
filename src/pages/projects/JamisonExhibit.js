@@ -41,9 +41,9 @@ export default function JamisonExhibit() {
             </p>
           </div>
 
-          <div className="row-f10 outline jc-evenly">
+          <div className="row-f8 outline jc-evenly">
             <div className="row-f10">
-              <h2>visual style</h2>
+              <h2>visual styling</h2>
             </div>
             <div className="row-f10">
               <VideoGallery
