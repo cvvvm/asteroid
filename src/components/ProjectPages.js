@@ -39,9 +39,20 @@ export function ImgCover({ project, altText, imgType, vh = 100, children, classN
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export function Role({ columns, title, freelance, roles, contributors, children }) {
+export function Role({
+  columns,
+  title,
+  freelance,
+  personal,
+  roles,
+  contributors,
+  children,
+}) {
   if (freelance) {
     var freelanceBadge = <p className="badge-outline">freelance</p>;
+  }
+  if (personal) {
+    var personalBadge = <p className="badge-outline">personal</p>;
   }
 
   if (contributors) {
@@ -64,6 +75,7 @@ export function Role({ columns, title, freelance, roles, contributors, children 
       <div className="row-f10 pc-start col-gap-1" style={{ marginBottom: '-0.5rem' }}>
         <p className="badge">my role:</p>
         {freelanceBadge}
+        {personalBadge}
       </div>
       <p className="note">{roles}</p>
       {contributes}

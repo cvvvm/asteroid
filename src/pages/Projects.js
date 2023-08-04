@@ -123,6 +123,12 @@ export function Projects() {
           title={'nina jarnum yoga: redesign'}
           caption={'transitioning to an online, member-based model.'}
         />
+        <ProjectCard
+          link={'local-election-guides'}
+          categories={['design']}
+          title={'local election guides'}
+          caption={'helping make ballot information clear.'}
+        />
       </div>
     </>
   );

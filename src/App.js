@@ -22,6 +22,7 @@ import VoltaRoach from './pages/projects/VoltaRoach';
 import TourTaniti from './pages/projects/TourTaniti';
 import NinaJarnumYoga from './pages/projects/NinaJarnumYoga';
 import CovidCampusComms from './pages/projects/CovidCampusComms';
+import LocalElectionGuides from './pages/projects/LocalElectionGuides';
 
 // ON ROUTE CHANGE
 //---------------------------------------------------------------------
@@ -135,6 +136,10 @@ function App() {
             <Route path="projects/tour-taniti" element={<TourTaniti />} />
             <Route path="projects/nina-jarnum-yoga" element={<NinaJarnumYoga />} />
             <Route path="projects/covid-campus-comms" element={<CovidCampusComms />} />
+            <Route
+              path="projects/local-election-guides"
+              element={<LocalElectionGuides />}
+            />
           </Route>
         </Routes>
       </ScrollToTop>

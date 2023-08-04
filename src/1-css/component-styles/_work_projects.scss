@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 375px));
   grid-template-rows: repeat(auto-fit, auto);
-  gap: var(--item-gap);
+  gap: clamp(1rem, calc(1.1 * 4vw), 6rem);
   place-content: $place-center;
 
   min-height: 100vh;
