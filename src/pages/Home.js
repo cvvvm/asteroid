@@ -17,7 +17,7 @@ const homeHeading = [
   'coding this site makes it a portfolio piece.',
 ];
 
-const homeDesc = ['a designer, engineer, occasional illustrator.'];
+const homeDesc = ['self-taught designer, engineer, occasional illustrator.'];
 
 const introImages = [
   '1.webp',
