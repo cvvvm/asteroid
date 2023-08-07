@@ -46,6 +46,7 @@
 @mixin width-fill($i) {
   @include breakpoint(md) {
     flex: 0 1 calc(($i * 10%));
+    min-width: 250px;
   }
 }
 
