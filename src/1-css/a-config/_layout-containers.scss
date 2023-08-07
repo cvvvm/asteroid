@@ -45,8 +45,9 @@
 
 @mixin width-fill($i) {
   @include breakpoint(md) {
-    flex: 0 1 calc(($i * 10%));
+    flex: 1 1 calc(($i * 10%));
     min-width: 275px;
+    //max-width: calc(($i * 10%) * 2); // potential scaling tweak
   }
 }
 
