@@ -10,17 +10,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$page-breakpoints: (
-  xs: 0,
-  sm: 512,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  xxl: 1536,
-);
-
 $max-columns: 18;
-
 @include cssvar-set(
   (
     max-columns: #{$max-columns},
@@ -30,6 +20,15 @@ $max-columns: 18;
     spacer: 1rem,
     container-padding: 6rem 1rem,
   )
+);
+
+$page-breakpoints: (
+  xs: 0,
+  sm: 512,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1536,
 );
 
 $place-start: start !default;

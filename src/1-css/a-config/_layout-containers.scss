@@ -46,7 +46,7 @@
 @mixin width-fill($i) {
   @include breakpoint(md) {
     flex: 0 1 calc(($i * 10%));
-    min-width: 250px;
+    min-width: 275px;
   }
 }
 
@@ -96,16 +96,9 @@
   }
 }
 
-.col-f {
-  @include flex-base();
-  @include col();
-  flex: 1 1 auto;
-}
-
 .row-f {
   @include flex-base();
   @include row();
-  flex: 1 1 auto;
 }
 
 @for $i from 1 through $max-columns {
