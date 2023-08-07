@@ -67,7 +67,7 @@ export default function JamisonExhibit() {
                 ]}
               />
             </div>
-            <div className="col-4">
+            <div className="col-f3">
               <h4>visuals:</h4>
               <p>
                 i crafted the visual style to combine modern interface elements with the
@@ -75,35 +75,21 @@ export default function JamisonExhibit() {
                 every object was made to feel like it occupied physical space on the
                 screen.
               </p>
-              <p className="note">
-                image containers became wooden panels with nails, buttons & menu items
-                displayed their text over wooden signage, ropes connected grouped menu
-                items.
-              </p>
             </div>
-            <div className="col-4">
+            <div className="col-f3">
               <h4>experience:</h4>
               <p>
                 i built hundreds of slides coordinated between dozens of branching user
                 paths. designing & coordinating interactive maps, information pop-ups,
                 timelines, a quiz.
               </p>
-              <p className="note">
-                the exhibit could be navigated by 'forward/back' buttons, each slide
-                contained other paths. each interaction was thoroughly tested to reduce
-                the exhibit's chances of breaking.
-              </p>
             </div>
-            <div className="col-4">
+            <div className="col-f3">
               <h4>animation:</h4>
               <p>
                 it was important to me that the animation reinforced the physicality of
                 the visual style. objects don't fade away, but slide around like items on
                 a table.
-              </p>
-              <p className="note">
-                Powerpoint's built-in smart transitions made general animations feasible
-                without manual timelines for every interactive object.
               </p>
             </div>
           </div>
