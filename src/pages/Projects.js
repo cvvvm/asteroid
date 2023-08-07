@@ -3,7 +3,8 @@ import { Outlet, Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 // RETURN TO PROJECTS BUTTON
-//---------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function ReturnToProjects() {
   return (
     <>
@@ -15,13 +16,7 @@ export function ReturnToProjects() {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-//
 // WORK CARDS
-//
-//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -33,34 +28,6 @@ export function ProjectCard({ title, caption, categories, link, background }) {
       {category}
     </p>
   ));
-
-  /* const showProjectImg = ({}) => {
-    gsap.to(workBG.current, { zIndex: -99, duration: 0, overwrite: true });
-    gsap.to(workBG.current, {
-      opacity: 1,
-      scale: 1,
-      duration: 0,
-      delay: 0.1,
-      ease: 'none',
-      overwrite: true,
-    });
-  };
-
-  const hideProjectImg = ({}) => {
-    gsap.to(workBG.current, {
-      zIndex: -98,
-      duration: 0,
-      delay: 0.2,
-      overwrite: true,
-    });
-    gsap.to(workBG.current, {
-      scale: 1.01,
-      opacity: 0,
-      duration: 0.2,
-      ease: 'expo.in',
-      overwrite: true,
-    });
-  }; */
 
   return (
     <>
