@@ -59,7 +59,8 @@ export default {
     padding: '1rem .75rem 1rem 1.3125rem',
     margin: '0',
     borderRadius: '.625rem',
-    overflow: 'auto',
+    height: 'fit-content',
+    overflowX: 'auto',
     transition: transition,
   },
   'code[class*="language-"]': {

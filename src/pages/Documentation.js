@@ -1,4 +1,5 @@
-import { Link, Outlet, useMatch, useResolvedPath } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss';
@@ -8,44 +9,18 @@ import calcGridCol from '../functions/calcGridCol';
 SyntaxHighlighter.registerLanguage('scss', scss);
 SyntaxHighlighter.registerLanguage('javascript', javascript);
 
-// sidebar
-//------------------------------------------------------------------------------------
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-function NavLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <Link to={to} {...props} className={'sidebar-item' + (isActive ? ' active' : '')}>
-      {children}
-    </Link>
-  );
-}
-
-export function Sidebar() {
-  return (
-    <div className="sidebar-container">
-      <div className="sidebar">
-        {/* <NavLink to={'colors'}>colors</NavLink>
-        <NavLink to={'layout'}>layout</NavLink> */}
-      </div>
-    </div>
-  );
-}
-
 // build docs
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export default function Documentation() {
   return (
-    <div className="sidebar-content-container">
-      <Sidebar />
-      <div className="sidebar-page-content">
+    <>
+      <Sidebar links={['colors', 'layout']} title={'Documentation'}></Sidebar>
+      <div className="container px-md-4">
         <Outlet />
       </div>
-    </div>
+    </>
   );
 }
 
@@ -67,18 +42,16 @@ function SectionHead({ title, children }) {
   );
 }
 
-function H4Code({ textCol = 3, code, language, title, children }) {
+function H4Code({ textCol = 6, code, language, title, children }) {
   return (
-    <div className="row-f10 pc-start pi-center gap-1 pl-2">
+    <div className="row-f10 pc-start pi-center pl-2">
       <div className={'col-' + textCol}>
         <h4>{title}</h4>
         {children}
       </div>
-      <div className="row-f jc-start">
-        <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
-          {code}
-        </SyntaxHighlighter>
-      </div>
+      <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
+        {code}
+      </SyntaxHighlighter>
     </div>
   );
 }
@@ -97,7 +70,7 @@ export function DocIndex() {
   return (
     <div className="col-6">
       <h1>documentation</h1>
-      <p>coming soon. how exciting.</p>
+      <p>good job using the documentation branch!</p>
     </div>
   );
 }
@@ -145,9 +118,12 @@ export function ColorDoc() {
     </div>
   );
 }
+
+// LAYOUT
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const calcGridColFunc =
   "function calcGridCol() { \n\t // calulate current # of columns \n\t let winWidth = window.innerWidth; \n\t let colCount = parseInt(winWidth / 100 + 1); \n\t\n\t // update current # of columns \n\t root.style.setProperty('--current-columns', colCount);\n}";
-
 const colMixin =
   '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, \n\t > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}';
 const rowMixin =

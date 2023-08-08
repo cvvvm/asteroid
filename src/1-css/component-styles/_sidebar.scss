@@ -1,36 +1,93 @@
-$sidebar-width: clamp(12rem, calc(12 * 2vw), 15rem);
+$sidebar-width-md: 20rem; //clamp(16rem, calc(12 * 2vw), 20rem);
 
 @mixin sidebar() {
-  .sidebar-content-container {
-    position: relative;
-    display: grid;
-
-    grid-template-columns: $sidebar-width 1fr;
-    width: 100vw;
-    height: calc(100vh - 6rem);
-  }
-  .sidebar-container {
-    position: relative;
-    display: flex;
-  }
+  // sidebar
+  //-----------------------------------------------------------
   .sidebar {
-    position: sticky;
-    top: 0;
-    bottom: 0;
+    z-index: 10000;
+    position: fixed;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3rem auto;
+    grid-template-rows: 4rem auto;
     row-gap: 1rem;
     place-content: center;
+    align-items: center;
 
-    width: $sidebar-width;
     height: 100vh;
-    padding: 3rem 1.5rem 3rem 1.5rem;
-    background-color: rgb-var($color: accent, $opacity: 50);
+    width: 100vw;
+    padding: 1rem;
+
+    background-color: rgb-var($color: text, $opacity: 100);
+    box-shadow: 8px 0px rgb-var(blk);
+    translate: calc(-100vw - 8px) 0;
 
     @include breakpoint(md) {
+      top: 0;
+      bottom: 0rem;
+      width: $sidebar-width-md;
+      padding: 3rem 3rem 3rem 1.5rem;
+
+      translate: #{'-' + $sidebar-width-md} 0;
+    }
+    > * {
+      color: rgb-var(bg);
     }
   }
+
+  // sidebar toggle
+  //-----------------------------------------------------------
+  .sidebar-toggle-container {
+    pointer-events: none;
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-content: end;
+    top: 0rem;
+    bottom: 0rem;
+
+    padding: 1.75rem 0.75rem;
+    height: 100vh;
+    width: calc(100vw + 5.25rem);
+
+    @include breakpoint(md) {
+      right: initial;
+      padding: 0;
+      width: calc($sidebar-width-md + 4rem);
+      align-content: start;
+    }
+  }
+
+  .sidebar-toggle {
+    z-index: 8001;
+    position: relative;
+    pointer-events: auto;
+    place-self: start end;
+
+    font-size: 1.75rem;
+    padding: 1.5rem 1.375rem;
+    border: none;
+    box-shadow: $button-shadow rgb-var(blk);
+
+    &.active {
+      background-color: rgb-var(red-accent);
+      color: #990d00;
+      box-shadow: $button-shadow #990d00;
+
+      &:hover {
+        background-color: #f14131;
+      }
+    }
+
+    @include breakpoint(md) {
+      place-self: start end;
+      padding: 3rem 1.5rem;
+      translate: 0;
+    }
+  }
+
+  // sidebar links
+  //-----------------------------------------------------------
   .sidebar-item {
     @extend .button-outline;
     font-size: 1rem;
@@ -39,18 +96,10 @@ $sidebar-width: clamp(12rem, calc(12 * 2vw), 15rem);
     margin: 0;
 
     &.active {
-      color: rgb-var(bg);
-      background-color: rgb-var(text);
-      border-color: rgb-var(text);
+      color: rgb-var(text);
+      background-color: rgb-var(bg);
+      border-color: rgb-var(bg);
       box-shadow: $button-shadow rgb-var(blk);
     }
-  }
-
-  .sidebar-page-content {
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    padding: var(--container-padding);
   }
 }

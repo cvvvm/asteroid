@@ -4,9 +4,8 @@
 .nav-wrapper {
   z-index: 9900;
   position: fixed;
-  // top: calc(100vh - 64px); // position at bottom
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 1rem;
+  right: 0.75rem;
 
   display: flex;
   flex-flow: column nowrap;
