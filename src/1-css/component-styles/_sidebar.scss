@@ -22,6 +22,8 @@ $sidebar-width: clamp(16rem, calc(12 * 2vw), 20rem);
       width: $sidebar-width;
       height: 100vh;
       padding: 3rem 3rem 3rem 1.5rem;
+
+      translate: -100% 0;
     }
     > * {
       color: rgb-var(bg);
@@ -35,14 +37,14 @@ $sidebar-width: clamp(16rem, calc(12 * 2vw), 20rem);
     position: absolute;
     display: grid;
     @include breakpoint(md) {
-      top: 3rem;
-      bottom: 3rem;
+      top: 0rem;
+      bottom: 0rem;
       grid-template-columns: auto;
       grid-template-rows: auto;
       justify-content: end;
 
       width: calc($sidebar-width + 4rem);
-      //height: 100vh;
+      height: 100vh;
     }
   }
   .sidebar-toggle {
