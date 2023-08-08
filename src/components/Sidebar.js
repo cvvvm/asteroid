@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { rgbvar } from '../functions/ThemeSet';
 
 const mdWidth = 768;
 
