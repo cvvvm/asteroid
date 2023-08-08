@@ -39,7 +39,7 @@ export function ContactForm() {
   const [emailSent, setEmailSent] = useState('');
 
   // submit
-  //---------------------------------------------------------------------
+  //-----------------------------------------------------------
   const submit = () => {
     if (userName && userEmail && userMessage) {
       const serviceId = 'service_thcv72o';
@@ -70,7 +70,7 @@ export function ContactForm() {
   };
 
   // check email validity
-  //---------------------------------------------------------------------
+  //-----------------------------------------------------------
   const isValidEmail = (userEmail) => {
     const regex =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -79,7 +79,7 @@ export function ContactForm() {
   };
 
   // render
-  //---------------------------------------------------------------------
+  //-----------------------------------------------------------
   return (
     <div className="row-10 vh-50 invert jc-start px-md-4 py-4">
       <h2>done reading, wanna chat?</h2>
