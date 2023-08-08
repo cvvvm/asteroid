@@ -3,6 +3,8 @@ import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { rgbvar } from '../functions/ThemeSet';
 
+const mdWidth = 768;
+
 // navlinks
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,7 +44,7 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
         duration: 0.4,
       });
     };
-
+    // activate on 'md' width or larger
     // toggle boundaries
     var toggleYBounds = 100;
     if (mouseY <= toggleYBounds) {
@@ -51,8 +53,9 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
     if (mouseY >= window.innerHeight - toggleYBounds) {
       setMouseY(window.innerHeight - toggleYBounds);
     }
-
-    window.addEventListener('mousemove', handleMouseMove);
+    if (window.innerWidth > mdWidth) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -65,7 +68,11 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
         ref={sidebarToggleRef}
         onClick={clickFunc}
       >
-        <i className={'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
+        <i
+          className={
+            'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-arrow-bar-right')
+          }
+        ></i>
       </button>
     </div>
   );
@@ -119,6 +126,16 @@ export default function Sidebar({ links = [], title, children }) {
       sidebarTL.current = gsap
         .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
         .to(sidebarRef.current, { translateX: 0 }, '<');
+      if (window.innerWidth < mdWidth) {
+        sidebarTL.current.to(
+          sidebarToggleRef.current,
+          {
+            translateX: '-5.5rem',
+            ease: 'power4.out',
+          },
+          '<'
+        );
+      }
     }, [sidebarRef]);
     return () => sidebarCtx.revert();
   }, []);
