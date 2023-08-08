@@ -69,7 +69,7 @@ function Nav() {
     }
   }
 
-  // watch nav status
+  // watch nav state
   //-----------------------------------------------------------
   useEffect(() => {
     // toggle the direction of timeline

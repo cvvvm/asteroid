@@ -1,4 +1,4 @@
-$sidebar-width: clamp(16rem, calc(12 * 2vw), 20rem);
+$sidebar-width: 20rem; //clamp(16rem, calc(12 * 2vw), 20rem);
 
 @mixin sidebar() {
   // sidebar
@@ -23,7 +23,7 @@ $sidebar-width: clamp(16rem, calc(12 * 2vw), 20rem);
       height: 100vh;
       padding: 3rem 3rem 3rem 1.5rem;
 
-      translate: -100% 0;
+      translate: #{'-' + $sidebar-width} 0;
     }
     > * {
       color: rgb-var(bg);
@@ -55,6 +55,22 @@ $sidebar-width: clamp(16rem, calc(12 * 2vw), 20rem);
 
     font-size: 1.75rem;
     box-shadow: $button-shadow rgb-var(blk);
+    border: none;
+
+    &.active {
+      background-color: rgb-var(red-accent);
+      color: #990d00;
+      box-shadow: $button-shadow #990d00;
+
+      &:hover {
+        background-color: #f14131;
+      }
+    }
+
+    @include breakpoint(md) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
   }
 
   // sidebar links

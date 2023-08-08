@@ -17,7 +17,7 @@ export default function Documentation() {
   return (
     <>
       <Sidebar links={['colors', 'layout']} title={'Documentation'}></Sidebar>
-      <div className="container">
+      <div className="container px-md-4">
         <Outlet />
       </div>
     </>

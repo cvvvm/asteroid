@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { rgbvar } from '../functions/ThemeSet';
 
 // navlinks
 //------------------------------------------------------------------------------------
@@ -25,8 +26,7 @@ function NavLink({ to, children, ...props }) {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SidebarToggle({ sidebarState }) {
-  const sidebarToggleRef = useRef();
+function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
   const sidebarToggleContainer = useRef();
   const [mouseY, setMouseY] = useState();
 
@@ -37,18 +37,19 @@ function SidebarToggle({ sidebarState }) {
       setMouseY(event.clientY);
 
       gsap.to(sidebarToggleRef.current, {
-        top: mouseY - 25,
-        ease: 'power4.out',
-        duration: 0.75,
+        top: mouseY - 60,
+        ease: 'power4.outIn',
+        duration: 0.4,
       });
     };
 
     // toggle boundaries
-    if (mouseY <= 50) {
-      setMouseY(50);
+    var toggleYBounds = 100;
+    if (mouseY <= toggleYBounds) {
+      setMouseY(toggleYBounds);
     }
-    if (mouseY >= window.innerHeight - 60) {
-      setMouseY(window.innerHeight - 60);
+    if (mouseY >= window.innerHeight - toggleYBounds) {
+      setMouseY(window.innerHeight - toggleYBounds);
     }
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -60,9 +61,9 @@ function SidebarToggle({ sidebarState }) {
   return (
     <div className="sidebar-toggle-container" ref={sidebarToggleContainer}>
       <button
-        className="button sidebar-toggle"
+        className={'button sidebar-toggle ' + (sidebarState === 'open' ? 'active' : '')}
         ref={sidebarToggleRef}
-        /* style={{ top: mouseY - 40 }} */
+        onClick={clickFunc}
       >
         <i className={'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
       </button>
@@ -82,6 +83,8 @@ function SidebarToggle({ sidebarState }) {
 
 export default function Sidebar({ links = [], title, children }) {
   const sidebarRef = useRef();
+  const sidebarToggleRef = useRef();
+  const sidebarTL = useRef();
   const [sidebarState, setSidebarState] = useState('closed');
 
   // animation
@@ -102,12 +105,23 @@ export default function Sidebar({ links = [], title, children }) {
   //-----------------------------------------------------------
   useEffect(() => {
     if (sidebarState === 'closed') {
-      gsap.to(sidebarRef.current, { translateX: 0 });
+      sidebarTL.current.timeScale(4);
     } else if (sidebarState === 'open') {
-      gsap.to(sidebarRef.current, { translateX: -100 });
+      sidebarTL.current.timeScale(3);
     }
+    sidebarTL.current.reversed(sidebarState === 'closed');
   }, [sidebarState]);
 
+  // animate sidebar
+  //-----------------------------------------------------------
+  useLayoutEffect(() => {
+    const sidebarCtx = gsap.context(() => {
+      sidebarTL.current = gsap
+        .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
+        .to(sidebarRef.current, { translateX: 0 }, '<');
+    }, [sidebarRef]);
+    return () => sidebarCtx.revert();
+  }, []);
   // content
   //------------------------------------------------------------------------------------
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +130,7 @@ export default function Sidebar({ links = [], title, children }) {
   //-----------------------------------------------------------
   var linksMap = links.map((link, index) => {
     return (
-      <NavLink key={index} to={link}>
+      <NavLink key={index} to={link} onClick={toggleSidebar}>
         {link}
       </NavLink>
     );
@@ -138,7 +152,11 @@ export default function Sidebar({ links = [], title, children }) {
       {title}
       {linksMap}
       {children}
-      <SidebarToggle sidebarState={sidebarState} onclick={() => toggleSidebar()} />
+      <SidebarToggleButton
+        sidebarState={sidebarState}
+        sidebarToggleRef={sidebarToggleRef}
+        clickFunc={toggleSidebar}
+      />
     </div>
   );
 }
