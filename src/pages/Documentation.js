@@ -6,6 +6,7 @@ import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss';
 import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
 import highlighterstyles from './docs/highlighter-slyles';
 import calcGridCol from '../functions/calcGridCol';
+import { rgbvar } from '../functions/ThemeSet';
 SyntaxHighlighter.registerLanguage('scss', scss);
 SyntaxHighlighter.registerLanguage('javascript', javascript);
 
@@ -17,7 +18,7 @@ export default function Documentation() {
   return (
     <>
       <Sidebar links={['layout']} title={'Documentation'}></Sidebar>
-      <div className="container pl-md-6 vh-100">
+      <div className="container jc-start pl-sm-5 pl-md-7 pb-8 vh-100">
         <Outlet />
       </div>
     </>
@@ -33,26 +34,80 @@ export default function Documentation() {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SectionHead({ title, children }) {
+
+// title block
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function TitleBlock({ children, links = [] }) {
+  var linksMap = links.map((name, i) => {
+    return (
+      <div key={i}>
+        <span className="note">{i + 1 + '.'}</span>
+        <a href={'#' + name} className="plink">
+          {name}
+        </a>
+      </div>
+    );
+  });
+
   return (
-    <div className="col-6 outline pc-start py-1 px-2 mt-3">
-      <h2>{title}</h2>
-      {children}
+    <div className="row-f10 pc-start">
+      <div className="row-f5 jc-start row-gap-1 order-lg-1">
+        <div className="col-f10">
+          <p className="note">jump to:</p>
+        </div>
+        {linksMap}
+      </div>
+      <div className="col-5 invert">
+        <h1>layout</h1>
+        {children}
+      </div>
     </div>
   );
 }
 
-function H4Code({ textCol = 6, code, language, title, children }) {
+// section head
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function SectionHead({ title, link, children }) {
+  if (children) {
+    var childContent = <div className="row-f10 jc-start">{children}</div>;
+  }
   return (
-    <div className="row-f10 pc-start pi-center pl-2">
-      <div className={'col-' + textCol}>
-        <h4>{title}</h4>
-        {children}
+    <div className="row-f10 jc-start">
+      <div className="row-10 ml-sm-1" id={link}>
+        <div
+          className="row-10 jc-start ac-center row-gap-1 py-2 pl-2 pr-2"
+          style={{
+            borderLeft: '3px solid ' + rgbvar('accent'),
+            backgroundColor: rgbvar('accent', 15),
+          }}
+        >
+          <h2>{title}</h2>
+          {childContent}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// h4 code block
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function H4Code({ textCol = 4, code, language, title, children }) {
+  return (
+    <>
+      <div className="row-4 px-1 pl-sm-2 jc-start pi-center">
+        <div className={'col-' + textCol}>
+          <h4>{title}</h4>
+          {children}
+        </div>
       </div>
       <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
         {code}
       </SyntaxHighlighter>
-    </div>
+      <div className="row-f10"></div>
+    </>
   );
 }
 
@@ -70,7 +125,8 @@ export function DocIndex() {
   return (
     <div className="col-6">
       <h1>documentation</h1>
-      <p className="note">watch out - this currently breaks on mobile </p>
+
+      <p className="note">content is incomplete</p>
     </div>
   );
 }
@@ -147,20 +203,20 @@ const rowMixin =
 
 export function LayoutDoc() {
   return (
-    <div className="row-f9 pc-start">
-      <div className="col-f10 invert">
-        <h1>layout</h1>
+    <>
+      <TitleBlock links={['rows-columns', 'mixins']}>
         <p>
           base layout items are built with flex-box, and offer scaling + fixed width
           options for rows/columns.
         </p>
-      </div>
-      <SectionHead title={'rows + columns'}>
-        <p>
+      </TitleBlock>
+
+      <SectionHead title={'rows + columns'} link={'rows-columns'}>
+        <p className="col-4">
           fixed width layout items are built to emulate css grid items - in that their
           width isn't based on a width percentage, but emulates a responsive column width.
         </p>
-        <p>
+        <p className="col-4 mt-0">
           as the viewport is scaled, the items will scale down once the viewport width is
           less than the item width.
         </p>
@@ -180,7 +236,7 @@ export function LayoutDoc() {
         </p>
       </H4Code>
 
-      <SectionHead title={'scss @mixins'} />
+      <SectionHead title={'scss @mixins'} link={'mixins'} />
 
       <H4Code code={rowMixin} language={'scss'} title={'rows base mixin'}>
         <p className="small">
@@ -200,6 +256,6 @@ export function LayoutDoc() {
           placed directly within other columns.
         </p>
       </H4Code>
-    </div>
+    </>
   );
 }

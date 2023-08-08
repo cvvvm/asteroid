@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-const mdWidth = 768;
+const smWidth = 512;
 
 // navlinks
 //------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
     if (mouseY >= window.innerHeight - toggleYBounds) {
       setMouseY(window.innerHeight - toggleYBounds);
     }
-    if (window.innerWidth > mdWidth) {
+    if (window.innerWidth > smWidth) {
       window.addEventListener('mousemove', handleMouseMove);
     }
     return () => {
@@ -125,11 +125,12 @@ export default function Sidebar({ links = [], title, children }) {
       sidebarTL.current = gsap
         .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
         .to(sidebarRef.current, { translateX: 0 }, '<');
-      if (window.innerWidth < mdWidth) {
+      if (window.innerWidth < smWidth) {
         sidebarTL.current.to(
           sidebarToggleRef.current,
           {
-            translateX: '-5.5rem',
+            translateX: '-6.5rem',
+            translateY: '0.75rem',
             ease: 'power4.out',
           },
           '<'

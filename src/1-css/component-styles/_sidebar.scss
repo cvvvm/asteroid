@@ -1,4 +1,4 @@
-$sidebar-width-md: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
+$sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
 
 @mixin sidebar() {
   // sidebar
@@ -13,21 +13,21 @@ $sidebar-width-md: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
     place-content: center;
     align-items: center;
 
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     padding: 1rem;
 
     background-color: rgb-var($color: text, $opacity: 100);
     box-shadow: 8px 0px rgb-var(blk);
     translate: calc(-100vw - 8px) 0;
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       top: 0;
       bottom: 0rem;
-      width: $sidebar-width-md;
+      width: $sidebar-width-sm;
       padding: 3rem 3rem 3rem 1.5rem;
 
-      translate: #{'-' + $sidebar-width-md} 0;
+      translate: #{'-' + $sidebar-width-sm} 0;
     }
     > * {
       color: rgb-var(bg);
@@ -50,10 +50,10 @@ $sidebar-width-md: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
     height: 100vh;
     width: calc(100vw + 5.25rem);
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       right: initial;
       padding: 0;
-      width: calc($sidebar-width-md + 4rem);
+      width: calc($sidebar-width-sm + 4rem);
       align-content: start;
     }
   }
@@ -79,7 +79,7 @@ $sidebar-width-md: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
       }
     }
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       place-self: start end;
       padding: 3rem 1.5rem;
       translate: 0;

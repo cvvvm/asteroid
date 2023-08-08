@@ -97,11 +97,6 @@
   }
 }
 
-.row-f {
-  @include flex-base();
-  @include row();
-}
-
 @for $i from 1 through $max-columns {
   // fixed
   //-----------------------------------------------------------
