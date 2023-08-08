@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import Footer from '../components/Footer';
 
 // home intros
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 let introIndex = 0;
 
 const homeHeading = [
@@ -33,15 +33,15 @@ const introImages = [
 ];
 
 // HOME PAGE
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function Home() {
   let [activeHead, setActiveHead] = useState(0);
   let [activeImage, setActiveImage] = useState(0);
   let [activeDesc, setActiveDesc] = useState(0);
 
   // swap intros
-  //---------------------------------------------------------------------
+  //-----------------------------------------------------------
   function prevIntro() {
     if (introIndex <= 0) {
       introIndex = homeHeading.length - 1;

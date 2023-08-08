@@ -1,11 +1,11 @@
 // DETECT CONTRAST
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 /* https://codepen.io/kennyglenn/pen/kxqWjP */
 @function contrast-color($color) {
   @return if(lightness($color) < 60%, $wht, $gry-drk);
 }
 // DEEP GET
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 /* https://css-tricks.com/snippets/sass/deep-getset-maps/ */
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
@@ -15,7 +15,7 @@
 }
 
 // STRING REPLACE
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 /* https://css-tricks.com/snippets/sass/str-replace-function/ */
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
@@ -29,13 +29,13 @@
 }
 
 // USE CSS VARIABLE - RGBA
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 @function rgb-var($color, $opacity: 100) {
   @return rgba(var(--#{$color}), (#{$opacity + '%'}));
 }
 
 // transitions
-//---------------------------------------------------------------------
+//-----------------------------------------------------------
 @function transition(
   $color: false,
   $spacer: false,
