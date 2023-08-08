@@ -17,7 +17,7 @@ export default function Documentation() {
   return (
     <>
       <Sidebar links={['colors', 'layout']} title={'Documentation'}></Sidebar>
-      <div className="container px-md-4">
+      <div className="container pl-md-6 vh-100">
         <Outlet />
       </div>
     </>
@@ -70,7 +70,7 @@ export function DocIndex() {
   return (
     <div className="col-6">
       <h1>documentation</h1>
-      <p>good job using the documentation branch!</p>
+      <p className="note">watch out - this currently breaks on mobile </p>
     </div>
   );
 }
