@@ -18,7 +18,10 @@ export default function Documentation() {
   return (
     <>
       <Sidebar links={['layout']} title={'Documentation'}></Sidebar>
-      <div className="container jc-start pl-sm-6 pl-md-7 pb-8 vh-100">
+      <div
+        className="container row-gap-1 pl-sm-9 pb-8 vh-100"
+        style={{ maxWidth: '1000px' }}
+      >
         <Outlet />
       </div>
     </>
@@ -51,14 +54,13 @@ function TitleBlock({ children, links = [] }) {
   });
 
   return (
-    <div className="row-f10 pc-start">
-      <div className="row-f5 jc-start row-gap-1 order-lg-1">
-        <div className="col-f10">
-          <p className="note">jump to:</p>
-        </div>
-        {linksMap}
+    <div className="row-f10 pc-start col-gap-2 row-gap-1">
+      <div className="col-f10">
+        <p className="note">jump to:</p>
       </div>
-      <div className="col-5 invert">
+      {linksMap}
+
+      <div className="col-f10 invert mt-1">
         <h1>layout</h1>
         {children}
       </div>
@@ -71,11 +73,11 @@ function TitleBlock({ children, links = [] }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function SectionHead({ title, link, children }) {
   if (children) {
-    var childContent = <div className="row-f10 jc-start">{children}</div>;
+    var childContent = <div className="row-f10 jc-start ai-baseline">{children}</div>;
   }
   return (
     <div
-      className="row-10 jc-start ac-center row-gap-1 py-2 pl-2 pr-2"
+      className="row-10 jc-start ac-center row-gap-1 py-2 pl-1 pl-sm-2 pr-2 mt-2 mt-sm-4"
       style={{
         borderLeft: '3px solid ' + rgbvar('accent'),
         backgroundColor: rgbvar('accent', 15),
@@ -91,21 +93,22 @@ function SectionHead({ title, link, children }) {
 // h4 code block
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function H4Code({ textCol = 3, codeCol = 5, code, language, title, children }) {
+function H4Code({ textCol = 3, code, language, title, children }) {
+  if (children) {
+    var childContent = <div className="row-f10 pc-start ai-baseline">{children}</div>;
+  }
   return (
     <>
-      <div className="row-f10"></div>
-      <div className={'col-' + textCol}>
+      <div className={'row-f10 row-gap-1 pc-start mt-1 px-sm-1'}>
         <h4>{title}</h4>
-        {children}
+        {childContent}
       </div>
 
-      <div className={'jc-start row-' + codeCol} style={{ minHeight: 0, minWidth: 0 }}>
+      <div className={'jc-start row-f10'} style={{ minHeight: 0, minWidth: 0 }}>
         <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
           {code}
         </SyntaxHighlighter>
       </div>
-      <div className="row-f10"></div>
     </>
   );
 }
@@ -211,11 +214,11 @@ export function LayoutDoc() {
       </TitleBlock>
 
       <SectionHead title={'rows + columns'} link={'rows-columns'}>
-        <p className="col-4">
+        <p className="col-f4">
           fixed width layout items are built to emulate css grid items - in that their
           width isn't based on a width percentage, but emulates a responsive column width.
         </p>
-        <p className="col-4">
+        <p className="col-f4">
           as the viewport is scaled, the items will scale down once the viewport width is
           less than the item width.
         </p>
@@ -225,11 +228,11 @@ export function LayoutDoc() {
         code={calcGridColFunc}
         language={'javascript'}
       >
-        <p className="small">
+        <p className="small col-f4">
           using the css variable '--current-columns', fixed width items watch if their
           width is larger than the viewport width.
         </p>
-        <p className="small">
+        <p className="small col-f4">
           once the item's width is exceeded, the '--current-columns' css variable is used
           to appropriately scale the item.
         </p>
@@ -238,21 +241,17 @@ export function LayoutDoc() {
       <SectionHead title={'scss @mixins'} link={'mixins'} />
 
       <H4Code code={rowMixin} language={'scss'} title={'rows base mixin'}>
-        <p className="small">
-          rows are flex containers, defaulting to center-placed content.
-        </p>
-        <p className="small">
-          rows are intended to hold cols, rows, and most other objects.
+        <p className="small ">
+          rows are flex containers, defaulting to center-placed content. rows are intended
+          to hold cols, rows, and most other objects.
         </p>
       </H4Code>
 
       <H4Code code={colMixin} language={'scss'} title={'col base mixin'}>
         <p className="small">
-          columns are flex containers, defaulting to left-aligned content.
-        </p>
-        <p className="small">
-          columns are intended to hold content + rows. they don't usually behave when
-          placed directly within other columns.
+          columns are flex containers, defaulting to left-aligned content. columns are
+          intended to hold content + rows. they don't usually behave when placed directly
+          within other columns.
         </p>
       </H4Code>
     </>

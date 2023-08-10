@@ -62,6 +62,7 @@ export default {
     height: 'fit-content',
     overflowX: 'auto',
     transition: transition,
+    flex: '1 1 100%',
   },
   'code[class*="language-"]': {
     fontFamily: fontFamily,
