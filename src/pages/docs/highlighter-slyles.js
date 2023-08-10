@@ -62,8 +62,6 @@ export default {
     height: 'fit-content',
     overflowX: 'auto',
     transition: transition,
-    wordBreak: 'break-word',
-    whiteSpace: 'pre-wrap',
   },
   'code[class*="language-"]': {
     fontFamily: fontFamily,

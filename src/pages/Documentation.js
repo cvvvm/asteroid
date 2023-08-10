@@ -74,19 +74,16 @@ function SectionHead({ title, link, children }) {
     var childContent = <div className="row-f10 jc-start">{children}</div>;
   }
   return (
-    <div className="row-f10 jc-start">
-      <div className="row-10 ml-sm-1" id={link}>
-        <div
-          className="row-10 jc-start ac-center row-gap-1 py-2 pl-2 pr-2"
-          style={{
-            borderLeft: '3px solid ' + rgbvar('accent'),
-            backgroundColor: rgbvar('accent', 15),
-          }}
-        >
-          <h2>{title}</h2>
-          {childContent}
-        </div>
-      </div>
+    <div
+      className="row-10 jc-start ac-center row-gap-1 py-2 pl-2 pr-2"
+      style={{
+        borderLeft: '3px solid ' + rgbvar('accent'),
+        backgroundColor: rgbvar('accent', 15),
+      }}
+      id={link}
+    >
+      <h2>{title}</h2>
+      {childContent}
     </div>
   );
 }
@@ -94,18 +91,20 @@ function SectionHead({ title, link, children }) {
 // h4 code block
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function H4Code({ textCol = 4, code, language, title, children }) {
+function H4Code({ textCol = 3, codeCol = 5, code, language, title, children }) {
   return (
     <>
-      <div className="row-4 px-1 pl-sm-2 jc-start pi-center">
-        <div className={'col-' + textCol}>
-          <h4>{title}</h4>
-          {children}
-        </div>
+      <div className="row-f10"></div>
+      <div className={'col-' + textCol}>
+        <h4>{title}</h4>
+        {children}
       </div>
-      <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
-        {code}
-      </SyntaxHighlighter>
+
+      <div className={'jc-start row-' + codeCol} style={{ minHeight: 0, minWidth: 0 }}>
+        <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
+          {code}
+        </SyntaxHighlighter>
+      </div>
       <div className="row-f10"></div>
     </>
   );
@@ -126,7 +125,7 @@ export function DocIndex() {
     <div className="col-6">
       <h1>documentation</h1>
 
-      <p className="note">content is incomplete</p>
+      <p className="note">content is incomplete...but there's still something.</p>
     </div>
   );
 }
@@ -197,7 +196,7 @@ export function ColorDoc() {
 const calcGridColFunc =
   "function calcGridCol() { \n\t // calulate current # of columns \n\t let winWidth = window.innerWidth; \n\t let colCount = parseInt(winWidth / 100 + 1); \n\t\n\t // update current # of columns \n\t root.style.setProperty('--current-columns', colCount);\n}";
 const colMixin =
-  '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, \n\t > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}';
+  '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}';
 const rowMixin =
   '@mixin row() { \n\t  flex-flow: row wrap; \n\t  gap: var(--object-gap); \n\t  place-content: $place-center; \n}';
 
@@ -216,7 +215,7 @@ export function LayoutDoc() {
           fixed width layout items are built to emulate css grid items - in that their
           width isn't based on a width percentage, but emulates a responsive column width.
         </p>
-        <p className="col-4 mt-0">
+        <p className="col-4">
           as the viewport is scaled, the items will scale down once the viewport width is
           less than the item width.
         </p>
