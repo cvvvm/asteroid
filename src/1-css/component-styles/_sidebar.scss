@@ -53,7 +53,7 @@ $sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
     @include breakpoint(sm) {
       right: initial;
       padding: 0;
-      width: calc($sidebar-width-sm + 4.75rem);
+      width: calc($sidebar-width-sm + 4.5rem);
       align-content: start;
     }
   }
@@ -81,7 +81,7 @@ $sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
 
     @include breakpoint(sm) {
       place-self: start end;
-      padding: 1.75rem;
+      padding: 1.5rem;
       translate: 0;
     }
   }

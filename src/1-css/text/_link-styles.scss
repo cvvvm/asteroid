@@ -7,7 +7,6 @@ a {
 //-----------------------------------------------------------
 @mixin p-link($invert: false) {
   letter-spacing: -0.0625rem;
-  //font-style: italic;
   font-weight: $weight-light;
   text-decoration: none;
   text-shadow: 0rem 0.0625rem rgb-var(blk, 0);

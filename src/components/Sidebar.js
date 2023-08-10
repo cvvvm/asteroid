@@ -126,11 +126,13 @@ export default function Sidebar({ links = [], title, children }) {
       sidebarTL.current = gsap
         .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
         .to(sidebarRef.current, { translateX: 0 }, '<');
+
+      // animate toggle for xs breakpoint
       if (window.innerWidth < smWidth) {
         sidebarTL.current.to(
           sidebarToggleRef.current,
           {
-            translateX: '-6.5rem',
+            translateX: '-5rem',
             translateY: '0.75rem',
             ease: 'power4.out',
           },

@@ -18,7 +18,7 @@ export default function Documentation() {
   return (
     <>
       <Sidebar links={['layout']} title={'Documentation'}></Sidebar>
-      <div className="container jc-start pl-sm-5 pl-md-7 pb-8 vh-100">
+      <div className="container jc-start pl-sm-6 pl-md-7 pb-8 vh-100">
         <Outlet />
       </div>
     </>
