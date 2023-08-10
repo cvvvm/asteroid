@@ -27,7 +27,12 @@ function NavLink({ to, children, ...props }) {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
+function SidebarToggleButton({
+  sidebarState,
+  clickFunc,
+  sidebarToggleRef,
+  icon = 'folder2-open',
+}) {
   const sidebarToggleContainer = useRef();
   const [mouseY, setMouseY] = useState();
 
@@ -67,11 +72,7 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
         ref={sidebarToggleRef}
         onClick={clickFunc}
       >
-        <i
-          className={
-            'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-arrow-bar-right')
-          }
-        ></i>
+        <i className={'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-' + icon)}></i>
       </button>
     </div>
   );
