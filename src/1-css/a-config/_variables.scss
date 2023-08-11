@@ -19,6 +19,8 @@ $max-columns: 18;
     item-gap: 2rem,
     spacer: 1rem,
     container-padding: 6rem 1.5rem,
+    card-padding: clamp(2rem, calc(1.125 * 5vw), 1.5rem)
+      clamp(1rem, calc(1.1 * 5vw), 2rem) clamp(2.125rem, calc(1.1 * 5vw), 1.625rem),
   )
 );
 
@@ -37,8 +39,8 @@ $place-center: center !default;
 $spacer: var(--spacer) !default;
 
 $border-rad-sm: 0.325rem !default;
-$border-rad: 0.625rem !default;
-$border-rad-lg: 1.125rem !default;
+$border-rad: 0.5rem !default;
+$border-rad-lg: 0.875rem !default;
 
 $border-width-sm: 1px !default;
 $border-width: 2px !default;

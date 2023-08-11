@@ -8,6 +8,8 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// flex base props
+//-----------------------------------------------------------
 @mixin flex-base() {
   display: flex;
   flex: 1 1 100%;
@@ -51,13 +53,13 @@
   }
 }
 
-// CARD column
-//-----------------------------------------------------------
+// outline/invert column
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @mixin column-outline($invert: false, $alt: false) {
   place-self: center;
   place-content: center;
-  padding: clamp(2rem, calc(1.125 * 5vw), 2.5rem) clamp(1rem, calc(1.1 * 5vw), 3rem)
-    clamp(2.125rem, calc(1.1 * 5vw), 2.625rem);
+  padding: var(--card-padding);
   border-radius: $border-rad-lg;
   background-color: rgb-var(bg);
   border: $border-width solid rgb-var(accent);
@@ -68,6 +70,19 @@
     background-color: rgb-var(text);
     border: $border-width solid rgb-var($color: text, $opacity: 100);
   }
+}
+
+// block quote
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin block-quote() {
+  place-content: center start;
+  gap: 1rem;
+  padding: var(--card-padding);
+  background: rgb-var(accent, 15);
+  border-left: $border-width-lg solid rgb-var(accent);
+  transition: transition($color: true, $size: true, $spacer: true);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -77,7 +77,7 @@ function SectionHead({ title, link, children }) {
   }
   return (
     <div
-      className="row-10 jc-start ac-center row-gap-1 py-2 pl-1 pl-sm-2 pr-2 mt-2 mt-sm-4"
+      className="row-10 quote mt-2 mt-sm-4"
       style={{
         borderLeft: '3px solid ' + rgbvar('accent'),
         backgroundColor: rgbvar('accent', 15),
@@ -212,7 +212,6 @@ export function LayoutDoc() {
           options for rows/columns.
         </p>
       </TitleBlock>
-
       <SectionHead title={'rows + columns'} link={'rows-columns'}>
         <p className="col-f4">
           fixed width layout items are built to emulate css grid items - in that their
@@ -223,6 +222,7 @@ export function LayoutDoc() {
           less than the item width.
         </p>
       </SectionHead>
+
       <H4Code
         title={'calculating columns'}
         code={calcGridColFunc}
@@ -237,16 +237,13 @@ export function LayoutDoc() {
           to appropriately scale the item.
         </p>
       </H4Code>
-
       <SectionHead title={'scss @mixins'} link={'mixins'} />
-
       <H4Code code={rowMixin} language={'scss'} title={'rows base mixin'}>
         <p className="small ">
           rows are flex containers, defaulting to center-placed content. rows are intended
           to hold cols, rows, and most other objects.
         </p>
       </H4Code>
-
       <H4Code code={colMixin} language={'scss'} title={'col base mixin'}>
         <p className="small">
           columns are flex containers, defaulting to left-aligned content. columns are
