@@ -24,7 +24,7 @@ SyntaxHighlighter.registerLanguage('javascript', javascript);
 // title block
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function TitleBlock({ children, links = [] }) {
+function TitleBlock({ title, children, links = [] }) {
   var linksMap = links.map((name, i) => {
     return (
       <div key={i}>
@@ -44,7 +44,7 @@ function TitleBlock({ children, links = [] }) {
       {linksMap}
 
       <div className="col-f10 invert mt-1">
-        <h1>layout</h1>
+        <h1>{title}</h1>
         {children}
       </div>
     </div>
@@ -60,7 +60,7 @@ function SectionHead({ title, link, children }) {
   }
   return (
     <div
-      className="row-10 quote mt-2 mt-sm-4"
+      className="row-f10 quote mt-2 mt-sm-4"
       style={{
         borderLeft: '3px solid ' + rgbvar('accent'),
         backgroundColor: rgbvar('accent', 15),
@@ -196,7 +196,7 @@ const rowMixin =
 export function LayoutDoc() {
   return (
     <>
-      <TitleBlock links={['rows-columns', 'mixins']}>
+      <TitleBlock title={'layout'} links={['rows-columns', 'mixins']}>
         <p>
           base layout items are built with flex-box, and offer scaling + fixed width
           options for rows/columns.
