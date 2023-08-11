@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 import Footer from '../components/Footer';
-import { rgbvar } from '../functions/ThemeSet';
 
 // home intros
 //-----------------------------------------------------------
