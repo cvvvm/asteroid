@@ -6,6 +6,7 @@ a {
 // P LINK STYLE MIXIN
 //-----------------------------------------------------------
 @mixin p-link($invert: false) {
+  white-space: nowrap;
   letter-spacing: -0.0625rem;
   font-weight: $weight-light;
   text-decoration: none;

@@ -16,7 +16,7 @@ function Footer({ project, vh = 20 }) {
   return (
     <div className={'container full py-5 pi-center vh-' + vh}>
       {projectReturn}
-      <div className="row-f10">
+      <div className="row-f10 jc-evenly">
         <p style={{ textAlign: 'center' }} className="note">
           &copy;{currYear}.{' '}
           <Link className={'notelink'} to={'/docs'}>
@@ -24,6 +24,9 @@ function Footer({ project, vh = 20 }) {
           </Link>{' '}
           by me :)
         </p>
+        <a href="/about" className="plink mt-0">
+          contact
+        </a>
       </div>
     </div>
   );
