@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11,7 +11,7 @@ import { useState } from 'react';
 // rgb variable reader
 //-----------------------------------------------------------
 export function rgbvar(color, opacity = 100) {
-  return 'rgba(var(--' + color + '), ' + opacity + '%)';
+  return 'rgba(var(--' + color + '), ' + opacity + '%)'
 }
 
 // UPDATE CSS VARS
@@ -20,16 +20,16 @@ export function rgbvar(color, opacity = 100) {
 
 // primary CSS var
 //-----------------------------------------------------------
-const root = document.documentElement.style;
+const root = document.documentElement.style
 export function setCssVarColor(color) {
-  root.setProperty('--text', 'var(--text-' + color + ')');
-  root.setProperty('--bg', 'var(--bg-' + color + ')');
-  root.setProperty('--accent', 'var(--' + color + '-accent)');
-  root.setProperty('--blk', 'var(--' + color + '-blk)');
+  root.setProperty('--text', 'var(--text-' + color + ')')
+  root.setProperty('--bg', 'var(--bg-' + color + ')')
+  root.setProperty('--accent', 'var(--' + color + '-accent)')
+  root.setProperty('--blk', 'var(--' + color + '-blk)')
 }
 
 export function ColorSet({ currentAppColor, appColorTarget }) {
-  const appColorList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono'];
+  const appColorList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono']
 
   return (
     <div className="color-set-toggles-mask">
@@ -43,18 +43,18 @@ export function ColorSet({ currentAppColor, appColorTarget }) {
               style={{
                 backgroundColor: rgbvar(color + '-accent'),
                 borderColor:
-                  color == currentAppColor
+                  color === currentAppColor
                     ? 'rgba(255,255,255,0.75)'
-                    : rgbvar(color + '-accent'),
+                    : rgbvar(color + '-accent')
                 //boxShadow: '4px 4px 0px ' + rgbvar(color + '-blk'),
               }}
               className="color-set-toggle"
             ></div>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,43 +68,43 @@ export function ColorSet({ currentAppColor, appColorTarget }) {
 // GET preferred theme!
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function detectThemePref() {
-  var detectedThemePref = '';
+  var detectedThemePref = ''
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    detectedThemePref = 'dark';
+    detectedThemePref = 'dark'
   } else if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: light)').matches
   ) {
-    detectedThemePref = 'light';
+    detectedThemePref = 'light'
   }
 
-  return detectedThemePref;
+  return detectedThemePref
 }
 
 // SET THEME
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function ThemeSet({ classNames }) {
-  let themeIcon = '';
-  const [appTheme, setAppTheme] = useState(detectThemePref());
+  let themeIcon = ''
+  const [appTheme, setAppTheme] = useState(detectThemePref())
 
-  document.documentElement.className = 'bg ' + appTheme + '-theme';
+  document.documentElement.className = 'bg ' + appTheme + '-theme'
 
   // SET theme icon
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   if (appTheme === 'light') {
-    themeIcon = 'lt'; //<i className="bi bi-lightbulb-fill"></i>;
+    themeIcon = 'lt' //<i className="bi bi-lightbulb-fill"></i>;
   } else {
-    themeIcon = 'dk'; //<i className="bi bi-moon-fill"></i>;
+    themeIcon = 'dk' //<i className="bi bi-moon-fill"></i>;
   }
 
   // SWAP theme
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   function themeSwap() {
     if (appTheme === 'light') {
-      setAppTheme('dark');
+      setAppTheme('dark')
     } else {
-      setAppTheme('light');
+      setAppTheme('light')
     }
   }
 
@@ -112,5 +112,5 @@ export function ThemeSet({ classNames }) {
     <button id="themeToggleButton" onClick={themeSwap} className={classNames}>
       <div>{themeIcon}</div>
     </button>
-  );
+  )
 }

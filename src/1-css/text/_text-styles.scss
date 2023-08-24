@@ -55,7 +55,7 @@ $type-ratios: (
   perfectFourth: 1.333,
   augmentedFourth: 1.414,
   perfectFifth: 1.5,
-  goldenRatio: 1.618,
+  goldenRatio: 1.618
 );
 
 $base-type-size: 1rem;
@@ -68,7 +68,7 @@ $font-family: (
   1: $avara,
   2: $avara,
   3: $avara,
-  4: $jet-brains,
+  4: $jet-brains
 );
 
 // set weight
@@ -76,7 +76,7 @@ $font-weight: (
   1: $weight-black,
   2: $weight-bold,
   3: $weight-bold,
-  4: $weight-bold,
+  4: $weight-bold
 );
 
 $h1-max: 2.75rem;
@@ -90,7 +90,7 @@ $font-size: (
   1: clamp($h2-max, calc(1.1 * 5vw), $h1-max),
   2: clamp($h3-max, calc(1.1 * 5vw), $h2-max),
   3: clamp($h4-max, calc(1.2 * 5vw), $h3-max),
-  4: clamp($h4-min, calc(1.1 * 1vw), $h4-max),
+  4: clamp($h4-min, calc(1.1 * 1vw), $h4-max)
 );
 
 @each $level in $type-levels {
@@ -113,10 +113,10 @@ h1 + p {
   margin-top: -1.5rem;
 }
 h2 + p {
-  margin-top: -1.75rem;
+  margin-top: -1.5rem;
 }
 h3 + p {
-  margin-top: -1.875rem;
+  margin-top: -1.75rem;
 }
 h4 + p {
   margin-top: -1.625rem;

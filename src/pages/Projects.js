@@ -1,6 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import gsap from 'gsap';
+import { Outlet, Link } from 'react-router-dom'
 
 // RETURN TO PROJECTS BUTTON
 //------------------------------------------------------------------------------------
@@ -13,7 +11,7 @@ export function ReturnToProjects() {
       </Link>
       <Outlet />
     </>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,14 +24,12 @@ export function ReturnToProjects() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function ProjectCard({ title, caption, categories, link, background }) {
-  const workBG = useRef();
-
+export function ProjectCard({ title, caption, categories, link }) {
   const catmap = categories.map((category) => (
     <p key={category} className="badge-outline">
       {category}
     </p>
-  ));
+  ))
 
   return (
     <>
@@ -43,7 +39,7 @@ export function ProjectCard({ title, caption, categories, link, background }) {
         <p className="caption">{caption}</p>
       </Link>
     </>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,6 +61,12 @@ export function Projects() {
           categories={['UX/UI']}
           title={'jamison city interactive'}
           caption={'stress-testing Powerpoint to teach history.'}
+        />
+        <ProjectCard
+          link={'lobo-redesign'}
+          categories={['brand', 'web']}
+          title={"what's a seawolf?"}
+          caption={'refreshing a 15 year old university mascot.'}
         />
         <ProjectCard
           link={'zig-zag-tattoo'}
@@ -104,5 +106,5 @@ export function Projects() {
         />
       </div>
     </>
-  );
+  )
 }

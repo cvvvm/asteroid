@@ -1,17 +1,16 @@
-import { useEffect, useLayoutEffect, useState, useRef } from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import gsap from 'gsap';
+import { useEffect, useLayoutEffect, useState, useRef } from 'react'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import gsap from 'gsap'
 
-import { ThemeSet, ColorSet, setCssVarColor, rgbvar } from '../functions/ThemeSet';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
+import { ThemeSet, ColorSet, setCssVarColor, rgbvar } from '../functions/ThemeSet'
 
 // nav links
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function NavLink({ to, children, appColor, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
   return (
     <Link
@@ -20,12 +19,12 @@ function NavLink({ to, children, appColor, ...props }) {
       className={'nav-link' + (isActive ? ' active' : '')}
       style={{
         backgroundColor: isActive ? rgbvar('text') : rgbvar('bg'),
-        color: isActive ? rgbvar('bg-' + appColor) : rgbvar('text-' + appColor),
+        color: isActive ? rgbvar('bg-' + appColor) : rgbvar('text-' + appColor)
       }}
     >
       {children}
     </Link>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,11 +38,11 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function Nav() {
-  var defaultColor = 'blue';
-  const nav = useRef();
-  const navTL = useRef();
-  const [navState, setNavState] = useState('closed');
-  const [appColor, setAppColor] = useState(defaultColor);
+  var defaultColor = 'pink'
+  const nav = useRef()
+  const navTL = useRef()
+  const [navState, setNavState] = useState('closed')
+  const [appColor, setAppColor] = useState(defaultColor)
 
   // NAV TOGGLES
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,20 +51,20 @@ function Nav() {
   // change app color
   //-----------------------------------------------------------
   function changeAppColor(e) {
-    setAppColor(e.currentTarget.id);
+    setAppColor(e.currentTarget.id)
   }
   // update CSS variables
   useEffect(() => {
-    setCssVarColor(appColor);
-  });
+    setCssVarColor(appColor)
+  })
 
   // toggle nav menu state
   //-----------------------------------------------------------
   function toggleNavMenu() {
     if (navState === 'closed') {
-      setNavState('open');
+      setNavState('open')
     } else if (navState === 'open') {
-      setNavState('closed');
+      setNavState('closed')
     }
   }
 
@@ -74,13 +73,13 @@ function Nav() {
   useEffect(() => {
     // toggle the direction of timeline
     if (navState === 'open') {
-      navTL.current.timeScale(1);
+      navTL.current.timeScale(1)
     } else if (navState === 'closed') {
-      navTL.current.timeScale(2);
+      navTL.current.timeScale(2)
     }
     // state on page load?
-    navTL.current.reversed(navState === 'closed');
-  }, [navState]);
+    navTL.current.reversed(navState === 'closed')
+  }, [navState])
 
   // animate nav
   //-----------------------------------------------------------
@@ -89,11 +88,11 @@ function Nav() {
       navTL.current = gsap
         .timeline({ reversed: true })
         .add(navOpenCtrlBar())
-        .add(navOpenNavLinks(), '<');
-    }, [nav]);
+        .add(navOpenNavLinks(), '<')
+    }, [nav])
 
-    return () => navCtx.revert();
-  }, []);
+    return () => navCtx.revert()
+  }, [])
 
   // build nav menu
   //-----------------------------------------------------------
@@ -129,10 +128,10 @@ function Nav() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Nav;
+export default Nav
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,15 +143,15 @@ export default Nav;
 
 function navOpenCtrlBar() {
   let openCtrlBarTL = gsap.timeline({
-    defaults: { duration: 0.2, ease: 'power4.out' },
-  });
+    defaults: { duration: 0.2, ease: 'power4.out' }
+  })
   openCtrlBarTL
     .to('.nav-link-mask', { scaleX: 1 }, '<')
     .to(
       '.nav-control-bar',
       {
         borderRadius: '1.25rem 1.25rem 0rem 0rem',
-        padding: '0.625rem 0.8125rem 0.625rem 0.625rem',
+        padding: '0.625rem 0.8125rem 0.625rem 0.625rem'
       },
       '<'
     )
@@ -162,7 +161,7 @@ function navOpenCtrlBar() {
       '.color-set-toggles-mask',
       {
         width: 'auto',
-        height: 'auto',
+        height: 'auto'
       },
       '<'
     )
@@ -170,7 +169,7 @@ function navOpenCtrlBar() {
       '.color-set-toggles-mask',
       {
         translateY: -1,
-        delay: 0.1,
+        delay: 0.1
       },
       '<'
     )
@@ -181,28 +180,28 @@ function navOpenCtrlBar() {
         translateX: 3,
         boxShadow: '0px 0px 0px rgba(0,0,0,0.25)',
         stagger: {
-          amount: 0.3,
+          amount: 0.3
         },
-        duration: 0.2,
+        duration: 0.2
       },
       '<'
-    );
+    )
 
-  return openCtrlBarTL;
+  return openCtrlBarTL
 }
 
 function navOpenNavLinks() {
   let openNavLinksTL = gsap.timeline({
-    defaults: { duration: 0.2, ease: 'power4.out' },
-  });
+    defaults: { duration: 0.2, ease: 'power4.out' }
+  })
   openNavLinksTL
     .to('.color-set-toggle', {
-      scale: 1,
+      scale: 1
     })
     .to('.nav-link-container', { padding: '0.875rem', duration: 0.1 }, '<')
     .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: '-2px' })
     .to('.nav-link', { translateY: 0 }, '<')
-    .to('.nav-link', { scale: 1, duration: 0.5 }, '<');
+    .to('.nav-link', { scale: 1, duration: 0.5 }, '<')
 
-  return openNavLinksTL;
+  return openNavLinksTL
 }

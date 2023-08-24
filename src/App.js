@@ -1,39 +1,43 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Link, Route, Routes, useLocation, useRoutes } from 'react-router-dom';
-import { Transition } from 'react-transition-group';
-import { gsap } from 'gsap';
+import { useEffect, useLayoutEffect } from 'react'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 
-import './1-css/main.min.css';
-import calcGridCol from './functions/calcGridCol';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import { gsap } from 'gsap'
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Documentation from './pages/Documentation';
+import './1-css/main.min.css'
+import calcGridCol from './functions/calcGridCol'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
 
-import { Projects, ReturnToProjects } from './pages/Projects';
-import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation';
+// top-level pages
+//-----------------------------------------------------------
+import Home from './pages/Home'
+import About from './pages/About'
+import Documentation from './pages/Documentation'
+import { Projects, ReturnToProjects } from './pages/Projects'
+import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation'
 
-import ZigZagTattoo from './pages/projects/ZigZagTattoo';
-import JamisonExhibit from './pages/projects/JamisonExhibit';
-import SsuWebReskin from './pages/projects/SsuWebReskin';
-import VoltaRoach from './pages/projects/VoltaRoach';
-import TourTaniti from './pages/projects/TourTaniti';
-import NinaJarnumYoga from './pages/projects/NinaJarnumYoga';
-import CovidCampusComms from './pages/projects/CovidCampusComms';
-import LocalElectionGuides from './pages/projects/LocalElectionGuides';
+// project pages
+//-----------------------------------------------------------
+import ZigZagTattoo from './pages/projects/ZigZagTattoo'
+import JamisonExhibit from './pages/projects/JamisonExhibit'
+import SsuWebReskin from './pages/projects/SsuWebReskin'
+import VoltaRoach from './pages/projects/VoltaRoach'
+import TourTaniti from './pages/projects/TourTaniti'
+import NinaJarnumYoga from './pages/projects/NinaJarnumYoga'
+import CovidCampusComms from './pages/projects/CovidCampusComms'
+import LocalElectionGuides from './pages/projects/LocalElectionGuides'
+import LoboRedesign from './pages/projects/LoboRedesign'
 
 // ON ROUTE CHANGE
 //-----------------------------------------------------------
 export const ScrollToTop = ({ children }) => {
-  const location = useLocation();
+  const location = useLocation()
 
   // scroll to top
   //-----------------------------------------------------------
   useEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, [location.pathname]);
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
 
   // animate page
   //-----------------------------------------------------------
@@ -45,22 +49,22 @@ export const ScrollToTop = ({ children }) => {
           delay: 0.1,
           y: '100vh',
           stagger: 0.025,
-          ease: 'expo.out',
+          ease: 'expo.out'
         }
-      );
+      )
       gsap.from('.projects-return', {
         delay: 0.6,
         y: -100,
         duration: 0.5,
-        ease: 'expo.out',
-      });
-    });
+        ease: 'expo.out'
+      })
+    })
 
-    return () => ctx.revert(); // cleanup
-  }, [location.pathname]);
+    return () => ctx.revert() // cleanup
+  }, [location.pathname])
 
-  return children;
-};
+  return children
+}
 
 export function ErrorPage({ page = '' }) {
   return (
@@ -73,7 +77,7 @@ export function ErrorPage({ page = '' }) {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,8 +94,8 @@ function App() {
   // CALC GRID
   //-----------------------------------------------------------
   useLayoutEffect(() => {
-    calcGridCol();
-  }, []);
+    calcGridCol()
+  }, [])
 
   // RENDER
   //-----------------------------------------------------------
@@ -136,6 +140,7 @@ function App() {
             <Route path="projects/tour-taniti" element={<TourTaniti />} />
             <Route path="projects/nina-jarnum-yoga" element={<NinaJarnumYoga />} />
             <Route path="projects/covid-campus-comms" element={<CovidCampusComms />} />
+            <Route path="projects/lobo-redesign" element={<LoboRedesign />} />
             <Route
               path="projects/local-election-guides"
               element={<LocalElectionGuides />}
@@ -144,7 +149,7 @@ function App() {
         </Routes>
       </ScrollToTop>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

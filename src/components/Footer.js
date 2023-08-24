@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function Footer({ project, vh = 20 }) {
-  const currYear = new Date().getFullYear();
+  const currYear = new Date().getFullYear()
 
   if (project) {
     var projectReturn = (
-      <div className={'row-f10 pb-5'}>
+      <div className={'row-f10 pb-3'}>
         <Link to={'/projects'}>
-          <button className="button">return to work</button>
+          <button className="button-outline">← return to work</button>
         </Link>
       </div>
-    );
+    )
   }
 
   return (
-    <div className={'container full py-5 pi-center vh-' + vh}>
+    <div className={'container full py-6 pi-center vh-' + vh}>
       {projectReturn}
       <div className="row-f10 jc-evenly">
         <p style={{ textAlign: 'center' }} className="note">
@@ -29,7 +29,7 @@ function Footer({ project, vh = 20 }) {
         </a>
       </div>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
