@@ -64,7 +64,7 @@ export function Projects() {
         />
         <ProjectCard
           link={'lobo-redesign'}
-          categories={['brand', 'web']}
+          categories={['brand', 'illustration']}
           title={"what's a seawolf?"}
           caption={'refreshing a 15 year old university mascot.'}
         />
