@@ -34,7 +34,7 @@ $page-breakpoints: (
   xxl: 1536
 );
 
-$place-start: start !default;
+$place-start: flex-start !default;
 $place-center: center !default;
 
 $spacer: var(--spacer) !default;

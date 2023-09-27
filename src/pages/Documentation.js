@@ -5,7 +5,6 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
 import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript'
 import highlighterstyles from './docs/highlighter-slyles'
-import calcGridCol from '../functions/calcGridCol'
 import { rgbvar } from '../functions/ThemeSet'
 import Footer from '../components/Footer'
 SyntaxHighlighter.registerLanguage('scss', scss)
