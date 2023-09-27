@@ -21,6 +21,7 @@ export function rgbvar(color, opacity = 100) {
 // primary CSS var
 //-----------------------------------------------------------
 const root = document.documentElement.style
+
 export function setCssVarColor(color) {
   root.setProperty('--text', 'var(--text-' + color + ')')
   root.setProperty('--bg', 'var(--bg-' + color + ')')
@@ -28,31 +29,27 @@ export function setCssVarColor(color) {
   root.setProperty('--blk', 'var(--' + color + '-blk)')
 }
 
-export function ColorSet({ currentAppColor, appColorTarget }) {
+export function ColorSet({ currentAppColor, appColorTarget, classNames, styles }) {
   const appColorList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono']
 
   return (
-    <div className="color-set-toggles-mask">
-      <div className="color-set-toggles-bar">
-        {appColorList.map(function (color) {
-          return (
-            <div
-              onClick={appColorTarget}
-              id={color}
-              key={color}
-              style={{
-                backgroundColor: rgbvar(color + '-accent'),
-                borderColor:
-                  color === currentAppColor
-                    ? 'rgba(255,255,255,0.75)'
-                    : rgbvar(color + '-accent')
-                //boxShadow: '4px 4px 0px ' + rgbvar(color + '-blk'),
-              }}
-              className="color-set-toggle"
-            ></div>
-          )
-        })}
-      </div>
+    <div className={'color-set-toggles-bar ' + classNames} style={{ styles }}>
+      {appColorList.map(function (color) {
+        return (
+          <div
+            onClick={appColorTarget}
+            id={color}
+            key={color}
+            style={{
+              backgroundColor: rgbvar(color + '-accent'),
+              borderColor:
+                color === currentAppColor ? rgbvar('text') : rgbvar('bg-' + color),
+              boxShadow: 'none' //'4px 4px 0px ' + rgbvar('text-' + color + '', 100)
+            }}
+            className="color-set-toggle"
+          ></div>
+        )
+      })}
     </div>
   )
 }

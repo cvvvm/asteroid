@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 
 import { gsap } from 'gsap'
@@ -7,6 +7,7 @@ import './1-css/main.min.css'
 import calcGridCol from './functions/calcGridCol'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import { setCssVarColor } from './functions/ThemeSet'
 
 // top-level pages
 //-----------------------------------------------------------
@@ -89,8 +90,26 @@ export function ErrorPage({ page = '' }) {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function randNumRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 function App() {
+  // APP COLOR
+  //-----------------------------------------------------------
+  // const appColorsList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono']
+  const [appColor, setAppColor] = useState('mono')
+
+  // change app color
+  //-----------------------------------------------------------
+  function changeAppColor(e) {
+    setAppColor(e.currentTarget.id)
+  }
+  // update CSS variables
+  useEffect(() => {
+    setCssVarColor(appColor)
+  })
+
   // CALC GRID
   //-----------------------------------------------------------
   useLayoutEffect(() => {
@@ -102,11 +121,17 @@ function App() {
   return (
     <>
       <ScrollToTop>
-        <Nav />
+        <Nav appColor={appColor} changeAppColor={changeAppColor} />
         <Routes>
           <Route path="*" element={<ErrorPage />} />
-          <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
+          <Route
+            index
+            element={<Home appColor={appColor} changeAppColor={changeAppColor} />}
+          />
+          <Route
+            path="home"
+            element={<Home appColor={appColor} changeAppColor={changeAppColor} />}
+          />
           <Route path="projects" element={<Projects />} />
           <Route path="about" element={<About />} />
 

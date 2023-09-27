@@ -1,0 +1,43 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// COLOR SET
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* .color-set-toggles-mask {
+  z-index: 9990;
+  overflow: hidden;
+
+  height: 0;
+  width: 0;
+
+  transform-origin: center top;
+  translate: 0 -100%;
+} */
+
+.color-set-toggles-bar {
+  // background-color: rgb-var(bg);
+  border-radius: $border-rad-lg;
+  padding: 0.625rem 0.8125rem 0.8125rem 0.5625rem;
+  transform-origin: center top;
+}
+
+.color-set-toggle {
+  @extend .button;
+  aspect-ratio: 1 / 1;
+  // flex: 1 1 calc(100% / 7);
+  // height: 2rem;
+  // width: 2rem;
+
+  padding: 1.125rem !important;
+  border-radius: 3rem !important;
+  border-width: $border-width !important;
+  border-style: solid;
+
+  /*   transform-origin: center;
+  translate: 0px 0px;
+  transition: filter $timing ease-in-out; */
+
+  &:hover {
+    filter: brightness(0.8) saturate(1.25);
+  }
+}

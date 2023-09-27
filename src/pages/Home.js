@@ -1,86 +1,22 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
+import { Link } from 'react-router-dom'
 
-import Footer from '../components/Footer';
-
-// home intros
-//-----------------------------------------------------------
-let introIndex = 0;
-
-const homeHeading = [
-  "hi, i'm claire.",
-  'i made you this website.',
-  'you can change the color.',
-  'the funniest person in web design.',
-  'professional keyboard & cat appreciator.',
-  'coding this site makes it a portfolio piece.',
-];
-
-const homeDesc = ['self-taught designer, engineer, occasional illustrator.'];
-
-const introImages = [
-  '1.webp',
-  '2.webp',
-  '3.webp',
-  '4.webp',
-  '5.webp',
-  '6.webp',
-  '7.webp',
-  '8.webp',
-  '9.webp',
-  '10.webp',
-];
+import Footer from '../components/Footer'
+import { ColorSet } from '../functions/ThemeSet'
 
 // HOME PAGE
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function Home() {
-  let [activeHead, setActiveHead] = useState(0);
-  let [activeImage, setActiveImage] = useState(0);
-  let [activeDesc, setActiveDesc] = useState(0);
-
-  // swap intros
-  //-----------------------------------------------------------
-  function prevIntro() {
-    if (introIndex <= 0) {
-      introIndex = homeHeading.length - 1;
-    } else {
-      introIndex -= 1;
-    }
-    setIntros(introIndex);
-  }
-
-  function nextIntro() {
-    introIndex += 1;
-    if (introIndex >= homeHeading.length) {
-      introIndex = 0;
-    }
-    setIntros(introIndex);
-  }
-
-  function setIntros(index) {
-    setActiveImage(index);
-    setActiveHead(index);
-    setActiveDesc(index);
-  }
-
+export default function Home({ appColor, changeAppColor }) {
   return (
     <>
-      <div className="container vh-80 pt-6 pb-0 row-gap-2">
-        <div className="row-8">
-          <div className="col-5 pc-center">
-            <h1 className="">{homeHeading[activeHead]}</h1>
-            <p className="">{homeDesc[activeDesc]}</p>
-            <p>
-              i built this website so you can see my work with the background color of
-              your choice.
-            </p>
-            <p className="note">
-              this site is new, some details are still being added :)
-            </p>
+      <div className="container vh-80 pt-7 pb-0 row-gap-4 row-gap-xs-7">
+        <div className="row-8 row-gap-2">
+          <div className="col-4">
+            <h1 className="">hi, i'm claire.</h1>
+            <p className="">self-taught designer, engineer, occasional illustrator.</p>
           </div>
-          <div className="row-5 pc-evenly py-1">
+
+          <div className="row-4 pc-evenly">
             <Link to={'/about'}>
               <button className="button-outline as-center">about</button>
             </Link>
@@ -89,10 +25,17 @@ function Home() {
             </Link>
           </div>
         </div>
+
+        <div className="row-f10 pi-center pc-center row-gap-1">
+          <p className="note row-f10">current color: {appColor}</p>
+          <ColorSet
+            currentAppColor={appColor}
+            appColorTarget={changeAppColor}
+            classNames={'row-10 row-gap-1 col-gap-xxs-2 col-gap-xs-3 col-gap-sm-1'}
+          />
+        </div>
       </div>
       <Footer />
     </>
-  );
+  )
 }
-
-export default Home;

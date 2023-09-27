@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import gsap from 'gsap'
 
-import { ThemeSet, ColorSet, setCssVarColor, rgbvar } from '../functions/ThemeSet'
+import { ThemeSet, ColorSet, rgbvar } from '../functions/ThemeSet'
 
 // nav links
 //------------------------------------------------------------------------------------
@@ -37,17 +37,16 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function Nav() {
-  var defaultColor = 'pink'
+function Nav({ appColor, changeAppColor }) {
   const nav = useRef()
   const navTL = useRef()
   const [navState, setNavState] = useState('closed')
-  const [appColor, setAppColor] = useState(defaultColor)
+  // const [appColor, setAppColor] = useState(defaultColor)
 
   // NAV TOGGLES
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+  /*
   // change app color
   //-----------------------------------------------------------
   function changeAppColor(e) {
@@ -56,7 +55,7 @@ function Nav() {
   // update CSS variables
   useEffect(() => {
     setCssVarColor(appColor)
-  })
+  }) */
 
   // toggle nav menu state
   //-----------------------------------------------------------
@@ -108,11 +107,13 @@ function Nav() {
             className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
           >
-            <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i>
+            {/* <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i> */}
+
+            {navState === 'open' ? 'exit' : 'menu'}
           </button>
         </div>
 
-        <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} />
+        {/* <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} /> */}
 
         {/*
         // NAV LINKS
@@ -127,6 +128,11 @@ function Nav() {
           </div>
         </div>
       </div>
+      {/*       <ColorSet
+        currentAppColor={appColor}
+        appColorTarget={changeAppColor}
+        classNames={'row-f10 row-gap-0 col-gap-1 p-1 py-xs-2 px-xs-0'}
+      /> */}
     </nav>
   )
 }
@@ -141,12 +147,23 @@ export default Nav
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function navOpenCtrlBar() {
+export function navOpenCtrlBar() {
   let openCtrlBarTL = gsap.timeline({
     defaults: { duration: 0.2, ease: 'power4.out' }
   })
   openCtrlBarTL
-    .to('.nav-link-mask', { scaleX: 1 }, '<')
+    /*     .from(
+      '.color-set-toggles-bar',
+      { position: 'fixed', bottom: 0, right: 0, translateY: '150%', zIndex: 10000 },
+      '<'
+    )
+    .to(
+      '.color-set-toggles-bar',
+      { position: 'fixed', bottom: 0, right: 0, zIndex: 10000 },
+      '<'
+    ) */
+    //.to('.nav-wrapper', { translateY: '100px' }, '<')
+    .to('.nav-link-mask', { scaleX: 1, width: '25rem', maxWidth: '90vw' }, '<')
     .to(
       '.nav-control-bar',
       {
@@ -157,36 +174,6 @@ function navOpenCtrlBar() {
     )
     .to('.nav-toggle', { borderRadius: '0.875rem' }, '<')
     .to('.theme-toggle', { borderRadius: '0.875rem' }, '<')
-    .to(
-      '.color-set-toggles-mask',
-      {
-        width: 'auto',
-        height: 'auto'
-      },
-      '<'
-    )
-    .to(
-      '.color-set-toggles-mask',
-      {
-        translateY: -1,
-        delay: 0.1
-      },
-      '<'
-    )
-    .from(
-      '.color-set-toggle',
-      {
-        translateY: 3,
-        translateX: 3,
-        boxShadow: '0px 0px 0px rgba(0,0,0,0.25)',
-        stagger: {
-          amount: 0.3
-        },
-        duration: 0.2
-      },
-      '<'
-    )
-
   return openCtrlBarTL
 }
 
@@ -195,9 +182,6 @@ function navOpenNavLinks() {
     defaults: { duration: 0.2, ease: 'power4.out' }
   })
   openNavLinksTL
-    .to('.color-set-toggle', {
-      scale: 1
-    })
     .to('.nav-link-container', { padding: '0.875rem', duration: 0.1 }, '<')
     .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: '-2px' })
     .to('.nav-link', { translateY: 0 }, '<')

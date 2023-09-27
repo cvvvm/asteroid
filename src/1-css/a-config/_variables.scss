@@ -20,17 +20,18 @@ $max-columns: 18;
     spacer: 1rem,
     container-padding: 6rem 1.5rem,
     card-padding: clamp(2rem, calc(1.125 * 5vw), 1.5rem)
-      clamp(1rem, calc(1.1 * 5vw), 2rem) clamp(2.125rem, calc(1.1 * 5vw), 1.625rem),
+      clamp(1rem, calc(1.1 * 5vw), 2rem) clamp(2.125rem, calc(1.1 * 5vw), 1.625rem)
   )
 );
 
 $page-breakpoints: (
-  xs: 0,
+  xxs: 0,
+  xs: 350,
   sm: 512,
   md: 768,
   lg: 1024,
   xl: 1280,
-  xxl: 1536,
+  xxl: 1536
 );
 
 $place-start: start !default;
@@ -61,7 +62,7 @@ $hover-translate: -3px -3px !default;
 
 $spacer-types: (
   'padding': 'p',
-  'margin': 'm',
+  'margin': 'm'
 );
 
 $spacer-areas: (
@@ -69,7 +70,7 @@ $spacer-areas: (
   '-top': 't',
   '-right': 'r',
   '-bottom': 'b',
-  '-left': 'l',
+  '-left': 'l'
 );
 
 // placement
@@ -81,7 +82,7 @@ $place-content: (
   'between': 'space-between',
   'around': 'space-around',
   'evenly': 'space-evenly',
-  'stretch': 'stretch',
+  'stretch': 'stretch'
 );
 
 $place-items: (
@@ -91,5 +92,5 @@ $place-items: (
   'self-end': 'self-end',
   'center': 'center',
   'baseline': 'baseline',
-  'stretch': 'stretch',
+  'stretch': 'stretch'
 );

@@ -33,7 +33,7 @@
   display: grid;
   grid-template-columns: auto auto;
 
-  background-color: rgb-var(accent);
+  background-color: rgb-var(text);
 
   padding: 0rem 0rem;
   border-radius: $border-rad;
@@ -42,11 +42,15 @@
 
 @mixin toggle-base() {
   font-family: $jet-brains;
+  font-size: 1.25rem;
   background-color: rgb-var(text);
   color: rgb-var(bg);
 
+  padding: 0.875rem 1.25rem 1rem;
   border: none;
-  transition: filter $timing ease-in-out, box-shadow $timing-fast ease-out,
+  transition:
+    filter $timing ease-in-out,
+    box-shadow $timing-fast ease-out,
     transition($color: true);
 
   &:hover {
@@ -63,14 +67,12 @@
 .theme-toggle {
   @include toggle-base();
   justify-self: start;
-  font-size: 1.25rem;
   border-radius: $border-rad 0rem 0rem $border-rad;
-  padding: 1rem 1.25rem 1.125rem;
 
   &.active {
     background-color: rgb-var(bg);
     color: rgb-var(text);
-    box-shadow: $button-shadow rgb-var(blk, 80);
+    box-shadow: $button-shadow rgb-var(accent);
 
     &:hover {
       color: rgb-var(blk);
@@ -82,9 +84,8 @@
 .nav-toggle {
   @include toggle-base();
   justify-self: end;
-  font-size: 1.5rem;
+  //font-size: 1.5rem;
   border-radius: 0rem $border-rad $border-rad 0rem;
-  padding: 0.75rem 1.25rem 0.875rem 1.25rem;
 
   &.active {
     background-color: rgb-var(red-accent);
@@ -94,53 +95,6 @@
     &:hover {
       background-color: #f14131;
     }
-  }
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-// COLOR SET
-//
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.color-set-toggles-mask {
-  z-index: 9990;
-  overflow: hidden;
-
-  height: 0;
-  width: 0;
-
-  transform-origin: center top;
-  translate: 0 -100%;
-}
-
-.color-set-toggles-bar {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 0.5rem;
-
-  background-color: rgb-var(accent);
-  padding: 0.625rem 0.8125rem 0.8125rem 0.5625rem;
-  transform-origin: center top;
-}
-
-.color-set-toggle {
-  padding: 1rem;
-  flex: 1 1 calc(100% / 7);
-  aspect-ratio: 1 / 1;
-  height: 2rem;
-
-  border-radius: 2rem;
-  border-width: $border-width-lg;
-  border-style: solid;
-  box-shadow: $button-shadow rgb-var(blk, 80);
-
-  transform-origin: center;
-  translate: 0px 0px;
-  transition: filter $timing ease-in-out;
-
-  &:hover {
-    filter: brightness(0.85) saturate(1.25);
   }
 }
 
@@ -190,8 +144,11 @@
   translate: 0 -650%;
   scale: 0.9;
 
-  transition: padding $timing ease-in, letter-spacing $timing ease-in-out,
-    background $timing ease-in-out, color $timing ease-in-out;
+  transition:
+    padding $timing ease-in,
+    letter-spacing $timing ease-in-out,
+    background $timing ease-in-out,
+    color $timing ease-in-out;
 
   &:hover {
     letter-spacing: 0.0625rem;

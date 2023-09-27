@@ -24,6 +24,7 @@
 //@import "./objects";
 
 @import './component-styles/button';
+@import './component-styles/color-picker';
 @import './component-styles/work_projects';
 @import './component-styles/nav';
 @import './component-styles/sidebar';
@@ -37,9 +38,13 @@
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * {
-  cursor: url('/public/cursor/cursor_idle.png') -64 -64, auto;
+  cursor:
+    url('/public/cursor/cursor_idle.png') -64 -64,
+    auto;
 }
 
 *:active {
-  cursor: url('/public/cursor/cursor_glowing.png') 10 10, auto;
+  cursor:
+    url('/public/cursor/cursor_glowing.png') 10 10,
+    auto;
 }
