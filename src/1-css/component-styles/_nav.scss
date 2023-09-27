@@ -42,7 +42,7 @@
 
 @mixin toggle-base() {
   font-family: $jet-brains;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, calc(1.125 * 4vw), 1.25rem);
   background-color: rgb-var(text);
   color: rgb-var(bg);
 
@@ -84,7 +84,6 @@
 .nav-toggle {
   @include toggle-base();
   justify-self: end;
-  //font-size: 1.5rem;
   border-radius: 0rem $border-rad $border-rad 0rem;
 
   &.active {
