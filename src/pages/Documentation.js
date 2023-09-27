@@ -1,15 +1,15 @@
-import { Outlet } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
+import { Outlet } from 'react-router-dom'
+import Sidebar from '../components/Sidebar'
 
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss';
-import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
-import highlighterstyles from './docs/highlighter-slyles';
-import calcGridCol from '../functions/calcGridCol';
-import { rgbvar } from '../functions/ThemeSet';
-import Footer from '../components/Footer';
-SyntaxHighlighter.registerLanguage('scss', scss);
-SyntaxHighlighter.registerLanguage('javascript', javascript);
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
+import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript'
+import highlighterstyles from './docs/highlighter-slyles'
+import calcGridCol from '../functions/calcGridCol'
+import { rgbvar } from '../functions/ThemeSet'
+import Footer from '../components/Footer'
+SyntaxHighlighter.registerLanguage('scss', scss)
+SyntaxHighlighter.registerLanguage('javascript', javascript)
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,8 +33,8 @@ function TitleBlock({ title, children, links = [] }) {
           {name}
         </a>
       </div>
-    );
-  });
+    )
+  })
 
   return (
     <div className="row-f10 pc-start col-gap-2 row-gap-1">
@@ -48,7 +48,7 @@ function TitleBlock({ title, children, links = [] }) {
         {children}
       </div>
     </div>
-  );
+  )
 }
 
 // section head
@@ -56,21 +56,21 @@ function TitleBlock({ title, children, links = [] }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function SectionHead({ title, link, children }) {
   if (children) {
-    var childContent = <div className="row-f10 jc-start ai-baseline">{children}</div>;
+    var childContent = <div className="row-f10 jc-start ai-baseline">{children}</div>
   }
   return (
     <div
       className="row-f10 quote mt-2 mt-sm-4"
       style={{
         borderLeft: '3px solid ' + rgbvar('accent'),
-        backgroundColor: rgbvar('accent', 15),
+        backgroundColor: rgbvar('accent', 15)
       }}
       id={link}
     >
       <h2>{title}</h2>
       {childContent}
     </div>
-  );
+  )
 }
 
 // h4 code block
@@ -78,7 +78,7 @@ function SectionHead({ title, link, children }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function H4Code({ textCol = 3, code, language, title, children }) {
   if (children) {
-    var childContent = <div className="row-f10 pc-start ai-baseline">{children}</div>;
+    var childContent = <div className="row-f10 pc-start ai-baseline">{children}</div>
   }
   return (
     <>
@@ -93,7 +93,7 @@ function H4Code({ textCol = 3, code, language, title, children }) {
         </SyntaxHighlighter>
       </div>
     </>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +122,7 @@ export default function Documentation() {
       </div>
       <Footer />
     </>
-  );
+  )
 }
 
 export function DocIndex() {
@@ -130,9 +130,11 @@ export function DocIndex() {
     <div className="col-6">
       <h1>documentation</h1>
 
-      <p className="note">content is incomplete...but there's still something.</p>
+      <p className="note">
+        if these look incomplete, it's because i'm still writing them.
+      </p>
     </div>
-  );
+  )
 }
 
 // colors & theming
@@ -140,9 +142,9 @@ export function DocIndex() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function ColorDoc() {
   const colorScssVar =
-    '// pink scss variables\n$pink-lt: 246, 205, 254;\n$pink-accent: 255, 110, 206;\n$pink-dk: 170, 9, 170;\n$pink-blk: 90, 0, 90;';
+    '// pink scss variables\n$pink-lt: 246, 205, 254;\n$pink-accent: 255, 110, 206;\n$pink-dk: 170, 9, 170;\n$pink-blk: 90, 0, 90;'
   const cssColorVarSetFunc =
-    "@include cssvar-set(\n\t(\n\t\ttext: '',\n\t\tbg: '',\n\t\taccent: '',\n\t\tblk: '',\n\n\t\tyellow-accent: #{$yellow-accent},\n\t\tgreen-accent: #{$green-accent},\n\t\tblue-accent: #{$blue-accent},\n\t\tpink-accent: #{$pink-accent},\n\t\tred-accent: #{$red-accent},\n\t\tgrey-accent: #{$grey-accent},\n\t\tmono-accent: #{$mono-accent},\n\t\t...\n\t));"; // yellow-blk: #{$yellow-blk},\n\t\tgreen-blk: #{$green-blk},\n\t\tblue-blk: #{$blue-blk},\n\t\tpink-blk: #{$pink-blk},\n\t\tred-blk: #{$red-blk},\n\t\tgrey-blk: #{$grey-blk},\n\t\tmono-blk: #{$mono-blk},\n\t)\n);";
+    "@include cssvar-set(\n\t(\n\t\ttext: '',\n\t\tbg: '',\n\t\taccent: '',\n\t\tblk: '',\n\n\t\tyellow-accent: #{$yellow-accent},\n\t\tgreen-accent: #{$green-accent},\n\t\tblue-accent: #{$blue-accent},\n\t\tpink-accent: #{$pink-accent},\n\t\tred-accent: #{$red-accent},\n\t\tgrey-accent: #{$grey-accent},\n\t\tmono-accent: #{$mono-accent},\n\t\t...\n\t));" // yellow-blk: #{$yellow-blk},\n\t\tgreen-blk: #{$green-blk},\n\t\tblue-blk: #{$blue-blk},\n\t\tpink-blk: #{$pink-blk},\n\t\tred-blk: #{$red-blk},\n\t\tgrey-blk: #{$grey-blk},\n\t\tmono-blk: #{$mono-blk},\n\t)\n);";
   return (
     <div className="row-f9 pc-start">
       <div className="col-f10 invert">
@@ -179,7 +181,7 @@ export function ColorDoc() {
         {cssColorVarSetFunc}
       </SyntaxHighlighter>
     </div>
-  );
+  )
 }
 
 // layout
@@ -187,11 +189,11 @@ export function ColorDoc() {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const calcGridColFunc =
-  "function calcGridCol() { \n\t // calulate current # of columns \n\t let winWidth = window.innerWidth; \n\t let colCount = parseInt(winWidth / 100 + 1); \n\t\n\t // update current # of columns \n\t root.style.setProperty('--current-columns', colCount);\n}";
+  "function calcGridCol() { \n\t // calulate current # of columns \n\t let winWidth = window.innerWidth; \n\t let colCount = parseInt(winWidth / 100 + 1); \n\t\n\t // update current # of columns \n\t root.style.setProperty('--current-columns', colCount);\n}"
 const colMixin =
-  '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}';
+  '@mixin col() { \n\t flex-flow: column wrap; \n\t gap: var(--item-gap); \n\t place-content: $place-start; \n\t place-items: $place-start; \n\t > img, > video { \n\t width: 100%; \n\t max-width: 100%; \n\t }\n}'
 const rowMixin =
-  '@mixin row() { \n\t  flex-flow: row wrap; \n\t  gap: var(--object-gap); \n\t  place-content: $place-center; \n}';
+  '@mixin row() { \n\t  flex-flow: row wrap; \n\t  gap: var(--object-gap); \n\t  place-content: $place-center; \n}'
 
 export function LayoutDoc() {
   return (
@@ -242,5 +244,5 @@ export function LayoutDoc() {
         </p>
       </H4Code>
     </>
-  );
+  )
 }
