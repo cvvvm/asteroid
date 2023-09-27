@@ -13,7 +13,7 @@
 .projects-return {
   z-index: 9000;
   position: fixed;
-  font-size: 1.5rem !important;
+  font-size: clamp(1.25rem, calc(1.125 * 4vw), 1.5rem) !important;
   top: 0.5rem;
   left: 0.75rem;
 
@@ -70,7 +70,8 @@
     background-color: rgb-var(bg);
     box-shadow: $button-shadow rgb-var(accent);
 
-    transition: transition($color: true, $spacer: true, $scale: true, $translate: true),
+    transition:
+      transition($color: true, $spacer: true, $scale: true, $translate: true),
       filter $timing ease-in-out;
 
     @include breakpoint(md) {
