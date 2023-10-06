@@ -76,21 +76,15 @@ $font-weight: (
   1: $weight-black,
   2: $weight-bold,
   3: $weight-bold,
-  4: $weight-bold
+  4: $weight-semi-bold
 );
-
-$h1-max: 2.75rem;
-$h2-max: 2rem;
-$h3-max: 1.5rem;
-$h4-max: 1.3125rem;
-$h4-min: 1.25rem;
 
 // set size
 $font-size: (
-  1: clamp($h2-max, calc(1.1 * 5vw), $h1-max),
-  2: clamp($h3-max, calc(1.1 * 5vw), $h2-max),
-  3: clamp($h4-max, calc(1.2 * 5vw), $h3-max),
-  4: clamp($h4-min, calc(1.1 * 1vw), $h4-max)
+  1: clamp-scale(32, 48),
+  2: clamp-scale(28, 36),
+  3: clamp-scale(24, 28),
+  4: clamp-scale(18, 22)
 );
 
 @each $level in $type-levels {
@@ -99,10 +93,12 @@ $font-size: (
     font-weight: map-get($font-weight, $level);
     font-size: map-get($font-size, $level);
     line-height: 130%;
-    //margin-left: -0.0625rem;
     letter-spacing: 0.025rem;
     filter: saturate(2);
-    transition: font-size 50ms ease-in-out;
+
+    transition:
+      font-size $timing-fast ease-in-out,
+      margin-bottom $timing ease-in-out;
   }
   h#{$level}::selection {
     background: rgb-var(accent, 50);
@@ -110,16 +106,16 @@ $font-size: (
 }
 
 h1 + p {
-  margin-top: -1.5rem;
+  margin-top: -12px;
 }
 h2 + p {
-  margin-top: -1.5rem;
+  margin-top: -16px;
 }
 h3 + p {
-  margin-top: -1.75rem;
+  margin-top: -20px;
 }
 h4 + p {
-  margin-top: -1.625rem;
+  margin-top: -18px;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,9 +131,9 @@ h4 + p {
 // paragraph
 //-----------------------------------------------------------
 p {
-  font-size: clamp(1rem, calc(1.1 * 2vw), 1.125rem);
+  font-size: clamp-scale(16, 18);
   font-family: $jet-brains;
-  font-weight: $weight-light;
+  font-weight: $weight-regular;
   line-height: 160%;
   letter-spacing: -0.0375rem;
 

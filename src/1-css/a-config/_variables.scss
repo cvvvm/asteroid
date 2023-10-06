@@ -11,14 +11,24 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $max-columns: 18;
+
+$object-gap-min: 32;
+$object-row-gap-max: 54;
+$object-col-gap-max: 80;
+
+$item-gap-min: 24;
+$item-gap-max: 28;
+
+$container-padding-x-min: 16;
+$container-padding-x-max: 48;
+$container-padding-y-min: 54;
+$container-padding-y-max: 96;
+
 @include cssvar-set(
   (
     max-columns: #{$max-columns},
     current-columns: '',
-    object-gap: clamp(2rem, 2rem + 1.1vw, 5rem),
-    item-gap: 2rem,
     spacer: 1rem,
-    container-padding: 6rem 1.5rem,
     card-padding: clamp(2rem, calc(1.125 * 5vw), 1.5rem)
       clamp(1rem, calc(1.1 * 5vw), 2rem) clamp(2.125rem, calc(1.1 * 5vw), 1.625rem)
   )

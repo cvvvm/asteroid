@@ -13,20 +13,21 @@
 @mixin flex-base() {
   display: flex;
   flex: 1 1 100%;
-  transition: transition($spacer: true);
+  transition: transition($spacer: true, $gap: true);
 }
 
 // area types
 //-----------------------------------------------------------
 @mixin row() {
   flex-flow: row wrap;
-  gap: var(--object-gap);
+  gap: clamp-scale($object-gap-min, $object-row-gap-max)
+    clamp-scale($object-gap-min, $object-col-gap-max);
   place-content: $place-center;
 }
 
 @mixin col() {
-  flex-flow: column wrap;
-  gap: var(--item-gap);
+  flex-flow: column nowrap;
+  gap: clamp-scale($item-gap-min, $item-gap-max);
   place-content: $place-start;
   place-items: $place-start;
   > img,
@@ -39,13 +40,27 @@
 // fill types
 //-----------------------------------------------------------
 @mixin width-fixed($i) {
+  /*   transition: transition(
+    $color: true,
+    $size: true,
+    $spacer: true,
+    $gap: true,
+    $ease: ease-out
+  ); */
   @include breakpoint(sm) {
     max-width: calc(var(--current-columns) * 100px);
-    flex: 0 1 calc(($i * 100px) - (var(--object-gap) / 2));
+    flex: 0 1 calc(($i * 100px) - (clamp-scale($object-gap-min, $object-col-gap-max) / 2));
   }
 }
 
 @mixin width-fill($i) {
+  /*   transition: transition(
+    $color: true,
+    $size: true,
+    $spacer: true,
+    $gap: true,
+    $ease: ease-out
+  ); */
   @include breakpoint(md) {
     flex: 1 1 calc(($i * 10%));
     min-width: 275px;
@@ -100,11 +115,10 @@
 .container {
   @include flex-base();
   @include row;
-
   max-width: calc(var(--max-columns) * 100px);
-
   margin: 0 auto;
-  padding: var(--container-padding); //clamp(2rem, calc(2 * 5vw), 10rem) 1rem;
+  padding: clamp-scale($container-padding-y-min, $container-padding-y-max)
+    clamp-scale($container-padding-x-min, $container-padding-x-max);
   &.full {
     max-width: 100vw;
     margin: 0;

@@ -28,10 +28,27 @@
   @return $string;
 }
 
-// USE CSS VARIABLE - RGBA
-//-----------------------------------------------------------
+// use css variable - RGBA
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @function rgb-var($color, $opacity: 100) {
   @return rgba(var(--#{$color}), (#{$opacity + '%'}));
+}
+
+// set clamp scaling
+//------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@function clamp-scale($minSizePx, $maxSizePx) {
+  $minSize: calc($minSizePx / 16);
+  $maxSize: calc($maxSizePx / 16);
+  $minWidthRem: calc(map-get($page-breakpoints, xs) / 16);
+  $maxWidthRem: calc(map-get($page-breakpoints, lg) / 16);
+  $slope: calc(($maxSize - $minSize) / ($maxWidthRem - $minWidthRem));
+  $yAxis: calc((-1 * $minWidthRem) * $slope + $minSize);
+  $prefValue: $yAxis + 'rem + ' + ($slope * 100) + 'vw';
+
+  //@return $slope;
+  @return clamp(#{$minSize + 'rem'}, #{$prefValue}, #{$maxSize + 'rem'});
 }
 
 // transitions

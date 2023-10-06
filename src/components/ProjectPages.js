@@ -1,5 +1,5 @@
-import { Devices } from '../components/MockupDevices';
-import { useState, useRef, useEffect } from 'react';
+import { Devices } from '../components/MockupDevices'
+import { useState, useRef, useEffect } from 'react'
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +19,7 @@ export function ImgCover({ project, altText, imgType, vh = 100, children, classN
         style={{
           backgroundImage: 'url(/images/projects/' + project + '/cover.' + imgType + ')',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center'
         }}
         title={altText}
         role="img"
@@ -27,7 +27,7 @@ export function ImgCover({ project, altText, imgType, vh = 100, children, classN
         {children}
       </span>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,13 +46,13 @@ export function Role({
   personal,
   roles,
   contributors,
-  children,
+  children
 }) {
   if (freelance) {
-    var freelanceBadge = <p className="badge-outline">freelance</p>;
+    var freelanceBadge = <p className="badge-outline">freelance</p>
   }
   if (personal) {
-    var personalBadge = <p className="badge-outline">personal</p>;
+    var personalBadge = <p className="badge-outline">personal</p>
   }
 
   if (contributors) {
@@ -63,7 +63,7 @@ export function Role({
         </div>
         <p className="note">{contributors}</p>
       </>
-    );
+    )
   }
 
   return (
@@ -80,7 +80,7 @@ export function Role({
       <p className="note">{roles}</p>
       {contributes}
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,16 +104,16 @@ export function DeviceImgToggler({
   imgType,
   togglesDesc = 'display page',
   toggles,
-  arrows = true,
+  arrows = true
 }) {
   // map display toggles
   //-----------------------------------------------------------
-  const [imgIndex, setImgIndex] = useState(0);
-  const [imgName, setImgName] = useState(images[imgIndex]);
+  const [imgIndex, setImgIndex] = useState(0)
+  const [imgName, setImgName] = useState(images[imgIndex])
 
   const logging = () => {
-    console.log('image: ' + imgName + ' index: ' + imgIndex);
-  };
+    console.log('image: ' + imgName + ' index: ' + imgIndex)
+  }
 
   // if toggles
   //-----------------------------------------------------------
@@ -125,16 +125,16 @@ export function DeviceImgToggler({
           key={page}
           className={'device-page-toggle button' + (imgName === page ? '' : '-outline')}
           onClick={() => {
-            setImgIndex(index);
-            setImgName(images[index]);
-            logging();
+            setImgIndex(index)
+            setImgName(images[index])
+            logging()
           }}
           ref={() => index}
         >
           {page.replace(/-/g, ' ')}
         </button>
-      );
-    });
+      )
+    })
     // toggles row block
     var toggleBlock = (
       <div className="row-f10 jc-start gap-1">
@@ -146,21 +146,21 @@ export function DeviceImgToggler({
           {toggleMap}
         </div>
       </div>
-    );
+    )
   }
 
   // page count arrows
   //-----------------------------------------------------------
-  const screensCount = images.length - 1;
-  const lastCalc = imgIndex === 0 ? screensCount : imgIndex - 1;
-  const nextCalc = imgIndex === screensCount ? 0 : imgIndex + 1;
+  const screensCount = images.length - 1
+  const lastCalc = imgIndex === 0 ? screensCount : imgIndex - 1
+  const nextCalc = imgIndex === screensCount ? 0 : imgIndex + 1
 
   // slide counter
   var slideCounter = (
     <p className="note">
       {imgIndex + 1} / {images.length}
     </p>
-  );
+  )
 
   // if arrows
   if (arrows) {
@@ -178,9 +178,9 @@ export function DeviceImgToggler({
         <button
           className="button gallery-button"
           onClick={() => {
-            setImgIndex(lastCalc);
-            setImgName(images[lastCalc]);
-            logging();
+            setImgIndex(lastCalc)
+            setImgName(images[lastCalc])
+            logging()
           }}
         >
           ←
@@ -189,15 +189,15 @@ export function DeviceImgToggler({
         <button
           className="button gallery-button"
           onClick={() => {
-            setImgIndex(nextCalc);
-            setImgName(images[nextCalc]);
-            logging();
+            setImgIndex(nextCalc)
+            setImgName(images[nextCalc])
+            logging()
           }}
         >
           →
         </button>
       </div>
-    );
+    )
   }
 
   // render component
@@ -217,7 +217,7 @@ export function DeviceImgToggler({
         {arrows}
       </Devices>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,24 +239,24 @@ const ToggledGallery = ({
   imgType = '',
   activeGallery,
   galleries,
-  children,
+  children
 }) => {
-  const [currentImg, setCurrentImg] = useState(0);
-  const length = galleries[activeGallery].images.length - 1;
+  const [currentImg, setCurrentImg] = useState(0)
+  const length = galleries[activeGallery].images.length - 1
 
   if (imgType) {
-    imgType = '.' + imgType;
+    imgType = '.' + imgType
   }
 
   const lastSlide = () => {
-    setCurrentImg(currentImg === 0 ? length : currentImg - 1);
-  };
+    setCurrentImg(currentImg === 0 ? length : currentImg - 1)
+  }
   const nextSlide = () => {
-    setCurrentImg(currentImg === length ? 0 : currentImg + 1);
-  };
+    setCurrentImg(currentImg === length ? 0 : currentImg + 1)
+  }
 
   if (currentImg > length) {
-    setCurrentImg(length);
+    setCurrentImg(length)
   }
 
   // map active gallery
@@ -277,13 +277,13 @@ const ToggledGallery = ({
           ).toLowerCase()}
         />
       </div>
-    );
-  });
+    )
+  })
 
   // hide/show buttons, counter
   //-----------------------------------------------------------
-  var lastButton = '';
-  var nextButton = '';
+  var lastButton = ''
+  var nextButton = ''
 
   // if multiple images
   if (galleries[activeGallery].images.length > 1) {
@@ -291,24 +291,24 @@ const ToggledGallery = ({
       <button className="gallery-button button" onClick={lastSlide}>
         ←
       </button>
-    );
+    )
     nextButton = (
       <button className="gallery-button button" onClick={nextSlide}>
         →
       </button>
-    );
+    )
     var slideCounter = (
       <p className="note">
         {currentImg + 1} / {galleries[activeGallery].images.length}
       </p>
-    );
+    )
     var arrows = (
       <div className="row-f10 mb-1 ai-center pc-evenly">
         {lastButton}
         {slideCounter}
         {nextButton}
       </div>
-    );
+    )
   }
 
   return (
@@ -318,8 +318,8 @@ const ToggledGallery = ({
 
       {children ? <div className="row-f10 ai-center">{children}</div> : ''}
     </>
-  );
-};
+  )
+}
 
 // COMPONENT
 //------------------------------------------------------------------------------------
@@ -335,11 +335,11 @@ export function GalleryImgToggler({
   project,
   imgType,
   galleries = [{ title: '', images: [] }],
-  children,
+  children
 }) {
   // states
   //-----------------------------------------------------------
-  const [activeGallery, setActiveGallery] = useState(0);
+  const [activeGallery, setActiveGallery] = useState(0)
 
   // map display toggles
   //-----------------------------------------------------------
@@ -357,8 +357,8 @@ export function GalleryImgToggler({
       >
         {gallery.title.replace(/-/g, ' ')}
       </button>
-    );
-  });
+    )
+  })
 
   // if children exist
   //-----------------------------------------------------------
@@ -376,7 +376,7 @@ export function GalleryImgToggler({
       >
         {children}
       </div>
-    );
+    )
   }
 
   // hide/show toggles in text col
@@ -387,7 +387,7 @@ export function GalleryImgToggler({
         <p className="note ps-center">view:</p>
         {toggleMap}
       </div>
-    );
+    )
   }
 
   // render component
@@ -406,7 +406,7 @@ export function GalleryImgToggler({
         </ToggledGallery>
       </div>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -430,16 +430,16 @@ export function GalleryImgToggler({
 />; */
 
 export const Gallery = ({ columns, imgType = '', project = '', images }) => {
-  const [currentImg, setCurrentImg] = useState(0);
-  const length = images.length;
+  const [currentImg, setCurrentImg] = useState(0)
+  const length = images.length
 
   const nextSlide = () => {
-    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
-  };
+    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1)
+  }
 
   const lastSlide = () => {
-    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1);
-  };
+    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1)
+  }
 
   return (
     <div className={'gallery ps-center col-' + columns}>
@@ -456,15 +456,15 @@ export const Gallery = ({ columns, imgType = '', project = '', images }) => {
               } /* alt={slide.alt} */
             />
           </div>
-        );
+        )
       })}
 
       <button className="gallery-button button" onClick={nextSlide}>
         →
       </button>
     </div>
-  );
-};
+  )
+}
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -481,22 +481,22 @@ export const VideoGallery = ({
   project = '',
   videoType = '',
   activeGallery = 0,
-  galleries,
+  galleries
 }) => {
-  const [currentImg, setCurrentImg] = useState(0);
-  const length = galleries[activeGallery].images.length;
+  const [currentImg, setCurrentImg] = useState(0)
+  const length = galleries[activeGallery].images.length
 
   if (videoType) {
-    videoType = '.' + videoType;
+    videoType = '.' + videoType
   }
 
   const nextSlide = () => {
-    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
-  };
+    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1)
+  }
 
   const lastSlide = () => {
-    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1);
-  };
+    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1)
+  }
 
   // map active gallery
   //-----------------------------------------------------------
@@ -523,8 +523,8 @@ export const VideoGallery = ({
           />
         </video>
       </div>
-    );
-  });
+    )
+  })
 
   // slide counter
   //-----------------------------------------------------------
@@ -532,7 +532,7 @@ export const VideoGallery = ({
     <p className="note">
       {currentImg + 1} / {galleries[activeGallery].images.length}
     </p>
-  );
+  )
 
   return (
     <div className={'row-gap-1 row-' + columns}>
@@ -547,5 +547,5 @@ export const VideoGallery = ({
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
