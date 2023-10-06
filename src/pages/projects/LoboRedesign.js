@@ -24,7 +24,7 @@ export default function LoboRedesign() {
       </ImgCover>
       <div className="container">
         <GalleryImgToggler
-          textCol={4}
+          textCol={5}
           invert
           galleryCol={8}
           vh={50}
