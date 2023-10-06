@@ -172,8 +172,7 @@ export function DeviceImgToggler({
           marginTop: '-2.375rem',
           marginLeft: '-1rem',
           marginRight: '-1rem',
-        }}
- */
+        }} */
       >
         <button
           className="button gallery-button"

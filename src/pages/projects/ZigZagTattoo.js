@@ -2,11 +2,11 @@ import {
   ImgCover,
   Role,
   DeviceImgToggler,
-  GalleryImgToggler,
-} from '../../components/ProjectPages';
+  GalleryImgToggler
+} from '../../components/ProjectPages'
 
 export default function ZigZagTattoo() {
-  var project = 'zig-zag-tattoo';
+  var project = 'zig-zag-tattoo'
   return (
     <>
       <ImgCover
@@ -50,6 +50,8 @@ export default function ZigZagTattoo() {
             outside of tattooing is essential.
           </p>
         </DeviceImgToggler>
+      </div>
+      <div className="container">
         <GalleryImgToggler
           textCol={4}
           invert
@@ -60,9 +62,9 @@ export default function ZigZagTattoo() {
             {
               title: 'final marks',
               prefix: 'logo',
-              images: ['cover', 'primary', 'wide', 'tall'],
+              images: ['cover', 'primary', 'wide', 'tall']
             },
-            { title: 'sketches', prefix: 'process', images: ['1', '2', '3'] },
+            { title: 'sketches', prefix: 'process', images: ['1', '2', '3'] }
           ]}
         >
           <h2>form, function, name.</h2>
@@ -77,5 +79,5 @@ export default function ZigZagTattoo() {
         </GalleryImgToggler>
       </div>
     </>
-  );
+  )
 }

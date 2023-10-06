@@ -1,13 +1,7 @@
-import {
-  ImgCover,
-  Role,
-  DeviceImgToggler,
-  GalleryImgToggler,
-  VideoGallery,
-} from '../../components/ProjectPages';
+import { ImgCover, Role, GalleryImgToggler } from '../../components/ProjectPages'
 
 export default function VoltaRoach() {
-  var project = 'volta-roach';
+  var project = 'volta-roach'
   return (
     <>
       <ImgCover
@@ -49,31 +43,32 @@ export default function VoltaRoach() {
             {
               title: 'final',
               prefix: 'process',
-              images: ['final'],
+              images: ['final']
             },
             {
               title: 'color',
               prefix: 'process',
-              images: ['color'],
+              images: ['color']
             },
             {
               title: 'wire',
               prefix: 'process',
-              images: ['wire'],
+              images: ['wire']
             },
             {
               title: 'ink',
               prefix: 'process',
-              images: ['ink'],
+              images: ['ink']
             },
             {
               title: 'sketch',
               prefix: 'process',
-              images: ['sketch'],
-            },
+              images: ['sketch']
+            }
           ]}
         ></GalleryImgToggler>
-
+      </div>
+      <div className="container">
         <GalleryImgToggler
           textCol={5}
           textColOrder={1}
@@ -86,8 +81,8 @@ export default function VoltaRoach() {
             {
               title: 'detail',
               prefix: 'detail',
-              images: ['1', '2', '3', '4', '5'],
-            },
+              images: ['1', '2', '3', '4', '5']
+            }
           ]}
         >
           <h3>feedback highlights:</h3>
@@ -96,5 +91,5 @@ export default function VoltaRoach() {
         </GalleryImgToggler>
       </div>
     </>
-  );
+  )
 }

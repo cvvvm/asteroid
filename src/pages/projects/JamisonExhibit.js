@@ -41,7 +41,6 @@ export default function JamisonExhibit() {
         </div>
 
         <div className="row-f10 vh-80">
-          {/* <div className="row-f8 outline jc-evenly"> */}
           <div className="row-f10"></div>
           <div className="row-f10">
             <VideoGallery
@@ -88,56 +87,53 @@ export default function JamisonExhibit() {
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
+      </div>
 
-        <div className="container">
+      <div className="container">
+        <GalleryImgToggler
+          textCol={4}
+          invert
+          galleryCol={10}
+          vh={10}
+          project={project}
+          imgType={'webp'}
+          galleries={[
+            {
+              title: 'wireframe',
+              prefix: 'before',
+              images: ['menu', 'people', 'world_map', 'town_map', 'things']
+            },
+            {
+              title: 'final',
+              prefix: 'after',
+              images: ['menu', 'people', 'world_map', 'town_map', 'things']
+            }
+          ]}
+        ></GalleryImgToggler>
+
+        <div className="col-9">
+          <h2 className="">process:</h2>
           <div className="row-f10">
-            <GalleryImgToggler
-              textCol={4}
-              invert
-              galleryCol={10}
-              vh={10}
-              project={project}
-              imgType={'webp'}
-              galleries={[
-                {
-                  title: 'wireframe',
-                  prefix: 'before',
-                  images: ['menu', 'people', 'world_map', 'town_map', 'things']
-                },
-                {
-                  title: 'final',
-                  prefix: 'after',
-                  images: ['menu', 'people', 'world_map', 'town_map', 'things']
-                }
-              ]}
-            ></GalleryImgToggler>
-
-            <div className="col-9">
-              <h2 className="">process:</h2>
-              <div className="row-f10">
-                <div className="col-f4">
-                  <h4>experience:</h4>
-                  <p>
-                    i built hundreds of slides coordinated between dozens of branching
-                    user paths. designing & coordinating interactive maps, information
-                    pop-ups, timelines, a quiz.
-                  </p>
-                </div>
-                <div className="col-f4">
-                  <h4>optimization:</h4>
-                  <p>
-                    the amount of assets & animations meant balancing intensely between
-                    how much was on screen, what moved, and what could be rasterized
-                    together, then further compressed. (thanks{' '}
-                    <a className="plink" href="https://imageoptim.com">
-                      imgoptim
-                    </a>
-                    !)
-                  </p>
-                </div>
-              </div>
+            <div className="col-f4">
+              <h4>experience:</h4>
+              <p>
+                i built hundreds of slides coordinated between dozens of branching user
+                paths. designing & coordinating interactive maps, information pop-ups,
+                timelines, a quiz.
+              </p>
+            </div>
+            <div className="col-f4">
+              <h4>optimization:</h4>
+              <p>
+                the amount of assets & animations meant balancing intensely between how
+                much was on screen, what moved, and what could be rasterized together,
+                then further compressed. (thanks{' '}
+                <a className="plink" href="https://imageoptim.com">
+                  imgoptim
+                </a>
+                !)
+              </p>
             </div>
           </div>
         </div>
