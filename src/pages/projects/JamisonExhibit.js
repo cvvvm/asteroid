@@ -94,19 +94,24 @@ export default function JamisonExhibit() {
         <GalleryImgToggler
           textCol={4}
           invert
-          galleryCol={10}
+          galleryCol={8}
           vh={10}
           project={project}
           imgType={'webp'}
           galleries={[
             {
+              title: 'sketch',
+              prefix: 'sketch',
+              images: ['menu', 'people', 'world_map', 'town_map', 'things']
+            },
+            {
               title: 'wireframe',
-              prefix: 'before',
+              prefix: 'wire',
               images: ['menu', 'people', 'world_map', 'town_map', 'things']
             },
             {
               title: 'final',
-              prefix: 'after',
+              prefix: 'final',
               images: ['menu', 'people', 'world_map', 'town_map', 'things']
             }
           ]}

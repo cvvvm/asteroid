@@ -383,7 +383,7 @@ export function GalleryImgToggler({
   if (galleries.length > 1) {
     var toggles = (
       <div className="row-f10 pc-center page-toggles-container">
-        <p className="note ps-center">view:</p>
+        <p className="note ps-center">toggle:</p>
         {toggleMap}
       </div>
     )
