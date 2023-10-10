@@ -1,36 +1,36 @@
-import { rgbvar } from '../../functions/ThemeSet';
+import { rgbvar } from '../../functions/ThemeSet'
 
 // variables & functions
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const getBlk = rgbvar('blk');
+const getBlk = rgbvar('blk')
 
 function filter(b, s) {
-  return 'brightness(' + b + ') saturate(' + s + ')';
+  return 'brightness(' + b + ') saturate(' + s + ')'
 }
 
 function white(o) {
-  return 'rgba(255,255,255,' + o + '%)';
+  return 'rgba(255,255,255,' + o + '%)'
 }
 function accent(o) {
-  return rgbvar('accent', o);
+  return rgbvar('accent', o)
 }
 // color
 //-----------------------------------------------------------
 
 // text
 //-----------------------------------------------------------
-const fontSize = '.9375rem';
-const letterSpacing = '0rem';
-const lineHeight = '135%';
-const tabSize = 1;
-const fontFamily = 'JetBrains Mono';
-const wtReg = '200';
-const wtBold = '500';
+const fontSize = '.9375rem'
+const letterSpacing = '0rem'
+const lineHeight = '135%'
+const tabSize = 1
+const fontFamily = 'JetBrains Mono'
+const wtReg = '200'
+const wtBold = '500'
 
 // misc
 //-----------------------------------------------------------
-const transition = 'color 50ms ease-in-out';
+const transition = 'color 50ms ease-in-out'
 
 // styles
 //------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ export default {
     height: 'fit-content',
     overflowX: 'auto',
     transition: transition,
-    flex: '1 1 100%',
+    flex: '1 1 100%'
   },
   'code[class*="language-"]': {
     fontFamily: fontFamily,
@@ -82,187 +82,187 @@ export default {
     msHyphens: 'none',
     hyphens: 'none',
     color: white(100),
-    transition: transition,
+    transition: transition
   },
   'pre > code[class*="language-"]': {
-    fontSize: '1rem',
+    fontSize: '1rem'
   },
   'pre[class*="language-"]::-moz-selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'pre[class*="language-"] ::-moz-selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'code[class*="language-"]::-moz-selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'code[class*="language-"] ::-moz-selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'pre[class*="language-"]::selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'pre[class*="language-"] ::selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'code[class*="language-"]::selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   'code[class*="language-"] ::selection': {
     textShadow: 'none',
-    background: '#6a51e6',
+    background: '#6a51e6'
   },
   ':not(pre) > code[class*="language-"]': {
     padding: '.1rem',
-    borderRadius: '.3rem',
+    borderRadius: '.3rem'
   },
   comment: {
-    color: white(40),
+    color: white(40)
   },
   prolog: {
-    color: white(100),
+    color: white(100)
   },
   doctype: {
-    color: white(100),
+    color: white(100)
   },
   cdata: {
-    color: white(100),
+    color: white(100)
   },
   punctuation: {
-    color: white(40),
+    color: white(40)
   },
   namespace: {
-    color: white(100),
+    color: white(100)
   },
   tag: {
-    color: white(100),
+    color: white(100)
   },
   operator: {
-    color: white(75),
+    color: white(75)
   },
   number: {
-    color: white(100),
+    color: white(100)
   },
   property: {
-    color: white(100),
+    color: white(100)
   },
   function: {
     color: accent(100),
     filter: filter(1.5, 5),
-    fontWeight: wtBold,
+    fontWeight: wtBold
   },
   'tag-id': {
-    color: white(100),
+    color: white(100)
   },
   selector: {
-    color: white(100),
+    color: white(100)
   },
   'atrule-id': {
-    color: white(100),
+    color: white(100)
   },
   'code.language-javascript': {
-    color: white(100),
+    color: white(100)
   },
   'attr-name': {
-    color: white(100),
+    color: white(100)
   },
   'code.language-css': {
-    color: white(100),
+    color: white(100)
   },
   'code.language-scss': {
-    color: white(100),
+    color: white(100)
   },
   boolean: {
     color: accent(100),
-    filter: filter(1.5, 2),
+    filter: filter(1.5, 2)
   },
   string: {
-    color: white(100),
+    color: white(100)
   },
   entity: {
     color: white(100),
-    cursor: 'help',
+    cursor: 'help'
   },
   url: {
-    color: white(100),
+    color: white(100)
   },
   '.language-css .token.string': {
-    color: white(100),
+    color: white(100)
   },
   '.language-scss .token.string': {
-    color: white(100),
+    color: white(100)
   },
   '.style .token.string': {
-    color: white(100),
+    color: white(100)
   },
   'attr-value': {
-    color: white(100),
+    color: white(100)
   },
   keyword: {
     color: accent(100),
-    filter: filter(1, 0.75),
+    filter: filter(1, 0.75)
   },
   control: {
-    color: white(100),
+    color: white(100)
   },
   directive: {
-    color: white(100),
+    color: white(100)
   },
   unit: {
-    color: white(100),
+    color: white(100)
   },
   statement: {
-    color: white(100),
+    color: white(100)
   },
   regex: {
-    color: white(100),
+    color: white(100)
   },
   atrule: {
-    color: white(100),
+    color: white(100)
   },
   placeholder: {
-    color: white(100),
+    color: white(100)
   },
   variable: {
     color: accent(100),
-    filter: filter(1, 1.75),
+    filter: filter(1, 1.75)
   },
   deleted: {
-    textDecoration: 'line-through',
+    textDecoration: 'line-through'
   },
   inserted: {
     borderBottom: '1px dotted #eeebff',
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   italic: {
-    fontStyle: 'italic',
+    fontStyle: 'italic'
   },
   important: {
-    color: accent(60),
+    color: accent(60)
   },
   bold: {
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   'pre > code.highlight': {
     Outline: '.4rem solid #8a75f5',
-    OutlineOffset: '.4rem',
+    OutlineOffset: '.4rem'
   },
   '.line-numbers.line-numbers .line-numbers-rows': {
     borderRightColor: white(100),
-    color: white(50),
+    color: white(50)
   },
   '.line-numbers .line-numbers-rows > span:before': {
-    color: white(50),
+    color: white(50)
   },
   '.line-highlight.line-highlight': {
     background:
-      'linear-gradient(to right, rgba(224, 145, 66, 0.2) 70%, rgba(224, 145, 66, 0))',
-  },
-};
+      'linear-gradient(to right, rgba(224, 145, 66, 0.2) 70%, rgba(224, 145, 66, 0))'
+  }
+}

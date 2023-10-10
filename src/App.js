@@ -13,9 +13,11 @@ import { setCssVarColor } from './functions/ThemeSet'
 //-----------------------------------------------------------
 import Home from './pages/Home'
 import About from './pages/About'
-import Documentation from './pages/Documentation'
 import { Projects, ReturnToProjects } from './pages/Projects'
-import { DocIndex, LayoutDoc, ColorDoc } from './pages/Documentation'
+import { Documentation, DocIndex } from './pages/Documentation'
+
+import ColorDoc from './pages/docs/ColorsThemeDoc'
+import LayoutDoc from './pages/docs/LayoutDoc'
 
 // project pages
 //-----------------------------------------------------------

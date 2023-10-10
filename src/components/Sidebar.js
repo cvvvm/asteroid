@@ -1,21 +1,21 @@
-import { gsap } from 'gsap';
-import { useState, useRef, useEffect, useLayoutEffect } from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { gsap } from 'gsap'
+import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
-const smWidth = 512;
+const smWidth = 512
 
 // navlinks
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function NavLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
   return (
     <Link to={to} {...props} className={'sidebar-item' + (isActive ? ' active' : '')}>
       {children}
     </Link>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,39 +31,39 @@ function SidebarToggleButton({
   sidebarState,
   clickFunc,
   sidebarToggleRef,
-  icon = 'folder2-open',
+  icon = 'folder2-open'
 }) {
-  const sidebarToggleContainer = useRef();
-  const [mouseY, setMouseY] = useState();
+  const sidebarToggleContainer = useRef()
+  const [mouseY, setMouseY] = useState()
 
   // track mouse Y position - moves toggle
   //-----------------------------------------------------------
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setMouseY(event.clientY);
+      setMouseY(event.clientY)
 
       gsap.to(sidebarToggleRef.current, {
         top: mouseY - 60,
         ease: 'power4.outIn',
-        duration: 0.4,
-      });
-    };
+        duration: 0.4
+      })
+    }
     // activate on 'md' width or larger
     // toggle boundaries
-    var toggleYBounds = 100;
+    var toggleYBounds = 100
     if (mouseY <= toggleYBounds) {
-      setMouseY(toggleYBounds);
+      setMouseY(toggleYBounds)
     }
     if (mouseY >= window.innerHeight - toggleYBounds) {
-      setMouseY(window.innerHeight - toggleYBounds);
+      setMouseY(window.innerHeight - toggleYBounds)
     }
     if (window.innerWidth > smWidth) {
-      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousemove', handleMouseMove)
     }
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  });
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [mouseY, sidebarToggleRef])
 
   return (
     <div className="sidebar-toggle-container" ref={sidebarToggleContainer}>
@@ -75,7 +75,7 @@ function SidebarToggleButton({
         <i className={'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-' + icon)}></i>
       </button>
     </div>
-  );
+  )
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,10 +89,10 @@ function SidebarToggleButton({
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export default function Sidebar({ links = [], title, children }) {
-  const sidebarRef = useRef();
-  const sidebarToggleRef = useRef();
-  const sidebarTL = useRef();
-  const [sidebarState, setSidebarState] = useState('closed');
+  const sidebarRef = useRef()
+  const sidebarToggleRef = useRef()
+  const sidebarTL = useRef()
+  const [sidebarState, setSidebarState] = useState('closed')
 
   // animation
   //------------------------------------------------------------------------------------
@@ -102,9 +102,9 @@ export default function Sidebar({ links = [], title, children }) {
   //-----------------------------------------------------------
   function toggleSidebar() {
     if (sidebarState === 'closed') {
-      setSidebarState('open');
+      setSidebarState('open')
     } else if (sidebarState === 'open') {
-      setSidebarState('closed');
+      setSidebarState('closed')
     }
   }
 
@@ -112,12 +112,12 @@ export default function Sidebar({ links = [], title, children }) {
   //-----------------------------------------------------------
   useEffect(() => {
     if (sidebarState === 'closed') {
-      sidebarTL.current.timeScale(4);
+      sidebarTL.current.timeScale(4)
     } else if (sidebarState === 'open') {
-      sidebarTL.current.timeScale(3);
+      sidebarTL.current.timeScale(3)
     }
-    sidebarTL.current.reversed(sidebarState === 'closed');
-  }, [sidebarState]);
+    sidebarTL.current.reversed(sidebarState === 'closed')
+  }, [sidebarState])
 
   // animate sidebar
   //-----------------------------------------------------------
@@ -125,7 +125,7 @@ export default function Sidebar({ links = [], title, children }) {
     const sidebarCtx = gsap.context(() => {
       sidebarTL.current = gsap
         .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
-        .to(sidebarRef.current, { translateX: 0 }, '<');
+        .to(sidebarRef.current, { translateX: 0 }, '<')
 
       // animate toggle for xs breakpoint
       if (window.innerWidth < smWidth) {
@@ -134,14 +134,14 @@ export default function Sidebar({ links = [], title, children }) {
           {
             translateX: '-5rem',
             translateY: '0.75rem',
-            ease: 'power4.out',
+            ease: 'power4.out'
           },
           '<'
-        );
+        )
       }
-    }, [sidebarRef]);
-    return () => sidebarCtx.revert();
-  }, []);
+    }, [sidebarRef])
+    return () => sidebarCtx.revert()
+  }, [])
   // content
   //------------------------------------------------------------------------------------
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,14 +153,14 @@ export default function Sidebar({ links = [], title, children }) {
       <NavLink key={index} to={link} onClick={toggleSidebar}>
         {link}
       </NavLink>
-    );
-  });
+    )
+  })
 
   // if title
   //-----------------------------------------------------------
   if (title) {
     {
-      var title = <h4 className="pl-1">{title}</h4>;
+      var title = <h4 className="pl-1">{title}</h4>
     }
   }
 
@@ -178,5 +178,5 @@ export default function Sidebar({ links = [], title, children }) {
         clickFunc={toggleSidebar}
       />
     </div>
-  );
+  )
 }
