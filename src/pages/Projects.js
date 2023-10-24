@@ -58,7 +58,7 @@ export function Projects() {
       <div className="projects-container">
         <ProjectCard
           link={'https://www.summoner.quest'}
-          categories={['UX/UI']}
+          categories={['UX/UI', 'vue.js', 'tailwind']}
           title={'dnd summoner'}
           caption={"an app i've built to manage monsters in dnd combat (external link)"}
         />
@@ -76,7 +76,7 @@ export function Projects() {
         />
         <ProjectCard
           link={'/projects/zig-zag-tattoo'}
-          categories={['brand', 'web']}
+          categories={['UX/UI', 'brand', 'css']}
           title={'zig zag tattoo: web + brand'}
           caption={'establishing a foundation for a new studio.'}
         />
@@ -88,25 +88,25 @@ export function Projects() {
         />
         <ProjectCard
           link={'/projects/ssu-web-reskin'}
-          categories={['UX/UI', 'web']}
+          categories={['UX/UI']}
           title={'sonoma state site redesign'}
           caption={'redesigning for a large university website.'}
         />
         <ProjectCard
           link={'/projects/covid-campus-comms'}
-          categories={['design', 'illustration']}
+          categories={['comms', 'illustration']}
           title={'covid-19 campus communications'}
           caption={'keeping the SSU community informed.'}
         />
         <ProjectCard
           link={'/projects/nina-jarnum-yoga'}
-          categories={['UX/UI', 'web']}
+          categories={['UX/UI', 'css', 'js']}
           title={'nina jarnum yoga: redesign'}
           caption={'transitioning to an online, member-based model.'}
         />
         <ProjectCard
           link={'/projects/local-election-guides'}
-          categories={['design']}
+          categories={['comms']}
           title={'local election guides'}
           caption={'helping make ballot information clear.'}
         />

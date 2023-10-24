@@ -223,6 +223,7 @@ ol {
 // intended for use with <p>
 //-----------------------------------------------------------
 @mixin badge-base($outline: false, $invert: false, $outline-invert: false) {
+  font-size: 1rem;
   font-family: $jet-brains;
   line-height: 100%;
   font-weight: $weight-regular;
@@ -232,7 +233,7 @@ ol {
   max-height: max-content;
 
   margin: 0rem 0rem 0rem -0.5rem;
-  padding: 6px 16px;
+  padding: 7px 16px 6px;
 
   background-color: rgb-var(text);
   border: $border-width-sm solid rgb-var(text);
