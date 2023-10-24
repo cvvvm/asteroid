@@ -33,7 +33,7 @@ export function ProjectCard({ title, caption, categories, link }) {
 
   return (
     <>
-      <Link to={'/projects/' + link} className="project-card ">
+      <Link to={'' + link} className="project-card ">
         <div className="row-f10 pc-start col-gap-1">{catmap}</div>
         <h2 className="title">{title}</h2>
         <p className="caption">{caption}</p>
@@ -57,49 +57,55 @@ export function Projects() {
     <>
       <div className="projects-container">
         <ProjectCard
-          link={'asc-exhibit'}
+          link={'https://www.summoner.quest'}
+          categories={['UX/UI']}
+          title={'dnd summoner'}
+          caption={"an app i've built to manage monsters in dnd combat (external link)"}
+        />
+        <ProjectCard
+          link={'/projects/asc-exhibit'}
           categories={['UX/UI']}
           title={'jamison city interactive'}
           caption={'stress-testing Powerpoint to teach history.'}
         />
         <ProjectCard
-          link={'lobo-redesign'}
+          link={'/projects/lobo-redesign'}
           categories={['brand', 'illustration']}
           title={"what's a seawolf?"}
           caption={'refreshing a 15 year old university mascot.'}
         />
         <ProjectCard
-          link={'zig-zag-tattoo'}
+          link={'/projects/zig-zag-tattoo'}
           categories={['brand', 'web']}
           title={'zig zag tattoo: web + brand'}
           caption={'establishing a foundation for a new studio.'}
         />
         <ProjectCard
-          link={'volta-roach'}
+          link={'/projects/volta-roach'}
           categories={['illustration']}
           title={'volta mech roach'}
           caption={'the battle for the future of energy.'}
         />
         <ProjectCard
-          link={'ssu-web-reskin'}
+          link={'/projects/ssu-web-reskin'}
           categories={['UX/UI', 'web']}
           title={'sonoma state site redesign'}
           caption={'redesigning for a large university website.'}
         />
         <ProjectCard
-          link={'covid-campus-comms'}
+          link={'/projects/covid-campus-comms'}
           categories={['design', 'illustration']}
           title={'covid-19 campus communications'}
           caption={'keeping the SSU community informed.'}
         />
         <ProjectCard
-          link={'nina-jarnum-yoga'}
+          link={'/projects/nina-jarnum-yoga'}
           categories={['UX/UI', 'web']}
           title={'nina jarnum yoga: redesign'}
           caption={'transitioning to an online, member-based model.'}
         />
         <ProjectCard
-          link={'local-election-guides'}
+          link={'/projects/local-election-guides'}
           categories={['design']}
           title={'local election guides'}
           caption={'helping make ballot information clear.'}
