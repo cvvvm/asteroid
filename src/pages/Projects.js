@@ -60,7 +60,9 @@ export function Projects() {
           link={'https://www.summoner.quest'}
           categories={['UX/UI', 'vue.js', 'tailwind']}
           title={'dnd summoner'}
-          caption={"an app i've built to manage monsters in dnd combat (external link)"}
+          caption={
+            'i built an API pulling tool for managing monsters in dnd combat (external link)'
+          }
         />
         <ProjectCard
           link={'/projects/asc-exhibit'}
@@ -88,7 +90,7 @@ export function Projects() {
         />
         <ProjectCard
           link={'/projects/ssu-web-reskin'}
-          categories={['UX/UI']}
+          categories={['UX/UI', 'Drupal']}
           title={'sonoma state site redesign'}
           caption={'redesigning for a large university website.'}
         />

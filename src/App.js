@@ -100,17 +100,19 @@ function App() {
   // APP COLOR
   //-----------------------------------------------------------
   // const appColorsList = ['yellow', 'green', 'blue', 'pink', 'red', 'grey', 'mono']
-  const [appColor, setAppColor] = useState('mono')
+  const [appColor, setAppColor] = useState(localStorage.getItem('setColor'))
 
   // change app color
   //-----------------------------------------------------------
   function changeAppColor(e) {
     setAppColor(e.currentTarget.id)
+    localStorage.setItem('setColor', e.currentTarget.id)
   }
   // update CSS variables
   useEffect(() => {
+    if (!appColor) setAppColor('mono')
     setCssVarColor(appColor)
-  })
+  }, [appColor])
 
   // CALC GRID
   //-----------------------------------------------------------

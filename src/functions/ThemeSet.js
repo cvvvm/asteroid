@@ -65,18 +65,27 @@ export function ColorSet({ currentAppColor, appColorTarget, classNames, styles }
 // GET preferred theme!
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function detectThemePref() {
-  var detectedThemePref = ''
+  var isDetectedThemePref = localStorage.getItem('setTheme')
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    detectedThemePref = 'dark'
-  } else if (
+  if (isDetectedThemePref) {
+    return isDetectedThemePref
+  }
+  //
+  else if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    isDetectedThemePref = 'dark'
+  }
+  //
+  else if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: light)').matches
   ) {
-    detectedThemePref = 'light'
+    isDetectedThemePref = 'light'
   }
 
-  return detectedThemePref
+  return isDetectedThemePref
 }
 
 // SET THEME
@@ -100,8 +109,10 @@ export function ThemeSet({ classNames }) {
   function themeSwap() {
     if (appTheme === 'light') {
       setAppTheme('dark')
+      localStorage.setItem('setTheme', 'dark')
     } else {
       setAppTheme('light')
+      localStorage.setItem('setTheme', 'light')
     }
   }
 
