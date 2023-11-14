@@ -13,7 +13,7 @@ export default function Home({ appColor, changeAppColor }) {
         <div className="row-4">
           <div className="col-4">
             <h1 className="">hi, i'm claire.</h1>
-            <p className="">self-taught designer, engineer, occasional illustrator.</p>
+            <p className="">self-taught designer, developer, occasional illustrator.</p>
           </div>
         </div>
 
