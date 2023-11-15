@@ -66,7 +66,7 @@ export function Projects() {
         />
         <ProjectCard
           link={'/projects/asc-exhibit'}
-          categories={['UX/UI']}
+          categories={['UX/UI', 'exhibit design']}
           title={'jamison city interactive'}
           caption={'stress-testing Powerpoint to teach history.'}
         />
