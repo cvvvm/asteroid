@@ -67,9 +67,10 @@
 
     padding: 1.5rem 1.75rem 1.625rem;
     border-radius: $border-rad;
-    border: $border-width-sm solid rgb-var(accent);
-    background-color: rgb-var(bg);
-    box-shadow: $button-shadow rgb-var(accent);
+    border: $border-width solid rgb-var(blk);
+    color: rgb-var(text, 100);
+    background-color: rgb-var(accent, 35);
+    box-shadow: $button-shadow rgb-var(blk);
 
     transition:
       transition($color: true, $spacer: true, $scale: true, $translate: true),
@@ -80,25 +81,27 @@
       border-radius: $border-rad-lg;
     }
 
-    &:hover {
-      color: rgb-var(bg, 100);
-      background-color: rgb-var(text, 100);
-      border: $border-width solid rgb-var(blk);
-      box-shadow: $button-shadow rgb-var(blk);
-      translate: $hover-translate !important;
-      margin-top: -3px;
-      margin-left: -3px;
+    > .badge,
+    .badge-outline {
+      color: rgb-var(text, 85);
+      background-color: rgb-var(text, 0);
+      border: $border-width-sm solid rgb-var(blk, 65);
+      box-shadow: $badge-shadow rgb-var(blk, 65);
+    }
 
+    &:hover {
+      color: rgb-var(bg);
+      background-color: rgb-var(text);
+      translate: $hover-translate !important;
       > h2 {
         filter: none;
       }
-
       > .badge,
       .badge-outline {
-        color: rgb-var(bg, 100);
-        background-color: rgb-var(text);
-        border: $border-width-sm solid rgb-var(bg, 65);
-        box-shadow: $badge-shadow rgb-var(bg, 65);
+        color: rgb-var(bg);
+        background-color: rgb-var(bg, 25);
+        border: $border-width-sm solid rgb-var(blk);
+        box-shadow: $badge-shadow rgb-var(blk);
       }
     }
 
