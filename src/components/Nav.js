@@ -16,7 +16,7 @@ function NavLink({ to, children, appColor, ...props }) {
     <Link
       to={to}
       {...props}
-      className={'nav-link' + (isActive ? ' active' : '')}
+      className={'nav-link ' + (isActive ? ' active' : '')}
       style={{
         backgroundColor: isActive ? rgbvar('text') : rgbvar('bg'),
         color: isActive ? rgbvar('bg-' + appColor) : rgbvar('text-' + appColor)
@@ -74,7 +74,7 @@ function Nav({ appColor, changeAppColor }) {
     if (navState === 'open') {
       navTL.current.timeScale(1)
     } else if (navState === 'closed') {
-      navTL.current.timeScale(2)
+      navTL.current.timeScale(1)
     }
     // state on page load?
     navTL.current.reversed(navState === 'closed')
@@ -84,10 +84,8 @@ function Nav({ appColor, changeAppColor }) {
   //-----------------------------------------------------------
   useLayoutEffect(() => {
     const navCtx = gsap.context(() => {
-      navTL.current = gsap
-        .timeline({ reversed: true })
-        .add(navOpenCtrlBar())
-        .add(navOpenNavLinks(), '<')
+      navTL.current = gsap.timeline({ reversed: true }).add(navOpenCtrlBar())
+      // .add(navOpenNavLinks(), '<')
     }, [nav])
 
     return () => navCtx.revert()
@@ -97,29 +95,31 @@ function Nav({ appColor, changeAppColor }) {
   //-----------------------------------------------------------
   return (
     <nav ref={nav}>
-      <div className="nav-wrapper">
-        <div className="nav-control-bar">
+      <div className="nav-placement-wrap">
+        <div
+          className="nav-container"
+          style={{
+            backgroundColor: navState === 'open' ? rgbvar('blk') : rgbvar('accent')
+          }}
+        >
+          {/* <div className="nav-control-bar"> */}
           <ThemeSet
             classNames={'theme-toggle ' + (navState === 'open' ? 'active' : '')}
           />
-
           <button
             className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
           >
-            {/* <i className={'bi' + (navState === 'open' ? ' bi-x-lg ' : ' bi-list')}></i> */}
-
-            {navState === 'open' ? 'exit' : 'menu'}
+            {navState === 'open' ? 'menu' : 'exit'}
           </button>
-        </div>
+          {/* </div> */}
 
-        {/* <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} /> */}
+          {/* <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} /> */}
 
-        {/*
+          {/*
         // NAV LINKS
         //-----------------------------------------------------------
          */}
-        <div className="nav-link-mask">
           <div className="nav-link-container" onClick={toggleNavMenu}>
             <NavLink to="home" children="home" appColor={appColor} />
             <NavLink to="projects" children="projects" appColor={appColor} />
@@ -149,43 +149,32 @@ export default Nav
 
 export function navOpenCtrlBar() {
   let openCtrlBarTL = gsap.timeline({
-    defaults: { duration: 0.2, ease: 'power4.out' }
+    defaults: { duration: 0.3, ease: 'power4.in' }
   })
   openCtrlBarTL
-    /*     .from(
-      '.color-set-toggles-bar',
-      { position: 'fixed', bottom: 0, right: 0, translateY: '150%', zIndex: 10000 },
-      '<'
-    )
     .to(
-      '.color-set-toggles-bar',
-      { position: 'fixed', bottom: 0, right: 0, zIndex: 10000 },
-      '<'
-    ) */
-    //.to('.nav-wrapper', { translateY: '100px' }, '<')
-    .to('.nav-link-mask', { scaleX: 1, width: '25rem', maxWidth: '90vw' }, '<')
-    .to(
-      '.nav-control-bar',
+      '.nav-container',
       {
-        borderRadius: '1.25rem 1.25rem 0rem 0rem',
-        padding: '0.625rem 0.8125rem 0.625rem 0.625rem'
+        rowGap: '0rem',
+        padding: '0rem',
+        width: 'auto'
       },
       '<'
     )
-    .to('.nav-toggle', { borderRadius: '0.875rem' }, '<')
-    .to('.theme-toggle', { borderRadius: '0.875rem' }, '<')
+    .to('.nav-link', { scale: 0.9 }, '<')
+    .to('.nav-link-container', { height: 0, paddingBottom: '0rem' }, '<')
+    .to('.nav-link-container', { display: 'none' }, '<')
   return openCtrlBarTL
 }
 
-function navOpenNavLinks() {
+/* function navOpenNavLinks() {
   let openNavLinksTL = gsap.timeline({
-    defaults: { duration: 0.2, ease: 'power4.out' }
+    defaults: { duration: 0.3, ease: 'power4.out' }
   })
   openNavLinksTL
-    .to('.nav-link-container', { padding: '0.875rem', duration: 0.1 }, '<')
-    .to('.nav-link-mask', { height: 'auto', scaleY: 1, translateY: '-2px' })
-    .to('.nav-link', { translateY: 0 }, '<')
-    .to('.nav-link', { scale: 1, duration: 0.5 }, '<')
-
+    .to('.nav-link', { scale: 0.9 }, '<')
+    .to('.nav-link-container', { height: 0, paddingBottom: 0 }, '<')
+    .to('.nav-link', { opacity: 0 }, '<')
+    .to('.nav-link-container', { display: 'none' }, '<')
   return openNavLinksTL
-}
+} */

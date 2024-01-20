@@ -48,3 +48,33 @@
     url('/public/cursor/cursor_glowing.png') 10 10,
     auto;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb-var(accent);
+  color: rgb-var(accent);
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb-var(blk);
+  color: rgb-var(blk);
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb-var(blk);
+  color: rgb-var(blk);
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar:window-inactive {
+  visibility: hidden;
+}

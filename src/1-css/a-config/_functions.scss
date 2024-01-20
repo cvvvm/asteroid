@@ -56,6 +56,7 @@
 @function transition(
   $color: false,
   $spacer: false,
+  $border: false,
   $size: false,
   $gap: false,
   $scale: false,
@@ -71,6 +72,9 @@
   }
   @if ($spacer) {
     $spacer: 'margin #{$timing} #{$ease}, padding #{$timing} #{$ease}';
+  }
+  @if ($border) {
+    $border: 'border-radius #{$timing} #{$ease}';
   }
   @if ($size) {
     $size: 'height #{$timing} #{$ease-in}, min-height #{$timing} #{$ease-in}, max-height #{$timing} #{$ease-in}, width #{$timing} #{$ease-in}, min-width #{$timing} #{$ease-in}, max-width #{$timing} #{$ease-in}';

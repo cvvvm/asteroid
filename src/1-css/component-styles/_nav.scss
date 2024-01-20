@@ -1,26 +1,38 @@
 // containers
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.nav-wrapper {
-  z-index: 9900;
+.nav-placement-wrap {
+  pointer-events: none;
+  z-index: 9999;
   position: fixed;
-  top: 0.5rem;
-  right: 0.75rem;
+  top: 0rem;
+  right: 0rem;
 
   display: flex;
-  flex-flow: column nowrap;
+  place-content: end;
 
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
-  padding: 0rem;
+  padding: 1rem;
+}
+
+.nav-container {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1rem;
+  column-gap: 0.375rem;
+
+  width: 100%;
+  max-width: 400px;
+
+  padding: 1rem;
+  border: $border-width solid rgb-var(blk);
+  border-radius: calc($border-rad + 2px);
+  background: rgb-var(accent);
 
   transform-origin: right top;
-  translate: 0% 0%;
-
-  @include breakpoint(md) {
-    top: 1rem;
-    right: 1rem;
-  }
+  transition: transition($color: true, $timing: '225ms', $ease: 'ease-out');
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,37 +40,16 @@
 // TOGGLES
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.nav-control-bar {
-  z-index: 9999;
-  display: grid;
-  grid-template-columns: auto auto;
-
-  background-color: rgb-var(text);
-
-  padding: 0rem 0rem;
-  border-radius: $border-rad;
-  transition: background 50ms ease-out;
-}
-
 @mixin toggle-base() {
-  font-family: $jet-brains;
-  font-size: clamp(1rem, calc(1.125 * 4vw), 1.25rem);
-  background-color: rgb-var(text);
-  color: rgb-var(bg);
-
-  padding: 0.875rem 1.25rem 1rem;
-  border: none;
-  transition:
-    filter $timing ease-in-out,
-    box-shadow $timing-fast ease-out,
-    transition($color: true);
-
+  @extend .button-outline;
+  color: rgb-var(blk) !important;
+  background-color: rgb-var(accent) !important;
+  border: $border-width solid rgb-var(blk) !important;
+  padding: 0.675rem 1rem !important;
+  box-shadow: none !important;
   &:hover {
-    background-color: rgb-var(accent, 100);
-    color: rgb-var(blk);
-  }
-  &:active {
-    filter: brightness(0.8) saturate(1.5);
+    box-shadow: $button-shadow rgb-var(blk) !important;
+    border-radius: $border-rad !important;
   }
 }
 
@@ -67,34 +58,15 @@
 .theme-toggle {
   @include toggle-base();
   justify-self: start;
-  border-radius: $border-rad 0rem 0rem $border-rad;
-
-  &.active {
-    background-color: rgb-var(bg);
-    color: rgb-var(text);
-    box-shadow: $button-shadow rgb-var(accent);
-
-    &:hover {
-      color: rgb-var(blk);
-      background-color: rgb-var(bg, 50);
-    }
-  }
+  margin-left: 0rem !important;
+  //border-radius: $border-rad 0rem 0rem $border-rad !important;
 }
 
 .nav-toggle {
   @include toggle-base();
   justify-self: end;
-  border-radius: 0rem $border-rad $border-rad 0rem;
-
-  &.active {
-    background-color: rgb-var(red-accent);
-    color: #990d00;
-    box-shadow: $button-shadow #990d00;
-
-    &:hover {
-      background-color: #f14131;
-    }
-  }
+  //border-radius: 0rem $border-rad $border-rad 0rem !important;
+  z-index: 10;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,68 +74,45 @@
 // LINKS
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// link wrapper
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.nav-link-mask {
-  z-index: 9001;
-  overflow: hidden;
-  height: 0px;
-
-  transform-origin: center top;
-  translate: 0 -75%;
-  scale: 0.9;
-}
-
 .nav-link-container {
+  grid-column: span 2;
+  overflow-y: hidden;
+
   display: grid;
   row-gap: 0.75rem;
-  align-items: center;
+  justify-items: center;
 
+  height: 100%;
   max-width: 100%;
-
-  background-color: rgb-var(text);
-  border-radius: 0rem 0rem $border-rad-lg $border-rad-lg;
+  padding: 2px;
+  padding-bottom: 0.5rem;
 }
 
 // link buttons
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .nav-link {
-  font-size: 1.375rem;
-  font-family: $jet-brains;
-  font-weight: $weight-regular;
+  // BG color is controlled in Nav.js
+  @extend .button-outline;
   text-align: center;
-  text-decoration: none;
-
-  border-radius: $border-rad;
-  //border: $border-width solid rgb-var(bg);
-  padding: clamp(3vh, calc(4 * 1.1vw), 2.5rem) 0rem;
-
-  transform-origin: center;
-  translate: 0 -650%;
-  scale: 0.9;
-
-  transition:
-    padding $timing ease-in,
-    letter-spacing $timing ease-in-out,
-    background $timing ease-in-out,
-    color $timing ease-in-out;
-
+  width: 98%;
+  padding: 1.5rem 0rem !important;
+  border: $border-width solid rgb-var(blk) !important;
+  box-shadow: $button-shadow rgb-var(blk) !important;
+  transform-origin: top center;
   &:hover {
-    letter-spacing: 0.0625rem;
-    color: rgb-var(blk) !important;
-    //border: $border-width solid rgb-var(accent, 0);
-    background-color: rgb-var(accent) !important;
+    color: rgb-var(text) !important;
+    background-color: rgb-var(bg, 50) !important;
   }
   &.active {
-    font-weight: $weight-black;
-    padding: clamp(6vh, calc(6 * 1.1vw), 5rem) 0rem;
-    //border: $border-width solid rgb-var(accent);
-    background-color: rgb-var(accent, 25) !important;
-
+    @extend .button;
+    width: 100%;
+    padding: 3rem 0rem !important;
+    background-color: rgb-var(text) !important;
+    border: $border-width solid rgb-var(blk) !important;
     &:hover {
-      //border: $border-width solid rgb-var(accent, 0);
-      background-color: rgb-var(accent, 50) !important;
+      color: rgb-var(bg) !important;
+      background-color: rgb-var(text, 75) !important;
+      border: $border-width solid rgb-var(blk) !important;
     }
   }
 }

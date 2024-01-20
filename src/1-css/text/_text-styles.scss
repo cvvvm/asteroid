@@ -94,7 +94,7 @@ $font-size: (
     font-size: map-get($font-size, $level);
     line-height: 130%;
     letter-spacing: 0.025rem;
-    filter: saturate(2);
+    filter: saturate(1.25);
 
     transition:
       font-size $timing-fast ease-in-out,
