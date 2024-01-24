@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 import { ThemeSet, /* ColorSet, */ rgbvar } from '../functions/ThemeSet'
 
@@ -161,7 +162,7 @@ export function navOpenCtrlBar() {
       },
       '<'
     )
-    .to('.nav-link', { scale: 0.9 }, '<')
+    .to('.nav-link', { opacity: 0, translateY: '-50px' }, '<')
     .to('.nav-link-container', { height: 0, paddingBottom: '0rem' }, '<')
     .to('.nav-link-container', { display: 'none' }, '<')
   return openCtrlBarTL
