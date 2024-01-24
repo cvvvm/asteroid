@@ -158,12 +158,13 @@ export function navOpenCtrlBar() {
       {
         rowGap: '0rem',
         padding: '0rem',
-        width: 'auto'
+        width: 'auto',
+        borderRadius: '0.5rem'
       },
       '<'
     )
     .to('.nav-link', { opacity: 0, translateY: '-50px' }, '<')
-    .to('.nav-link-container', { height: 0, paddingBottom: '0rem' }, '<')
+    .to('.nav-link-container', { height: 0, padding: '0rem 0rem 0rem 0rem' }, '<')
     .to('.nav-link-container', { display: 'none' }, '<')
   return openCtrlBarTL
 }
