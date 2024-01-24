@@ -44,7 +44,7 @@ export const ScrollToTop = ({ children }) => {
 
   // animate page
   //-----------------------------------------------------------
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(['.container:first-of-type > * ', '.projects-container'], {
         delay: 0.1,
@@ -89,9 +89,6 @@ export function ErrorPage({ page = '' }) {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* function randNumRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-} */
 
 function App() {
   // APP COLOR

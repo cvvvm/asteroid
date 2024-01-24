@@ -73,7 +73,7 @@ function Nav({ appColor, changeAppColor }) {
   useEffect(() => {
     // toggle the direction of timeline
     if (navState === 'open') {
-      navTL.current.timeScale(1)
+      navTL.current.timeScale(1.5)
     } else if (navState === 'closed') {
       navTL.current.timeScale(1)
     }
@@ -83,14 +83,12 @@ function Nav({ appColor, changeAppColor }) {
 
   // animate nav
   //-----------------------------------------------------------
-  useLayoutEffect(() => {
-    const navCtx = gsap.context(() => {
+  useGSAP(
+    () => {
       navTL.current = gsap.timeline({ reversed: true }).add(navOpenCtrlBar())
-      // .add(navOpenNavLinks(), '<')
-    }, [nav])
-
-    return () => navCtx.revert()
-  }, [])
+    },
+    { scope: nav }
+  )
 
   // build nav menu
   //-----------------------------------------------------------
@@ -159,7 +157,7 @@ export function navOpenCtrlBar() {
         rowGap: '0rem',
         padding: '0rem',
         width: 'auto',
-        borderRadius: '0.5rem'
+        borderRadius: '0.625rem'
       },
       '<'
     )

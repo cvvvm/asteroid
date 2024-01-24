@@ -29,6 +29,7 @@
 
   width: 100%;
   max-width: 400px;
+  height: 100%;
 
   padding: 1rem;
   border: $border-width solid rgb-var(blk);
@@ -88,7 +89,7 @@
 
   height: 100%;
   max-width: 100%;
-  padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+  padding: 0.625rem 0.5rem 0.75rem;
 }
 
 // link buttons
@@ -97,8 +98,8 @@
   // BG color is controlled in Nav.js
   @extend .button-outline;
   text-align: center;
-  width: 98%;
-  padding: 1.5rem 0rem !important;
+  width: 100%;
+  padding: 2rem 0rem !important;
   border: $border-width solid rgb-var(blk) !important;
   box-shadow: $button-shadow rgb-var(blk) !important;
   opacity: 1;
@@ -110,8 +111,7 @@
   }
   &.active {
     @extend .button;
-    width: 100%;
-    padding: 3rem 0rem !important;
+    padding: 1.5rem 0rem !important;
     background-color: rgb-var(text) !important;
     border: $border-width solid rgb-var(blk) !important;
     &:hover {
