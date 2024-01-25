@@ -40,7 +40,6 @@ function NavLink({ to, children, appColor, ...props }) {
 
 function Nav({ appColor, changeAppColor }) {
   const nav = useRef()
-  const navTL = useRef()
   const [navState, setNavState] = useState('closed')
   // const [appColor, setAppColor] = useState(defaultColor)
 
@@ -60,34 +59,23 @@ function Nav({ appColor, changeAppColor }) {
 
   // toggle nav menu state
   //-----------------------------------------------------------
+
   function toggleNavMenu() {
-    if (navState === 'closed') {
-      setNavState('open')
-    } else if (navState === 'open') {
-      setNavState('closed')
-    }
+    navState === 'closed' ? setNavState('open') : setNavState('closed')
   }
 
-  // watch nav state
-  //-----------------------------------------------------------
-  useEffect(() => {
-    // toggle the direction of timeline
-    if (navState === 'open') {
-      navTL.current.timeScale(1.5)
-    } else if (navState === 'closed') {
-      navTL.current.timeScale(1)
-    }
-    // state on page load?
-    navTL.current.reversed(navState === 'closed')
-  }, [navState])
-
-  // animate nav
-  //-----------------------------------------------------------
   useGSAP(
     () => {
-      navTL.current = gsap.timeline({ reversed: true }).add(navOpenCtrlBar())
+      if (navState === 'closed') {
+        openNavTL().pause().revert()
+        closeNavTL()
+      }
+      if (navState === 'open') {
+        closeNavTL().pause().revert()
+        openNavTL()
+      }
     },
-    { scope: nav }
+    { dependencies: [navState], scope: nav }
   )
 
   // build nav menu
@@ -95,12 +83,7 @@ function Nav({ appColor, changeAppColor }) {
   return (
     <nav ref={nav}>
       <div className="nav-placement-wrap">
-        <div
-          className="nav-container"
-          style={{
-            backgroundColor: navState === 'open' ? rgbvar('blk') : rgbvar('accent')
-          }}
-        >
+        <div className="nav-container">
           {/* <div className="nav-control-bar"> */}
           <ThemeSet
             classNames={'theme-toggle ' + (navState === 'open' ? 'active' : '')}
@@ -109,12 +92,10 @@ function Nav({ appColor, changeAppColor }) {
             className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
             onClick={toggleNavMenu}
           >
-            {navState === 'open' ? 'menu' : 'exit'}
+            {navState === 'closed' ? 'menu' : 'exit'}
           </button>
           {/* </div> */}
-
           {/* <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} /> */}
-
           {/*
         // NAV LINKS
         //-----------------------------------------------------------
@@ -146,35 +127,59 @@ export default Nav
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export function navOpenCtrlBar() {
-  let openCtrlBarTL = gsap.timeline({
-    defaults: { duration: 0.3, ease: 'power4.in' }
+export function openNavTL() {
+  let openNav = gsap.timeline({
+    defaults: { duration: 0.3, ease: 'power4.out' }
   })
-  openCtrlBarTL
+  openNav
+    // .to('.nav-container', { backgroundColor: rgbvar('accent'), duration: 0.0025 }, '<')
+    .to('.nav-link-container', { display: 'grid', duration: 0.015 }, '<')
     .to(
-      '.nav-container',
+      '.nav-link-container',
       {
-        rowGap: '0rem',
-        padding: '0rem',
-        width: 'auto',
-        borderRadius: '0.625rem'
+        height: '100%',
+        padding: '1.25rem 0.5rem 0.75rem',
+        duration: 0.15
       },
       '<'
     )
-    .to('.nav-link', { opacity: 0, translateY: '-50px' }, '<')
-    .to('.nav-link-container', { height: 0, padding: '0rem 0rem 0rem 0rem' }, '<')
-    .to('.nav-link-container', { display: 'none' }, '<')
-  return openCtrlBarTL
+    .to('.nav-link', { opacity: 1, translateY: '0px' }, '<')
+    .to(
+      '.nav-container',
+      {
+        padding: '1rem',
+        width: '100%',
+        height: '100%',
+        borderRadius: '1rem 1rem 1.25rem 1.25rem'
+      },
+      '<'
+    )
+
+  return openNav
 }
 
-/* function navOpenNavLinks() {
-  let openNavLinksTL = gsap.timeline({
-    defaults: { duration: 0.3, ease: 'power4.out' }
+export function closeNavTL() {
+  let closeNav = gsap.timeline({
+    defaults: { duration: 0.2, ease: 'power4.in' }
   })
-  openNavLinksTL
-    .to('.nav-link', { scale: 0.9 }, '<')
-    .to('.nav-link-container', { height: 0, paddingBottom: 0 }, '<')
+  closeNav
+    // .to('.nav-container', { backgroundColor: rgbvar('blk'), duration: 0.0025 }, '<')
+    .to(
+      '.nav-link-container',
+      { height: '0%', padding: '0rem 0rem 0rem 0rem', duration: 0.3 },
+      '<'
+    )
     .to('.nav-link', { opacity: 0 }, '<')
-    .to('.nav-link-container', { display: 'none' }, '<')
-  return openNavLinksTL
-} */
+    .to(
+      '.nav-container',
+      {
+        width: '142px',
+        height: '55px',
+        padding: '0.125rem',
+        borderRadius: '0.7375rem'
+      },
+      '<'
+    )
+    .to('.nav-link-container', { display: 'none' })
+  return closeNav
+}
