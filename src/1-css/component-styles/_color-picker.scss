@@ -14,9 +14,7 @@
 
   padding: 1.125rem;
   border-radius: 2rem;
-  border-width: 8px;
-  border-style: solid;
-  border-color: rgb-var(blk);
+  border: 8px solid rgb-var(blk);
 
   scale: 0.8;
   translate: 0;
@@ -55,9 +53,7 @@
 
   padding: 1.125rem;
   border-radius: 2rem;
-  border-width: 8px;
-  border-style: solid;
-  border-color: rgb-var(bg);
+  border: 8px solid rgb-var(bg);
 
   transition: transition($color: true, $scale: true);
 
