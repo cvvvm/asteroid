@@ -42,8 +42,7 @@ export function ColorSet({ currentAppColor, appColorTarget, classNames, styles }
             key={color}
             style={{
               backgroundColor: rgbvar(color + '-accent'),
-              borderColor:
-                color === currentAppColor ? rgbvar('blk', 50) : rgbvar('blk', 100),
+              borderColor: color === currentAppColor ? rgbvar('blk', 50) : '',
               boxShadow: 'none' //'4px 4px 0px ' + rgbvar('text-' + color + '', 100)
             }}
             className="color-set-toggle"

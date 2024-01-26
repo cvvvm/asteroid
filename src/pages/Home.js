@@ -9,23 +9,14 @@ import { ColorSet } from '../functions/ThemeSet'
 export default function Home({ appColor, changeAppColor }) {
   return (
     <>
-      <div className="container vh-80 pt-7 pt-md-6 pb-0 row-gap-3 row-gap-xs-5">
-        <div className="row-4">
+      <div className="container vh-90 pt-2 pt-xs-0 pb-0 row-gap-2 ">
+        <div className="row-4 px-1 px-sm-0">
           <div className="col-4">
             <h1 className="">hi, i'm claire.</h1>
             <p className="">self-taught designer, developer, occasional illustrator.</p>
           </div>
         </div>
 
-        {/* colors */}
-        <div className="row-f10 pi-center pc-center row-gap-0">
-          <p className="note row-f10">current color: {appColor}</p>
-          <ColorSet
-            currentAppColor={appColor}
-            appColorTarget={changeAppColor}
-            classNames={'color-set-home'}
-          />
-        </div>
         {/* buttons */}
         <div className="row-f10">
           <div className="row-4 pc-evenly">
@@ -36,6 +27,17 @@ export default function Home({ appColor, changeAppColor }) {
               <button className="button as-center ">projects</button>
             </Link>
           </div>
+        </div>
+        {/* colors */}
+        <div className="row-f10 pi-center pc-center row-gap-1 mt-2">
+          <p className="note row-f10 ai-center col-gap-1">
+            current color: <p className="badge">{appColor}</p>
+          </p>
+          <ColorSet
+            currentAppColor={appColor}
+            appColorTarget={changeAppColor}
+            classNames={'color-set-home'}
+          />
         </div>
       </div>
       <Footer />
