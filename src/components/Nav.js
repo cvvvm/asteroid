@@ -78,6 +78,8 @@ export default function Nav({ appColor, changeAppColor }) {
   let closeNavEase = 'power4.in'
   useGSAP(
     () => {
+      // close
+      //-----------------------------------------------------------
       if (navState.state === 'menu' && !navState.inital) {
         gsap.to(['.nav-mask', '.colors-mask'], {
           height: '0px',
@@ -110,6 +112,9 @@ export default function Nav({ appColor, changeAppColor }) {
           ease: closeNavEase
         })
       }
+
+      // open
+      //-----------------------------------------------------------
       if (navState.state === 'exit' && navState.clicked) {
         gsap.to(['.nav-mask', '.colors-mask'], {
           height: '465px',
