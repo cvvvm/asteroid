@@ -1,3 +1,8 @@
+$nav-transitions: transition(
+  $color: true,
+  $translate: true
+);
+
 // containers
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5,39 +10,84 @@
   pointer-events: none;
   z-index: 9999;
   position: fixed;
-  top: 0rem;
+  bottom: 0rem;
   right: 0rem;
 
   display: flex;
   place-content: end;
 
   width: 100%;
+  max-width: 550px;
   max-height: 100%;
   padding: 0.5rem;
+
+  transition: $nav-transitions;
 
   @include breakpoint(md) {
     padding: 1rem;
   }
 }
 
+.menu-container {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1rem;
+
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  border-radius: $border-rad-lg;
+  background-color: rgb-var(blk);
+
+  transition: $nav-transitions;
+}
+
+.colors-container {
+  pointer-events: auto;
+  display: grid;
+  grid-template-rows: 1fr 54px;
+  justify-items: stretch;
+  justify-content: stretch;
+  gap: 1rem;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: $border-rad;
+}
+
 .nav-container {
   pointer-events: auto;
   display: grid;
-  grid-template-columns: min-content 1fr;
-  row-gap: 0rem; // 1rem;
-  column-gap: 0.5rem;
+  grid-template-rows: 1fr 54px;
+  gap: 1rem;
 
-  width: 142px; // 100%;
-  height: 55px;
-  max-width: 400px;
+  width: 100%;
+  height: 100%;
 
-  padding: 0.125rem; // 1rem;
-  border: $border-width solid rgb-var(accent);
-  border-radius: 0.625rem; // 1rem 1rem 1.25rem 1.25rem;
-  background-color: rgb-var(accent);
+  border-radius: $border-rad;
+}
 
-  transform-origin: right top;
-  transition: transition($color: true, $timing: '200ms', $ease: 'ease-out');
+.nav-link-container {
+  overflow: hidden;
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+  border-radius: $border-rad;
+  background-color: rgb-var(bg);
+
+  transition: $nav-transitions;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,17 +96,21 @@
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @mixin toggle-base() {
-  @extend .button-outline;
-  font-size: 1rem !important;
-  color: rgb-var(bg) !important;
-  background-color: rgb-var(text) !important;
-  border: $border-width solid rgb-var(text) !important;
-  padding: 0.625rem 1rem 0.75rem !important;
-  box-shadow: none !important;
+  font-family: $jet-brains;
+  font-size: 1rem;
+  color: rgb-var(bg);
+  background-color: rgb-var(text);
+  padding: 0.625rem 1rem 0.75rem;
+  border-radius: $border-rad-sm;
+  border: $border-width solid rgb-var(text);
+  box-shadow: none;
+
+  transition: $nav-transitions;
+
   &:hover {
-    box-shadow: 2px 2px 0px rgb-var(blk) !important;
-    border-radius: $border-rad !important;
-    border: $border-width solid rgb-var(blk) !important;
+    border: $border-width solid rgb-var(accent);
+    box-shadow: $button-shadow 0px rgb-var(accent);
+    translate: -2px -2px;
   }
 }
 
@@ -64,7 +118,6 @@
 //-----------------------------------------------------------
 .theme-toggle {
   @include toggle-base();
-  justify-self: start;
   margin-left: 0rem !important;
 }
 
@@ -79,46 +132,45 @@
 // LINKS
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.nav-link-container {
-  grid-column: span 2;
-  overflow-y: hidden;
-
-  display: none; // grid;
-  row-gap: 0.75rem;
-  justify-items: center;
-
-  height: 0%; // 100%;
-  max-width: 100%;
-  padding: 0rem 0rem 0rem; // 0.625rem 0.5rem 0.75rem;
-}
 
 // link buttons
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .nav-link {
-  // BG color is controlled in Nav.js
-  @extend .button-outline;
+  display: flex;
+  place-items: center;
+  place-content: center;
+
+  font-family: $jet-brains;
+  font-size: 1.125rem;
   text-align: center;
+
   width: 100%;
-  padding: 2rem 0rem !important;
-  border: $border-width solid rgb-var(blk) !important;
-  box-shadow: $button-shadow rgb-var(blk) !important;
-  opacity: 0; // 100%;
-  translate: 0px 0px;
-  transform-origin: center;
+  height: 100%;
+  padding: 2rem;
+
+  border-radius: $border-rad;
+  border: $border-width solid rgb-var(blk);
+
+  opacity: 1;
+  color: rgb-var(text);
+  background-color: rgb-var(accent, 15);
+  box-shadow: $button-shadow rgb-var(blk);
+
+  transition: $nav-transitions;
+
   &:hover {
-    color: rgb-var(text) !important;
-    background-color: rgb-var(bg, 50) !important;
-    translate: -2px -2px !important;
+    color: rgb-var(text);
+    background-color: rgb-var(accent, 50);
+    translate: -2px -2px;
   }
   &.active {
-    @extend .button;
-    padding: 1.5rem 0rem !important;
-    background-color: rgb-var(text) !important;
-    border: $border-width solid rgb-var(blk) !important;
+    color: rgb-var(bg);
+    background-color: rgb-var(text);
+    border: $border-width solid rgb-var(blk);
     &:hover {
-      color: rgb-var(bg) !important;
-      background-color: rgb-var(text, 75) !important;
-      border: $border-width solid rgb-var(blk) !important;
+      color: rgb-var(bg);
+      background-color: rgb-var(accent);
+      border: $border-width solid rgb-var(blk);
     }
   }
 }

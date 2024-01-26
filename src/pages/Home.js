@@ -23,7 +23,7 @@ export default function Home({ appColor, changeAppColor }) {
           <ColorSet
             currentAppColor={appColor}
             appColorTarget={changeAppColor}
-            classNames={'row-10 row-gap-1 col-gap-1 col-gap-xs-3 col-gap-sm-2'}
+            classNames={'color-set-home'}
           />
         </div>
         {/* buttons */}

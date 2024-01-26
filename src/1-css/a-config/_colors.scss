@@ -7,13 +7,13 @@
 //-----------------------------------------------------------
 $yellow-lt: 251, 234, 153; // #fbea99;
 $yellow-accent: 255, 200, 0; // #ffc908;
-$yellow-dk: 153, 102, 0; // #996600;
-$yellow-blk: 77, 51, 0; // #4d3300;
+$yellow-dk: 160, 90, 0; // #996600;
+$yellow-blk: 90, 30, 0; // #4d3300;
 
 $green-lt: 201, 240, 194; // #c9f0c2;
 $green-accent: 87, 218, 76; // #57da4c;
 $green-dk: 0, 102, 17; // #006611;
-$green-blk: 0, 51, 9; // #003309;
+$green-blk: 0, 45, 5; // #003309;
 
 $blue-lt: 205, 230, 254; // #cde6fe;
 $blue-accent: 87, 157, 255; // #579dff;
@@ -22,13 +22,13 @@ $blue-blk: 0, 29, 86; // #001d56;
 
 $pink-lt: 246, 205, 254; // #f6cdfe;
 $pink-accent: 255, 110, 206; // #ff6ece;
-$pink-dk: 170, 9, 170; // #aa09aa;
-$pink-blk: 90, 0, 90; // #5a005a;
+$pink-dk: 150, 9, 170; // #aa09aa;
+$pink-blk: 80, 0, 90; // #5a005a;
 
 $red-lt: 254, 209, 205; // #fed1cd;
 $red-accent: 255, 100, 100; // #ff6464;
 $red-dk: 153, 13, 0; // #990d00;
-$red-blk: 77, 7, 0; // #4d0700;
+$red-blk: 80, 7, 0; // #4d0700;
 
 $grey-lt: 221, 224, 227; // #dde0e3;
 $grey-accent: 151, 160, 170; // #97A0AA;
@@ -65,7 +65,7 @@ $mono-blk: 30, 30, 30; // #333333;
     pink-blk: #{$pink-blk},
     red-blk: #{$red-blk},
     grey-blk: #{$grey-blk},
-    mono-blk: #{$mono-blk},
+    mono-blk: #{$mono-blk}
   )
 );
 

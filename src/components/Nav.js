@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
-import { ThemeSet, /* ColorSet, */ rgbvar } from '../functions/ThemeSet'
+import { ThemeSet, ColorSet, rgbvar } from '../functions/ThemeSet'
 
 // nav links
 //------------------------------------------------------------------------------------
@@ -18,10 +18,10 @@ function NavLink({ to, children, appColor, ...props }) {
       to={to}
       {...props}
       className={'nav-link ' + (isActive ? ' active' : '')}
-      style={{
+      /* style={{
         backgroundColor: isActive ? rgbvar('text') : rgbvar('bg'),
         color: isActive ? rgbvar('bg-' + appColor) : rgbvar('text-' + appColor)
-      }}
+      }} */
     >
       {children}
     </Link>
@@ -38,9 +38,14 @@ function NavLink({ to, children, appColor, ...props }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function Nav({ appColor, changeAppColor }) {
+export default function Nav({ appColor, changeAppColor }) {
   const nav = useRef()
-  const [navState, setNavState] = useState('closed')
+  const [navState, setNavState] = useState({
+    inital: false,
+    clicked: null,
+    menuName: 'menu'
+  })
+  // const [navState, setNavState] = useState('closed')
   // const [appColor, setAppColor] = useState(defaultColor)
 
   // NAV TOGGLES
@@ -64,60 +69,53 @@ function Nav({ appColor, changeAppColor }) {
     navState === 'closed' ? setNavState('open') : setNavState('closed')
   }
 
-  useGSAP(
+  /*   useGSAP(
     () => {
       if (navState === 'closed') {
-        openNavTL().pause().revert()
         closeNavTL()
       }
       if (navState === 'open') {
-        closeNavTL().pause().revert()
         openNavTL()
       }
     },
     { dependencies: [navState], scope: nav }
-  )
+  ) */
 
   // build nav menu
   //-----------------------------------------------------------
   return (
     <nav ref={nav}>
       <div className="nav-placement-wrap">
-        <div className="nav-container">
-          {/* <div className="nav-control-bar"> */}
-          <ThemeSet
-            classNames={'theme-toggle ' + (navState === 'open' ? 'active' : '')}
-          />
-          <button
-            className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
-            onClick={toggleNavMenu}
-          >
-            {navState === 'closed' ? 'menu' : 'exit'}
-          </button>
-          {/* </div> */}
-          {/* <ColorSet currentAppColor={appColor} appColorTarget={changeAppColor} /> */}
-          {/*
-        // NAV LINKS
-        //-----------------------------------------------------------
-         */}
-          <div className="nav-link-container" onClick={toggleNavMenu}>
-            <NavLink to="home" children="home" appColor={appColor} />
-            <NavLink to="projects" children="projects" appColor={appColor} />
-            <NavLink to="docs" children="docs" appColor={appColor} />
-            <NavLink to="about" children="about" appColor={appColor} />
+        <div className="menu-container">
+          <div className="colors-container">
+            <ColorSet
+              currentAppColor={appColor}
+              appColorTarget={changeAppColor}
+              classNames={'color-set-nav'}
+            />
+            <ThemeSet
+              classNames={'theme-toggle ' + (navState === 'open' ? 'active' : '')}
+            />
+          </div>
+          <div className="nav-container">
+            <div className="nav-link-container" onClick={toggleNavMenu}>
+              <NavLink to="home" children="home" appColor={appColor} />
+              <NavLink to="projects" children="work" appColor={appColor} />
+              <NavLink to="docs" children="docs" appColor={appColor} />
+              <NavLink to="about" children="about" appColor={appColor} />
+            </div>
+            <button
+              className={'nav-toggle ' + (navState === 'open' ? 'active' : '')}
+              onClick={toggleNavMenu}
+            >
+              {navState === 'closed' ? 'menu' : 'exit'}
+            </button>
           </div>
         </div>
       </div>
-      {/*       <ColorSet
-        currentAppColor={appColor}
-        appColorTarget={changeAppColor}
-        classNames={'row-f10 row-gap-0 col-gap-1 p-1 py-xs-2 px-xs-0'}
-      /> */}
     </nav>
   )
 }
-
-export default Nav
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,21 +127,20 @@ export default Nav
 
 export function openNavTL() {
   let openNav = gsap.timeline({
-    defaults: { duration: 0.3, ease: 'power4.out' }
+    defaults: { duration: 0.6, ease: 'power4.out' }
   })
   openNav
-    // .to('.nav-container', { backgroundColor: rgbvar('accent'), duration: 0.0025 }, '<')
-    .to('.nav-link-container', { display: 'grid', duration: 0.015 }, '<')
+    .to('.nav-link-container', { display: 'grid', duration: 0 }, '<')
     .to(
       '.nav-link-container',
       {
         height: '100%',
-        padding: '1.25rem 0.5rem 0.75rem',
-        duration: 0.15
+        padding: '1.25rem 0.5rem 0.75rem'
+        // duration: 0.15
       },
       '<'
     )
-    .to('.nav-link', { opacity: 1, translateY: '0px' }, '<')
+    .to('.nav-link', { opacity: 1 }, '<')
     .to(
       '.nav-container',
       {
@@ -160,16 +157,11 @@ export function openNavTL() {
 
 export function closeNavTL() {
   let closeNav = gsap.timeline({
-    defaults: { duration: 0.2, ease: 'power4.in' }
+    defaults: { duration: 0.4, ease: 'power4.in' }
   })
   closeNav
-    // .to('.nav-container', { backgroundColor: rgbvar('blk'), duration: 0.0025 }, '<')
-    .to(
-      '.nav-link-container',
-      { height: '0%', padding: '0rem 0rem 0rem 0rem', duration: 0.3 },
-      '<'
-    )
-    .to('.nav-link', { opacity: 0 }, '<')
+    .to('.nav-link-container', { height: '0%', padding: '0rem 0rem 0rem 0rem' }, '<')
+    // .to('.nav-link', { opacity: 0 }, '<')
     .to(
       '.nav-container',
       {
