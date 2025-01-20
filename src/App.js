@@ -3,7 +3,7 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom'
 
 import { gsap } from 'gsap'
 
-import './1-css/main.min.css'
+import './1-css/main.css'
 import calcGridCol from './functions/calcGridCol'
 import Nav from './components/Nav'
 import Footer from './components/Footer'

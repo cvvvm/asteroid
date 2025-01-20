@@ -1,0 +1,13 @@
+.computer-home {
+    position: absolute;
+    top: calc(8dvh - 10px);
+    right: calc(36dvw - 100px);
+    width: 200px;
+    transition: scale 1750ms ease-in-out;
+    scale: 1;
+    opacity: .65;
+
+    &:hover {
+        scale: 1.25 !important;
+    }
+}
