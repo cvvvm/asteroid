@@ -10,6 +10,8 @@ export default function Home({ appColor, changeAppColor }) {
   return (
     <>
       <div className="container vh-90 pt-2 pt-xs-0 pb-0 row-gap-2 ">
+        <img src="/public/images/home/computer-avatar-D-v1.7.gif"
+             alt=""/>
         <div className="row-4 px-1 px-sm-0">
           <div className="col-4">
             <h1 className="">hi, i'm claire.</h1>

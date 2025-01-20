@@ -27,12 +27,7 @@ function NavLink({ to, children, ...props }) {
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SidebarToggleButton({
-  sidebarState,
-  clickFunc,
-  sidebarToggleRef,
-  icon = 'folder2-open'
-}) {
+function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
   const sidebarToggleContainer = useRef()
   const [mouseY, setMouseY] = useState()
 
@@ -43,14 +38,14 @@ function SidebarToggleButton({
       setMouseY(event.clientY)
 
       gsap.to(sidebarToggleRef.current, {
-        top: mouseY - 60,
+        top: mouseY - 40,
         ease: 'power4.outIn',
         duration: 0.4
       })
     }
     // activate on 'md' width or larger
     // toggle boundaries
-    var toggleYBounds = 100
+    var toggleYBounds = 50
     if (mouseY <= toggleYBounds) {
       setMouseY(toggleYBounds)
     }
@@ -68,11 +63,11 @@ function SidebarToggleButton({
   return (
     <div className="sidebar-toggle-container" ref={sidebarToggleContainer}>
       <button
-        className={'button sidebar-toggle ' + (sidebarState === 'open' ? 'active' : '')}
+        className={'sidebar-toggle ' + (sidebarState === 'open' ? 'active' : '')}
         ref={sidebarToggleRef}
         onClick={clickFunc}
       >
-        <i className={'bi' + (sidebarState === 'open' ? ' bi-x-lg ' : ' bi-' + icon)}></i>
+        {sidebarState === 'open' ? 'exit' : 'area'}
       </button>
     </div>
   )
@@ -125,7 +120,7 @@ export default function Sidebar({ links = [], title, children }) {
     const sidebarCtx = gsap.context(() => {
       sidebarTL.current = gsap
         .timeline({ reversed: true, duration: 0.2, ease: 'power4.out' })
-        .to(sidebarRef.current, { translateX: 0 }, '<')
+        .to(sidebarRef.current, { translateX: 0, zIndex: 10000 }, '<')
 
       // animate toggle for xs breakpoint
       if (window.innerWidth < smWidth) {
@@ -159,19 +154,19 @@ export default function Sidebar({ links = [], title, children }) {
   // if title
   //-----------------------------------------------------------
   if (title) {
-    {
-      var title = <h4 className="pl-1">{title}</h4>
-    }
+    title = <h4 className="pl-1">{title}</h4>
   }
 
-  // return sidebar
+  // render sidebar
   //------------------------------------------------------------------------------------
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   return (
     <div className="sidebar" ref={sidebarRef}>
-      {title}
-      {linksMap}
-      {children}
+      <div className="sidebar-content">
+        {title}
+        {linksMap}
+        {children}
+      </div>
       <SidebarToggleButton
         sidebarState={sidebarState}
         sidebarToggleRef={sidebarToggleRef}

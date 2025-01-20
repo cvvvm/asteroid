@@ -4,30 +4,48 @@ $sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
   // sidebar
   //-----------------------------------------------------------
   .sidebar {
-    z-index: 10000;
+    z-index: 5000;
     position: fixed;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 0px;
+
+    top: 0;
+    bottom: 0rem;
+    height: 100%;
+    width: 100%;
+
+    translate: calc(-100vw - 8px) 0;
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr 75px;
+      width: $sidebar-width-sm;
+      padding: 0rem;
+
+      translate: #{'-' + $sidebar-width-sm} 0;
+    }
+    > * {
+      color: rgb-var(bg);
+    }
+  }
+  .sidebar-content {
+    position: relative;
+    display: grid;
     grid-template-rows: 4rem auto;
-    row-gap: 1rem;
-    place-content: center;
+
+    align-content: center;
     align-items: center;
 
     height: 100%;
     width: 100%;
     padding: 1rem;
 
-    background-color: rgb-var($color: text, $opacity: 100);
+    background-color: rgb-var(text);
     box-shadow: 8px 0px rgb-var(accent);
-    translate: calc(-100vw - 8px) 0;
 
     @include breakpoint(sm) {
-      top: 0;
-      bottom: 0rem;
+      height: 100dvh;
       width: $sidebar-width-sm;
       padding: 3rem 3rem 3rem 1.5rem;
-
-      translate: #{'-' + $sidebar-width-sm} 0;
     }
     > * {
       color: rgb-var(bg);
@@ -38,7 +56,7 @@ $sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
   //-----------------------------------------------------------
   .sidebar-toggle-container {
     pointer-events: none;
-    position: absolute;
+    position: relative;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -46,46 +64,42 @@ $sidebar-width-sm: 22rem; //clamp(16rem, calc(12 * 2vw), 20rem);
     top: 0rem;
     bottom: 0rem;
 
-    padding: 1.75rem 0.75rem;
     height: 100dvh;
     width: calc(100vw + 4.875rem); // controls offset from sidebar
 
     @include breakpoint(sm) {
       right: initial;
       padding: 0;
-      width: calc($sidebar-width-sm + 4.375rem);
+      width: 100%;
       align-content: start;
     }
   }
 
   .sidebar-toggle {
-    z-index: 8001;
-    position: relative;
+    z-index: 5001;
+    position: absolute;
     pointer-events: auto;
     place-self: start end;
 
-    font-size: 1.75rem;
-    padding: 1.375rem 1.125rem;
+    font-size: 1rem;
+    font-family: $jet-brains;
+
+    color: rgb-var(bg);
+    background-color: rgb-var(text);
+
+    height: 54px;
+    padding: 0rem 1rem;
     border: none;
-    box-shadow: $button-shadow rgb-var(accent);
+    border-radius: $border-rad-sm;
 
-    &.active {
-      background-color: rgb-var(red-accent);
-      color: #990d00;
-      //box-shadow: $button-shadow #990d00;
+    transition: transition($color: true, $spacer: true);
 
-      &:hover {
-        background-color: #f14131;
-        box-shadow: $button-shadow rgb-var(accent);
-        translate: none;
-      }
+    &:hover {
+      color: rgb-var(bg);
+      background-color: rgb-var(text);
     }
-
-    @include breakpoint(sm) {
-      place-self: start end;
-      border-radius: 0rem $border-rad $border-rad 0rem;
-      padding: 1.375rem 1.375rem 1.375rem 1.25rem;
-      translate: 0;
+    &.active {
+      //box-shadow: $button-shadow #990d00;
     }
   }
 
