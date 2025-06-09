@@ -1,6 +1,6 @@
 // variables
-var rtime;
-var timeout = false;
+let rtime;
+let timeout = false;
 const resizeDelay = 75;
 const root = document.documentElement;
 
@@ -24,7 +24,7 @@ function resizeEnd() {
   }
 }
 
-// calclate columns
+// Calculate Columns
 //------------------------------------------------------------------------------------
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function calcGridCol() {

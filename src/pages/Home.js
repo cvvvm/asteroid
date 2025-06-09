@@ -15,8 +15,8 @@ export default function Home({ appColor, changeAppColor }) {
         className={"computer-home"}/>
         <div className="row-4 px-1 px-sm-0">
           <div className="col-4">
-            <h1 className="">hi, i'm claire.</h1>
-            <p className="">self-taught designer, developer, occasional illustrator.</p>
+            <h1 className="">Hi, I'm Claire.</h1>
+            <p className="">I'm a developer, occasionally an illustrator. This is a website I made to show you other stuff I made.</p>
           </div>
         </div>
 
