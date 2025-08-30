@@ -13,8 +13,8 @@ export default function Home({ appColor, changeAppColor }) {
         <img src="/images/home/computer-avatar-D-v1.7.1.webp"
              alt="cute lil animation of a computer monitor turning on, smiling, then looking surprised before turning off."
         className={"computer-home"}/>
-        <div className="row-4 px-1 px-sm-0">
-          <div className="col-4">
+        <div className="row-5 px-1 px-sm-0">
+          <div className="col-12">
             <h1 className="">Hi, I'm Claire.</h1>
             <p className="">I'm a developer, occasionally an illustrator. This is a website I made to show you other stuff I made.</p>
           </div>
