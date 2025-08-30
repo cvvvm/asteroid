@@ -128,10 +128,10 @@ export function Devices({
             />
           </div>
         </div>
-        <div className="row-f10" style={{ marginBottom: '.5rem' }}>
+        <div className="row-fill-10" style={{ marginBottom: '.5rem' }}>
           {children}
         </div>
-        <div className="row-f10 gap-0">
+        <div className="row-fill-10 gap-0">
           <button
             className={
               'device-toggle-button left button' +

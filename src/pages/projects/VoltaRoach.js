@@ -11,7 +11,7 @@ export default function VoltaRoach() {
         }
         imgType={'webp'}
       >
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             freelance
             title={'big, robot bug.'}

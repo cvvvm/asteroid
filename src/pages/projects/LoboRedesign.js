@@ -5,7 +5,7 @@ export default function LoboRedesign() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role title={"what's a seawolf?"} columns={6} roles={'illustrator'}>
             <p>
               Lobo's a seawolf, of course. As the Sonoma State University mascot, they're

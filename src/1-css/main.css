@@ -1,4 +1,7 @@
 @import './reset.css';
+/*/===!===!===!===!===!===!===!===!===!===!===!===!===!===!===!===!/*/
+/*-| Layout |-*/
+/*/===!===!===!===!===!===!===!===!===!===!===!===!===!===!===!/*/
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 :root {
   --max-columns: 18;
@@ -982,7 +985,7 @@
   }
 }
 
-.row-f1 {
+.row-fill-1 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -998,13 +1001,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f1 {
+  .row-fill-1 {
     flex: 1 1 10%;
     min-width: 275px;
   }
 }
 
-.col-f1 {
+.col-fill-1 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1020,19 +1023,19 @@
     $ease: ease-out
   ); */
 }
-.col-f1 > img,
-.col-f1 > video {
+.col-fill-1 > img,
+.col-fill-1 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f1 {
+  .col-fill-1 {
     flex: 1 1 10%;
     min-width: 275px;
   }
 }
 
-.row-f2 {
+.row-fill-2 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1048,13 +1051,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f2 {
+  .row-fill-2 {
     flex: 1 1 20%;
     min-width: 275px;
   }
 }
 
-.col-f2 {
+.col-fill-2 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1070,19 +1073,19 @@
     $ease: ease-out
   ); */
 }
-.col-f2 > img,
-.col-f2 > video {
+.col-fill-2 > img,
+.col-fill-2 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f2 {
+  .col-fill-2 {
     flex: 1 1 20%;
     min-width: 275px;
   }
 }
 
-.row-f3 {
+.row-fill-3 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1098,13 +1101,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f3 {
+  .row-fill-3 {
     flex: 1 1 30%;
     min-width: 275px;
   }
 }
 
-.col-f3 {
+.col-fill-3 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1120,19 +1123,19 @@
     $ease: ease-out
   ); */
 }
-.col-f3 > img,
-.col-f3 > video {
+.col-fill-3 > img,
+.col-fill-3 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f3 {
+  .col-fill-3 {
     flex: 1 1 30%;
     min-width: 275px;
   }
 }
 
-.row-f4 {
+.row-fill-4 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1148,13 +1151,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f4 {
+  .row-fill-4 {
     flex: 1 1 40%;
     min-width: 275px;
   }
 }
 
-.col-f4 {
+.col-fill-4 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1170,19 +1173,19 @@
     $ease: ease-out
   ); */
 }
-.col-f4 > img,
-.col-f4 > video {
+.col-fill-4 > img,
+.col-fill-4 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f4 {
+  .col-fill-4 {
     flex: 1 1 40%;
     min-width: 275px;
   }
 }
 
-.row-f5 {
+.row-fill-5 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1198,13 +1201,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f5 {
+  .row-fill-5 {
     flex: 1 1 50%;
     min-width: 275px;
   }
 }
 
-.col-f5 {
+.col-fill-5 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1220,19 +1223,19 @@
     $ease: ease-out
   ); */
 }
-.col-f5 > img,
-.col-f5 > video {
+.col-fill-5 > img,
+.col-fill-5 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f5 {
+  .col-fill-5 {
     flex: 1 1 50%;
     min-width: 275px;
   }
 }
 
-.row-f6 {
+.row-fill-6 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1248,13 +1251,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f6 {
+  .row-fill-6 {
     flex: 1 1 60%;
     min-width: 275px;
   }
 }
 
-.col-f6 {
+.col-fill-6 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1270,19 +1273,19 @@
     $ease: ease-out
   ); */
 }
-.col-f6 > img,
-.col-f6 > video {
+.col-fill-6 > img,
+.col-fill-6 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f6 {
+  .col-fill-6 {
     flex: 1 1 60%;
     min-width: 275px;
   }
 }
 
-.row-f7 {
+.row-fill-7 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1298,13 +1301,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f7 {
+  .row-fill-7 {
     flex: 1 1 70%;
     min-width: 275px;
   }
 }
 
-.col-f7 {
+.col-fill-7 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1320,19 +1323,19 @@
     $ease: ease-out
   ); */
 }
-.col-f7 > img,
-.col-f7 > video {
+.col-fill-7 > img,
+.col-fill-7 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f7 {
+  .col-fill-7 {
     flex: 1 1 70%;
     min-width: 275px;
   }
 }
 
-.row-f8 {
+.row-fill-8 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1348,13 +1351,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f8 {
+  .row-fill-8 {
     flex: 1 1 80%;
     min-width: 275px;
   }
 }
 
-.col-f8 {
+.col-fill-8 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1370,19 +1373,19 @@
     $ease: ease-out
   ); */
 }
-.col-f8 > img,
-.col-f8 > video {
+.col-fill-8 > img,
+.col-fill-8 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f8 {
+  .col-fill-8 {
     flex: 1 1 80%;
     min-width: 275px;
   }
 }
 
-.row-f9 {
+.row-fill-9 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1398,13 +1401,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f9 {
+  .row-fill-9 {
     flex: 1 1 90%;
     min-width: 275px;
   }
 }
 
-.col-f9 {
+.col-fill-9 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1420,19 +1423,19 @@
     $ease: ease-out
   ); */
 }
-.col-f9 > img,
-.col-f9 > video {
+.col-fill-9 > img,
+.col-fill-9 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f9 {
+  .col-fill-9 {
     flex: 1 1 90%;
     min-width: 275px;
   }
 }
 
-.row-f10 {
+.row-fill-10 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1448,13 +1451,13 @@
   ); */
 }
 @media (min-width: 768px) {
-  .row-f10 {
+  .row-fill-10 {
     flex: 1 1 100%;
     min-width: 275px;
   }
 }
 
-.col-f10 {
+.col-fill-10 {
   display: flex;
   flex: 1 1 100%;
   transition: false, margin 200ms ease-in-out, padding 200ms ease-in-out, false, gap 200ms ease-in-out, false, false, false;
@@ -1470,13 +1473,13 @@
     $ease: ease-out
   ); */
 }
-.col-f10 > img,
-.col-f10 > video {
+.col-fill-10 > img,
+.col-fill-10 > video {
   width: 100%;
   max-width: 100%;
 }
 @media (min-width: 768px) {
-  .col-f10 {
+  .col-fill-10 {
     flex: 1 1 100%;
     min-width: 275px;
   }
@@ -7267,7 +7270,7 @@ a {
   z-index: 8000;
   font-size: 1.5rem !important;
   padding: 0.125rem 1.5rem 0.25rem !important;
-  border-radius: 0.5rem !important;
+  border-radius: 4px !important;
 }
 .gallery-button:hover {
   background-color: rgba(var(--accent), 100%) !important;
@@ -7319,7 +7322,7 @@ a {
   height: 100%;
   max-height: 550px;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   background-color: rgba(var(--blk), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, translate 200ms ease-in-out, false;
 }
@@ -7339,7 +7342,7 @@ a {
   justify-content: stretch;
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 4px;
 }
 
 .nav-mask {
@@ -7355,7 +7358,7 @@ a {
   grid-template-rows: 0fr 54px;
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 4px;
 }
 
 .nav-link-container {
@@ -7366,7 +7369,7 @@ a {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   background-color: rgba(var(--bg), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, translate 200ms ease-in-out, false;
   transform-origin: bottom center;
@@ -7383,7 +7386,7 @@ a {
   color: rgba(var(--bg), 100%);
   background-color: rgba(var(--text), 100%);
   padding: 0.625rem 1rem 0.75rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   border: 2px solid rgba(var(--text), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, translate 200ms ease-in-out, false;
   margin-left: 0rem !important;
@@ -7402,7 +7405,7 @@ a {
   color: rgba(var(--bg), 100%);
   background-color: rgba(var(--text), 100%);
   padding: 0.625rem 1rem 0.75rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   border: 2px solid rgba(var(--text), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, translate 200ms ease-in-out, false;
   justify-self: end;
@@ -7426,7 +7429,7 @@ a {
   width: 100%;
   height: 100%;
   padding: 2rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   border: 2px solid rgba(var(--blk), 100%);
   opacity: 1;
   color: rgba(var(--text), 100%);
@@ -7488,10 +7491,10 @@ a {
   box-shadow: none !important;
 }
 .device-toggle-button.right {
-  border-radius: 0rem 0.5rem 0.5rem 0rem !important;
+  border-radius: 0rem 4px 4px 0rem !important;
 }
 .device-toggle-button.left {
-  border-radius: 0.5rem 0rem 0rem 0.5rem !important;
+  border-radius: 4px 0rem 0rem 4px !important;
 }
 .device-toggle-button:hover {
   translate: 0 !important;
@@ -7504,7 +7507,7 @@ a {
   font-size: 1rem !important;
   padding: 0.4375rem 1rem 0.5rem !important;
   margin: 0rem !important;
-  border-radius: 0.325rem !important;
+  border-radius: 2px !important;
   box-shadow: none !important;
 }
 .device-page-toggle:hover {
@@ -7629,7 +7632,7 @@ textarea {
   font-weight: 300;
   padding: 0.75rem 1rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 4px;
 }
 
 input[type=checkbox] {
@@ -7641,7 +7644,7 @@ input[type=checkbox] {
   place-content: center;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   border: 2px solid rgba(var(--accent), 100%);
   transition: all 50ms ease-in-out;
 }
@@ -7700,7 +7703,7 @@ input[type=checkbox]:checked {
   padding: 0rem 0.375rem 0rem 0.375rem;
   margin-left: -0.375rem;
   margin-right: -0.375rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   box-shadow: inset 0 -0.095rem 0 0 rgba(var(--accent), 0%), inset 5rem -1rem 1rem 0 rgba(var(--accent), 5%), inset 10rem -1.5rem 1rem 0 rgba(var(--accent), 15%), inset 15rem -2rem 1rem 0 rgba(var(--accent), 25%), inset 20rem -2.5rem 1rem 0 rgba(var(--accent), 35%), 0 0 0.15rem 0 rgba(var(--accent), 0%);
 }
 .bg .plink:active {
@@ -7726,7 +7729,7 @@ input[type=checkbox]:checked {
   padding: 0rem 0.375rem 0rem 0.375rem;
   margin-left: -0.375rem;
   margin-right: -0.375rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   box-shadow: inset 0 -0.095rem 0 0 rgba(var(--accent), 0%), inset 5rem -1rem 1rem 0 rgba(var(--accent), 5%), inset 10rem -1.5rem 1rem 0 rgba(var(--accent), 15%), inset 15rem -2rem 1rem 0 rgba(var(--accent), 25%), inset 20rem -2.5rem 1rem 0 rgba(var(--accent), 35%), 0 0 0.15rem 0 rgba(var(--accent), 0%);
 }
 .bg .notelink:active {
@@ -7745,7 +7748,7 @@ input[type=checkbox]:checked {
   padding: 7px 16px 6px;
   background-color: rgba(var(--text), 100%);
   border: 1px solid rgba(var(--text), 100%);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   box-shadow: 1px 1px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, false, false;
 }
@@ -7766,7 +7769,7 @@ input[type=checkbox]:checked {
   padding: 7px 16px 6px;
   background-color: rgba(var(--text), 100%);
   border: 1px solid rgba(var(--text), 100%);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   box-shadow: 1px 1px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, false, false;
   background-color: rgba(var(--bg), 100%);
@@ -7790,7 +7793,7 @@ input[type=checkbox]:checked {
   border-color: rgba(var(--text), 100%);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   box-shadow: 4px 4px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, false, false, false, translate 200ms ease-in-out, false, box-shadow 200ms ease-in-out;
 }
@@ -7816,7 +7819,7 @@ input[type=checkbox]:checked {
   border-color: rgba(var(--text), 100%);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   box-shadow: 4px 4px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, false, false, false, translate 200ms ease-in-out, false, box-shadow 200ms ease-in-out;
   color: rgba(var(--text), 100%);
@@ -7846,7 +7849,7 @@ input[type=checkbox]:checked {
   place-self: center;
   place-content: center;
   padding: var(--card-padding);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   background-color: rgba(var(--bg), 100%);
   border: 2px solid rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, height 200ms ease-in, min-height 200ms ease-in, max-height 200ms ease-in, width 200ms ease-in, min-width 200ms ease-in, max-width 200ms ease-in, false, false, false, false;
@@ -7855,7 +7858,7 @@ input[type=checkbox]:checked {
   place-self: center;
   place-content: center;
   padding: var(--card-padding);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   background-color: rgba(var(--bg), 100%);
   border: 2px solid rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, height 200ms ease-in, min-height 200ms ease-in, max-height 200ms ease-in, width 200ms ease-in, min-width 200ms ease-in, max-width 200ms ease-in, false, false, false, false;
@@ -7875,7 +7878,7 @@ input[type=checkbox]:checked {
   padding: 7px 16px 6px;
   background-color: rgba(var(--text), 100%);
   border: 1px solid rgba(var(--text), 100%);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   box-shadow: 1px 1px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, false, false;
   background-color: rgba(var(--bg), 100%);
@@ -7900,7 +7903,7 @@ input[type=checkbox]:checked {
   padding: 7px 16px 6px;
   background-color: rgba(var(--text), 100%);
   border: 1px solid rgba(var(--text), 100%);
-  border-radius: 0.875rem;
+  border-radius: 8px;
   box-shadow: 1px 1px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, false, false, false, false, false, false;
   background-color: rgba(var(--text), 100%);
@@ -7924,7 +7927,7 @@ input[type=checkbox]:checked {
   border-color: rgba(var(--text), 100%);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   box-shadow: 4px 4px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, false, false, false, translate 200ms ease-in-out, false, box-shadow 200ms ease-in-out;
   color: rgba(var(--text), 100%);
@@ -7953,7 +7956,7 @@ input[type=checkbox]:checked {
   border-color: rgba(var(--text), 100%);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   box-shadow: 4px 4px 0px rgba(var(--accent), 100%);
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, false, false, false, translate 200ms ease-in-out, false, box-shadow 200ms ease-in-out;
   color: rgba(var(--bg), 100%);
@@ -7977,7 +7980,7 @@ input[type=checkbox]:checked {
   grid-template-rows: 0.25fr 1fr 0.5fr;
   row-gap: clamp(1rem, 0.7403560831rem + 1.1869436202vw, 1.5rem);
   padding: 1.5rem 1.75rem 1.625rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   border: 2px solid rgba(var(--blk), 100%);
   color: rgba(var(--text), 100%);
   background-color: rgba(var(--accent), 35%);
@@ -7987,7 +7990,7 @@ input[type=checkbox]:checked {
 @media (min-width: 768px) {
   .bg .project-card {
     padding: 2.5rem 3rem 2.5rem;
-    border-radius: 0.875rem;
+    border-radius: 8px;
   }
 }
 .bg .project-card > .badge,
@@ -8094,7 +8097,7 @@ input[type=checkbox]:checked {
   height: 54px;
   padding: 0rem 1rem;
   border: none;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   transition: color 50ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out, margin 200ms ease-in-out, padding 200ms ease-in-out, false, false, false, false, false;
 }
 .bg .sidebar-toggle:hover {
@@ -8103,7 +8106,7 @@ input[type=checkbox]:checked {
 }
 .bg .sidebar-item {
   font-size: 1rem;
-  border-radius: 0.325rem;
+  border-radius: 2px;
   border: 2px solid rgba(var(--accent), 100%);
   margin: 0;
 }

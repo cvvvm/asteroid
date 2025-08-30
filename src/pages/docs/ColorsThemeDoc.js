@@ -1,5 +1,5 @@
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import highlighterstyles from '../docs/highlighter-slyles'
+import highlighterstyles from './HighlighterStyles'
 import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
 import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript'
 
@@ -16,8 +16,8 @@ export default function ColorDoc() {
   const cssColorVarSetFunc =
     "@include cssvar-set(\n\t(\n\t\ttext: '',\n\t\tbg: '',\n\t\taccent: '',\n\t\tblk: '',\n\n\t\tyellow-accent: #{$yellow-accent},\n\t\tgreen-accent: #{$green-accent},\n\t\tblue-accent: #{$blue-accent},\n\t\tpink-accent: #{$pink-accent},\n\t\tred-accent: #{$red-accent},\n\t\tgrey-accent: #{$grey-accent},\n\t\tmono-accent: #{$mono-accent},\n\t\t...\n\t));" // yellow-blk: #{$yellow-blk},\n\t\tgreen-blk: #{$green-blk},\n\t\tblue-blk: #{$blue-blk},\n\t\tpink-blk: #{$pink-blk},\n\t\tred-blk: #{$red-blk},\n\t\tgrey-blk: #{$grey-blk},\n\t\tmono-blk: #{$mono-blk},\n\t)\n);";
   return (
-    <div className="row-f9 pc-start">
-      <div className="col-f10 invert">
+    <div className="row-fill-9 pc-start">
+      <div className="col-fill-10 invert">
         <h1>colors</h1>
         <p>
           colors are implemented as number values with css variables, and accessed via
@@ -25,10 +25,10 @@ export default function ColorDoc() {
         </p>
       </div>
 
-      <div className="pc-start row-f10">
+      <div className="pc-start row-fill-10">
         <h2 className="">variable setup</h2>
       </div>
-      <div className="row-f10 pc-start">
+      <div className="row-fill-10 pc-start">
         <div className="col-3 jc-center">
           <h4>scss variables</h4>
           <p className="small">

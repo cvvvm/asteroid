@@ -5,7 +5,7 @@ function Footer({ project, vh = 20 }) {
 
   if (project) {
     var projectReturn = (
-      <div className={'row-f10 pb-3'}>
+      <div className={'row-fill-10 pb-3'}>
         <Link to={'/projects'}>
           <button className="button-outline">← return to work</button>
         </Link>
@@ -16,7 +16,7 @@ function Footer({ project, vh = 20 }) {
   return (
     <div className={'container full py-6 pi-center vh-' + vh}>
       {projectReturn}
-      <div className="row-f10 jc-evenly">
+      <div className="row-fill-10 jc-evenly">
         <p style={{ textAlign: 'center' }} className="note">
           &copy;{currYear}.{' '}
           <Link className={'notelink'} to={'/docs'}>

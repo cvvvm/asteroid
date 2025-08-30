@@ -21,7 +21,7 @@ export default function Home({ appColor, changeAppColor }) {
         </div>
 
         {/* buttons */}
-        <div className="row-f10">
+        <div className="row-fill-10">
           <div className="row-4 pc-evenly">
             <Link to={'/about'}>
               <button className="button-outline as-center">about</button>
@@ -32,8 +32,8 @@ export default function Home({ appColor, changeAppColor }) {
           </div>
         </div>
         {/* colors */}
-        <div className="row-f10 pi-center pc-center row-gap-1 mt-2">
-          <p className="note row-f10 ai-center col-gap-1">
+        <div className="row-fill-10 pi-center pc-center row-gap-1 mt-2">
+          <p className="note row-fill-10 ai-center col-gap-1">
             current color: <p className="badge">{appColor}</p>
           </p>
           <ColorSet

@@ -10,7 +10,7 @@ export default function JamisonExhibit() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             freelance
             title={'jamison city interactive'}
@@ -40,9 +40,9 @@ export default function JamisonExhibit() {
           </p>
         </div>
 
-        <div className="row-f10 vh-80">
-          <div className="row-f10"></div>
-          <div className="row-f10">
+        <div className="row-fill-10 vh-80">
+          <div className="row-fill-10"></div>
+          <div className="row-fill-10">
             <VideoGallery
               columns={12}
               project={project}
@@ -67,8 +67,8 @@ export default function JamisonExhibit() {
 
           <div className="col-9">
             <h2 className="">visual styling</h2>
-            <div className="row-f10">
-              <div className="col-f4">
+            <div className="row-fill-10">
+              <div className="col-fill-4">
                 <h4>interface:</h4>
                 <p>
                   i crafted the visual style to combine modern interface elements with the
@@ -77,7 +77,7 @@ export default function JamisonExhibit() {
                   screen.
                 </p>
               </div>
-              <div className="col-f4">
+              <div className="col-fill-4">
                 <h4>animation:</h4>
                 <p>
                   it was important to me that the animation reinforced the physicality of
@@ -119,8 +119,8 @@ export default function JamisonExhibit() {
 
         <div className="col-9">
           <h2 className="">process:</h2>
-          <div className="row-f10">
-            <div className="col-f4">
+          <div className="row-fill-10">
+            <div className="col-fill-4">
               <h4>experience:</h4>
               <p>
                 i built hundreds of slides coordinated between dozens of branching user
@@ -128,7 +128,7 @@ export default function JamisonExhibit() {
                 timelines, a quiz.
               </p>
             </div>
-            <div className="col-f4">
+            <div className="col-fill-4">
               <h4>optimization:</h4>
               <p>
                 the amount of assets & animations meant balancing intensely between how

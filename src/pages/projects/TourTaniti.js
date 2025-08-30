@@ -10,7 +10,7 @@ export default function TourTaniti() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             title={"so idyllic, it doesn't exist"}
             columns={6}

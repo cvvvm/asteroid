@@ -5,7 +5,7 @@ export default function LocalElectionGuides() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             title={'change starts locally.'}
             columns={6}

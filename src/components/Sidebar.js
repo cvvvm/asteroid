@@ -4,9 +4,8 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
 const smWidth = 512
 
-// navlinks
-//------------------------------------------------------------------------------------
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*-| Nav Links |-*/
+/*---+----+---+----+---+----+---+----+---*/
 function NavLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
@@ -18,15 +17,8 @@ function NavLink({ to, children, ...props }) {
   )
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-//
-// sidebar toggle
-//
-//
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*-| Sidebar Toggle |-*/
+/*---+----+---+----+---+----+---+----+---*/
 function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
   const sidebarToggleContainer = useRef()
   const [mouseY, setMouseY] = useState()
@@ -67,7 +59,7 @@ function SidebarToggleButton({ sidebarState, clickFunc, sidebarToggleRef }) {
         ref={sidebarToggleRef}
         onClick={clickFunc}
       >
-        {sidebarState === 'open' ? 'exit' : 'area'}
+        {sidebarState === 'open' ? 'exit' : 'menu' }
       </button>
     </div>
   )

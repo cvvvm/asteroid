@@ -11,7 +11,7 @@ export default function NinaJarnumYoga() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             title={'flexible under pressure.'}
             columns={6}

@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <div className="container">
-        <div className="row-f10 vh-20 jc-evenly col-gap-5 px-md-10">
+        <div className="row-fill-10 vh-20 jc-evenly col-gap-5 px-md-10">
           <div className="col-4">
             <p className="badge">about</p>
             <p>professional computer user living in the PNW.</p>
@@ -177,7 +177,7 @@ export function ContactForm() {
         </label>
       </form>
       {/* submit button -------------------------------------------------------- */}
-      <div className="row-f10 pt-1">
+      <div className="row-fill-10 pt-1">
         <button className="button" onClick={submit}>
           submit
         </button>

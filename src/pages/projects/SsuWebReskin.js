@@ -10,7 +10,7 @@ export default function SsuWebReskin() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             title={'new brand, fresh website'}
             columns={6}
@@ -44,7 +44,7 @@ export default function SsuWebReskin() {
           </p>
         </DeviceImgToggler>
 
-        <div className="row-f10">
+        <div className="row-fill-10">
           <div className="col-6 ps-stretch outline">
             <h2>tiny teams, tiny time.</h2>
             <p>

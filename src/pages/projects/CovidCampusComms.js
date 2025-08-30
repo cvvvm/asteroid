@@ -5,7 +5,7 @@ export default function CovidCampusComms() {
   return (
     <>
       <ImgCover project={project} imgType={'webp'}>
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             title={"covid can't read."}
             columns={6}

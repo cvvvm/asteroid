@@ -14,7 +14,7 @@ export default function ZigZagTattoo() {
         altText="pink, yellow, and light green zig zags on dark green background. pointing to intro text block for project page"
         imgType={'svg'}
       >
-        <div className="row-f10">
+        <div className="row-fill-10">
           <Role
             freelance
             title={'zig zag tattoo'}

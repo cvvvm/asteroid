@@ -1,7 +1,7 @@
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
 import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript'
-import highlighterstyles from '../pages/docs/highlighter-slyles'
+import highlighterstyles from '../pages/docs/HighlighterStyles'
 import { rgbvar } from '../functions/ThemeSet.js'
 SyntaxHighlighter.registerLanguage('scss', scss)
 SyntaxHighlighter.registerLanguage('javascript', javascript)
@@ -32,13 +32,13 @@ export function TitleBlock({ title, children, links = [] }) {
   })
 
   return (
-    <div className="row-f10 pc-start col-gap-2 row-gap-1">
-      <div className="col-f10">
+    <div className="row-fill-10 pc-start col-gap-2 row-gap-1">
+      <div className="col-fill-10">
         <p className="note">jump to:</p>
       </div>
       {linksMap}
 
-      <div className="col-f10 invert mt-1">
+      <div className="col-fill-10 invert mt-1">
         <h1>{title}</h1>
         {children}
       </div>
@@ -51,11 +51,11 @@ export function TitleBlock({ title, children, links = [] }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function SectionHead({ title, link, children }) {
   if (children) {
-    var childContent = <div className="row-f10 jc-start ai-baseline">{children}</div>
+    var childContent = <div className="row-fill-10 jc-start ai-baseline">{children}</div>
   }
   return (
     <div
-      className="row-f10 quote mt-2 mt-sm-4"
+      className="row-fill-10 quote mt-2 mt-sm-1"
       style={{
         borderLeft: '3px solid ' + rgbvar('accent'),
         backgroundColor: rgbvar('accent', 15)
@@ -73,16 +73,16 @@ export function SectionHead({ title, link, children }) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function H4Code({ textCol = 3, code, language, title, children }) {
   if (children) {
-    var childContent = <div className="row-f10 pc-start ai-baseline">{children}</div>
+    var childContent = <div className="row-fill-10 pc-start ai-baseline">{children}</div>
   }
   return (
     <>
-      <div className={'row-f10 row-gap-1 pc-start mt-1 px-sm-1'}>
+      <div className={'row-fill-10 row-gap-1 pc-start mt-1 px-sm-1'}>
         <h4>{title}</h4>
         {childContent}
       </div>
 
-      <div className={'jc-start row-f10'} style={{ minHeight: 0, minWidth: 0 }}>
+      <div className={'jc-start row-fill-10'} style={{ minHeight: 0, minWidth: 0 }}>
         <SyntaxHighlighter language={language} style={highlighterstyles} showLineNumbers>
           {code}
         </SyntaxHighlighter>

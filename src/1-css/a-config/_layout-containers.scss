@@ -143,12 +143,12 @@
 @for $i from 1 through 10 {
   // fills
   //-----------------------------------------------------------
-  .row-f#{$i} {
+  .row-fill-#{$i} {
     @include flex-base();
     @include row();
     @include width-fill($i);
   }
-  .col-f#{$i} {
+  .col-fill-#{$i} {
     @include flex-base();
     @include col();
     @include width-fill($i);

@@ -57,7 +57,7 @@ export function Role({
   if (contributors) {
     var contributes = (
       <>
-        <div className="col-f10 pt-1" style={{ marginBottom: '-0.625rem' }}>
+        <div className="col-fill-10 pt-1" style={{ marginBottom: '-0.625rem' }}>
           <p className="badge">contributors:</p>
         </div>
         <p className="note">{contributors}</p>
@@ -67,11 +67,11 @@ export function Role({
 
   return (
     <div className={'outline invert mt-4 mt-md-0 row-gap-1 col-' + columns}>
-      <div className="col-f10 pb-1 pb-md-2">
+      <div className="col-fill-10 pb-1 pb-md-2">
         <h1>{title}</h1>
         {children}
       </div>
-      <div className="row-f10 pc-start col-gap-1" style={{ marginBottom: '-0.5rem' }}>
+      <div className="row-fill-10 pc-start col-gap-1" style={{ marginBottom: '-0.5rem' }}>
         <p className="badge">my role:</p>
         {freelanceBadge}
         {personalBadge}
@@ -136,10 +136,10 @@ export function DeviceImgToggler({
     })
     // toggles row block
     var toggleBlock = (
-      <div className="row-f10 jc-start gap-1">
+      <div className="row-fill-10 jc-start gap-1">
         <p className="note mb-0">{togglesDesc + ':'}</p>
         <div
-          className="page-toggles-container row-f10 pc-start"
+          className="page-toggles-container row-fill-10 pc-start"
           style={{ marginLeft: '-.25rem' }}
         >
           {toggleMap}
@@ -165,7 +165,7 @@ export function DeviceImgToggler({
   if (arrows) {
     var arrows = (
       <div
-        className={'row-f10 pc-evenly ai-center'}
+        className={'row-fill-10 pc-evenly ai-center'}
         /*         style={{
           columnGap: '200px',
           marginTop: '-2.375rem',
@@ -201,7 +201,7 @@ export function DeviceImgToggler({
   // render component
   //-----------------------------------------------------------
   return (
-    <div className={'row-f10 pb-3 pb-sm-2 pb-md-1 vh-' + vh}>
+    <div className={'row-fill-10 pb-3 pb-sm-2 pb-md-1 vh-' + vh}>
       <div
         className={
           'order-' + textColOrder + ' outline col-' + textCol + (invert ? ' invert' : '')
@@ -301,7 +301,7 @@ const ToggledGallery = ({
       </p>
     )
     var arrows = (
-      <div className="row-f10 mb-1 ai-center pc-evenly">
+      <div className="row-fill-10 mb-1 ai-center pc-evenly">
         {lastButton}
         {slideCounter}
         {nextButton}
@@ -311,10 +311,10 @@ const ToggledGallery = ({
 
   return (
     <>
-      <div className={'gallery ps-center col-f10 ' + columns}>{imgMap}</div>
+      <div className={'gallery ps-center col-fill-10 ' + columns}>{imgMap}</div>
       {arrows}
 
-      {children ? <div className="row-f10 ai-center">{children}</div> : ''}
+      {children ? <div className="row-fill-10 ai-center">{children}</div> : ''}
     </>
   )
 }
@@ -381,7 +381,7 @@ export function GalleryImgToggler({
   //-----------------------------------------------------------
   if (galleries.length > 1) {
     var toggles = (
-      <div className="row-f10 pc-center page-toggles-container">
+      <div className="row-fill-10 pc-center page-toggles-container">
         <p className="note ps-center">toggle:</p>
         {toggleMap}
       </div>
@@ -391,7 +391,7 @@ export function GalleryImgToggler({
   // render component
   //-----------------------------------------------------------
   return (
-    <div className={' row-f10 vh-' + vh}>
+    <div className={' row-fill-10 vh-' + vh}>
       {children}
       <div className={'row-gap-1 row-' + galleryCol}>
         <ToggledGallery
@@ -535,7 +535,7 @@ export const VideoGallery = ({
   return (
     <div className={'row-gap-1 row-' + columns}>
       <div className="gallery">{imgMap}</div>
-      <div className="row-f10 mb-1 pc-evenly ai-center">
+      <div className="row-fill-10 mb-1 pc-evenly ai-center">
         <button className="gallery-button button" onClick={lastSlide}>
           ←
         </button>
